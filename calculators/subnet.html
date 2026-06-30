@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnet Calculator - IP Address and Network Subnet Calculator | FreebieCalculator</title>
+    <meta name="description" content="Free subnet calculator for IP networks. Calculate subnet masks, network addresses, broadcast addresses, and host ranges for IPv4 networks.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/subnet.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Subnet Calculator - IP Address and Network Subnet Calculator">
+    <meta property="og:description" content="Calculate subnet masks, network addresses, and host ranges with our comprehensive subnet calculator for network planning.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/subnet.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Subnet Calculator",
+        "description": "Calculate IP subnets, network addresses, and host ranges for network configuration",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Other Calculators",
+                "item": "https://freebiecalculator.com/#other"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Subnet Calculator",
+                "item": "https://freebiecalculator.com/calculators/subnet.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is CIDR notation?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CIDR (Classless Inter-Domain Routing) notation shows an IP address followed by a slash and number indicating network bits. For example, 192.168.1.0/24 means 24 bits are used for the network portion."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I choose the right subnet size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Consider the number of hosts needed in each subnet. Choose the smallest subnet that accommodates your hosts plus growth. Remember that 2 addresses (network and broadcast) are not usable for hosts."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between network and broadcast addresses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The network address (all host bits 0) identifies the subnet itself. The broadcast address (all host bits 1) is used to send data to all devices in the subnet. Neither can be assigned to hosts."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is a wildcard mask?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A wildcard mask is the inverse of a subnet mask. It's used in access control lists (ACLs) and routing protocols. Where subnet mask has 1s, wildcard mask has 0s, and vice versa."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#other-calculators">Other Calculators</a> › 
+                <span>Subnet Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>🌐 Subnet Calculator</h1>
+                <p>Calculate IP subnets, network addresses, broadcast addresses, and host ranges for network planning.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <form id="subnet-calculator" class="calculator-form">
+                    <div class="form-group">
+                        <label for="ip-address">IP Address</label>
+                        <input type="text" id="ip-address" placeholder="e.g., 192.168.1.100" pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$" required>
+                        <small>Enter an IPv4 address</small>
+                    </div>
+                    
+                    <div class="input-method-tabs">
+                        <button type="button" class="method-tab active" data-method="cidr">CIDR Notation</button>
+                        <button type="button" class="method-tab" data-method="subnet-mask">Subnet Mask</button>
+                        <button type="button" class="method-tab" data-method="host-count">Host Count</button>
+                    </div>
+                    
+                    <!-- CIDR Method -->
+                    <div id="cidr-method" class="input-method active">
+                        <div class="form-group">
+                            <label for="cidr-prefix">CIDR Prefix</label>
+                            <div class="cidr-input">
+                                <span>/</span>
+                                <input type="number" id="cidr-prefix" min="1" max="30" placeholder="24" required>
+                            </div>
+                            <small>Number of network bits (1-30)</small>
+                        </div>
+                    </div>
+                    
+                    <!-- Subnet Mask Method -->
+                    <div id="subnet-mask-method" class="input-method">
+                        <div class="form-group">
+                            <label for="subnet-mask">Subnet Mask</label>
+                            <input type="text" id="subnet-mask" placeholder="e.g., 255.255.255.0" pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$">
+                            <small>Enter subnet mask in dotted decimal notation</small>
+                        </div>
+                    </div>
+                    
+                    <!-- Host Count Method -->
+                    <div id="host-count-method" class="input-method">
+                        <div class="form-group">
+                            <label for="host-count">Required Hosts</label>
+                            <input type="number" id="host-count" min="2" placeholder="254">
+                            <small>Number of hosts needed (minimum subnet will be calculated)</small>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">Calculate Subnet</button>
+                </form>
+                
+                <div class="common-subnets">
+                    <h3>Common Subnet Masks</h3>
+                    <div class="subnet-examples">
+                        <div class="subnet-example" onclick="setSubnet('24', '255.255.255.0')">
+                            <span>/24</span>
+                            <span>255.255.255.0</span>
+                            <span>254 hosts</span>
+                        </div>
+                        <div class="subnet-example" onclick="setSubnet('25', '255.255.255.128')">
+                            <span>/25</span>
+                            <span>255.255.255.128</span>
+                            <span>126 hosts</span>
+                        </div>
+                        <div class="subnet-example" onclick="setSubnet('26', '255.255.255.192')">
+                            <span>/26</span>
+                            <span>255.255.255.192</span>
+                            <span>62 hosts</span>
+                        </div>
+                        <div class="subnet-example" onclick="setSubnet('27', '255.255.255.224')">
+                            <span>/27</span>
+                            <span>255.255.255.224</span>
+                            <span>30 hosts</span>
+                        </div>
+                        <div class="subnet-example" onclick="setSubnet('28', '255.255.255.240')">
+                            <span>/28</span>
+                            <span>255.255.255.240</span>
+                            <span>14 hosts</span>
+                        </div>
+                        <div class="subnet-example" onclick="setSubnet('30', '255.255.255.252')">
+                            <span>/30</span>
+                            <span>255.255.255.252</span>
+                            <span>2 hosts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="subnet-results" class="results-container" style="display: none;">
+                    <h3>🔢 Subnet Information</h3>
+                    
+                    <div class="result-grid">
+                        <div class="result-card highlight">
+                            <div class="result-label">Network Address</div>
+                            <div class="result-value" id="network-address">192.168.1.0</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Broadcast Address</div>
+                            <div class="result-value" id="broadcast-address">192.168.1.255</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Subnet Mask</div>
+                            <div class="result-value" id="subnet-mask-result">255.255.255.0</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Total Hosts</div>
+                            <div class="result-value" id="total-hosts">254</div>
+                        </div>
+                    </div>
+                    
+                    <div class="subnet-details">
+                        <h4>Subnet Details</h4>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">CIDR Notation:</span>
+                                <span id="cidr-notation">192.168.1.0/24</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Wildcard Mask:</span>
+                                <span id="wildcard-mask">0.0.0.255</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Network Class:</span>
+                                <span id="network-class">Class C</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">First Host:</span>
+                                <span id="first-host">192.168.1.1</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Last Host:</span>
+                                <span id="last-host">192.168.1.254</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Host Range:</span>
+                                <span id="host-range">192.168.1.1 - 192.168.1.254</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="binary-representation">
+                        <h4>Binary Representation</h4>
+                        <div id="binary-info" class="binary-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Subnet Calculator Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🔧 Multiple Input Methods</h3>
+                        <p>Calculate subnets using CIDR notation, subnet masks, or required host count. Flexible input for different networking scenarios.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 Complete Analysis</h3>
+                        <p>Get network address, broadcast address, host ranges, and binary representations for comprehensive subnet planning.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🌐 Network Planning</h3>
+                        <p>Perfect for network administrators, students, and IT professionals planning IP address allocations and network segmentation.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Subnet Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What is CIDR notation?</div>
+                        <div class="faq-answer">CIDR (Classless Inter-Domain Routing) notation shows an IP address followed by a slash and number indicating network bits. For example, 192.168.1.0/24 means 24 bits are used for the network portion.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I choose the right subnet size?</div>
+                        <div class="faq-answer">Consider the number of hosts needed in each subnet. Choose the smallest subnet that accommodates your hosts plus growth. Remember that 2 addresses (network and broadcast) are not usable for hosts.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between network and broadcast addresses?</div>
+                        <div class="faq-answer">The network address (all host bits 0) identifies the subnet itself. The broadcast address (all host bits 1) is used to send data to all devices in the subnet. Neither can be assigned to hosts.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What is a wildcard mask?</div>
+                        <div class="faq-answer">A wildcard mask is the inverse of a subnet mask. It's used in access control lists (ACLs) and routing protocols. Where subnet mask has 1s, wildcard mask has 0s, and vice versa.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        // Tab switching for input methods
+        document.querySelectorAll('.method-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const method = this.dataset.method;
+                switchInputMethod(method);
+            });
+        });
+        
+        document.getElementById('subnet-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateSubnet();
+        });
+        
+        function switchInputMethod(method) {
+            // Update tab buttons
+            document.querySelectorAll('.method-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-method="${method}"]`).classList.add('active');
+            
+            // Update input methods
+            document.querySelectorAll('.input-method').forEach(inputMethod => {
+                inputMethod.classList.remove('active');
+            });
+            document.getElementById(`${method}-method`).classList.add('active');
+        }
+        
+        window.setSubnet = function(cidr, mask) {
+            document.getElementById('cidr-prefix').value = cidr;
+            document.getElementById('subnet-mask').value = mask;
+            switchInputMethod('cidr');
+        };
+        
+        function calculateSubnet() {
+            const ipAddress = document.getElementById('ip-address').value;
+            
+            if (!isValidIPAddress(ipAddress)) {
+                alert('Please enter a valid IP address');
+                return;
+            }
+            
+            const activeMethod = document.querySelector('.input-method.active').id;
+            let subnetMask, cidrPrefix;
+            
+            switch (activeMethod) {
+                case 'cidr-method':
+                    cidrPrefix = parseInt(document.getElementById('cidr-prefix').value);
+                    if (!cidrPrefix || cidrPrefix < 1 || cidrPrefix > 30) {
+                        alert('Please enter a valid CIDR prefix (1-30)');
+                        return;
+                    }
+                    subnetMask = cidrToSubnetMask(cidrPrefix);
+                    break;
+                    
+                case 'subnet-mask-method':
+                    subnetMask = document.getElementById('subnet-mask').value;
+                    if (!isValidIPAddress(subnetMask) || !isValidSubnetMask(subnetMask)) {
+                        alert('Please enter a valid subnet mask');
+                        return;
+                    }
+                    cidrPrefix = subnetMaskToCidr(subnetMask);
+                    break;
+                    
+                case 'host-count-method':
+                    const hostCount = parseInt(document.getElementById('host-count').value);
+                    if (!hostCount || hostCount < 2) {
+                        alert('Please enter a valid host count (minimum 2)');
+                        return;
+                    }
+                    cidrPrefix = calculateCidrFromHostCount(hostCount);
+                    subnetMask = cidrToSubnetMask(cidrPrefix);
+                    break;
+            }
+            
+            const subnetInfo = calculateSubnetInfo(ipAddress, subnetMask, cidrPrefix);
+            displaySubnetResults(subnetInfo);
+        }
+        
+        function isValidIPAddress(ip) {
+            const parts = ip.split('.');
+            return parts.length === 4 && parts.every(part => {
+                const num = parseInt(part);
+                return num >= 0 && num <= 255 && part === num.toString();
+            });
+        }
+        
+        function isValidSubnetMask(mask) {
+            const binary = ipToBinary(mask);
+            // Valid subnet mask has consecutive 1s followed by consecutive 0s
+            return /^1*0*$/.test(binary);
+        }
+        
+        function cidrToSubnetMask(cidr) {
+            const mask = [];
+            for (let i = 0; i < 4; i++) {
+                const bitsInOctet = Math.max(0, Math.min(8, cidr - i * 8));
+                mask.push(256 - Math.pow(2, 8 - bitsInOctet));
+            }
+            return mask.join('.');
+        }
+        
+        function subnetMaskToCidr(mask) {
+            return ipToBinary(mask).split('1').length - 1;
+        }
+        
+        function calculateCidrFromHostCount(hostCount) {
+            const hostBits = Math.ceil(Math.log2(hostCount + 2));
+            return 32 - hostBits;
+        }
+        
+        function ipToBinary(ip) {
+            return ip.split('.').map(octet => 
+                parseInt(octet).toString(2).padStart(8, '0')
+            ).join('');
+        }
+        
+        function binaryToIp(binary) {
+            const octets = [];
+            for (let i = 0; i < 32; i += 8) {
+                octets.push(parseInt(binary.substr(i, 8), 2));
+            }
+            return octets.join('.');
+        }
+        
+        function calculateSubnetInfo(ipAddress, subnetMask, cidrPrefix) {
+            const ipBinary = ipToBinary(ipAddress);
+            const maskBinary = ipToBinary(subnetMask);
+            
+            // Calculate network address
+            let networkBinary = '';
+            for (let i = 0; i < 32; i++) {
+                networkBinary += (ipBinary[i] === '1' && maskBinary[i] === '1') ? '1' : '0';
+            }
+            const networkAddress = binaryToIp(networkBinary);
+            
+            // Calculate broadcast address
+            let broadcastBinary = '';
+            for (let i = 0; i < 32; i++) {
+                broadcastBinary += (maskBinary[i] === '1') ? networkBinary[i] : '1';
+            }
+            const broadcastAddress = binaryToIp(broadcastBinary);
+            
+            // Calculate wildcard mask
+            const wildcardMask = subnetMask.split('.').map(octet => 255 - parseInt(octet)).join('.');
+            
+            // Calculate host information
+            const hostBits = 32 - cidrPrefix;
+            const totalHosts = Math.pow(2, hostBits) - 2; // Subtract network and broadcast
+            
+            // Calculate first and last host
+            const networkParts = networkAddress.split('.').map(part => parseInt(part));
+            const broadcastParts = broadcastAddress.split('.').map(part => parseInt(part));
+            
+            const firstHost = [...networkParts];
+            firstHost[3]++;
+            
+            const lastHost = [...broadcastParts];
+            lastHost[3]--;
+            
+            // Determine network class
+            const firstOctet = parseInt(ipAddress.split('.')[0]);
+            let networkClass;
+            if (firstOctet <= 127) networkClass = 'Class A';
+            else if (firstOctet <= 191) networkClass = 'Class B';
+            else if (firstOctet <= 223) networkClass = 'Class C';
+            else if (firstOctet <= 239) networkClass = 'Class D (Multicast)';
+            else networkClass = 'Class E (Reserved)';
+            
+            return {
+                networkAddress,
+                broadcastAddress,
+                subnetMask,
+                wildcardMask,
+                cidrPrefix,
+                totalHosts,
+                firstHost: firstHost.join('.'),
+                lastHost: lastHost.join('.'),
+                networkClass,
+                ipBinary,
+                maskBinary,
+                networkBinary,
+                broadcastBinary
+            };
+        }
+        
+        function displaySubnetResults(info) {
+            // Display main results
+            document.getElementById('network-address').textContent = info.networkAddress;
+            document.getElementById('broadcast-address').textContent = info.broadcastAddress;
+            document.getElementById('subnet-mask-result').textContent = info.subnetMask;
+            document.getElementById('total-hosts').textContent = formatNumber(info.totalHosts);
+            
+            // Display detailed information
+            document.getElementById('cidr-notation').textContent = `${info.networkAddress}/${info.cidrPrefix}`;
+            document.getElementById('wildcard-mask').textContent = info.wildcardMask;
+            document.getElementById('network-class').textContent = info.networkClass;
+            document.getElementById('first-host').textContent = info.firstHost;
+            document.getElementById('last-host').textContent = info.lastHost;
+            document.getElementById('host-range').textContent = `${info.firstHost} - ${info.lastHost}`;
+            
+            // Display binary representation
+            displayBinaryInfo(info);
+            
+            document.getElementById('subnet-results').style.display = 'block';
+            document.getElementById('subnet-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function displayBinaryInfo(info) {
+            const binaryHtml = `
+                <div class="binary-row">
+                    <span class="binary-label">IP Address:</span>
+                    <span class="binary-value">${formatBinary(info.ipBinary)}</span>
+                </div>
+                <div class="binary-row">
+                    <span class="binary-label">Subnet Mask:</span>
+                    <span class="binary-value">${formatBinary(info.maskBinary)}</span>
+                </div>
+                <div class="binary-row">
+                    <span class="binary-label">Network:</span>
+                    <span class="binary-value">${formatBinary(info.networkBinary)}</span>
+                </div>
+                <div class="binary-row">
+                    <span class="binary-label">Broadcast:</span>
+                    <span class="binary-value">${formatBinary(info.broadcastBinary)}</span>
+                </div>
+            `;
+            
+            document.getElementById('binary-info').innerHTML = binaryHtml;
+        }
+        
+        function formatBinary(binary) {
+            return binary.replace(/(.{8})/g, '$1 ').trim();
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .input-method-tabs {
+            display: flex;
+            margin: 20px 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .method-tab {
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .method-tab:hover {
+            color: var(--primary-color);
+        }
+        
+        .method-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .input-method {
+            display: none;
+        }
+        
+        .input-method.active {
+            display: block;
+        }
+        
+        .cidr-input {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .cidr-input span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .cidr-input input {
+            width: 80px;
+        }
+        
+        .common-subnets {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .subnet-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .subnet-example {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 10px;
+            align-items: center;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .subnet-example:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .subnet-details {
+            margin: 30px 0;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        
+        .binary-representation {
+            margin: 30px 0;
+        }
+        
+        .binary-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        
+        .binary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .binary-row:last-child {
+            border-bottom: none;
+        }
+        
+        .binary-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-family: Arial, sans-serif;
+            min-width: 120px;
+        }
+        
+        .binary-value {
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+        
+        @media (max-width: 768px) {
+            .input-method-tabs {
+                flex-direction: column;
+            }
+            
+            .method-tab {
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .method-tab.active {
+                border-bottom-color: var(--border-color);
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            .subnet-examples {
+                grid-template-columns: 1fr;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .binary-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .binary-value {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</body>
+</html>

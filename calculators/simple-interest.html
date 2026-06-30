@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator - Calculate Interest & Principal | FreebieCalculator</title>
+    <meta name="description" content="Free simple interest calculator to calculate interest earned, final amount, principal, rate, or time. Easy-to-use tool for loans and investments.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/simple-interest.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Simple Interest Calculator - Calculate Interest & Principal">
+    <meta property="og:description" content="Calculate simple interest for loans and investments with this free online calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/simple-interest.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simple Interest Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate simple interest for loans, savings, and investments with principal, rate, and time inputs.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Calculators",
+                "item": "https://freebiecalculator.com/#finance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Simple Interest Calculator",
+                "item": "https://freebiecalculator.com/calculators/simple-interest.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "When is simple interest used instead of compound interest?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simple interest is commonly used for short-term loans, car loans, and some personal loans where the interest calculation method is specified in the contract. It's also used in some certificate of deposits and bonds that pay simple interest rather than compound interest."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I convert monthly or daily rates to annual rates?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For simple interest, multiply monthly rates by 12 or daily rates by 365 to get the annual rate. For example, 0.5% per month = 0.5% \u00d7 12 = 6% annually. Note that this differs from compound interest conversions which use exponential calculations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use this calculator for loan payments?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This calculator shows total interest over the loan term, but most loans require monthly payments. For simple interest loans, divide the total amount (principal + interest) by the number of months to get equal monthly payments. For more complex loan calculations, use our EMI calculator."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between simple interest and flat rate interest?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simple interest and flat rate interest often calculate the same total interest amount, but they may differ in how payments are structured. Simple interest loans may allow early payoff with interest savings, while flat rate loans may charge the full interest regardless of early payment."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate is this calculator for real-world scenarios?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This calculator provides accurate results for pure simple interest calculations. However, real loans may have additional fees, different payment schedules, or varying interest calculation methods. Always check with your lender for exact terms and use this as an estimation tool."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Simple Interest Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <div class="form-group">
+                        <label for="calc-mode">What would you like to calculate?</label>
+                        <select id="calc-mode">
+                            <option value="interest">Interest & Final Amount</option>
+                            <option value="principal">Principal Amount</option>
+                            <option value="rate">Interest Rate</option>
+                            <option value="time">Time Period</option>
+                        </select>
+                    </div>
+                    
+                    <div id="interest-calc" class="calc-mode-section">
+                        <h3>Calculate Interest & Final Amount</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="principal-1">Principal Amount ($):</label>
+                                <input type="number" id="principal-1" step="0.01" placeholder="e.g., 5000" min="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rate-1">Annual Interest Rate (%):</label>
+                                <input type="number" id="rate-1" step="0.01" placeholder="e.g., 5.5" min="0" required>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="time-1">Time Period:</label>
+                                <input type="number" id="time-1" step="0.1" placeholder="e.g., 3" min="0.1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time-unit-1">Time Unit:</label>
+                                <select id="time-unit-1">
+                                    <option value="years">Years</option>
+                                    <option value="months">Months</option>
+                                    <option value="days">Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onclick="calculateInterest()">Calculate Interest</button>
+                    </div>
+                    
+                    <div id="principal-calc" class="calc-mode-section" style="display: none;">
+                        <h3>Calculate Principal Amount</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="final-amount-2">Final Amount ($):</label>
+                                <input type="number" id="final-amount-2" step="0.01" placeholder="e.g., 5500" min="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rate-2">Annual Interest Rate (%):</label>
+                                <input type="number" id="rate-2" step="0.01" placeholder="e.g., 5.5" min="0" required>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="time-2">Time Period:</label>
+                                <input type="number" id="time-2" step="0.1" placeholder="e.g., 3" min="0.1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time-unit-2">Time Unit:</label>
+                                <select id="time-unit-2">
+                                    <option value="years">Years</option>
+                                    <option value="months">Months</option>
+                                    <option value="days">Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onclick="calculatePrincipal()">Calculate Principal</button>
+                    </div>
+                    
+                    <div id="rate-calc" class="calc-mode-section" style="display: none;">
+                        <h3>Calculate Interest Rate</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="principal-3">Principal Amount ($):</label>
+                                <input type="number" id="principal-3" step="0.01" placeholder="e.g., 5000" min="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="final-amount-3">Final Amount ($):</label>
+                                <input type="number" id="final-amount-3" step="0.01" placeholder="e.g., 5500" min="0.01" required>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="time-3">Time Period:</label>
+                                <input type="number" id="time-3" step="0.1" placeholder="e.g., 3" min="0.1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time-unit-3">Time Unit:</label>
+                                <select id="time-unit-3">
+                                    <option value="years">Years</option>
+                                    <option value="months">Months</option>
+                                    <option value="days">Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onclick="calculateRate()">Calculate Rate</button>
+                    </div>
+                    
+                    <div id="time-calc" class="calc-mode-section" style="display: none;">
+                        <h3>Calculate Time Period</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="principal-4">Principal Amount ($):</label>
+                                <input type="number" id="principal-4" step="0.01" placeholder="e.g., 5000" min="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="final-amount-4">Final Amount ($):</label>
+                                <input type="number" id="final-amount-4" step="0.01" placeholder="e.g., 5500" min="0.01" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="rate-4">Annual Interest Rate (%):</label>
+                            <input type="number" id="rate-4" step="0.01" placeholder="e.g., 5.5" min="0" required>
+                        </div>
+                        <button onclick="calculateTime()">Calculate Time</button>
+                    </div>
+                    
+                    <div id="simple-interest-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="si-result-display"></div>
+                        <div class="result-details" id="si-breakdown"></div>
+                        <div class="result-details" id="si-summary"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Understanding Simple Interest</h2>
+                    <p>
+                        Simple interest is a method of calculating interest that is applied only to the original principal 
+                        amount. Unlike compound interest, simple interest does not earn interest on previously earned interest. 
+                        This makes it straightforward to calculate and understand, which is why it's commonly used for certain 
+                        types of loans and short-term investments.
+                    </p>
+                    <p>
+                        Simple interest is often used in car loans, personal loans, certificate of deposits with simple interest, 
+                        and some short-term business loans. Understanding how to calculate simple interest helps you compare 
+                        different financial products and make informed decisions about borrowing and investing.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Simple Interest Formula</h2>
+                    
+                    <h4>Basic Simple Interest Formula</h4>
+                    <pre><code>
+Simple Interest (SI) = Principal × Rate × Time
+SI = P × R × T
+
+Where:
+P = Principal amount (initial sum)
+R = Annual interest rate (as a decimal: 5% = 0.05)
+T = Time period in years
+
+Final Amount = Principal + Simple Interest
+A = P + SI = P + (P × R × T) = P(1 + RT)
+                    </code></pre>
+                    
+                    <h4>Solving for Different Variables</h4>
+                    
+                    <h5>Finding Principal:</h5>
+                    <pre><code>P = SI ÷ (R × T)
+or
+P = A ÷ (1 + RT)</code></pre>
+                    
+                    <h5>Finding Rate:</h5>
+                    <pre><code>R = SI ÷ (P × T)
+or
+R = (A - P) ÷ (P × T)</code></pre>
+                    
+                    <h5>Finding Time:</h5>
+                    <pre><code>T = SI ÷ (P × R)
+or
+T = (A - P) ÷ (P × R)</code></pre>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Calculating Interest Earned</h4>
+                        <p><strong>Principal:</strong> $10,000</p>
+                        <p><strong>Rate:</strong> 6% per year</p>
+                        <p><strong>Time:</strong> 3 years</p>
+                        <p><strong>Calculation:</strong> SI = $10,000 × 0.06 × 3 = $1,800</p>
+                        <p><strong>Final Amount:</strong> $10,000 + $1,800 = $11,800</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Car Loan Interest</h4>
+                        <p><strong>Loan Amount:</strong> $25,000</p>
+                        <p><strong>Rate:</strong> 4.5% per year</p>
+                        <p><strong>Time:</strong> 5 years</p>
+                        <p><strong>Interest:</strong> $25,000 × 0.045 × 5 = $5,625</p>
+                        <p><strong>Total to Repay:</strong> $25,000 + $5,625 = $30,625</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Finding Required Principal</h4>
+                        <p><strong>Desired Final Amount:</strong> $15,000</p>
+                        <p><strong>Rate:</strong> 8% per year</p>
+                        <p><strong>Time:</strong> 2 years</p>
+                        <p><strong>Calculation:</strong> P = $15,000 ÷ (1 + 0.08 × 2) = $15,000 ÷ 1.16 = $12,931</p>
+                        <p><strong>Required Principal:</strong> $12,931</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Simple vs. Compound Interest</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>📊 Simple Interest</h4>
+                            <p><strong>Characteristics:</strong></p>
+                            <ul>
+                                <li>Interest calculated only on principal</li>
+                                <li>Linear growth pattern</li>
+                                <li>Lower returns over time</li>
+                                <li>Easier to calculate manually</li>
+                                <li>Predictable payment amounts</li>
+                            </ul>
+                            <p><strong>Common Uses:</strong></p>
+                            <ul>
+                                <li>Car loans</li>
+                                <li>Personal loans</li>
+                                <li>Some CDs</li>
+                                <li>Short-term business loans</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>📈 Compound Interest</h4>
+                            <p><strong>Characteristics:</strong></p>
+                            <ul>
+                                <li>Interest calculated on principal + previous interest</li>
+                                <li>Exponential growth pattern</li>
+                                <li>Higher returns over time</li>
+                                <li>More complex calculations</li>
+                                <li>Accelerating growth effect</li>
+                            </ul>
+                            <p><strong>Common Uses:</strong></p>
+                            <ul>
+                                <li>Savings accounts</li>
+                                <li>Most investments</li>
+                                <li>Credit cards</li>
+                                <li>Mortgages</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Comparison Example: $10,000 at 5% for 10 years</h4>
+                    <ul>
+                        <li><strong>Simple Interest:</strong> $10,000 + ($10,000 × 0.05 × 10) = $15,000</li>
+                        <li><strong>Compound Interest:</strong> $10,000 × (1.05)^10 = $16,289</li>
+                        <li><strong>Difference:</strong> $1,289 more with compound interest</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">When is simple interest used instead of compound interest?</div>
+                        <div class="faq-answer">
+                            Simple interest is commonly used for short-term loans, car loans, and some personal loans where 
+                            the interest calculation method is specified in the contract. It's also used in some certificate 
+                            of deposits and bonds that pay simple interest rather than compound interest.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I convert monthly or daily rates to annual rates?</div>
+                        <div class="faq-answer">
+                            For simple interest, multiply monthly rates by 12 or daily rates by 365 to get the annual rate. 
+                            For example, 0.5% per month = 0.5% × 12 = 6% annually. Note that this differs from compound 
+                            interest conversions which use exponential calculations.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use this calculator for loan payments?</div>
+                        <div class="faq-answer">
+                            This calculator shows total interest over the loan term, but most loans require monthly payments. 
+                            For simple interest loans, divide the total amount (principal + interest) by the number of months 
+                            to get equal monthly payments. For more complex loan calculations, use our EMI calculator.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between simple interest and flat rate interest?</div>
+                        <div class="faq-answer">
+                            Simple interest and flat rate interest often calculate the same total interest amount, but they 
+                            may differ in how payments are structured. Simple interest loans may allow early payoff with 
+                            interest savings, while flat rate loans may charge the full interest regardless of early payment.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is this calculator for real-world scenarios?</div>
+                        <div class="faq-answer">
+                            This calculator provides accurate results for pure simple interest calculations. However, real 
+                            loans may have additional fees, different payment schedules, or varying interest calculation 
+                            methods. Always check with your lender for exact terms and use this as an estimation tool.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Financial Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/investment-roi.html">Investment ROI Calculator</a>
+                        <a href="/calculators/emi.html">EMI Calculator</a>
+                        <a href="/calculators/mortgage.html">Mortgage Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/car-loan.html">Car Loan Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { calculateSimpleInterest, formatCurrency, formatNumber, roundTo } from '/assets/js/utils/math.js';
+        
+        // Switch between calculation modes
+        document.getElementById('calc-mode').addEventListener('change', function(e) {
+            const sections = document.querySelectorAll('.calc-mode-section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            const mode = e.target.value;
+            document.getElementById(`${mode}-calc`).style.display = 'block';
+            
+            // Hide result when switching
+            document.getElementById('simple-interest-result').style.display = 'none';
+        });
+        
+        function convertTimeToYears(time, unit) {
+            switch (unit) {
+                case 'months':
+                    return time / 12;
+                case 'days':
+                    return time / 365.25;
+                default:
+                    return time;
+            }
+        }
+        
+        function formatTimeDisplay(timeInYears, originalTime, unit) {
+            if (unit === 'years') {
+                return `${formatNumber(originalTime, 1)} years`;
+            } else if (unit === 'months') {
+                return `${formatNumber(originalTime, 1)} months (${formatNumber(timeInYears, 2)} years)`;
+            } else {
+                return `${formatNumber(originalTime, 0)} days (${formatNumber(timeInYears, 3)} years)`;
+            }
+        }
+        
+        window.calculateInterest = function() {
+            const principal = parseFloat(document.getElementById('principal-1').value);
+            const rate = parseFloat(document.getElementById('rate-1').value);
+            const time = parseFloat(document.getElementById('time-1').value);
+            const timeUnit = document.getElementById('time-unit-1').value;
+            
+            if (isNaN(principal) || isNaN(rate) || isNaN(time) || 
+                principal <= 0 || rate < 0 || time <= 0) {
+                alert('Please enter valid positive values');
+                return;
+            }
+            
+            const timeInYears = convertTimeToYears(time, timeUnit);
+            const result = calculateSimpleInterest(principal, rate / 100, timeInYears);
+            
+            showResult(
+                `Final Amount: ${formatCurrency(result.finalAmount)}`,
+                `Principal: ${formatCurrency(principal)}<br>
+                 Interest Rate: ${rate}% per year<br>
+                 Time Period: ${formatTimeDisplay(timeInYears, time, timeUnit)}<br>
+                 <strong>Interest Earned: ${formatCurrency(result.interestEarned)}</strong><br>
+                 <strong>Final Amount: ${formatCurrency(result.finalAmount)}</strong>`,
+                `Over ${formatTimeDisplay(timeInYears, time, timeUnit)}, your ${formatCurrency(principal)} will earn ${formatCurrency(result.interestEarned)} in simple interest.`
+            );
+        };
+        
+        window.calculatePrincipal = function() {
+            const finalAmount = parseFloat(document.getElementById('final-amount-2').value);
+            const rate = parseFloat(document.getElementById('rate-2').value);
+            const time = parseFloat(document.getElementById('time-2').value);
+            const timeUnit = document.getElementById('time-unit-2').value;
+            
+            if (isNaN(finalAmount) || isNaN(rate) || isNaN(time) || 
+                finalAmount <= 0 || rate < 0 || time <= 0) {
+                alert('Please enter valid positive values');
+                return;
+            }
+            
+            const timeInYears = convertTimeToYears(time, timeUnit);
+            const rateDecimal = rate / 100;
+            
+            // P = A / (1 + RT)
+            const principal = finalAmount / (1 + rateDecimal * timeInYears);
+            const interest = finalAmount - principal;
+            
+            showResult(
+                `Required Principal: ${formatCurrency(principal)}`,
+                `Final Amount Desired: ${formatCurrency(finalAmount)}<br>
+                 Interest Rate: ${rate}% per year<br>
+                 Time Period: ${formatTimeDisplay(timeInYears, time, timeUnit)}<br>
+                 <strong>Required Principal: ${formatCurrency(principal)}</strong><br>
+                 Interest to be Earned: ${formatCurrency(interest)}`,
+                `You need to invest ${formatCurrency(principal)} to reach your goal of ${formatCurrency(finalAmount)}.`
+            );
+        };
+        
+        window.calculateRate = function() {
+            const principal = parseFloat(document.getElementById('principal-3').value);
+            const finalAmount = parseFloat(document.getElementById('final-amount-3').value);
+            const time = parseFloat(document.getElementById('time-3').value);
+            const timeUnit = document.getElementById('time-unit-3').value;
+            
+            if (isNaN(principal) || isNaN(finalAmount) || isNaN(time) || 
+                principal <= 0 || finalAmount <= principal || time <= 0) {
+                alert('Please enter valid values (final amount must be greater than principal)');
+                return;
+            }
+            
+            const timeInYears = convertTimeToYears(time, timeUnit);
+            const interest = finalAmount - principal;
+            
+            // R = (A - P) / (P × T)
+            const rateDecimal = interest / (principal * timeInYears);
+            const ratePercent = rateDecimal * 100;
+            
+            showResult(
+                `Required Interest Rate: ${formatNumber(ratePercent, 2)}%`,
+                `Principal: ${formatCurrency(principal)}<br>
+                 Final Amount: ${formatCurrency(finalAmount)}<br>
+                 Time Period: ${formatTimeDisplay(timeInYears, time, timeUnit)}<br>
+                 Interest Earned: ${formatCurrency(interest)}<br>
+                 <strong>Required Rate: ${formatNumber(ratePercent, 2)}% per year</strong>`,
+                `You need an annual interest rate of ${formatNumber(ratePercent, 2)}% to reach your goal.`
+            );
+        };
+        
+        window.calculateTime = function() {
+            const principal = parseFloat(document.getElementById('principal-4').value);
+            const finalAmount = parseFloat(document.getElementById('final-amount-4').value);
+            const rate = parseFloat(document.getElementById('rate-4').value);
+            
+            if (isNaN(principal) || isNaN(finalAmount) || isNaN(rate) || 
+                principal <= 0 || finalAmount <= principal || rate <= 0) {
+                alert('Please enter valid values (final amount must be greater than principal, rate must be positive)');
+                return;
+            }
+            
+            const interest = finalAmount - principal;
+            const rateDecimal = rate / 100;
+            
+            // T = (A - P) / (P × R)
+            const timeInYears = interest / (principal * rateDecimal);
+            const timeInMonths = timeInYears * 12;
+            const timeInDays = timeInYears * 365.25;
+            
+            showResult(
+                `Required Time: ${formatNumber(timeInYears, 2)} years`,
+                `Principal: ${formatCurrency(principal)}<br>
+                 Final Amount: ${formatCurrency(finalAmount)}<br>
+                 Interest Rate: ${rate}% per year<br>
+                 Interest to Earn: ${formatCurrency(interest)}<br>
+                 <strong>Time Required:</strong><br>
+                 ${formatNumber(timeInYears, 2)} years<br>
+                 ${formatNumber(timeInMonths, 1)} months<br>
+                 ${formatNumber(timeInDays, 0)} days`,
+                `It will take ${formatNumber(timeInYears, 1)} years to grow ${formatCurrency(principal)} to ${formatCurrency(finalAmount)} at ${rate}% simple interest.`
+            );
+        };
+        
+        function showResult(display, breakdown, summary) {
+            document.getElementById('si-result-display').textContent = display;
+            document.getElementById('si-breakdown').innerHTML = breakdown;
+            document.getElementById('si-summary').innerHTML = `<em>${summary}</em>`;
+            document.getElementById('simple-interest-result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt-to-Income Ratio Calculator – Check Your DTI | FreebieCalculator</title>
+    <meta name="description" content="Free debt-to-income ratio (DTI) calculator. Find out if you qualify for a mortgage or loan. Calculate your front-end and back-end DTI ratios instantly.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/debt-to-income.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="Debt-to-Income Ratio Calculator – Check Your DTI">
+    <meta property="og:description" content="Calculate your DTI ratio to see if you qualify for a mortgage or loan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/debt-to-income.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Debt-to-Income Ratio Calculator","description":"Calculate front-end and back-end DTI ratio for mortgage and loan qualification","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","url":"https://freebiecalculator.com/calculators/debt-to-income.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"FreebieCalculator.com","url":"https://freebiecalculator.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is a good debt-to-income ratio?","acceptedAnswer":{"@type":"Answer","text":"For mortgage approval, most lenders want a back-end DTI below 43%. A DTI under 36% is considered good, under 28% is excellent. Some loan programs (FHA) allow up to 50% DTI."}},
+        {"@type":"Question","name":"What counts as debt for DTI?","acceptedAnswer":{"@type":"Answer","text":"Monthly debt payments include: mortgage/rent, car loans, student loans, minimum credit card payments, child support, alimony, and other loan payments. Utilities, groceries, and insurance are NOT counted."}},
+        {"@type":"Question","name":"What is the 28/36 rule?","acceptedAnswer":{"@type":"Answer","text":"The 28/36 rule states that no more than 28% of gross income should go to housing costs (front-end DTI), and no more than 36% should cover all debt payments (back-end DTI). This is the traditional standard used by many lenders."}},
+        {"@type":"Question","name":"How do I lower my DTI ratio?","acceptedAnswer":{"@type":"Answer","text":"To lower your DTI: pay off or pay down existing debts (especially high-balance accounts), increase your income, avoid taking on new debt before applying for a loan, and don't close credit cards (this affects credit utilization but not DTI directly)."}}
+    ]}</script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/></svg>freebiecalculator.com</a>
+            <nav role="navigation" aria-label="Main navigation"><ul class="nav-menu"><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li><a href="/help/">Help</a></li><li><a href="/#math-calculators">General</a></li><li><a href="/#health-calculators">Health</a></li><li><a href="/#financial-calculators">Finance</a></li><li><a href="/#other-calculators">Other</a></li></ul></nav>
+            <div class="header-actions"><div id="language-selector-container"></div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button><button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/#financial-calculators">Finance Calculators</a> › <span>Debt-to-Income Ratio Calculator</span></nav>
+            <div class="calculator-header">
+                <h1>📊 Debt-to-Income Ratio Calculator</h1>
+                <p>Calculate your DTI ratio to see if you qualify for a mortgage or loan — instantly.</p>
+            </div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container">
+                <div class="calculator-tool">
+                    <form id="dti-form">
+                        <h3 style="margin-bottom:.75rem">Monthly Gross Income</h3>
+                        <div class="form-group">
+                            <label for="gross-income">Gross Monthly Income ($)</label>
+                            <input type="number" id="gross-income" step="50" min="1" placeholder="e.g., 5000" required>
+                            <small>Before taxes and deductions</small>
+                        </div>
+                        <h3 style="margin:1rem 0 .75rem">Monthly Debt Payments</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="housing">Housing (Mortgage/Rent) ($)</label>
+                                <input type="number" id="housing" step="10" min="0" value="0" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="car-pay">Car Payment(s) ($)</label>
+                                <input type="number" id="car-pay" step="10" min="0" value="0" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="student-loan">Student Loans ($)</label>
+                                <input type="number" id="student-loan" step="10" min="0" value="0" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="credit-cards">Credit Cards (min payment) ($)</label>
+                                <input type="number" id="credit-cards" step="10" min="0" value="0" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="other-debts">Other Debts ($)</label>
+                            <input type="number" id="other-debts" step="10" min="0" value="0" placeholder="Personal loans, child support...">
+                        </div>
+                        <button type="submit" class="btn-primary">Calculate DTI Ratio</button>
+                    </form>
+                    <div id="dti-result" class="result-container" style="display:none">
+                        <h3>Your DTI Results</h3>
+                        <div class="result-grid" id="dti-grid"></div>
+                        <div id="dti-verdict" style="margin-top:1rem;padding:1rem;border-radius:.5rem;text-align:center;font-weight:600"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>DTI Ratio Ranges Explained</h2>
+                <table class="data-table">
+                    <thead><tr><th>DTI Ratio</th><th>Rating</th><th>Mortgage Eligibility</th></tr></thead>
+                    <tbody>
+                        <tr><td>Below 28%</td><td>✅ Excellent</td><td>Best rates available</td></tr>
+                        <tr><td>28% – 36%</td><td>✅ Good</td><td>Easily qualifies for most loans</td></tr>
+                        <tr><td>37% – 43%</td><td>⚠️ Acceptable</td><td>May qualify; lender scrutiny</td></tr>
+                        <tr><td>44% – 50%</td><td>⚠️ High</td><td>FHA loans only; harder to qualify</td></tr>
+                        <tr><td>Above 50%</td><td>❌ Too High</td><td>Most lenders will decline</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item"><div class="faq-question">What is a good debt-to-income ratio?</div><div class="faq-answer">Under 36% is considered good for most lenders. Under 28% is excellent. Most conventional mortgages require a back-end DTI of 43% or less.</div></div>
+                    <div class="faq-item"><div class="faq-question">What counts as debt for DTI?</div><div class="faq-answer">Monthly debt payments: mortgage/rent, car loans, student loans, minimum credit card payments, child support, and other loan payments. NOT utilities, groceries, or insurance.</div></div>
+                    <div class="faq-item"><div class="faq-question">What is the 28/36 rule?</div><div class="faq-answer">No more than 28% of gross income on housing (front-end DTI), and no more than 36% on all debt (back-end DTI). The classic lender standard.</div></div>
+                    <div class="faq-item"><div class="faq-question">How do I lower my DTI?</div><div class="faq-answer">Pay down existing debts (especially high balances), increase income, avoid new debt before loan applications. Even small debt reductions can move you into a better DTI tier.</div></div>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Related Calculators</h2>
+                <div class="calculator-links">
+                    <a href="/calculators/mortgage.html">Mortgage Calculator</a>
+                    <a href="/calculators/loan-to-value.html">Loan-to-Value Calculator</a>
+                    <a href="/calculators/paycheck.html">Paycheck Calculator</a>
+                    <a href="/calculators/car-loan.html">Car Loan Calculator</a>
+                    <a href="/calculators/emi.html">EMI Calculator</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+    document.getElementById('dti-form').addEventListener('submit',function(e){
+        e.preventDefault();
+        const income=parseFloat(document.getElementById('gross-income').value)||0;
+        if(income<=0) return;
+        const housing=parseFloat(document.getElementById('housing').value)||0;
+        const car=parseFloat(document.getElementById('car-pay').value)||0;
+        const student=parseFloat(document.getElementById('student-loan').value)||0;
+        const cc=parseFloat(document.getElementById('credit-cards').value)||0;
+        const other=parseFloat(document.getElementById('other-debts').value)||0;
+        const totalDebt=housing+car+student+cc+other;
+        const backEnd=(totalDebt/income*100);
+        const frontEnd=(housing/income*100);
+        const nonHousing=totalDebt-housing;
+        const fmt=n=>n.toFixed(1)+'%';
+        const fmtD=n=>'$'+n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});
+        document.getElementById('dti-grid').innerHTML=`
+            <div class="result-card primary"><div class="result-label">Back-End DTI</div><div class="result-value">${fmt(backEnd)}</div></div>
+            <div class="result-card"><div class="result-label">Front-End DTI</div><div class="result-value">${fmt(frontEnd)}</div></div>
+            <div class="result-card"><div class="result-label">Total Monthly Debt</div><div class="result-value">${fmtD(totalDebt)}</div></div>
+            <div class="result-card"><div class="result-label">Monthly Income</div><div class="result-value">${fmtD(income)}</div></div>
+        `;
+        let color,msg;
+        if(backEnd<28){color='#27ae60';msg="✅ Excellent DTI! You'll easily qualify for the best mortgage rates.";}
+        else if(backEnd<36){color='#27ae60';msg='✅ Good DTI. You qualify for most loans and competitive rates.';}
+        else if(backEnd<43){color='#f39c12';msg='⚠️ Acceptable DTI. You may qualify, but lenders will look closely at your application.';}
+        else if(backEnd<50){color='#e67e22';msg='⚠️ High DTI. Consider FHA loans. Work on reducing debt before applying.';}
+        else{color='#e74c3c';msg='❌ DTI is too high. Most lenders will decline. Focus on paying down debts first.';}
+        const v=document.getElementById('dti-verdict');
+        v.style.background=color+'22'; v.style.borderLeft='4px solid '+color; v.style.color=color;
+        v.textContent=msg;
+        document.getElementById('dti-result').style.display='block';
+    });
+    </script>
+    <style>
+        .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1rem}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:.5rem;padding:1rem;text-align:center}
+        .result-card.primary{background:var(--primary-solid);color:white;border-color:var(--primary-solid)}
+        .result-card.primary .result-label{color:rgba(255,255,255,.8)}
+        .result-card.primary .result-value{font-size:1.4rem}
+        .result-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.25rem}
+        .result-value{font-size:1.1rem;font-weight:700;color:var(--text-primary)}
+        .data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+        .data-table th,.data-table td{padding:.5rem .75rem;text-align:left;border:1px solid var(--border-color);font-size:.9rem}
+        .data-table th{background:var(--bg-secondary);font-weight:600}
+        .data-table tr:nth-child(even){background:var(--bg-secondary)}
+    </style>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAGR Calculator – Compound Annual Growth Rate | FreebieCalculator</title>
+    <meta name="description" content="Free CAGR calculator. Calculate the Compound Annual Growth Rate of any investment instantly. Enter beginning value, ending value, and number of years.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/cagr.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="CAGR Calculator – Compound Annual Growth Rate">
+    <meta property="og:description" content="Calculate Compound Annual Growth Rate (CAGR) for any investment in seconds.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/cagr.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CAGR Calculator",
+        "description": "Calculate Compound Annual Growth Rate for investments and business metrics",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "url": "https://freebiecalculator.com/calculators/cagr.html",
+        "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+        "isAccessibleForFree": true,
+        "provider": {"@type":"Organization","name":"FreebieCalculator.com","url":"https://freebiecalculator.com"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":'What is CAGR?',"acceptedAnswer":{"@type":"Answer","text":'CAGR stands for Compound Annual Growth Rate. It measures the mean annual growth rate of an investment over a period longer than one year, assuming growth is compounded annually.'}},
+            {"@type":"Question","name":'What is a good CAGR?',"acceptedAnswer":{"@type":"Answer","text":"A 'good' CAGR depends on the asset class. For stocks, 7–10% is considered solid (matching the S&P 500 historical average). For individual stocks, 15–20% is excellent. For a business, 10–20% annual revenue CAGR is strong."}},
+            {"@type":"Question","name":'What is the formula for CAGR?',"acceptedAnswer":{"@type":"Answer","text":'CAGR = (Ending Value / Beginning Value)^(1/Years) − 1. For example, an investment growing from $10,000 to $20,000 in 5 years has a CAGR of (20000/10000)^(1/5) − 1 = 14.87%.'}},
+            {"@type":"Question","name":'What is the difference between CAGR and average annual return?',"acceptedAnswer":{"@type":"Answer","text":'The average annual return simply averages yearly returns, which can be misleading. CAGR reflects the actual compounding effect, giving you the true single-rate return that would produce the same end value.'}},
+            {"@type":"Question","name":'Can CAGR be negative?',"acceptedAnswer":{"@type":"Answer","text":'Yes. A negative CAGR means the investment lost value over the period. For example, declining from $10,000 to $7,000 over 3 years gives a CAGR of approximately −11.1%.'}}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="/#math-calculators">General</a></li>
+                    <li><a href="/#health-calculators">Health</a></li>
+                    <li><a href="/#financial-calculators">Finance</a></li>
+                    <li><a href="/#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#financial-calculators">Finance Calculators</a> › <span>CAGR Calculator</span>
+            </nav>
+            <div class="calculator-header">
+                <h1>📈 CAGR Calculator</h1>
+                <p>Calculate the Compound Annual Growth Rate of any investment or business metric.</p>
+            </div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container">
+                <div class="calculator-tool">
+                    <form id="cagr-form">
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="begin-val">Beginning Value ($)</label>
+                                <input type="number" id="begin-val" step="0.01" min="0.01" placeholder="e.g., 10000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="end-val">Ending Value ($)</label>
+                                <input type="number" id="end-val" step="0.01" min="0.01" placeholder="e.g., 25000" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="num-years">Number of Years</label>
+                            <input type="number" id="num-years" step="0.5" min="0.5" placeholder="e.g., 5" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Calculate CAGR</button>
+                    </form>
+                    <div id="cagr-result" class="result-container" style="display:none">
+                        <h3>CAGR Results</h3>
+                        <div class="result-grid" id="cagr-grid"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>CAGR Formula</h2>
+                <div class="formula-box">CAGR = (Ending Value ÷ Beginning Value)^(1 ÷ Years) − 1</div>
+                <p><strong>Example:</strong> Investment grows from $10,000 → $25,000 over 5 years:</p>
+                <div class="formula-box">CAGR = (25,000 ÷ 10,000)^(1÷5) − 1 = 20.11%</div>
+                <h2>CAGR Benchmarks</h2>
+                <table class="data-table">
+                    <thead><tr><th>Asset Class</th><th>Typical CAGR</th><th>Rating</th></tr></thead>
+                    <tbody>
+                        <tr><td>Savings Account</td><td>0.5–2%</td><td>Safe, low return</td></tr>
+                        <tr><td>Bonds</td><td>2–4%</td><td>Conservative</td></tr>
+                        <tr><td>S&amp;P 500 (historical)</td><td>7–10%</td><td>Good benchmark</td></tr>
+                        <tr><td>Growth Stocks</td><td>15–25%</td><td>Excellent</td></tr>
+                        <tr><td>Venture Capital</td><td>25%+</td><td>High risk/reward</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item"><div class="faq-question">What is CAGR?</div><div class="faq-answer">CAGR (Compound Annual Growth Rate) measures the mean annual growth rate of an investment over multiple years, assuming compounding. It's the single rate that takes you from start to end value.</div></div>
+                    <div class="faq-item"><div class="faq-question">What is a good CAGR?</div><div class="faq-answer">For stocks: 7–10% matches the S&P 500 long-term average. 15–20% for individual stocks is excellent. For a business, 10–20% revenue CAGR annually is considered strong growth.</div></div>
+                    <div class="faq-item"><div class="faq-question">What is the CAGR formula?</div><div class="faq-answer">CAGR = (Ending Value / Beginning Value)^(1/Years) − 1. An investment from $10K → $20K in 5 years: (20000/10000)^(0.2) − 1 = 14.87% CAGR.</div></div>
+                    <div class="faq-item"><div class="faq-question">Can CAGR be negative?</div><div class="faq-answer">Yes. If your investment lost value, CAGR will be negative — showing the annual rate of loss. For example, $10K → $7K over 3 years = −11.1% CAGR.</div></div>
+                </div>
+            </section>
+            <section class="content-section">
+                <h2>Related Calculators</h2>
+                <div class="calculator-links">
+                    <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                    <a href="/calculators/investment-roi.html">Investment ROI Calculator</a>
+                    <a href="/calculators/retirement.html">Retirement Calculator</a>
+                    <a href="/calculators/inflation.html">Inflation Calculator</a>
+                    <a href="/calculators/simple-interest.html">Simple Interest Calculator</a>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+document.getElementById('cagr-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    const bv=parseFloat(document.getElementById('begin-val').value);
+    const ev=parseFloat(document.getElementById('end-val').value);
+    const yrs=parseFloat(document.getElementById('num-years').value);
+    if(!bv||!ev||!yrs) return;
+    const cagr=(Math.pow(ev/bv,1/yrs)-1)*100;
+    const totalReturn=((ev-bv)/bv)*100;
+    const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+    document.getElementById('cagr-grid').innerHTML=`
+        <div class="result-card primary"><div class="result-label">CAGR</div><div class="result-value">${fmt(cagr)}%</div></div>
+        <div class="result-card"><div class="result-label">Total Return</div><div class="result-value">${fmt(totalReturn)}%</div></div>
+        <div class="result-card"><div class="result-label">Total Gain</div><div class="result-value">$${fmt(ev-bv)}</div></div>
+        <div class="result-card"><div class="result-label">Years</div><div class="result-value">${fmt(yrs)}</div></div>
+    `;
+    document.getElementById('cagr-result').style.display='block';
+});</script>
+    <style>
+        .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:1rem}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:.5rem;padding:1rem;text-align:center}
+        .result-card.primary{background:var(--primary-solid);color:white;border-color:var(--primary-solid)}
+        .result-card.primary .result-label{color:rgba(255,255,255,.8)}
+        .result-card.primary .result-value{font-size:1.4rem}
+        .result-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.25rem}
+        .result-value{font-size:1.1rem;font-weight:700;color:var(--text-primary)}
+        .formula-box{background:var(--bg-secondary);border-left:4px solid var(--primary-solid);padding:.75rem 1rem;border-radius:.25rem;margin:.5rem 0;font-family:monospace}
+        .data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+        .data-table th,.data-table td{padding:.5rem .75rem;text-align:left;border:1px solid var(--border-color);font-size:.9rem}
+        .data-table th{background:var(--bg-secondary);font-weight:600}
+        .data-table tr:nth-child(even){background:var(--bg-secondary)}
+        
+    </style>
+</body>
+</html>

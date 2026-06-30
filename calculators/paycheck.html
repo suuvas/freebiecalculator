@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paycheck Calculator – Calculate Take-Home Pay After Tax | FreebieCalculator</title>
+    <meta name="description" content="Free paycheck calculator. Estimate your take-home pay after federal and state taxes, Social Security, Medicare, and other deductions. Works for hourly and salaried workers.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/paycheck.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="Paycheck Calculator – Estimate Your Take-Home Pay">
+    <meta property="og:description" content="Calculate net pay after taxes and deductions for hourly and salaried employees.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/paycheck.html">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Paycheck Calculator","description":"Estimate take-home pay after federal taxes, Social Security, and Medicare","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","url":"https://freebiecalculator.com/calculators/paycheck.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"FreebieCalculator.com","url":"https://freebiecalculator.com"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"How is take-home pay calculated?","acceptedAnswer":{"@type":"Answer","text":"Take-home pay = Gross Pay minus federal income tax, state income tax (varies by state), Social Security tax (6.2%), Medicare tax (1.45%), and any pre-tax deductions like 401(k) or health insurance."}},
+        {"@type":"Question","name":"What percentage of my paycheck goes to taxes?","acceptedAnswer":{"@type":"Answer","text":"Most workers pay 22–32% in total taxes. This includes ~12% federal income tax (varies by bracket), 6.2% Social Security, 1.45% Medicare, and state income tax (0–13% depending on state)."}},
+        {"@type":"Question","name":"What is the difference between gross and net pay?","acceptedAnswer":{"@type":"Answer","text":"Gross pay is your total earnings before any deductions. Net pay (take-home pay) is what you actually receive after all taxes and deductions are removed."}},
+        {"@type":"Question","name":"How do I increase my take-home pay?","acceptedAnswer":{"@type":"Answer","text":"You can increase take-home pay by contributing to pre-tax accounts (401k, HSA, FSA) which reduce taxable income, claiming all eligible deductions on your W-4, or working in a no-income-tax state like Texas, Florida, or Nevada."}}
+    ]}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/></svg>freebiecalculator.com</a>
+            <nav role="navigation" aria-label="Main navigation"><ul class="nav-menu"><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li><a href="/help/">Help</a></li><li><a href="/#math-calculators">General</a></li><li><a href="/#health-calculators">Health</a></li><li><a href="/#financial-calculators">Finance</a></li><li><a href="/#other-calculators">Other</a></li></ul></nav>
+            <div class="header-actions"><div id="language-selector-container"></div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button><button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/#financial-calculators">Finance Calculators</a> › <span>Paycheck Calculator</span></nav>
+            <div class="calculator-header">
+                <h1>💵 Paycheck Calculator</h1>
+                <p>Estimate your take-home pay after federal taxes, Social Security, Medicare, and deductions.</p>
+            </div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container">
+                <div class="calculator-tool">
+                    <form id="paycheck-form">
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="pay-type">Pay Type</label>
+                                <select id="pay-type">
+                                    <option value="salary">Annual Salary</option>
+                                    <option value="hourly">Hourly Wage</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pay-amount">Amount ($)</label>
+                                <input type="number" id="pay-amount" step="0.01" min="1" placeholder="e.g., 60000" required>
+                            </div>
+                        </div>
+                        <div id="hourly-fields" style="display:none">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="p-hours">Hours/Week</label>
+                                    <input type="number" id="p-hours" value="40" min="1" max="168" step="0.5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="p-weeks">Weeks/Year</label>
+                                    <input type="number" id="p-weeks" value="52" min="1" max="52" step="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="filing-status">Filing Status</label>
+                                <select id="filing-status">
+                                    <option value="single">Single</option>
+                                    <option value="married">Married Filing Jointly</option>
+                                    <option value="hoh">Head of Household</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pay-period">Pay Period</label>
+                                <select id="pay-period">
+                                    <option value="26">Bi-Weekly (26/yr)</option>
+                                    <option value="24">Semi-Monthly (24/yr)</option>
+                                    <option value="12">Monthly (12/yr)</option>
+                                    <option value="52">Weekly (52/yr)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="state-tax">State Tax Rate (%)</label>
+                                <input type="number" id="state-tax" value="5" min="0" max="15" step="0.1">
+                                <small>Avg ~5%. TX/FL/NV = 0%</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="pretax-deduct">Pre-Tax Deductions ($/yr)</label>
+                                <input type="number" id="pretax-deduct" value="0" min="0" step="100" placeholder="401k, HSA...">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Calculate Paycheck</button>
+                    </form>
+                    <div id="paycheck-result" class="result-container" style="display:none">
+                        <h3>Your Paycheck Breakdown</h3>
+                        <div class="result-grid" id="paycheck-grid"></div>
+                        <div class="breakdown-table" id="breakdown-table"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>2024 Federal Tax Brackets (Single)</h2>
+                <table class="data-table">
+                    <thead><tr><th>Taxable Income</th><th>Tax Rate</th></tr></thead>
+                    <tbody>
+                        <tr><td>$0 – $11,600</td><td>10%</td></tr>
+                        <tr><td>$11,601 – $47,150</td><td>12%</td></tr>
+                        <tr><td>$47,151 – $100,525</td><td>22%</td></tr>
+                        <tr><td>$100,526 – $191,950</td><td>24%</td></tr>
+                        <tr><td>$191,951 – $243,725</td><td>32%</td></tr>
+                        <tr><td>$243,726 – $609,350</td><td>35%</td></tr>
+                        <tr><td>Over $609,350</td><td>37%</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>FICA Taxes:</strong> Social Security: 6.2% (up to $168,600 wages), Medicare: 1.45% (no limit).</p>
+            </section>
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item"><div class="faq-question">How is take-home pay calculated?</div><div class="faq-answer">Take-home = Gross Pay minus federal income tax, state income tax, Social Security (6.2%), Medicare (1.45%), and pre-tax deductions like 401(k) or health insurance.</div></div>
+                    <div class="faq-item"><div class="faq-question">What percentage of my paycheck goes to taxes?</div><div class="faq-answer">Most workers pay 22–32% total. This includes federal income tax (~12–22%), FICA (7.65%), and state income tax (0–13% depending on state).</div></div>
+                    <div class="faq-item"><div class="faq-question">What is the difference between gross and net pay?</div><div class="faq-answer">Gross pay is total earnings before deductions. Net pay (take-home) is what you actually receive after all taxes and deductions are removed.</div></div>
+                    <div class="faq-item"><div class="faq-question">How do I increase my take-home pay?</div><div class="faq-answer">Maximize pre-tax contributions (401k, HSA, FSA), claim all W-4 deductions, and consider that states like TX, FL, NV, and WA have no state income tax.</div></div>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Related Calculators</h2>
+                <div class="calculator-links">
+                    <a href="/calculators/hourly-to-salary.html">Hourly to Salary Calculator</a>
+                    <a href="/calculators/salary-after-tax.html">Salary After Tax Calculator</a>
+                    <a href="/calculators/tax.html">Tax Calculator</a>
+                    <a href="/calculators/retirement.html">Retirement Calculator</a>
+                    <a href="/calculators/tip.html">Tip Calculator</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+    document.getElementById('pay-type').addEventListener('change',function(){
+        document.getElementById('hourly-fields').style.display=this.value==='hourly'?'':'none';
+    });
+    function federalTax(taxable, status) {
+        const brackets = {
+            single:[[11600,.10],[47150,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]],
+            married:[[23200,.10],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]],
+            hoh:[[16550,.10],[63100,.12],[100500,.22],[191950,.24],[243700,.32],[609350,.35],[Infinity,.37]]
+        };
+        const b=brackets[status]||brackets.single;
+        let tax=0,prev=0;
+        for(const [top,rate] of b){
+            if(taxable<=0) break;
+            const chunk=Math.min(taxable,top-prev);
+            tax+=chunk*rate; taxable-=chunk; prev=top;
+        }
+        return tax;
+    }
+    document.getElementById('paycheck-form').addEventListener('submit',function(e){
+        e.preventDefault();
+        const payType=document.getElementById('pay-type').value;
+        let annual;
+        if(payType==='hourly'){
+            const rate=parseFloat(document.getElementById('pay-amount').value)||0;
+            const hrs=parseFloat(document.getElementById('p-hours').value)||40;
+            const wks=parseFloat(document.getElementById('p-weeks').value)||52;
+            annual=rate*hrs*wks;
+        } else { annual=parseFloat(document.getElementById('pay-amount').value)||0; }
+        const status=document.getElementById('filing-status').value;
+        const periods=parseInt(document.getElementById('pay-period').value)||26;
+        const stateTaxRate=parseFloat(document.getElementById('state-tax').value)||0;
+        const pretax=parseFloat(document.getElementById('pretax-deduct').value)||0;
+        const stdDeduct={single:14600,married:29200,hoh:21900};
+        const gross=annual;
+        const taxableIncome=Math.max(0,gross-pretax-(stdDeduct[status]||14600));
+        const fedTax=federalTax(taxableIncome,status);
+        const ss=Math.min(gross,168600)*0.062;
+        const medicare=gross*0.0145;
+        const stateTax=gross*(stateTaxRate/100);
+        const totalDeduct=fedTax+ss+medicare+stateTax+pretax;
+        const netAnnual=gross-totalDeduct;
+        const perPeriod=netAnnual/periods;
+        const grossPer=gross/periods;
+        const fmt=n=>'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+        const pct=n=>(n/gross*100).toFixed(1)+'%';
+        document.getElementById('paycheck-grid').innerHTML=`
+            <div class="result-card primary"><div class="result-label">Net Per Paycheck</div><div class="result-value">${fmt(perPeriod)}</div></div>
+            <div class="result-card"><div class="result-label">Gross Per Paycheck</div><div class="result-value">${fmt(grossPer)}</div></div>
+            <div class="result-card"><div class="result-label">Annual Take-Home</div><div class="result-value">${fmt(netAnnual)}</div></div>
+            <div class="result-card"><div class="result-label">Effective Tax Rate</div><div class="result-value">${pct(totalDeduct-pretax)}</div></div>
+        `;
+        document.getElementById('breakdown-table').innerHTML=`
+            <h4 style="margin:1rem 0 .5rem">Annual Breakdown</h4>
+            <table class="data-table"><thead><tr><th>Item</th><th>Annual</th><th>Per Paycheck</th><th>% of Gross</th></tr></thead><tbody>
+            <tr><td>Gross Pay</td><td>${fmt(gross)}</td><td>${fmt(grossPer)}</td><td>100%</td></tr>
+            <tr><td>Federal Income Tax</td><td style="color:var(--error-color)">-${fmt(fedTax)}</td><td style="color:var(--error-color)">-${fmt(fedTax/periods)}</td><td>${pct(fedTax)}</td></tr>
+            <tr><td>Social Security (6.2%)</td><td style="color:var(--error-color)">-${fmt(ss)}</td><td style="color:var(--error-color)">-${fmt(ss/periods)}</td><td>${pct(ss)}</td></tr>
+            <tr><td>Medicare (1.45%)</td><td style="color:var(--error-color)">-${fmt(medicare)}</td><td style="color:var(--error-color)">-${fmt(medicare/periods)}</td><td>${pct(medicare)}</td></tr>
+            <tr><td>State Income Tax</td><td style="color:var(--error-color)">-${fmt(stateTax)}</td><td style="color:var(--error-color)">-${fmt(stateTax/periods)}</td><td>${pct(stateTax)}</td></tr>
+            ${pretax>0?`<tr><td>Pre-Tax Deductions</td><td style="color:var(--error-color)">-${fmt(pretax)}</td><td style="color:var(--error-color)">-${fmt(pretax/periods)}</td><td>${pct(pretax)}</td></tr>`:''}
+            <tr style="font-weight:700"><td>Take-Home Pay</td><td>${fmt(netAnnual)}</td><td>${fmt(perPeriod)}</td><td>${pct(netAnnual)}</td></tr>
+            </tbody></table>`;
+        document.getElementById('paycheck-result').style.display='block';
+    });
+    </script>
+    <style>
+        .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:1rem}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:.5rem;padding:1rem;text-align:center}
+        .result-card.primary{background:var(--primary-solid);color:white;border-color:var(--primary-solid)}
+        .result-card.primary .result-label{color:rgba(255,255,255,.8)}
+        .result-card.primary .result-value{font-size:1.4rem}
+        .result-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.25rem}
+        .result-value{font-size:1.1rem;font-weight:700;color:var(--text-primary)}
+        .data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+        .data-table th,.data-table td{padding:.5rem .75rem;text-align:left;border:1px solid var(--border-color);font-size:.85rem}
+        .data-table th{background:var(--bg-secondary);font-weight:600}
+        .data-table tr:nth-child(even){background:var(--bg-secondary)}
+    </style>
+</body>
+</html>

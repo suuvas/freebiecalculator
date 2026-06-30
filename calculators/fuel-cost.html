@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Cost Calculator - Calculate Gas and Trip Costs | FreebieCalculator</title>
+    <meta name="description" content="Free fuel cost calculator to calculate gas costs for trips, fuel efficiency, and travel expenses. Plan your road trip budget with accurate fuel calculations.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/fuel-cost.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fuel Cost Calculator - Calculate Gas and Trip Costs">
+    <meta property="og:description" content="Calculate fuel costs for trips and analyze fuel efficiency with our comprehensive fuel cost calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/fuel-cost.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Fuel Cost Calculator",
+        "description": "Calculate fuel costs, gas expenses, and trip costs for travel planning",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Other Calculators",
+                "item": "https://freebiecalculator.com/#other"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Fuel Cost Calculator",
+                "item": "https://freebiecalculator.com/calculators/fuel-cost.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How accurate are fuel cost calculations?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Calculations are highly accurate when using correct fuel efficiency and current gas prices. Actual costs may vary due to driving conditions, traffic, and fuel price fluctuations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What affects fuel efficiency?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Driving speed, traffic conditions, vehicle maintenance, tire pressure, air conditioning use, and driving habits all significantly impact fuel efficiency."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How can I improve my fuel efficiency?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Maintain steady speeds, avoid rapid acceleration/braking, keep tires properly inflated, remove excess weight, and perform regular vehicle maintenance."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I include tolls and other expenses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This calculator focuses on fuel costs only. For complete trip budgeting, add tolls, parking fees, food, and accommodation costs separately."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#other-calculators">Other Calculators</a> › 
+                <span>Fuel Cost Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>⛽ Fuel Cost Calculator</h1>
+                <p>Calculate fuel costs for trips, analyze fuel efficiency, and plan your travel budget.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <div class="calc-tabs">
+                    <button class="calc-tab active" data-tab="trip">Trip Cost</button>
+                    <button class="calc-tab" data-tab="efficiency">Fuel Efficiency</button>
+                    <button class="calc-tab" data-tab="comparison">Cost Comparison</button>
+                </div>
+                
+                <!-- Trip Cost Tab -->
+                <div id="trip" class="calc-content active">
+                    <form class="calculator-form">
+                        <h3>Calculate Trip Fuel Cost</h3>
+                        
+                        <div class="form-group">
+                            <label for="trip-distance">Trip Distance</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="trip-distance" min="0" step="0.1" placeholder="250" required>
+                                <select id="distance-unit">
+                                    <option value="miles">miles</option>
+                                    <option value="km">kilometers</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fuel-efficiency">Fuel Efficiency</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="fuel-efficiency" min="0.1" step="0.1" placeholder="25" required>
+                                <select id="efficiency-unit">
+                                    <option value="mpg">MPG</option>
+                                    <option value="l100km">L/100km</option>
+                                    <option value="kmpl">km/L</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fuel-price">Fuel Price per Gallon/Liter</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="fuel-price" min="0" step="0.01" placeholder="3.50" required>
+                                <select id="price-unit">
+                                    <option value="gallon">per gallon ($)</option>
+                                    <option value="liter">per liter ($)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trip-type">Trip Type</label>
+                            <select id="trip-type">
+                                <option value="one-way">One Way</option>
+                                <option value="round-trip">Round Trip</option>
+                            </select>
+                        </div>
+                        
+                        <button type="button" onclick="calculateTripCost()" class="calculate-btn">Calculate Trip Cost</button>
+                        
+                        <div id="trip-results" class="results-display"></div>
+                    </form>
+                </div>
+                
+                <!-- Fuel Efficiency Tab -->
+                <div id="efficiency" class="calc-content">
+                    <form class="calculator-form">
+                        <h3>Calculate Fuel Efficiency</h3>
+                        
+                        <div class="form-group">
+                            <label for="distance-traveled">Distance Traveled</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="distance-traveled" min="0" step="0.1" placeholder="300" required>
+                                <select id="distance-traveled-unit">
+                                    <option value="miles">miles</option>
+                                    <option value="km">kilometers</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fuel-used">Fuel Used</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="fuel-used" min="0" step="0.01" placeholder="12" required>
+                                <select id="fuel-used-unit">
+                                    <option value="gallons">gallons</option>
+                                    <option value="liters">liters</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="button" onclick="calculateEfficiency()" class="calculate-btn">Calculate Efficiency</button>
+                        
+                        <div id="efficiency-results" class="results-display"></div>
+                    </form>
+                </div>
+                
+                <!-- Cost Comparison Tab -->
+                <div id="comparison" class="calc-content">
+                    <form class="calculator-form">
+                        <h3>Compare Vehicle Fuel Costs</h3>
+                        
+                        <div class="comparison-section">
+                            <h4>Vehicle A</h4>
+                            <div class="vehicle-inputs">
+                                <div class="form-group">
+                                    <label for="vehicle-a-mpg">Fuel Efficiency (MPG)</label>
+                                    <input type="number" id="vehicle-a-mpg" min="0.1" step="0.1" placeholder="25" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicle-a-price">Fuel Price ($/gallon)</label>
+                                    <input type="number" id="vehicle-a-price" min="0" step="0.01" placeholder="3.50" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-section">
+                            <h4>Vehicle B</h4>
+                            <div class="vehicle-inputs">
+                                <div class="form-group">
+                                    <label for="vehicle-b-mpg">Fuel Efficiency (MPG)</label>
+                                    <input type="number" id="vehicle-b-mpg" min="0.1" step="0.1" placeholder="35" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicle-b-price">Fuel Price ($/gallon)</label>
+                                    <input type="number" id="vehicle-b-price" min="0" step="0.01" placeholder="3.50" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comparison-distance">Annual Mileage</label>
+                            <input type="number" id="comparison-distance" min="0" placeholder="12000" required>
+                        </div>
+                        
+                        <button type="button" onclick="compareVehicles()" class="calculate-btn">Compare Costs</button>
+                        
+                        <div id="comparison-results" class="results-display"></div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Fuel Cost Calculator Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🛣️ Trip Planning</h3>
+                        <p>Calculate exact fuel costs for any trip distance. Plan your travel budget with accurate fuel expense estimates.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 Efficiency Analysis</h3>
+                        <p>Monitor your vehicle's fuel efficiency and track improvements. Calculate MPG, L/100km, or km/L from your fuel usage data.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🚗 Vehicle Comparison</h3>
+                        <p>Compare fuel costs between different vehicles to make informed purchasing decisions and understand long-term savings.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Fuel Cost Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate are fuel cost calculations?</div>
+                        <div class="faq-answer">Calculations are highly accurate when using correct fuel efficiency and current gas prices. Actual costs may vary due to driving conditions, traffic, and fuel price fluctuations.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What affects fuel efficiency?</div>
+                        <div class="faq-answer">Driving speed, traffic conditions, vehicle maintenance, tire pressure, air conditioning use, and driving habits all significantly impact fuel efficiency.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How can I improve my fuel efficiency?</div>
+                        <div class="faq-answer">Maintain steady speeds, avoid rapid acceleration/braking, keep tires properly inflated, remove excess weight, and perform regular vehicle maintenance.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I include tolls and other expenses?</div>
+                        <div class="faq-answer">This calculator focuses on fuel costs only. For complete trip budgeting, add tolls, parking fees, food, and accommodation costs separately.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatCurrency, formatNumber } from '/assets/js/utils/math.js';
+        
+        // Tab switching
+        document.querySelectorAll('.calc-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.dataset.tab;
+                switchTab(tabName);
+            });
+        });
+        
+        function switchTab(tab) {
+            document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+            
+            document.querySelectorAll('.calc-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+        }
+        
+        window.calculateTripCost = function() {
+            const distance = parseFloat(document.getElementById('trip-distance').value);
+            const efficiency = parseFloat(document.getElementById('fuel-efficiency').value);
+            const price = parseFloat(document.getElementById('fuel-price').value);
+            const distanceUnit = document.getElementById('distance-unit').value;
+            const efficiencyUnit = document.getElementById('efficiency-unit').value;
+            const priceUnit = document.getElementById('price-unit').value;
+            const tripType = document.getElementById('trip-type').value;
+            
+            if (!distance || !efficiency || !price) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Convert to consistent units (miles and gallons)
+            let distanceMiles = distance;
+            if (distanceUnit === 'km') {
+                distanceMiles = distance * 0.621371;
+            }
+            
+            let efficiencyMPG = efficiency;
+            if (efficiencyUnit === 'l100km') {
+                efficiencyMPG = 235.214 / efficiency; // Convert L/100km to MPG
+            } else if (efficiencyUnit === 'kmpl') {
+                efficiencyMPG = efficiency * 2.352; // Convert km/L to MPG
+            }
+            
+            let pricePerGallon = price;
+            if (priceUnit === 'liter') {
+                pricePerGallon = price * 3.78541; // Convert per liter to per gallon
+            }
+            
+            // Calculate fuel needed and cost
+            const totalDistance = tripType === 'round-trip' ? distanceMiles * 2 : distanceMiles;
+            const gallonsNeeded = totalDistance / efficiencyMPG;
+            const totalCost = gallonsNeeded * pricePerGallon;
+            const costPerMile = totalCost / totalDistance;
+            
+            const resultHtml = `
+                <div class="result-content">
+                    <div class="main-result">
+                        <h4>Trip Fuel Cost: ${formatCurrency(totalCost)}</h4>
+                    </div>
+                    <div class="result-details">
+                        <div class="detail-item">
+                            <span>Total Distance:</span>
+                            <span>${formatNumber(totalDistance)} miles</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Fuel Needed:</span>
+                            <span>${formatNumber(gallonsNeeded)} gallons</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Cost per Mile:</span>
+                            <span>${formatCurrency(costPerMile)}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Fuel Efficiency:</span>
+                            <span>${formatNumber(efficiencyMPG)} MPG</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('trip-results').innerHTML = resultHtml;
+        };
+        
+        window.calculateEfficiency = function() {
+            const distance = parseFloat(document.getElementById('distance-traveled').value);
+            const fuel = parseFloat(document.getElementById('fuel-used').value);
+            const distanceUnit = document.getElementById('distance-traveled-unit').value;
+            const fuelUnit = document.getElementById('fuel-used-unit').value;
+            
+            if (!distance || !fuel) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Convert to miles and gallons
+            let distanceMiles = distance;
+            if (distanceUnit === 'km') {
+                distanceMiles = distance * 0.621371;
+            }
+            
+            let fuelGallons = fuel;
+            if (fuelUnit === 'liters') {
+                fuelGallons = fuel * 0.264172;
+            }
+            
+            const mpg = distanceMiles / fuelGallons;
+            const l100km = 235.214 / mpg;
+            const kmpl = mpg / 2.352;
+            
+            const resultHtml = `
+                <div class="result-content">
+                    <div class="main-result">
+                        <h4>Fuel Efficiency Results</h4>
+                    </div>
+                    <div class="efficiency-grid">
+                        <div class="efficiency-item">
+                            <span class="efficiency-value">${formatNumber(mpg)}</span>
+                            <span class="efficiency-unit">MPG</span>
+                        </div>
+                        <div class="efficiency-item">
+                            <span class="efficiency-value">${formatNumber(l100km)}</span>
+                            <span class="efficiency-unit">L/100km</span>
+                        </div>
+                        <div class="efficiency-item">
+                            <span class="efficiency-value">${formatNumber(kmpl)}</span>
+                            <span class="efficiency-unit">km/L</span>
+                        </div>
+                    </div>
+                    <div class="result-details">
+                        <div class="detail-item">
+                            <span>Distance:</span>
+                            <span>${formatNumber(distance)} ${distanceUnit}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Fuel Used:</span>
+                            <span>${formatNumber(fuel)} ${fuelUnit}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('efficiency-results').innerHTML = resultHtml;
+        };
+        
+        window.compareVehicles = function() {
+            const mpgA = parseFloat(document.getElementById('vehicle-a-mpg').value);
+            const priceA = parseFloat(document.getElementById('vehicle-a-price').value);
+            const mpgB = parseFloat(document.getElementById('vehicle-b-mpg').value);
+            const priceB = parseFloat(document.getElementById('vehicle-b-price').value);
+            const annualMiles = parseFloat(document.getElementById('comparison-distance').value);
+            
+            if (!mpgA || !priceA || !mpgB || !priceB || !annualMiles) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            const annualCostA = (annualMiles / mpgA) * priceA;
+            const annualCostB = (annualMiles / mpgB) * priceB;
+            const savings = Math.abs(annualCostA - annualCostB);
+            const moreEfficient = annualCostA < annualCostB ? 'A' : 'B';
+            
+            const resultHtml = `
+                <div class="result-content">
+                    <div class="comparison-grid">
+                        <div class="vehicle-result ${moreEfficient === 'A' ? 'better' : ''}">
+                            <h5>Vehicle A</h5>
+                            <div class="annual-cost">${formatCurrency(annualCostA)}/year</div>
+                            <div class="cost-per-mile">${formatCurrency(annualCostA/annualMiles)}/mile</div>
+                        </div>
+                        <div class="vehicle-result ${moreEfficient === 'B' ? 'better' : ''}">
+                            <h5>Vehicle B</h5>
+                            <div class="annual-cost">${formatCurrency(annualCostB)}/year</div>
+                            <div class="cost-per-mile">${formatCurrency(annualCostB/annualMiles)}/mile</div>
+                        </div>
+                    </div>
+                    <div class="savings-info">
+                        <strong>Vehicle ${moreEfficient} saves ${formatCurrency(savings)} per year</strong>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('comparison-results').innerHTML = resultHtml;
+        };
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .calc-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .calc-tab {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .calc-tab:hover {
+            color: var(--primary-color);
+        }
+        
+        .calc-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .calc-content {
+            display: none;
+        }
+        
+        .calc-content.active {
+            display: block;
+        }
+        
+        .input-with-unit {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .input-with-unit input {
+            flex: 1;
+        }
+        
+        .input-with-unit select {
+            min-width: 120px;
+        }
+        
+        .comparison-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .vehicle-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .results-display {
+            margin-top: 20px;
+        }
+        
+        .result-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .main-result {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .result-details {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .efficiency-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .efficiency-item {
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .efficiency-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .efficiency-unit {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .vehicle-result {
+            padding: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .vehicle-result.better {
+            border-color: var(--primary-color);
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .annual-cost {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        
+        .cost-per-mile {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .savings-info {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e8;
+            border-radius: 6px;
+            color: #2e7d32;
+        }
+        
+        @media (max-width: 768px) {
+            .calc-tabs {
+                flex-direction: column;
+            }
+            
+            .calc-tab {
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .calc-tab.active {
+                border-bottom-color: var(--border-color);
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            .vehicle-inputs {
+                grid-template-columns: 1fr;
+            }
+            
+            .efficiency-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Calculator - Calculate Mean, Median, Mode | FreebieCalculator</title>
+    <meta name="description" content="Free average calculator to find mean, median, mode, and range of numbers. Calculate statistical averages with detailed explanations and examples.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/average.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Average Calculator - Calculate Mean, Median, Mode">
+    <meta property="og:description" content="Calculate mean, median, mode, and range of numbers with this free statistical calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/average.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Average Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate statistical averages including mean, median, mode, and range of a set of numbers.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Math Calculators",
+                "item": "https://freebiecalculator.com/#math"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Average Calculator",
+                "item": "https://freebiecalculator.com/calculators/average.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which average should I use for my data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your data and what you want to know. Use mean for normal distributions, median for skewed data or when outliers are present, and mode to find the most common value. Consider calculating all three for a complete picture."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do outliers affect different averages?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Outliers significantly affect the mean but have little to no effect on the median and mode. If your dataset has extreme values, the median often provides a better representation of the \"typical\" value than the mean."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if my data has no mode or multiple modes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No mode means all values appear with equal frequency. Multiple modes (bimodal, multimodal) indicate that several values are equally common. This can reveal important patterns in your data, such as multiple peaks in a distribution."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I calculate averages for non-numerical data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mean and median require numerical data. Mode can be calculated for any type of data, including categorical data (colors, names, categories). For example, you can find the most common color in a survey response."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How many numbers do I need to calculate meaningful averages?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can calculate averages with any number of values, but larger datasets generally provide more reliable results. For statistical significance, you typically want at least 30 values, though this depends on your specific use case."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Average Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <form id="average-form">
+                        <div class="form-group">
+                            <label for="input-method">Input Method:</label>
+                            <select id="input-method">
+                                <option value="manual">Enter numbers manually</option>
+                                <option value="list">Paste list of numbers</option>
+                            </select>
+                        </div>
+                        
+                        <div id="manual-input">
+                            <div class="form-group">
+                                <label for="numbers-input">Enter Numbers:</label>
+                                <input type="text" id="numbers-input" placeholder="Enter numbers separated by commas (e.g., 10, 20, 30, 25, 15)" required>
+                                <small>Separate numbers with commas, spaces, or line breaks</small>
+                            </div>
+                        </div>
+                        
+                        <div id="list-input" style="display: none;">
+                            <div class="form-group">
+                                <label for="numbers-textarea">Paste Numbers:</label>
+                                <textarea id="numbers-textarea" rows="6" placeholder="Paste your list of numbers here (one per line or separated by commas)"></textarea>
+                                <small>Each number on a new line or separated by commas/spaces</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="remove-duplicates"> Remove duplicate values
+                            </label>
+                        </div>
+                        
+                        <button type="submit">Calculate Averages</button>
+                    </form>
+                    
+                    <div id="average-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="mean-display"></div>
+                        <div class="result-details" id="statistics-breakdown"></div>
+                        <div class="result-details" id="dataset-info"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Types of Averages</h2>
+                    <p>
+                        There are several ways to calculate the "average" of a set of numbers, each providing different 
+                        insights into your data. Our calculator computes the most common statistical measures: mean, 
+                        median, mode, and range, giving you a comprehensive view of your dataset.
+                    </p>
+                    <p>
+                        Understanding these different measures helps you better interpret data, whether you're analyzing 
+                        test scores, financial data, survey results, or any other numerical information.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Statistical Formulas</h2>
+                    
+                    <h4>Mean (Arithmetic Average)</h4>
+                    <p>The sum of all values divided by the number of values:</p>
+                    <pre><code>
+Mean = (x₁ + x₂ + x₃ + ... + xₙ) ÷ n
+
+Where:
+x₁, x₂, x₃, ... xₙ are the individual values
+n is the total number of values
+
+Example: [10, 20, 30, 40]
+Mean = (10 + 20 + 30 + 40) ÷ 4 = 100 ÷ 4 = 25
+                    </code></pre>
+                    
+                    <h4>Median (Middle Value)</h4>
+                    <p>The middle value when numbers are arranged in order:</p>
+                    <pre><code>
+For odd number of values: Middle value
+For even number of values: Average of two middle values
+
+Example 1 (odd): [10, 20, 30, 40, 50]
+Median = 30 (middle value)
+
+Example 2 (even): [10, 20, 30, 40]
+Median = (20 + 30) ÷ 2 = 25
+                    </code></pre>
+                    
+                    <h4>Mode (Most Frequent Value)</h4>
+                    <p>The value(s) that appear most frequently:</p>
+                    <ul>
+                        <li><strong>No mode:</strong> All values appear with equal frequency</li>
+                        <li><strong>Unimodal:</strong> One value appears most frequently</li>
+                        <li><strong>Bimodal:</strong> Two values tie for most frequent</li>
+                        <li><strong>Multimodal:</strong> Multiple values tie for most frequent</li>
+                    </ul>
+                    
+                    <h4>Range</h4>
+                    <pre><code>Range = Maximum value - Minimum value</code></pre>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Test Scores</h4>
+                        <p><strong>Data:</strong> 85, 92, 78, 96, 89, 84, 91</p>
+                        <p><strong>Sorted:</strong> 78, 84, 85, 89, 91, 92, 96</p>
+                        <p><strong>Mean:</strong> (85+92+78+96+89+84+91) ÷ 7 = 615 ÷ 7 = 87.9</p>
+                        <p><strong>Median:</strong> 89 (middle value of 7 numbers)</p>
+                        <p><strong>Mode:</strong> No mode (all values appear once)</p>
+                        <p><strong>Range:</strong> 96 - 78 = 18</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Sales Data</h4>
+                        <p><strong>Data:</strong> 100, 150, 200, 150, 300, 150, 250</p>
+                        <p><strong>Sorted:</strong> 100, 150, 150, 150, 200, 250, 300</p>
+                        <p><strong>Mean:</strong> 1300 ÷ 7 = 185.7</p>
+                        <p><strong>Median:</strong> 150 (middle value)</p>
+                        <p><strong>Mode:</strong> 150 (appears 3 times)</p>
+                        <p><strong>Range:</strong> 300 - 100 = 200</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: When to Use Each Measure</h4>
+                        <p><strong>Mean:</strong> Best for normally distributed data without outliers</p>
+                        <p><strong>Median:</strong> Better for skewed data or when outliers are present</p>
+                        <p><strong>Mode:</strong> Useful for categorical data or finding most common value</p>
+                        <p><strong>Example Data with Outlier:</strong> 10, 12, 13, 14, 15, 100</p>
+                        <p>Mean = 27.3 (heavily influenced by outlier)</p>
+                        <p>Median = 13.5 (more representative of typical values)</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>When to Use Each Average</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>📊 Mean (Arithmetic Average)</h4>
+                            <p><strong>Best for:</strong></p>
+                            <ul>
+                                <li>Normally distributed data</li>
+                                <li>Data without extreme outliers</li>
+                                <li>When you need to account for all values</li>
+                                <li>Financial calculations (average income, expenses)</li>
+                                <li>Academic performance (overall GPA)</li>
+                            </ul>
+                            <p><strong>Avoid when:</strong> Data has extreme outliers</p>
+                        </div>
+                        
+                        <div>
+                            <h4>📈 Median (Middle Value)</h4>
+                            <p><strong>Best for:</strong></p>
+                            <ul>
+                                <li>Skewed data distributions</li>
+                                <li>Data with outliers</li>
+                                <li>Income/salary data</li>
+                                <li>Real estate prices</li>
+                                <li>When you want the "typical" value</li>
+                            </ul>
+                            <p><strong>Advantage:</strong> Not affected by extreme values</p>
+                        </div>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>🔄 Mode (Most Frequent)</h4>
+                            <p><strong>Best for:</strong></p>
+                            <ul>
+                                <li>Categorical data</li>
+                                <li>Finding most popular item</li>
+                                <li>Survey responses</li>
+                                <li>Quality control</li>
+                                <li>Identifying common patterns</li>
+                            </ul>
+                            <p><strong>Note:</strong> May not exist or may have multiple values</p>
+                        </div>
+                        
+                        <div>
+                            <h4>📏 Range (Spread)</h4>
+                            <p><strong>Useful for:</strong></p>
+                            <ul>
+                                <li>Understanding data spread</li>
+                                <li>Quality control limits</li>
+                                <li>Risk assessment</li>
+                                <li>Comparing variability</li>
+                                <li>Setting expectations</li>
+                            </ul>
+                            <p><strong>Limitation:</strong> Only considers extreme values</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Which average should I use for my data?</div>
+                        <div class="faq-answer">
+                            It depends on your data and what you want to know. Use mean for normal distributions, 
+                            median for skewed data or when outliers are present, and mode to find the most common value. 
+                            Consider calculating all three for a complete picture.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do outliers affect different averages?</div>
+                        <div class="faq-answer">
+                            Outliers significantly affect the mean but have little to no effect on the median and mode. 
+                            If your dataset has extreme values, the median often provides a better representation of 
+                            the "typical" value than the mean.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What if my data has no mode or multiple modes?</div>
+                        <div class="faq-answer">
+                            No mode means all values appear with equal frequency. Multiple modes (bimodal, multimodal) 
+                            indicate that several values are equally common. This can reveal important patterns in your 
+                            data, such as multiple peaks in a distribution.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I calculate averages for non-numerical data?</div>
+                        <div class="faq-answer">
+                            Mean and median require numerical data. Mode can be calculated for any type of data, 
+                            including categorical data (colors, names, categories). For example, you can find the 
+                            most common color in a survey response.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How many numbers do I need to calculate meaningful averages?</div>
+                        <div class="faq-answer">
+                            You can calculate averages with any number of values, but larger datasets generally provide 
+                            more reliable results. For statistical significance, you typically want at least 30 values, 
+                            though this depends on your specific use case.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/gpa.html">GPA Calculator</a>
+                        <a href="/calculators/cgpa.html">CGPA Calculator</a>
+                        <a href="/calculators/age.html">Age Calculator</a>
+                        <a href="/calculators/unit-converter.html">Unit Converter</a>
+                        <a href="/calculators/discount.html">Discount Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber, roundTo } from '/assets/js/utils/math.js';
+        
+        // Toggle input method
+        document.getElementById('input-method').addEventListener('change', function(e) {
+            const manualInput = document.getElementById('manual-input');
+            const listInput = document.getElementById('list-input');
+            
+            if (e.target.value === 'manual') {
+                manualInput.style.display = 'block';
+                listInput.style.display = 'none';
+            } else {
+                manualInput.style.display = 'none';
+                listInput.style.display = 'block';
+            }
+        });
+        
+        document.getElementById('average-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const inputMethod = document.getElementById('input-method').value;
+            const removeDuplicates = document.getElementById('remove-duplicates').checked;
+            
+            let inputText = '';
+            if (inputMethod === 'manual') {
+                inputText = document.getElementById('numbers-input').value;
+            } else {
+                inputText = document.getElementById('numbers-textarea').value;
+            }
+            
+            if (!inputText.trim()) {
+                alert('Please enter some numbers');
+                return;
+            }
+            
+            // Parse numbers from input
+            const numbers = parseNumbers(inputText);
+            
+            if (numbers.length === 0) {
+                alert('No valid numbers found. Please check your input.');
+                return;
+            }
+            
+            // Remove duplicates if requested
+            const dataset = removeDuplicates ? [...new Set(numbers)] : numbers;
+            
+            // Calculate statistics
+            const stats = calculateStatistics(dataset);
+            
+            // Display results
+            document.getElementById('mean-display').textContent = 
+                `Mean (Average): ${formatNumber(stats.mean, 3)}`;
+            
+            document.getElementById('statistics-breakdown').innerHTML = `
+                <strong>Statistical Measures:</strong><br>
+                Mean (Arithmetic Average): ${formatNumber(stats.mean, 3)}<br>
+                Median (Middle Value): ${formatNumber(stats.median, 3)}<br>
+                Mode (Most Frequent): ${stats.mode}<br>
+                Range (Max - Min): ${formatNumber(stats.range, 3)}<br>
+                <br>
+                <strong>Additional Statistics:</strong><br>
+                Minimum Value: ${formatNumber(stats.min, 3)}<br>
+                Maximum Value: ${formatNumber(stats.max, 3)}<br>
+                Sum of All Values: ${formatNumber(stats.sum, 3)}
+            `;
+            
+            const sortedNumbers = [...dataset].sort((a, b) => a - b);
+            
+            document.getElementById('dataset-info').innerHTML = `
+                <strong>Dataset Information:</strong><br>
+                Number of Values: ${dataset.length}<br>
+                ${removeDuplicates ? `Original Count (with duplicates): ${numbers.length}<br>` : ''}
+                Sorted Values: ${sortedNumbers.slice(0, 20).map(n => formatNumber(n, 2)).join(', ')}${sortedNumbers.length > 20 ? '...' : ''}<br>
+                <br>
+                <strong>Data Interpretation:</strong><br>
+                ${interpretData(stats, dataset)}
+            `;
+            
+            document.getElementById('average-result').style.display = 'block';
+        });
+        
+        function parseNumbers(input) {
+            // Split by various delimiters and filter out non-numbers
+            const parts = input.split(/[,\s\n\t]+/);
+            const numbers = [];
+            
+            for (const part of parts) {
+                const trimmed = part.trim();
+                if (trimmed && !isNaN(trimmed)) {
+                    numbers.push(parseFloat(trimmed));
+                }
+            }
+            
+            return numbers;
+        }
+        
+        function calculateStatistics(numbers) {
+            const sorted = [...numbers].sort((a, b) => a - b);
+            const n = numbers.length;
+            
+            // Mean
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+            const mean = sum / n;
+            
+            // Median
+            let median;
+            if (n % 2 === 0) {
+                median = (sorted[n/2 - 1] + sorted[n/2]) / 2;
+            } else {
+                median = sorted[Math.floor(n/2)];
+            }
+            
+            // Mode
+            const frequency = {};
+            numbers.forEach(num => {
+                frequency[num] = (frequency[num] || 0) + 1;
+            });
+            
+            const maxFreq = Math.max(...Object.values(frequency));
+            const modes = Object.keys(frequency)
+                .filter(key => frequency[key] === maxFreq)
+                .map(key => parseFloat(key));
+            
+            let modeText;
+            if (maxFreq === 1) {
+                modeText = 'No mode (all values appear once)';
+            } else if (modes.length === 1) {
+                modeText = `${formatNumber(modes[0], 3)} (appears ${maxFreq} times)`;
+            } else {
+                modeText = `Multiple modes: ${modes.map(m => formatNumber(m, 3)).join(', ')} (each appears ${maxFreq} times)`;
+            }
+            
+            // Range and extremes
+            const min = Math.min(...numbers);
+            const max = Math.max(...numbers);
+            const range = max - min;
+            
+            return {
+                mean,
+                median,
+                mode: modeText,
+                range,
+                min,
+                max,
+                sum,
+                count: n
+            };
+        }
+        
+        function interpretData(stats, dataset) {
+            const interpretations = [];
+            
+            // Compare mean and median
+            const meanMedianDiff = Math.abs(stats.mean - stats.median);
+            const tolerance = stats.range * 0.1; // 10% of range
+            
+            if (meanMedianDiff <= tolerance) {
+                interpretations.push('The data appears to be approximately normally distributed (mean ≈ median).');
+            } else if (stats.mean > stats.median) {
+                interpretations.push('The data is positively skewed (mean > median), indicating some high outliers.');
+            } else {
+                interpretations.push('The data is negatively skewed (mean < median), indicating some low outliers.');
+            }
+            
+            // Range interpretation
+            const cv = (Math.sqrt(dataset.reduce((acc, x) => acc + Math.pow(x - stats.mean, 2), 0) / dataset.length) / stats.mean) * 100;
+            if (cv < 15) {
+                interpretations.push('The data has low variability (values are close to the mean).');
+            } else if (cv > 30) {
+                interpretations.push('The data has high variability (values are spread out).');
+            } else {
+                interpretations.push('The data has moderate variability.');
+            }
+            
+            return interpretations.join(' ');
+        }
+    </script>
+</body>
+</html>

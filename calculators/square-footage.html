@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Footage Calculator – Calculate Area of Any Room or Space | FreebieCalculator</title>
+    <meta name="description" content="Free square footage calculator for rooms, floors, walls, and outdoor spaces. Calculate area in square feet, square meters, and square yards instantly.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/square-footage.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="Square Footage Calculator – Calculate Any Area Instantly">
+    <meta property="og:description" content="Calculate square footage for rooms, floors, walls, and outdoor spaces. Get results in sq ft, sq m, and sq yd.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/square-footage.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Square Footage Calculator",
+        "description": "Calculate area in square feet, square meters, and square yards for rooms and spaces",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web Browser",
+        "url": "https://freebiecalculator.com/calculators/square-footage.html",
+        "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"},
+        "isAccessibleForFree": true,
+        "provider": {"@type": "Organization","name": "FreebieCalculator.com","url": "https://freebiecalculator.com"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question","name": "How do I calculate square footage of a room?","acceptedAnswer": {"@type": "Answer","text": "For a rectangular room, multiply the length by the width: Square Footage = Length (ft) × Width (ft). For example, a 12ft × 15ft room = 180 square feet."}},
+            {"@type": "Question","name": "How many square feet is a 12x12 room?","acceptedAnswer": {"@type": "Answer","text": "A 12×12 room is 144 square feet (12 × 12 = 144 sq ft). This is equivalent to approximately 13.4 square meters."}},
+            {"@type": "Question","name": "How do I convert square feet to square meters?","acceptedAnswer": {"@type": "Answer","text": "Multiply square feet by 0.0929 to get square meters. For example, 500 sq ft × 0.0929 = 46.45 square meters. Or divide square feet by 10.764."}},
+            {"@type": "Question","name": "How many square feet are in an acre?","acceptedAnswer": {"@type": "Answer","text": "One acre equals 43,560 square feet. To convert acres to square feet, multiply the number of acres by 43,560."}},
+            {"@type": "Question","name": "How do I measure an L-shaped room?","acceptedAnswer": {"@type": "Answer","text": "Divide the L-shape into two rectangles, calculate each rectangle's area separately, then add them together. Our calculator supports multiple rooms — just add each section and total them up."}}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="/#math-calculators">General</a></li>
+                    <li><a href="/#health-calculators">Health</a></li>
+                    <li><a href="/#financial-calculators">Finance</a></li>
+                    <li><a href="/#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#math-calculators">General Calculators</a> › <span>Square Footage Calculator</span>
+            </nav>
+            <div class="calculator-header">
+                <h1>📐 Square Footage Calculator</h1>
+                <p>Calculate the area of any room, floor, wall, or outdoor space in square feet, meters, or yards.</p>
+            </div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container">
+                <div class="calculator-tool">
+                    <form id="sqft-form">
+                        <div class="shape-tabs">
+                            <button type="button" class="shape-tab active" data-shape="rectangle">Rectangle / Square</button>
+                            <button type="button" class="shape-tab" data-shape="triangle">Triangle</button>
+                            <button type="button" class="shape-tab" data-shape="circle">Circle</button>
+                        </div>
+                        <div id="rect-inputs">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="length">Length</label>
+                                    <input type="number" id="length" step="0.01" min="0" placeholder="e.g., 12" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="width">Width</label>
+                                    <input type="number" id="width" step="0.01" min="0" placeholder="e.g., 15" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tri-inputs" style="display:none;">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="tri-base">Base</label>
+                                    <input type="number" id="tri-base" step="0.01" min="0" placeholder="e.g., 10">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tri-height">Height</label>
+                                    <input type="number" id="tri-height" step="0.01" min="0" placeholder="e.g., 8">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="circle-inputs" style="display:none;">
+                            <div class="form-group">
+                                <label for="radius">Radius</label>
+                                <input type="number" id="radius" step="0.01" min="0" placeholder="e.g., 5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="unit">Unit of Measurement</label>
+                            <select id="unit">
+                                <option value="ft">Feet (ft)</option>
+                                <option value="m">Meters (m)</option>
+                                <option value="in">Inches (in)</option>
+                                <option value="yd">Yards (yd)</option>
+                                <option value="cm">Centimeters (cm)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">Calculate Area</button>
+                    </form>
+                    <div id="sqft-result" class="result-container" style="display:none;">
+                        <h3>Area Results</h3>
+                        <div class="result-grid" id="area-grid"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Square Footage Formulas</h2>
+                <div class="formula-box"><strong>Rectangle / Square:</strong> Area = Length × Width</div>
+                <div class="formula-box"><strong>Triangle:</strong> Area = (Base × Height) ÷ 2</div>
+                <div class="formula-box"><strong>Circle:</strong> Area = π × Radius²</div>
+                <h3>Unit Conversions</h3>
+                <ul>
+                    <li>1 sq ft = 0.0929 sq meters</li>
+                    <li>1 sq meter = 10.764 sq ft</li>
+                    <li>1 sq yard = 9 sq ft</li>
+                    <li>1 acre = 43,560 sq ft</li>
+                    <li>1 sq ft = 144 sq inches</li>
+                </ul>
+            </section>
+            <section class="content-section">
+                <h2>Common Room Sizes</h2>
+                <table class="data-table">
+                    <thead><tr><th>Room Type</th><th>Typical Size</th><th>Square Footage</th></tr></thead>
+                    <tbody>
+                        <tr><td>Small Bedroom</td><td>10 × 10 ft</td><td>100 sq ft</td></tr>
+                        <tr><td>Average Bedroom</td><td>12 × 12 ft</td><td>144 sq ft</td></tr>
+                        <tr><td>Master Bedroom</td><td>14 × 16 ft</td><td>224 sq ft</td></tr>
+                        <tr><td>Living Room</td><td>15 × 18 ft</td><td>270 sq ft</td></tr>
+                        <tr><td>Kitchen</td><td>10 × 12 ft</td><td>120 sq ft</td></tr>
+                        <tr><td>2-Car Garage</td><td>20 × 20 ft</td><td>400 sq ft</td></tr>
+                        <tr><td>Tiny House</td><td>20 × 24 ft</td><td>480 sq ft</td></tr>
+                        <tr><td>Average US Home</td><td>—</td><td>~2,300 sq ft</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I calculate square footage of a room?</div>
+                        <div class="faq-answer">For a rectangle, multiply length × width in feet. A 12 ft × 15 ft room = 180 sq ft. For irregular shapes, divide into rectangles and add each area together.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How many square feet is a 12×12 room?</div>
+                        <div class="faq-answer">A 12×12 room is 144 square feet (12 × 12 = 144). This equals about 13.4 square meters.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I convert square feet to square meters?</div>
+                        <div class="faq-answer">Multiply square feet × 0.0929. Example: 500 sq ft × 0.0929 = 46.45 sq meters. Or divide by 10.764.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How many square feet are in an acre?</div>
+                        <div class="faq-answer">One acre = 43,560 square feet. To convert acres to sq ft, multiply by 43,560.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I measure an L-shaped room?</div>
+                        <div class="faq-answer">Divide the L-shape into two rectangles, calculate each area, and add them. For example: Section A (10×12 = 120 sq ft) + Section B (8×6 = 48 sq ft) = 168 sq ft total.</div>
+                    </div>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Related Calculators</h2>
+                <div class="calculator-links">
+                    <a href="/calculators/area.html">Area Calculator</a>
+                    <a href="/calculators/volume.html">Volume Calculator</a>
+                    <a href="/calculators/triangle.html">Triangle Calculator</a>
+                    <a href="/calculators/concrete.html">Concrete Calculator</a>
+                    <a href="/calculators/unit-converter.html">Unit Converter</a>
+                    <a href="/calculators/percentage.html">Percentage Calculator</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+    let activeShape = 'rectangle';
+    document.querySelectorAll('.shape-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.shape-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeShape = btn.dataset.shape;
+            document.getElementById('rect-inputs').style.display = activeShape === 'rectangle' ? '' : 'none';
+            document.getElementById('tri-inputs').style.display = activeShape === 'triangle' ? '' : 'none';
+            document.getElementById('circle-inputs').style.display = activeShape === 'circle' ? '' : 'none';
+        });
+    });
+    document.getElementById('sqft-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const unit = document.getElementById('unit').value;
+        const toFt = {ft:1, m:10.7639, in:1/144, yd:9, cm:0.00107639};
+        const toM = {ft:0.0929, m:1, in:0.000645, yd:0.0836, cm:0.0001};
+        const toYd = {ft:0.1111, m:1.196, in:0.000772, yd:1, cm:0.00012};
+        let areaNative = 0;
+        if (activeShape === 'rectangle') {
+            const l = parseFloat(document.getElementById('length').value);
+            const w = parseFloat(document.getElementById('width').value);
+            if (!l || !w) return;
+            areaNative = l * w;
+        } else if (activeShape === 'triangle') {
+            const b = parseFloat(document.getElementById('tri-base').value);
+            const h = parseFloat(document.getElementById('tri-height').value);
+            if (!b || !h) return;
+            areaNative = 0.5 * b * h;
+        } else {
+            const r = parseFloat(document.getElementById('radius').value);
+            if (!r) return;
+            areaNative = Math.PI * r * r;
+        }
+        const sqft = areaNative * toFt[unit];
+        const sqm = areaNative * toM[unit];
+        const sqyd = areaNative * toYd[unit];
+        const fmt = n => n.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('area-grid').innerHTML = `
+            <div class="result-card primary"><div class="result-label">Square Feet</div><div class="result-value">${fmt(sqft)} ft²</div></div>
+            <div class="result-card"><div class="result-label">Square Meters</div><div class="result-value">${fmt(sqm)} m²</div></div>
+            <div class="result-card"><div class="result-label">Square Yards</div><div class="result-value">${fmt(sqyd)} yd²</div></div>
+            <div class="result-card"><div class="result-label">Square Inches</div><div class="result-value">${fmt(sqft * 144)} in²</div></div>
+        `;
+        document.getElementById('sqft-result').style.display = 'block';
+    });
+    </script>
+    <style>
+        .shape-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .shape-tab { padding: 0.5rem 1rem; border: 2px solid var(--border-color); border-radius: 0.5rem; background: var(--bg-secondary); cursor: pointer; font-weight: 500; transition: all 0.2s; }
+        .shape-tab.active { border-color: var(--primary-solid); background: var(--primary-solid); color: white; }
+        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .result-card { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; text-align: center; }
+        .result-card.primary { background: var(--primary-solid); color: white; border-color: var(--primary-solid); }
+        .result-card.primary .result-label { color: rgba(255,255,255,0.8); }
+        .result-card.primary .result-value { font-size: 1.3rem; }
+        .result-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+        .result-value { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+        .formula-box { background: var(--bg-secondary); border-left: 4px solid var(--primary-solid); padding: 0.75rem 1rem; border-radius: 0.25rem; margin: 0.5rem 0; font-family: monospace; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .data-table th, .data-table td { padding: 0.5rem 0.75rem; text-align: left; border: 1px solid var(--border-color); font-size: 0.9rem; }
+        .data-table th { background: var(--bg-secondary); font-weight: 600; }
+        .data-table tr:nth-child(even) { background: var(--bg-secondary); }
+    </style>
+</body>
+</html>

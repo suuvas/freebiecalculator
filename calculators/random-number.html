@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator - Generate Random Numbers | FreebieCalculator</title>
+    <meta name="description" content="Free random number generator. Generate random integers, decimals, and numbers within custom ranges. Perfect for games, statistics, and decision making.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/random-number.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Random Number Generator - Generate Random Numbers">
+    <meta property="og:description" content="Generate random numbers with custom ranges and options. Free online random number generator tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/random-number.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Random Number Generator",
+        "description": "Generate random numbers with custom ranges and options",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Math Calculators",
+                "item": "https://freebiecalculator.com/#math"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Random Number Generator",
+                "item": "https://freebiecalculator.com/calculators/random-number.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How random are the generated numbers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This generator uses JavaScript's Math.random() function, which produces pseudo-random numbers suitable for most applications but not cryptographically secure."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between allowing and disallowing duplicates?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When duplicates are allowed, the same number can appear multiple times. When disabled, each number in the set will be unique (useful for random sampling without replacement)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use this for secure applications?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This generator is not cryptographically secure and shouldn't be used for passwords, security tokens, or sensitive applications. Use it for games, statistics, and general-purpose randomization."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the maximum range I can use?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can use any range within JavaScript's number limits (approximately \u00b19 quadrillion). For very large ranges with unique numbers, ensure your quantity doesn't exceed the range size."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#math-calculators">Math Calculators</a> › 
+                <span>Random Number Generator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>🎲 Random Number Generator</h1>
+                <p>Generate random numbers with custom ranges, quantities, and options for any purpose.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <form id="random-generator" class="calculator-form">
+                    <div class="form-group">
+                        <label for="number-type">Number Type</label>
+                        <select id="number-type" required>
+                            <option value="integer">Integers (whole numbers)</option>
+                            <option value="decimal">Decimals (with decimals)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="min-value">Minimum Value</label>
+                            <input type="number" id="min-value" value="1" step="any" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="max-value">Maximum Value</label>
+                            <input type="number" id="max-value" value="100" step="any" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" min="1" max="1000" value="1" required>
+                            <small>How many numbers to generate (max 1000)</small>
+                        </div>
+                        
+                        <div class="form-group" id="decimal-places-group" style="display: none;">
+                            <label for="decimal-places">Decimal Places</label>
+                            <input type="number" id="decimal-places" min="1" max="10" value="2">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="allow-duplicates" checked>
+                            Allow duplicate numbers
+                        </label>
+                        <small>Uncheck to ensure all numbers are unique</small>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">Generate Random Numbers</button>
+                </form>
+                
+                <div id="random-results" class="results-container" style="display: none;">
+                    <h3>🎯 Generated Numbers</h3>
+                    
+                    <div class="generated-numbers" id="numbers-display">
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button id="copy-numbers" class="action-btn">📋 Copy Numbers</button>
+                        <button id="generate-again" class="action-btn">🔄 Generate Again</button>
+                        <button id="download-csv" class="action-btn">💾 Download CSV</button>
+                    </div>
+                    
+                    <div class="statistics" id="statistics-section" style="display: none;">
+                        <h4>Statistics</h4>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">Count:</span>
+                                <span id="stat-count">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Sum:</span>
+                                <span id="stat-sum">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Average:</span>
+                                <span id="stat-average">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Min:</span>
+                                <span id="stat-min">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Max:</span>
+                                <span id="stat-max">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Random Number Generator Uses</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🎮 Games & Fun</h3>
+                        <p>Generate numbers for board games, lottery picks, random selections, contests, and entertainment purposes.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 Statistics & Research</h3>
+                        <p>Create random samples for statistical analysis, research studies, surveys, and data science projects.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🔒 Security & Testing</h3>
+                        <p>Generate random values for testing, simulations, password creation, and cryptographic applications.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Random Number Generator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How random are the generated numbers?</div>
+                        <div class="faq-answer">This generator uses JavaScript's Math.random() function, which produces pseudo-random numbers suitable for most applications but not cryptographically secure.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between allowing and disallowing duplicates?</div>
+                        <div class="faq-answer">When duplicates are allowed, the same number can appear multiple times. When disabled, each number in the set will be unique (useful for random sampling without replacement).</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use this for secure applications?</div>
+                        <div class="faq-answer">This generator is not cryptographically secure and shouldn't be used for passwords, security tokens, or sensitive applications. Use it for games, statistics, and general-purpose randomization.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the maximum range I can use?</div>
+                        <div class="faq-answer">You can use any range within JavaScript's number limits (approximately ±9 quadrillion). For very large ranges with unique numbers, ensure your quantity doesn't exceed the range size.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        let lastGeneratedNumbers = [];
+        
+        // Show/hide decimal places input based on number type
+        document.getElementById('number-type').addEventListener('change', function() {
+            const decimalGroup = document.getElementById('decimal-places-group');
+            if (this.value === 'decimal') {
+                decimalGroup.style.display = 'block';
+            } else {
+                decimalGroup.style.display = 'none';
+            }
+        });
+        
+        document.getElementById('random-generator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateRandomNumbers();
+        });
+        
+        document.getElementById('generate-again').addEventListener('click', function() {
+            generateRandomNumbers();
+        });
+        
+        document.getElementById('copy-numbers').addEventListener('click', function() {
+            copyToClipboard();
+        });
+        
+        document.getElementById('download-csv').addEventListener('click', function() {
+            downloadCSV();
+        });
+        
+        function generateRandomNumbers() {
+            const numberType = document.getElementById('number-type').value;
+            const minValue = parseFloat(document.getElementById('min-value').value);
+            const maxValue = parseFloat(document.getElementById('max-value').value);
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const allowDuplicates = document.getElementById('allow-duplicates').checked;
+            const decimalPlaces = parseInt(document.getElementById('decimal-places').value) || 2;
+            
+            if (minValue >= maxValue) {
+                alert('Maximum value must be greater than minimum value');
+                return;
+            }
+            
+            if (!allowDuplicates && numberType === 'integer') {
+                const range = Math.floor(maxValue) - Math.ceil(minValue) + 1;
+                if (quantity > range) {
+                    alert(`Cannot generate ${quantity} unique integers in range ${Math.ceil(minValue)} to ${Math.floor(maxValue)} (max ${range} unique values)`);
+                    return;
+                }
+            }
+            
+            const numbers = [];
+            const usedNumbers = new Set();
+            
+            for (let i = 0; i < quantity; i++) {
+                let randomNumber;
+                let attempts = 0;
+                
+                do {
+                    if (numberType === 'integer') {
+                        randomNumber = Math.floor(Math.random() * (Math.floor(maxValue) - Math.ceil(minValue) + 1)) + Math.ceil(minValue);
+                    } else {
+                        randomNumber = Math.random() * (maxValue - minValue) + minValue;
+                        randomNumber = parseFloat(randomNumber.toFixed(decimalPlaces));
+                    }
+                    attempts++;
+                    
+                    // Prevent infinite loop for impossible unique generation
+                    if (attempts > 10000) {
+                        alert('Unable to generate enough unique numbers. Try a larger range or allow duplicates.');
+                        return;
+                    }
+                } while (!allowDuplicates && usedNumbers.has(randomNumber));
+                
+                if (!allowDuplicates) {
+                    usedNumbers.add(randomNumber);
+                }
+                
+                numbers.push(randomNumber);
+            }
+            
+            lastGeneratedNumbers = numbers;
+            displayResults(numbers);
+        }
+        
+        function displayResults(numbers) {
+            const numbersDisplay = document.getElementById('numbers-display');
+            
+            if (numbers.length <= 50) {
+                // Display as grid for smaller sets
+                numbersDisplay.innerHTML = numbers.map(num => 
+                    `<span class="number-item">${formatNumber(num)}</span>`
+                ).join('');
+                numbersDisplay.className = 'generated-numbers grid-display';
+            } else {
+                // Display as list for larger sets
+                numbersDisplay.innerHTML = `<div class="number-list">${numbers.map(num => formatNumber(num)).join(', ')}</div>`;
+                numbersDisplay.className = 'generated-numbers list-display';
+            }
+            
+            // Show statistics if more than 1 number
+            if (numbers.length > 1) {
+                showStatistics(numbers);
+            } else {
+                document.getElementById('statistics-section').style.display = 'none';
+            }
+            
+            document.getElementById('random-results').style.display = 'block';
+            document.getElementById('random-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showStatistics(numbers) {
+            const sum = numbers.reduce((a, b) => a + b, 0);
+            const average = sum / numbers.length;
+            const min = Math.min(...numbers);
+            const max = Math.max(...numbers);
+            
+            document.getElementById('stat-count').textContent = numbers.length;
+            document.getElementById('stat-sum').textContent = formatNumber(sum);
+            document.getElementById('stat-average').textContent = formatNumber(average);
+            document.getElementById('stat-min').textContent = formatNumber(min);
+            document.getElementById('stat-max').textContent = formatNumber(max);
+            
+            document.getElementById('statistics-section').style.display = 'block';
+        }
+        
+        function copyToClipboard() {
+            const text = lastGeneratedNumbers.map(num => formatNumber(num)).join('\n');
+            navigator.clipboard.writeText(text).then(() => {
+                const button = document.getElementById('copy-numbers');
+                const originalText = button.textContent;
+                button.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            }).catch(() => {
+                alert('Failed to copy to clipboard');
+            });
+        }
+        
+        function downloadCSV() {
+            const csv = 'Random Numbers\n' + lastGeneratedNumbers.map(num => formatNumber(num)).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'random_numbers.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .generated-numbers.grid-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .generated-numbers.list-display {
+            margin: 20px 0;
+        }
+        
+        .number-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .number-list {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .result-actions {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            background: var(--button-bg);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .stat-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .generated-numbers.grid-display {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                gap: 8px;
+            }
+            
+            .number-item {
+                padding: 8px;
+                font-size: 1rem;
+                min-height: 35px;
+            }
+            
+            .result-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

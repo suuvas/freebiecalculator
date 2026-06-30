@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            freebiecalculator.com — Free Online Calculators (Fast & Simple)
+        </title>
+        <meta
+            name="description"
+            content="Use free, fast, and accurate online calculators for finance, health, education, and everyday math. No login. Mobile-friendly."
+        />
+        <link rel="canonical" href="https://freebiecalculator.com/" />
+        <link rel="stylesheet" href="/assets/css/base.css?v=7" />
+        <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+        <link rel="manifest" href="/manifest.json" />
+
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="FreebieCalculator — Free Online Calculators"
+        />
+        <meta
+            property="og:description"
+            content="Use free, fast, and accurate online calculators for finance, health, education, and everyday math. No login. Mobile-friendly."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://freebiecalculator.com/" />
+        <meta
+            property="og:image"
+            content="https://freebiecalculator.com/assets/img/logo.svg"
+        />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary" />
+        <meta
+            name="twitter:title"
+            content="FreebieCalculator — Free Online Calculators"
+        />
+        <meta
+            name="twitter:description"
+            content="Use free, fast, and accurate online calculators for finance, health, education, and everyday math. No login. Mobile-friendly."
+        />
+
+        <!-- JSON-LD Organization Schema -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "FreebieCalculator",
+                "url": "https://freebiecalculator.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://freebiecalculator.com/assets/img/logo.svg"
+                },
+                "description": "Free online calculators for finance, health, education, and everyday math calculations",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "url": "https://freebiecalculator.com/contact.html"
+                },
+                "sameAs": [
+                    "https://freebiecalculator.com/about.html"
+                ],
+                "founder": {
+                    "@type": "Person",
+                    "name": "FreebieCalculator Team"
+                },
+                "knowsAbout": [
+                    "Financial Calculations",
+                    "Health Metrics",
+                    "Educational Tools",
+                    "Mathematical Formulas"
+                ]
+            }
+        </script>
+
+        <!-- JSON-LD WebSite Schema with SearchAction -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "FreebieCalculator",
+                "url": "https://freebiecalculator.com",
+                "description": "Free online calculators for finance, health, education, and everyday math",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://freebiecalculator.com/search.html?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "FreebieCalculator",
+                    "url": "https://freebiecalculator.com"
+                }
+            }
+        </script>
+
+        <!-- TODO: Enable Google Analytics after setup
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    --></head>
+    <body>
+        <header id="header">
+            <div class="header-content">
+                <a
+                    href="/"
+                    class="logo"
+                    style="
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        text-decoration: none;
+                        color: #667eea;
+                        z-index: 1000;
+                    "
+                >
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style="margin-right: 0.5rem"
+                    >
+                        <rect
+                            width="32"
+                            height="32"
+                            rx="6"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="6"
+                            y="6"
+                            width="20"
+                            height="20"
+                            rx="2"
+                            fill="white"
+                        />
+                        <rect
+                            x="8"
+                            y="8"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="14"
+                            y="8"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="20"
+                            y="8"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="8"
+                            y="12"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="14"
+                            y="12"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="20"
+                            y="12"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="8"
+                            y="16"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="14"
+                            y="16"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="20"
+                            y="16"
+                            width="4"
+                            height="2"
+                            fill="currentColor"
+                        />
+                        <rect
+                            x="8"
+                            y="20"
+                            width="16"
+                            height="2"
+                            fill="#f59e0b"
+                        />
+                    </svg>
+                    freebiecalculator.com
+                </a>
+
+                <nav role="navigation" aria-label="Main navigation">
+                    <ul
+                        class="nav-menu"
+                        style="
+                            display: flex;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            gap: 2rem;
+                        "
+                    >
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog/">Guides</a></li>
+                        <li><a href="/help/">Help</a></li>
+                        <li><a href="#math-calculators">General</a></li>
+                        <li><a href="#health-calculators">Health</a></li>
+                        <li><a href="#financial-calculators">Finance</a></li>
+                        <li><a href="#other-calculators">Other</a></li>
+                    </ul>
+                </nav>
+
+                <div
+                    class="header-actions"
+                    style="display: flex; align-items: center; gap: 1rem"
+                >
+                    <div id="language-selector-container"></div>
+                    <button
+                        class="theme-toggle"
+                        id="theme-toggle"
+                        aria-label="Toggle dark mode"
+                    >
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button
+                        class="mobile-menu-btn"
+                        aria-label="Toggle mobile menu"
+                        aria-expanded="false"
+                    >
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <section class="hero">
+                    <h1>
+                        Free Online Calculators — Mortgage, BMI, Tax &amp; 60+ Tools
+                    </h1>
+                    <p class="hero-description">
+                        Instantly calculate mortgage payments, BMI, compound interest, salary, tax, and more. 60+ free online calculators for finance, health &amp; math — no signup, no download, works on any device.
+                    </p>
+
+                    <div class="search-container">
+                        <input
+                            type="text"
+                            id="calculator-search"
+                            placeholder="Search calculators..."
+                            aria-label="Search calculators"
+                        />
+                    </div>
+                </section>
+
+                <!-- Ad #1: Leaderboard — below hero, above featured (highest-value position) -->
+                <div class="ad-slot ad-homepage ad-leaderboard" id="hp-ad-1" aria-label="Advertisement" role="complementary">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                         data-ad-slot="1111111111"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                </div>
+
+                <!-- Revenue-Optimized Featured Calculators -->
+                <div id="top-calculators-homepage"></div>
+
+                <section class="categories">
+                    <div class="category-section" id="math-calculators">
+                        <h2>📐 Math & Education Calculators</h2>
+                        <div class="calculator-grid">
+                            <a
+                                href="/calculators/percentage.html"
+                                class="calculator-card"
+                            >
+                                <h3>Percentage Calculator</h3>
+                                <p>
+                                    Calculate percentages, increases, and
+                                    decreases
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/area.html"
+                                class="calculator-card"
+                            >
+                                <h3>Area Calculator</h3>
+                                <p>Calculate area of geometric shapes</p>
+                            </a>
+                            <a
+                                href="/calculators/volume.html"
+                                class="calculator-card"
+                            >
+                                <h3>Volume Calculator</h3>
+                                <p>Calculate volume of 3D shapes</p>
+                            </a>
+                            <a
+                                href="/calculators/triangle.html"
+                                class="calculator-card"
+                            >
+                                <h3>Triangle Calculator</h3>
+                                <p>
+                                    Calculate triangle properties and
+                                    measurements
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/scientific.html"
+                                class="calculator-card"
+                            >
+                                <h3>Scientific Calculator</h3>
+                                <p>
+                                    Advanced calculator with scientific
+                                    functions
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/average.html"
+                                class="calculator-card"
+                            >
+                                <h3>Average Calculator</h3>
+                                <p>
+                                    Calculate mean, median, and mode of numbers
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/standard-deviation.html"
+                                class="calculator-card"
+                            >
+                                <h3>Standard Deviation Calculator</h3>
+                                <p>Calculate standard deviation and variance</p>
+                            </a>
+                            <a
+                                href="/calculators/fraction.html"
+                                class="calculator-card"
+                            >
+                                <h3>Fraction Calculator</h3>
+                                <p>
+                                    Add, subtract, multiply, and divide
+                                    fractions
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/unit-converter.html"
+                                class="calculator-card"
+                            >
+                                <h3>Unit Converter</h3>
+                                <p>
+                                    Convert between different units of
+                                    measurement
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/binary-converter.html"
+                                class="calculator-card"
+                            >
+                                <h3>Binary Converter</h3>
+                                <p>
+                                    Convert between binary, decimal, hex, and
+                                    octal
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/gpa.html"
+                                class="calculator-card"
+                            >
+                                <h3>GPA Calculator</h3>
+                                <p>Calculate your Grade Point Average</p>
+                            </a>
+                            <a
+                                href="/calculators/cgpa.html"
+                                class="calculator-card"
+                            >
+                                <h3>CGPA Calculator</h3>
+                                <p>
+                                    Calculate your Cumulative Grade Point
+                                    Average
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/grade.html"
+                                class="calculator-card"
+                            >
+                                <h3>Grade Calculator</h3>
+                                <p>Calculate grades and letter grades</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ad #2: Rectangle — between Math and Health sections -->
+                    <div class="ad-slot ad-homepage ad-rectangle" id="hp-ad-2" aria-label="Advertisement" role="complementary">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="2222222222"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                    </div>
+
+                    <div class="category-section" id="health-calculators">
+                        <h2>🏥 Health & Fitness Calculators</h2>
+                        <div class="calculator-grid">
+                            <a href="/calculators/sleep.html" class="calculator-card">
+                                <h3>Sleep Calculator</h3>
+                                <p>Find the best time to wake up based on sleep cycles</p>
+                            </a>
+                            <a href="/calculators/macro-calculator.html" class="calculator-card">
+                                <h3>Macro Calculator</h3>
+                                <p>Calculate daily protein, carbs, and fat targets</p>
+                            </a>
+                            <a href="/calculators/ovulation.html" class="calculator-card">
+                                <h3>Ovulation Calculator</h3>
+                                <p>Predict your most fertile days and ovulation date</p>
+                            </a>
+                            <a href="/calculators/due-date.html" class="calculator-card">
+                                <h3>Due Date Calculator</h3>
+                                <p>Estimate your baby's due date and pregnancy timeline</p>
+                            </a>
+                            <a
+                                href="/calculators/bmi.html"
+                                class="calculator-card"
+                            >
+                                <h3>BMI Calculator</h3>
+                                <p>Calculate your Body Mass Index</p>
+                            </a>
+                            <a
+                                href="/calculators/bmr.html"
+                                class="calculator-card"
+                            >
+                                <h3>BMR Calculator</h3>
+                                <p>Calculate your Basal Metabolic Rate</p>
+                            </a>
+                            <a
+                                href="/calculators/calorie.html"
+                                class="calculator-card"
+                            >
+                                <h3>Daily Calorie Calculator</h3>
+                                <p>Calculate your daily calorie needs</p>
+                            </a>
+                            <a
+                                href="/calculators/water-intake.html"
+                                class="calculator-card"
+                            >
+                                <h3>Water Intake Calculator</h3>
+                                <p>Calculate your daily water needs</p>
+                            </a>
+                            <a
+                                href="/calculators/body-fat.html"
+                                class="calculator-card"
+                            >
+                                <h3>Body Fat Calculator</h3>
+                                <p>Calculate body fat percentage</p>
+                            </a>
+                            <a
+                                href="/calculators/ideal-weight.html"
+                                class="calculator-card"
+                            >
+                                <h3>Ideal Weight Calculator</h3>
+                                <p>Calculate your ideal body weight</p>
+                            </a>
+                            <a
+                                href="/calculators/pregnancy.html"
+                                class="calculator-card"
+                            >
+                                <h3>Pregnancy Calculator</h3>
+                                <p>
+                                    Calculate due date and pregnancy milestones
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/pace.html"
+                                class="calculator-card"
+                            >
+                                <h3>Running Pace Calculator</h3>
+                                <p>Calculate running pace and race times</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ad #3: Leaderboard — between Health and Finance sections -->
+                    <div class="ad-slot ad-homepage ad-leaderboard" id="hp-ad-3" aria-label="Advertisement" role="complementary">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="3333333333"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                    </div>
+
+                    <div class="category-section" id="financial-calculators">
+                        <h2>💰 Financial Calculators</h2>
+                        <div class="calculator-grid">
+                            <a href="/calculators/paycheck.html" class="calculator-card">
+                                <h3>Paycheck Calculator</h3>
+                                <p>Estimate take-home pay after taxes and deductions</p>
+                            </a>
+                            <a href="/calculators/debt-to-income.html" class="calculator-card">
+                                <h3>Debt-to-Income Calculator</h3>
+                                <p>Check your DTI ratio for mortgage and loan approval</p>
+                            </a>
+                            <a href="/calculators/cagr.html" class="calculator-card">
+                                <h3>CAGR Calculator</h3>
+                                <p>Calculate Compound Annual Growth Rate for investments</p>
+                            </a>
+                            <a href="/calculators/net-worth.html" class="calculator-card">
+                                <h3>Net Worth Calculator</h3>
+                                <p>Calculate your total assets minus liabilities</p>
+                            </a>
+                            <a href="/calculators/loan-to-value.html" class="calculator-card">
+                                <h3>Loan-to-Value Calculator</h3>
+                                <p>Calculate LTV ratio and check if you need PMI</p>
+                            </a>
+                            <a
+                                href="/calculators/hourly-to-salary.html"
+                                class="calculator-card"
+                            >
+                                <h3>Hourly to Salary Calculator</h3>
+                                <p>Convert hourly wage to annual, monthly, and weekly salary</p>
+                            </a>
+                            <a
+                                href="/calculators/compound-interest.html"
+                                class="calculator-card"
+                            >
+                                <h3>Compound Interest Calculator</h3>
+                                <p>
+                                    Calculate compound interest and investment
+                                    growth
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/simple-interest.html"
+                                class="calculator-card"
+                            >
+                                <h3>Simple Interest Calculator</h3>
+                                <p>
+                                    Calculate simple interest on loans and
+                                    investments
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/mortgage.html"
+                                class="calculator-card"
+                            >
+                                <h3>Mortgage Calculator</h3>
+                                <p>
+                                    Calculate mortgage payments and amortization
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/emi.html"
+                                class="calculator-card"
+                            >
+                                <h3>EMI Calculator</h3>
+                                <p>Calculate Equated Monthly Installments</p>
+                            </a>
+                            <a
+                                href="/calculators/car-loan.html"
+                                class="calculator-card"
+                            >
+                                <h3>Car Loan Calculator</h3>
+                                <p>
+                                    Calculate car loan payments and total cost
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/investment-roi.html"
+                                class="calculator-card"
+                            >
+                                <h3>Investment ROI Calculator</h3>
+                                <p>Calculate return on investment percentage</p>
+                            </a>
+                            <a
+                                href="/calculators/retirement.html"
+                                class="calculator-card"
+                            >
+                                <h3>Retirement Calculator</h3>
+                                <p>Plan for retirement savings and goals</p>
+                            </a>
+                            <a
+                                href="/calculators/amortization.html"
+                                class="calculator-card"
+                            >
+                                <h3>Amortization Calculator</h3>
+                                <p>Calculate loan amortization schedules</p>
+                            </a>
+                            <a
+                                href="/calculators/payment.html"
+                                class="calculator-card"
+                            >
+                                <h3>Payment Calculator</h3>
+                                <p>Calculate loan payments and terms</p>
+                            </a>
+                            <a
+                                href="/calculators/inflation.html"
+                                class="calculator-card"
+                            >
+                                <h3>Inflation Calculator</h3>
+                                <p>Calculate inflation impact on money</p>
+                            </a>
+                            <a
+                                href="/calculators/tax.html"
+                                class="calculator-card"
+                            >
+                                <h3>Tax Calculator</h3>
+                                <p>Estimate your tax liability</p>
+                            </a>
+                            <a
+                                href="/calculators/salary-after-tax.html"
+                                class="calculator-card"
+                            >
+                                <h3>Salary After Tax Calculator</h3>
+                                <p>Calculate take-home salary after taxes</p>
+                            </a>
+                            <a
+                                href="/calculators/sales-tax.html"
+                                class="calculator-card"
+                            >
+                                <h3>Sales Tax Calculator</h3>
+                                <p>Calculate sales tax and total prices</p>
+                            </a>
+                            <a
+                                href="/calculators/discount.html"
+                                class="calculator-card"
+                            >
+                                <h3>Discount Calculator</h3>
+                                <p>Calculate discounts and final prices</p>
+                            </a>
+                            <a
+                                href="/calculators/tip.html"
+                                class="calculator-card"
+                            >
+                                <h3>Tip Calculator</h3>
+                                <p>Calculate tips and split bills</p>
+                            </a>
+                            <a
+                                href="/calculators/fuel-cost.html"
+                                class="calculator-card"
+                            >
+                                <h3>Fuel Cost Calculator</h3>
+                                <p>Calculate fuel costs and trip expenses</p>
+                            </a>
+                            <a
+                                href="/calculators/currency-converter.html"
+                                class="calculator-card"
+                            >
+                                <h3>Currency Converter</h3>
+                                <p>Convert between different currencies</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ad #4: Rectangle — between Finance and Other sections -->
+                    <div class="ad-slot ad-homepage ad-rectangle" id="hp-ad-4" aria-label="Advertisement" role="complementary">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="4444444444"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                    </div>
+
+                    <div class="category-section" id="other-calculators">
+                        <h2>🔧 Other Calculators</h2>
+                        <div class="calculator-grid">
+                            <a
+                                href="/calculators/love.html"
+                                class="calculator-card"
+                            >
+                                <h3>Love Calculator</h3>
+                                <p>Test your romantic compatibility and love match percentage</p>
+                            </a>
+                            <a
+                                href="/calculators/square-footage.html"
+                                class="calculator-card"
+                            >
+                                <h3>Square Footage Calculator</h3>
+                                <p>Calculate area of any room, floor, or space in sq ft and sq m</p>
+                            </a>
+                            <a
+                                href="/calculators/age.html"
+                                class="calculator-card"
+                            >
+                                <h3>Age Calculator</h3>
+                                <p>
+                                    Calculate your exact age in years, months,
+                                    and days
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/date-difference.html"
+                                class="calculator-card"
+                            >
+                                <h3>Date Difference Calculator</h3>
+                                <p>
+                                    Calculate days between dates or add/subtract
+                                    days
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/time-calculator.html"
+                                class="calculator-card"
+                            >
+                                <h3>Time Calculator</h3>
+                                <p>Add, subtract, and convert time</p>
+                            </a>
+                            <a
+                                href="/calculators/hours.html"
+                                class="calculator-card"
+                            >
+                                <h3>Hours Calculator</h3>
+                                <p>
+                                    Calculate hours worked and time differences
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/qr-code.html"
+                                class="calculator-card"
+                            >
+                                <h3>QR Code Generator</h3>
+                                <p>
+                                    Generate QR codes for URLs, text, WiFi, and
+                                    more
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/password-generator.html"
+                                class="calculator-card"
+                            >
+                                <h3>Password Generator</h3>
+                                <p>
+                                    Generate secure passwords with custom
+                                    options
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/random-number.html"
+                                class="calculator-card"
+                            >
+                                <h3>Random Number Generator</h3>
+                                <p>Generate random numbers and sequences</p>
+                            </a>
+                            <a
+                                href="/calculators/subnet.html"
+                                class="calculator-card"
+                            >
+                                <h3>Subnet Calculator</h3>
+                                <p>
+                                    Calculate IP subnets and network addresses
+                                </p>
+                            </a>
+                            <a
+                                href="/calculators/concrete.html"
+                                class="calculator-card"
+                            >
+                                <h3>Concrete Calculator</h3>
+                                <p>
+                                    Calculate concrete volume and materials
+                                    needed
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="all-calculators">
+                    <h2>Browse All 60+ Calculators</h2>
+                    <p>
+                        Explore our complete collection of free online
+                        calculators designed to make your calculations quick,
+                        accurate, and hassle-free.
+                    </p>
+                    <div class="calculator-links">
+                        <a href="/calculators/age.html">Age Calculator</a>
+                        <a href="/calculators/amortization.html"
+                            >Amortization Calculator</a
+                        >
+                        <a href="/calculators/area.html">Area Calculator</a>
+                        <a href="/calculators/average.html"
+                            >Average Calculator</a
+                        >
+                        <a href="/calculators/binary-converter.html"
+                            >Binary Converter</a
+                        >
+                        <a href="/calculators/bmi.html">BMI Calculator</a>
+                        <a href="/calculators/bmr.html">BMR Calculator</a>
+                        <a href="/calculators/body-fat.html"
+                            >Body Fat Calculator</a
+                        >
+                        <a href="/calculators/calorie.html"
+                            >Calorie Calculator</a
+                        >
+                        <a href="/calculators/car-loan.html"
+                            >Car Loan Calculator</a
+                        >
+                        <a href="/calculators/cgpa.html">CGPA Calculator</a>
+                        <a href="/calculators/compound-interest.html"
+                            >Compound Interest Calculator</a
+                        >
+                        <a href="/calculators/concrete.html"
+                            >Concrete Calculator</a
+                        >
+                        <a href="/calculators/currency-converter.html"
+                            >Currency Converter</a
+                        >
+                        <a href="/calculators/date-difference.html"
+                            >Date Difference Calculator</a
+                        >
+                        <a href="/calculators/discount.html"
+                            >Discount Calculator</a
+                        >
+                        <a href="/calculators/emi.html">EMI Calculator</a>
+                        <a href="/calculators/fraction.html"
+                            >Fraction Calculator</a
+                        >
+                        <a href="/calculators/fuel-cost.html"
+                            >Fuel Cost Calculator</a
+                        >
+                        <a href="/calculators/gpa.html">GPA Calculator</a>
+                        <a href="/calculators/grade.html">Grade Calculator</a>
+                        <a href="/calculators/hours.html">Hours Calculator</a>
+                        <a href="/calculators/ideal-weight.html"
+                            >Ideal Weight Calculator</a
+                        >
+                        <a href="/calculators/inflation.html"
+                            >Inflation Calculator</a
+                        >
+                        <a href="/calculators/investment-roi.html"
+                            >Investment ROI Calculator</a
+                        >
+                        <a href="/calculators/mortgage.html"
+                            >Mortgage Calculator</a
+                        >
+                        <a href="/calculators/pace.html">Pace Calculator</a>
+                        <a href="/calculators/password-generator.html"
+                            >Password Generator</a
+                        >
+                        <a href="/calculators/payment.html"
+                            >Payment Calculator</a
+                        >
+                        <a href="/calculators/percentage.html"
+                            >Percentage Calculator</a
+                        >
+                        <a href="/calculators/pregnancy.html"
+                            >Pregnancy Calculator</a
+                        >
+                        <a href="/calculators/qr-code.html"
+                            >QR Code Generator</a
+                        >
+                        <a href="/calculators/random-number.html"
+                            >Random Number Generator</a
+                        >
+                        <a href="/calculators/retirement.html"
+                            >Retirement Calculator</a
+                        >
+                        <a href="/calculators/salary-after-tax.html"
+                            >Salary After Tax Calculator</a
+                        >
+                        <a href="/calculators/sales-tax.html"
+                            >Sales Tax Calculator</a
+                        >
+                        <a href="/calculators/scientific.html"
+                            >Scientific Calculator</a
+                        >
+                        <a href="/calculators/simple-interest.html"
+                            >Simple Interest Calculator</a
+                        >
+                        <a href="/calculators/standard-deviation.html"
+                            >Standard Deviation Calculator</a
+                        >
+                        <a href="/calculators/subnet.html">Subnet Calculator</a>
+                        <a href="/calculators/tax.html">Tax Calculator</a>
+                        <a href="/calculators/time-calculator.html"
+                            >Time Calculator</a
+                        >
+                        <a href="/calculators/tip.html">Tip Calculator</a>
+                        <a href="/calculators/triangle.html"
+                            >Triangle Calculator</a
+                        >
+                        <a href="/calculators/unit-converter.html"
+                            >Unit Converter</a
+                        >
+                        <a href="/calculators/volume.html">Volume Calculator</a>
+                        <a href="/calculators/water-intake.html">Water Intake Calculator</a>
+                        <a href="/calculators/paycheck.html">Paycheck Calculator</a>
+                        <a href="/calculators/debt-to-income.html">Debt-to-Income Calculator</a>
+                        <a href="/calculators/cagr.html">CAGR Calculator</a>
+                        <a href="/calculators/net-worth.html">Net Worth Calculator</a>
+                        <a href="/calculators/loan-to-value.html">Loan-to-Value Calculator</a>
+                        <a href="/calculators/sleep.html">Sleep Calculator</a>
+                        <a href="/calculators/macro-calculator.html">Macro Calculator</a>
+                        <a href="/calculators/ovulation.html">Ovulation Calculator</a>
+                        <a href="/calculators/due-date.html">Due Date Calculator</a>
+                        <a href="/calculators/gst-hst.html">GST/HST Calculator (Canada)</a>
+                    </div>
+                </section>
+
+                <section class="country-section" style="margin:2rem 0;padding:2rem;background:var(--bg-secondary);border-radius:1rem;border:1px solid var(--border-color)">
+                    <h2>🌍 Calculators by Country</h2>
+                    <p style="color:var(--text-secondary);margin-bottom:1.5rem">Calculators tailored for your local currency, taxes, and conventions.</p>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
+                        <a href="/uk/" style="display:flex;align-items:center;gap:.75rem;padding:1.25rem;background:var(--bg-primary);border:1px solid var(--border-color);border-radius:.75rem;text-decoration:none;color:var(--text-primary);transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
+                            <span style="font-size:2rem">🇬🇧</span>
+                            <div>
+                                <div style="font-weight:600;font-size:1rem">United Kingdom</div>
+                                <div style="font-size:.8rem;color:var(--text-secondary)">GBP · UK tax · NHS tools</div>
+                            </div>
+                        </a>
+                        <a href="/ca/" style="display:flex;align-items:center;gap:.75rem;padding:1.25rem;background:var(--bg-primary);border:1px solid var(--border-color);border-radius:.75rem;text-decoration:none;color:var(--text-primary);transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
+                            <span style="font-size:2rem">🇨🇦</span>
+                            <div>
+                                <div style="font-weight:600;font-size:1rem">Canada</div>
+                                <div style="font-size:.8rem;color:var(--text-secondary)">CAD · GST/HST · Provincial tax</div>
+                            </div>
+                        </a>
+                        <a href="/" style="display:flex;align-items:center;gap:.75rem;padding:1.25rem;background:var(--bg-primary);border:1px solid var(--border-color);border-radius:.75rem;text-decoration:none;color:var(--text-primary);transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
+                            <span style="font-size:2rem">🇺🇸</span>
+                            <div>
+                                <div style="font-weight:600;font-size:1rem">United States</div>
+                                <div style="font-size:.8rem;color:var(--text-secondary)">USD · Federal & state tax</div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            <!-- Ad #5: Leaderboard — above footer (highly engaged users) -->
+            <div class="ad-slot ad-homepage ad-leaderboard ad-prefooter" id="hp-ad-5" aria-label="Advertisement" role="complementary">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="5555555555"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+
+        <script type="module" src="/assets/js/main.js?v=108"></script>
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovulation Calculator – Predict Your Most Fertile Days | FreebieCalculator</title>
+    <meta name="description" content="Free ovulation calculator. Predict your most fertile days and ovulation date based on your menstrual cycle. Helpful for pregnancy planning or natural family planning.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/ovulation.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="Ovulation Calculator – Find Your Fertile Window">
+    <meta property="og:description" content="Predict ovulation date and fertile days based on your last period and cycle length.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/ovulation.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ovulation Calculator","description":"Predict ovulation and fertile window based on menstrual cycle","applicationCategory":"HealthApplication","operatingSystem":"Web Browser","url":"https://freebiecalculator.com/calculators/ovulation.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"FreebieCalculator.com","url":"https://freebiecalculator.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"When do I ovulate?","acceptedAnswer":{"@type":"Answer","text":"Ovulation typically occurs about 14 days before your next period. For a 28-day cycle, that's around day 14. For a 30-day cycle, around day 16. The fertile window spans the 5 days before ovulation plus ovulation day itself."}},
+        {"@type":"Question","name":"How long is the fertile window?","acceptedAnswer":{"@type":"Answer","text":"The fertile window is about 6 days: the 5 days before ovulation and the day of ovulation. Sperm can survive 3–5 days in the reproductive tract, and the egg is viable for 12–24 hours after release."}},
+        {"@type":"Question","name":"What are signs of ovulation?","acceptedAnswer":{"@type":"Answer","text":"Common signs include: change in cervical mucus (clear, stretchy, egg-white consistency), mild pelvic pain or cramping (mittelschmerz), slight rise in basal body temperature, increased libido, and breast tenderness."}},
+        {"@type":"Question","name":"Can I get pregnant outside the fertile window?","acceptedAnswer":{"@type":"Answer","text":"Pregnancy is highly unlikely outside the fertile window, but no tracking method is 100% reliable. Cycles can vary month to month. For contraception, consult a healthcare provider about more reliable methods."}},
+        {"@type":"Question","name":"Is this calculator accurate?","acceptedAnswer":{"@type":"Answer","text":"This calculator provides estimates based on average cycle patterns. Results are most accurate for women with regular cycles. Irregular cycles make prediction harder. For fertility treatment, work with a healthcare provider."}}
+    ]}</script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/></svg>freebiecalculator.com</a>
+            <nav role="navigation" aria-label="Main navigation"><ul class="nav-menu"><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li><a href="/help/">Help</a></li><li><a href="/#math-calculators">General</a></li><li><a href="/#health-calculators">Health</a></li><li><a href="/#financial-calculators">Finance</a></li><li><a href="/#other-calculators">Other</a></li></ul></nav>
+            <div class="header-actions"><div id="language-selector-container"></div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button><button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/#health-calculators">Health Calculators</a> › <span>Ovulation Calculator</span></nav>
+            <div class="calculator-header">
+                <h1>🌸 Ovulation Calculator</h1>
+                <p>Predict your most fertile days and ovulation date based on your menstrual cycle.</p>
+            </div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container">
+                <div class="calculator-tool">
+                    <form id="ovul-form">
+                        <div class="form-group">
+                            <label for="last-period">First Day of Last Period</label>
+                            <input type="date" id="last-period" required>
+                        </div>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="cycle-length">Cycle Length (days)</label>
+                                <input type="number" id="cycle-length" value="28" min="21" max="45" step="1">
+                                <small>Average is 28 days (range: 21–45)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="period-length">Period Length (days)</label>
+                                <input type="number" id="period-length" value="5" min="1" max="10" step="1">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Calculate Fertile Days</button>
+                    </form>
+                    <div id="ovul-result" class="result-container" style="display:none">
+                        <h3>Your Fertility Calendar</h3>
+                        <div class="result-grid" id="ovul-grid"></div>
+                        <div id="ovul-calendar" style="margin-top:1.5rem"></div>
+                        <p style="font-size:.8rem;color:var(--text-muted);margin-top:1rem">⚕️ <em>This calculator provides estimates only. Consult a healthcare provider for medical advice.</em></p>
+                    </div>
+                </div>
+            </div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Understanding Your Cycle</h2>
+                <p>A typical menstrual cycle has four phases:</p>
+                <table class="data-table">
+                    <thead><tr><th>Phase</th><th>Days (28-day cycle)</th><th>What Happens</th></tr></thead>
+                    <tbody>
+                        <tr><td>Menstruation</td><td>Days 1–5</td><td>Uterine lining sheds</td></tr>
+                        <tr><td>Follicular</td><td>Days 1–13</td><td>Follicles develop; estrogen rises</td></tr>
+                        <tr><td>Ovulation</td><td>Day 14</td><td>Egg is released — peak fertility</td></tr>
+                        <tr><td>Luteal</td><td>Days 15–28</td><td>Progesterone rises; uterus prepares</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item"><div class="faq-question">When do I ovulate?</div><div class="faq-answer">Ovulation usually occurs ~14 days before your next period. For a 28-day cycle, that's day 14. The fertile window is the 5 days before ovulation plus ovulation day.</div></div>
+                    <div class="faq-item"><div class="faq-question">How long is the fertile window?</div><div class="faq-answer">About 6 days: 5 days before ovulation + ovulation day. Sperm can survive 3–5 days; the egg is viable 12–24 hours. The 2–3 days before ovulation are most fertile.</div></div>
+                    <div class="faq-item"><div class="faq-question">What are signs of ovulation?</div><div class="faq-answer">Clear stretchy mucus (egg-white texture), mild pelvic cramps, slight temperature rise, increased libido, and breast tenderness are common signs.</div></div>
+                    <div class="faq-item"><div class="faq-question">Is this calculator accurate?</div><div class="faq-answer">It provides estimates based on average cycle patterns. Most accurate for regular cycles. Irregular cycles make prediction harder. For fertility treatment, always work with a healthcare provider.</div></div>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Related Health Calculators</h2>
+                <div class="calculator-links">
+                    <a href="/calculators/pregnancy.html">Pregnancy Calculator</a>
+                    <a href="/calculators/due-date.html">Due Date Calculator</a>
+                    <a href="/calculators/age.html">Age Calculator</a>
+                    <a href="/calculators/bmi.html">BMI Calculator</a>
+                    <a href="/calculators/water-intake.html">Water Intake Calculator</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+    // Set default date to today
+    document.getElementById('last-period').valueAsDate = new Date();
+    function addDays(d,n){const r=new Date(d);r.setDate(r.getDate()+n);return r;}
+    function fmtDate(d){return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+    document.getElementById('ovul-form').addEventListener('submit',function(e){
+        e.preventDefault();
+        const lp=new Date(document.getElementById('last-period').value+'T00:00:00');
+        const cl=parseInt(document.getElementById('cycle-length').value)||28;
+        const pl=parseInt(document.getElementById('period-length').value)||5;
+        // Ovulation = cycle length - 14 days before next period
+        const ovulDay=cl-14;
+        const ovulDate=addDays(lp,ovulDay);
+        const fertStart=addDays(ovulDate,-5);
+        const fertEnd=ovulDate; // day of ovulation
+        const nextPeriod=addDays(lp,cl);
+        const nextOvul=addDays(nextPeriod,cl-14);
+        const nextFertStart=addDays(nextOvul,-5);
+        document.getElementById('ovul-grid').innerHTML=`
+            <div class="result-card primary"><div class="result-label">Ovulation Date</div><div class="result-value" style="font-size:.95rem">${fmtDate(ovulDate)}</div></div>
+            <div class="result-card"><div class="result-label">Fertile Window Starts</div><div class="result-value" style="font-size:.9rem">${fmtDate(fertStart)}</div></div>
+            <div class="result-card"><div class="result-label">Fertile Window Ends</div><div class="result-value" style="font-size:.9rem">${fmtDate(fertEnd)}</div></div>
+            <div class="result-card"><div class="result-label">Next Period</div><div class="result-value" style="font-size:.9rem">${fmtDate(nextPeriod)}</div></div>
+        `;
+        document.getElementById('ovul-calendar').innerHTML=`
+            <h4>Next 3 Months Overview</h4>
+            <table class="data-table">
+                <thead><tr><th>Cycle</th><th>Period Starts</th><th>Fertile Window</th><th>Ovulation</th></tr></thead>
+                <tbody>
+                    <tr><td>Current</td><td>${fmtDate(lp)}</td><td>${fmtDate(fertStart)} – ${fmtDate(fertEnd)}</td><td>${fmtDate(ovulDate)}</td></tr>
+                    <tr><td>Next</td><td>${fmtDate(nextPeriod)}</td><td>${fmtDate(nextFertStart)} – ${fmtDate(nextOvul)}</td><td>${fmtDate(nextOvul)}</td></tr>
+                    <tr><td>+2 months</td><td>${fmtDate(addDays(nextPeriod,cl))}</td><td>${fmtDate(addDays(nextFertStart,cl))} – ${fmtDate(addDays(nextOvul,cl))}</td><td>${fmtDate(addDays(nextOvul,cl))}</td></tr>
+                </tbody>
+            </table>`;
+        document.getElementById('ovul-result').style.display='block';
+    });
+    </script>
+    <style>
+        .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1rem}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:.5rem;padding:1rem;text-align:center}
+        .result-card.primary{background:var(--primary-solid);color:white;border-color:var(--primary-solid)}
+        .result-card.primary .result-label{color:rgba(255,255,255,.8)}
+        .result-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.25rem}
+        .result-value{font-size:1.05rem;font-weight:700;color:var(--text-primary)}
+        .data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+        .data-table th,.data-table td{padding:.5rem .75rem;text-align:left;border:1px solid var(--border-color);font-size:.85rem}
+        .data-table th{background:var(--bg-secondary);font-weight:600}
+        .data-table tr:nth-child(even){background:var(--bg-secondary)}
+    </style>
+</body>
+</html>

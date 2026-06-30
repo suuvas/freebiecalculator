@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator - Calculate Your Grade Point Average | FreebieCalculator</title>
+    <meta name="description" content="Free GPA calculator to calculate your Grade Point Average from letter grades and credit hours. Supports 4.0 and weighted GPA calculations.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/gpa.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="GPA Calculator - Calculate Your Grade Point Average">
+    <meta property="og:description" content="Calculate your GPA from letter grades and credit hours with this free online calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/gpa.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "GPA Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate Grade Point Average (GPA) from letter grades and credit hours for academic planning.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Education Calculators",
+                "item": "https://freebiecalculator.com/#education"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "GPA Calculator",
+                "item": "https://freebiecalculator.com/calculators/gpa.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the difference between weighted and unweighted GPA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Unweighted GPA uses the standard 4.0 scale regardless of course difficulty. Weighted GPA gives extra points for advanced courses (Honors, AP, IB), potentially exceeding 4.0. Colleges often recalculate using their own weighting systems."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I improve my GPA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Focus on earning higher grades in future courses, especially those with more credit hours. Consider retaking failed courses if allowed. Taking additional courses with high grades can also help, but the impact diminishes as you accumulate more credits."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do colleges prefer weighted or unweighted GPA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most colleges look at both and often recalculate using their own methods. They consider course rigor (weighted GPA context) alongside raw performance (unweighted GPA). Taking challenging courses with good grades is generally viewed favorably."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if my school uses a different grading scale?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Grading scales vary by school and country. Some use numerical grades, others use different letter grade systems. Our calculator uses the standard U.S. 4.0 scale. Consult your academic advisor for conversions from other systems."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I include failed or repeated courses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Include all courses that count toward your GPA according to your school's policy. Some schools replace grades when you repeat courses, others average them, and some count both. Check your institution's specific grade replacement policy."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>GPA Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <div class="form-group">
+                        <label for="gpa-scale">GPA Scale:</label>
+                        <select id="gpa-scale">
+                            <option value="4.0" selected>4.0 Scale</option>
+                            <option value="5.0">5.0 Scale (Weighted)</option>
+                        </select>
+                    </div>
+                    
+                    <div id="courses-container">
+                        <h3>Enter Your Courses</h3>
+                        <div class="course-row" data-course="1">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="course-name-1">Course Name:</label>
+                                    <input type="text" id="course-name-1" placeholder="e.g., Mathematics">
+                                </div>
+                                <div class="form-group">
+                                    <label for="grade-1">Letter Grade:</label>
+                                    <select id="grade-1" class="grade-select">
+                                        <option value="">Select Grade</option>
+                                        <option value="A+">A+ (4.0)</option>
+                                        <option value="A">A (4.0)</option>
+                                        <option value="A-">A- (3.7)</option>
+                                        <option value="B+">B+ (3.3)</option>
+                                        <option value="B">B (3.0)</option>
+                                        <option value="B-">B- (2.7)</option>
+                                        <option value="C+">C+ (2.3)</option>
+                                        <option value="C">C (2.0)</option>
+                                        <option value="C-">C- (1.7)</option>
+                                        <option value="D+">D+ (1.3)</option>
+                                        <option value="D">D (1.0)</option>
+                                        <option value="D-">D- (0.7)</option>
+                                        <option value="F">F (0.0)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="credits-1">Credit Hours:</label>
+                                    <input type="number" id="credits-1" step="0.5" placeholder="e.g., 3" min="0.5" max="6">
+                                </div>
+                                <div class="form-group">
+                                    <label for="course-type-1">Course Type:</label>
+                                    <select id="course-type-1" class="course-type-select">
+                                        <option value="regular">Regular</option>
+                                        <option value="honors">Honors (+0.5)</option>
+                                        <option value="ap">AP/IB (+1.0)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="add-course" class="btn-secondary">Add Another Course</button>
+                        <button type="button" id="calculate-gpa">Calculate GPA</button>
+                    </div>
+                    
+                    <div id="gpa-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="gpa-display"></div>
+                        <div class="result-details" id="gpa-breakdown"></div>
+                        <div class="result-details" id="grade-distribution"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>How GPA Calculation Works</h2>
+                    <p>
+                        Grade Point Average (GPA) is a numerical representation of your academic performance, calculated 
+                        by converting letter grades to grade points and averaging them based on credit hours. The most 
+                        common system is the 4.0 scale, where an A equals 4.0 points, but weighted scales can go higher 
+                        for advanced courses.
+                    </p>
+                    <p>
+                        Understanding your GPA is crucial for college admissions, scholarship eligibility, academic standing, 
+                        and graduation requirements. Our calculator handles both standard 4.0 scale and weighted 5.0 scale 
+                        calculations, accounting for course difficulty levels.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>GPA Calculation Formula</h2>
+                    
+                    <h4>Basic GPA Formula</h4>
+                    <pre><code>
+GPA = Total Quality Points ÷ Total Credit Hours
+
+Quality Points = Grade Points × Credit Hours
+
+Example:
+Course 1: A (4.0) × 3 credits = 12 quality points
+Course 2: B (3.0) × 4 credits = 12 quality points
+Course 3: C (2.0) × 2 credits = 4 quality points
+
+GPA = (12 + 12 + 4) ÷ (3 + 4 + 2) = 28 ÷ 9 = 3.11
+                    </code></pre>
+                    
+                    <h4>Grade Point Values (4.0 Scale)</h4>
+                    <ul>
+                        <li>A+ / A = 4.0</li>
+                        <li>A- = 3.7</li>
+                        <li>B+ = 3.3</li>
+                        <li>B = 3.0</li>
+                        <li>B- = 2.7</li>
+                        <li>C+ = 2.3</li>
+                        <li>C = 2.0</li>
+                        <li>C- = 1.7</li>
+                        <li>D+ = 1.3</li>
+                        <li>D = 1.0</li>
+                        <li>D- = 0.7</li>
+                        <li>F = 0.0</li>
+                    </ul>
+                    
+                    <h4>Weighted GPA (5.0 Scale)</h4>
+                    <p>For advanced courses, additional points are added:</p>
+                    <ul>
+                        <li><strong>Regular courses:</strong> Standard grade points</li>
+                        <li><strong>Honors courses:</strong> +0.5 points</li>
+                        <li><strong>AP/IB courses:</strong> +1.0 points</li>
+                    </ul>
+                    <p>Example: An A in AP Biology = 4.0 + 1.0 = 5.0 points</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Standard GPA Calculation</h4>
+                        <p><strong>Courses:</strong></p>
+                        <ul>
+                            <li>English (4 credits): B+ → 3.3 × 4 = 13.2 points</li>
+                            <li>Math (3 credits): A → 4.0 × 3 = 12.0 points</li>
+                            <li>Science (3 credits): B → 3.0 × 3 = 9.0 points</li>
+                            <li>History (2 credits): A- → 3.7 × 2 = 7.4 points</li>
+                        </ul>
+                        <p><strong>Total:</strong> 41.6 quality points ÷ 12 credit hours = 3.47 GPA</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Weighted GPA with AP Courses</h4>
+                        <p><strong>Courses:</strong></p>
+                        <ul>
+                            <li>AP Chemistry (4 credits): A → (4.0 + 1.0) × 4 = 20.0 points</li>
+                            <li>Honors Math (3 credits): B+ → (3.3 + 0.5) × 3 = 11.4 points</li>
+                            <li>Regular English (3 credits): A- → 3.7 × 3 = 11.1 points</li>
+                        </ul>
+                        <p><strong>Total:</strong> 42.5 quality points ÷ 10 credit hours = 4.25 weighted GPA</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>GPA Interpretation Guide</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>🎯 GPA Ranges & Meanings</h4>
+                            <ul>
+                                <li><strong>3.8-4.0:</strong> Summa Cum Laude (Excellent)</li>
+                                <li><strong>3.5-3.79:</strong> Magna Cum Laude (Very Good)</li>
+                                <li><strong>3.2-3.49:</strong> Cum Laude (Good)</li>
+                                <li><strong>2.8-3.19:</strong> Above Average</li>
+                                <li><strong>2.5-2.79:</strong> Average</li>
+                                <li><strong>2.0-2.49:</strong> Below Average</li>
+                                <li><strong>Below 2.0:</strong> Academic Probation Risk</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>📚 Academic Implications</h4>
+                            <ul>
+                                <li><strong>Scholarships:</strong> Often require 3.0+ GPA</li>
+                                <li><strong>Honor Roll:</strong> Usually 3.5+ GPA</li>
+                                <li><strong>Dean's List:</strong> Typically 3.5-3.7+ GPA</li>
+                                <li><strong>Graduate School:</strong> Generally 3.0+ required</li>
+                                <li><strong>Competitive Programs:</strong> Often 3.5+ GPA</li>
+                                <li><strong>Academic Probation:</strong> Usually below 2.0 GPA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between weighted and unweighted GPA?</div>
+                        <div class="faq-answer">
+                            Unweighted GPA uses the standard 4.0 scale regardless of course difficulty. Weighted GPA 
+                            gives extra points for advanced courses (Honors, AP, IB), potentially exceeding 4.0. 
+                            Colleges often recalculate using their own weighting systems.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I improve my GPA?</div>
+                        <div class="faq-answer">
+                            Focus on earning higher grades in future courses, especially those with more credit hours. 
+                            Consider retaking failed courses if allowed. Taking additional courses with high grades can 
+                            also help, but the impact diminishes as you accumulate more credits.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do colleges prefer weighted or unweighted GPA?</div>
+                        <div class="faq-answer">
+                            Most colleges look at both and often recalculate using their own methods. They consider 
+                            course rigor (weighted GPA context) alongside raw performance (unweighted GPA). Taking 
+                            challenging courses with good grades is generally viewed favorably.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What if my school uses a different grading scale?</div>
+                        <div class="faq-answer">
+                            Grading scales vary by school and country. Some use numerical grades, others use different 
+                            letter grade systems. Our calculator uses the standard U.S. 4.0 scale. Consult your academic 
+                            advisor for conversions from other systems.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I include failed or repeated courses?</div>
+                        <div class="faq-answer">
+                            Include all courses that count toward your GPA according to your school's policy. Some 
+                            schools replace grades when you repeat courses, others average them, and some count both. 
+                            Check your institution's specific grade replacement policy.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Educational Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/cgpa.html">CGPA Calculator</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/age.html">Age Calculator</a>
+                        <a href="/calculators/date-difference.html">Date Difference Calculator</a>
+                        <a href="/calculators/discount.html">Discount Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber, roundTo } from '/assets/js/utils/math.js';
+        
+        let courseCount = 1;
+        
+        // Grade point values
+        const gradePoints = {
+            'A+': 4.0, 'A': 4.0, 'A-': 3.7,
+            'B+': 3.3, 'B': 3.0, 'B-': 2.7,
+            'C+': 2.3, 'C': 2.0, 'C-': 1.7,
+            'D+': 1.3, 'D': 1.0, 'D-': 0.7,
+            'F': 0.0
+        };
+        
+        const courseTypeBonus = {
+            'regular': 0.0,
+            'honors': 0.5,
+            'ap': 1.0
+        };
+        
+        // Update grade options when scale changes
+        document.getElementById('gpa-scale').addEventListener('change', function(e) {
+            const isWeighted = e.target.value === '5.0';
+            updateCourseTypeVisibility(isWeighted);
+        });
+        
+        function updateCourseTypeVisibility(show) {
+            const courseTypes = document.querySelectorAll('.course-type-select').forEach(select => {
+                select.parentElement.style.display = show ? 'block' : 'none';
+            });
+        }
+        
+        // Add course functionality
+        document.getElementById('add-course').addEventListener('click', function() {
+            courseCount++;
+            const container = document.getElementById('courses-container');
+            const isWeighted = document.getElementById('gpa-scale').value === '5.0';
+            
+            const courseRow = document.createElement('div');
+            courseRow.className = 'course-row';
+            courseRow.setAttribute('data-course', courseCount);
+            
+            courseRow.innerHTML = `
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="course-name-${courseCount}">Course Name:</label>
+                        <input type="text" id="course-name-${courseCount}" placeholder="e.g., Mathematics">
+                    </div>
+                    <div class="form-group">
+                        <label for="grade-${courseCount}">Letter Grade:</label>
+                        <select id="grade-${courseCount}" class="grade-select">
+                            <option value="">Select Grade</option>
+                            <option value="A+">A+ (4.0)</option>
+                            <option value="A">A (4.0)</option>
+                            <option value="A-">A- (3.7)</option>
+                            <option value="B+">B+ (3.3)</option>
+                            <option value="B">B (3.0)</option>
+                            <option value="B-">B- (2.7)</option>
+                            <option value="C+">C+ (2.3)</option>
+                            <option value="C">C (2.0)</option>
+                            <option value="C-">C- (1.7)</option>
+                            <option value="D+">D+ (1.3)</option>
+                            <option value="D">D (1.0)</option>
+                            <option value="D-">D- (0.7)</option>
+                            <option value="F">F (0.0)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="credits-${courseCount}">Credit Hours:</label>
+                        <input type="number" id="credits-${courseCount}" step="0.5" placeholder="e.g., 3" min="0.5" max="6">
+                    </div>
+                    <div class="form-group" style="display: ${isWeighted ? 'block' : 'none'}">
+                        <label for="course-type-${courseCount}">Course Type:</label>
+                        <select id="course-type-${courseCount}" class="course-type-select">
+                            <option value="regular">Regular</option>
+                            <option value="honors">Honors (+0.5)</option>
+                            <option value="ap">AP/IB (+1.0)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn-secondary" onclick="removeCourse(${courseCount})">Remove</button>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(courseRow);
+        });
+        
+        // Remove course functionality
+        window.removeCourse = function(courseId) {
+            const courseRow = document.querySelector(`[data-course="${courseId}"]`);
+            if (courseRow && document.querySelectorAll('.course-row').length > 1) {
+                courseRow.remove();
+            }
+        };
+        
+        // Calculate GPA
+        document.getElementById('calculate-gpa').addEventListener('click', function() {
+            const courseRows = document.querySelectorAll('.course-row');
+            const isWeighted = document.getElementById('gpa-scale').value === '5.0';
+            
+            let totalQualityPoints = 0;
+            let totalCredits = 0;
+            let courses = [];
+            let gradeDistribution = {};
+            
+            for (const row of courseRows) {
+                const courseId = row.getAttribute('data-course');
+                const courseName = document.getElementById(`course-name-${courseId}`).value || `Course ${courseId}`;
+                const grade = document.getElementById(`grade-${courseId}`).value;
+                const credits = parseFloat(document.getElementById(`credits-${courseId}`).value);
+                const courseType = isWeighted ? document.getElementById(`course-type-${courseId}`).value : 'regular';
+                
+                if (!grade || isNaN(credits) || credits <= 0) {
+                    continue; // Skip incomplete entries
+                }
+                
+                let points = gradePoints[grade] || 0;
+                if (isWeighted) {
+                    points += courseTypeBonus[courseType] || 0;
+                    points = Math.min(points, 5.0); // Cap at 5.0 for weighted scale
+                }
+                
+                const qualityPoints = points * credits;
+                totalQualityPoints += qualityPoints;
+                totalCredits += credits;
+                
+                courses.push({
+                    name: courseName,
+                    grade: grade,
+                    credits: credits,
+                    points: points,
+                    qualityPoints: qualityPoints,
+                    courseType: courseType
+                });
+                
+                // Track grade distribution
+                gradeDistribution[grade] = (gradeDistribution[grade] || 0) + 1;
+            }
+            
+            if (totalCredits === 0) {
+                alert('Please enter at least one complete course with grade and credit hours');
+                return;
+            }
+            
+            const gpa = totalQualityPoints / totalCredits;
+            
+            // Display results
+            document.getElementById('gpa-display').textContent = 
+                `Your GPA: ${formatNumber(gpa, 3)} (${isWeighted ? 'Weighted' : 'Unweighted'})`;
+            
+            let breakdownHtml = `<strong>Course Breakdown:</strong><br>`;
+            courses.forEach(course => {
+                const typeText = isWeighted && course.courseType !== 'regular' ? ` (${course.courseType})` : '';
+                breakdownHtml += `${course.name}: ${course.grade}${typeText} × ${course.credits} credits = ${formatNumber(course.qualityPoints, 2)} points<br>`;
+            });
+            breakdownHtml += `<br><strong>Total:</strong> ${formatNumber(totalQualityPoints, 2)} quality points ÷ ${formatNumber(totalCredits, 1)} credits = ${formatNumber(gpa, 3)} GPA`;
+            
+            document.getElementById('gpa-breakdown').innerHTML = breakdownHtml;
+            
+            // Grade distribution
+            let distributionHtml = `<strong>Grade Distribution:</strong><br>`;
+            Object.entries(gradeDistribution)
+                .sort(([a], [b]) => (gradePoints[b] || 0) - (gradePoints[a] || 0))
+                .forEach(([grade, count]) => {
+                    const percentage = (count / courses.length) * 100;
+                    distributionHtml += `${grade}: ${count} course${count > 1 ? 's' : ''} (${formatNumber(percentage, 0)}%)<br>`;
+                });
+            
+            // Add GPA interpretation
+            let interpretation = '';
+            if (gpa >= 3.8) interpretation = 'Excellent (Summa Cum Laude level)';
+            else if (gpa >= 3.5) interpretation = 'Very Good (Magna Cum Laude level)';
+            else if (gpa >= 3.2) interpretation = 'Good (Cum Laude level)';
+            else if (gpa >= 2.8) interpretation = 'Above Average';
+            else if (gpa >= 2.5) interpretation = 'Average';
+            else if (gpa >= 2.0) interpretation = 'Below Average';
+            else interpretation = 'Poor (at risk of academic probation)';
+            
+            distributionHtml += `<br><strong>Performance Level:</strong> ${interpretation}`;
+            
+            document.getElementById('grade-distribution').innerHTML = distributionHtml;
+            document.getElementById('gpa-result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

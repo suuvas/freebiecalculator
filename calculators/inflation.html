@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inflation Calculator - Calculate Purchasing Power Over Time | FreebieCalculator</title>
+    <meta name="description" content="Free inflation calculator to determine how inflation affects purchasing power over time. Calculate future and past money values with historical inflation rates.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/inflation.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Inflation Calculator - Calculate Purchasing Power Over Time">
+    <meta property="og:description" content="Calculate how inflation affects money value over time with our comprehensive inflation calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/inflation.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Inflation Calculator",
+        "description": "Calculate purchasing power and money value changes due to inflation over time",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Calculators",
+                "item": "https://freebiecalculator.com/#finance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Inflation Calculator",
+                "item": "https://freebiecalculator.com/calculators/inflation.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is inflation?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Inflation is the rate at which the general level of prices for goods and services rises, eroding purchasing power. A 3% inflation rate means what costs $100 today will cost $103 next year."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I use this for retirement planning?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Calculate how much your current expenses will cost in retirement. If you spend $50,000 today and retire in 30 years with 3% inflation, you'll need about $121,363 to maintain the same lifestyle."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between nominal and real returns?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nominal returns don't account for inflation, while real returns do. A 7% investment return with 3% inflation gives a real return of about 4%."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate are inflation projections?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This calculator uses compound growth formulas with your specified rate. Actual inflation varies year to year, so use historical averages for long-term planning and adjust periodically."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#financial-calculators">Financial Calculators</a> › 
+                <span>Inflation Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>📈 Inflation Calculator</h1>
+                <p>Calculate how inflation affects purchasing power and money value over time periods.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <form id="inflation-calculator" class="calculator-form">
+                    <div class="form-group">
+                        <label for="initial-amount">Initial Amount ($)</label>
+                        <input type="number" id="initial-amount" min="0.01" step="0.01" placeholder="e.g., 1000" required>
+                        <small>The money amount you want to analyze</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inflation-rate">Annual Inflation Rate (%)</label>
+                        <input type="number" id="inflation-rate" min="0" step="0.1" value="3" placeholder="e.g., 3" required>
+                        <small>Average annual inflation rate (US historical average: ~3%)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time-period">Time Period (Years)</label>
+                        <input type="number" id="time-period" min="1" step="1" placeholder="e.g., 10" required>
+                        <small>Number of years to calculate inflation impact</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="calculation-type">Calculation Type</label>
+                        <select id="calculation-type" required>
+                            <option value="future">Future Value (what will it cost?)</option>
+                            <option value="past">Past Value (what was it worth?)</option>
+                            <option value="purchasing-power">Purchasing Power Loss</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">Calculate Inflation Impact</button>
+                </form>
+                
+                <div id="inflation-results" class="results-container" style="display: none;">
+                    <h3>📊 Inflation Analysis</h3>
+                    
+                    <div class="result-grid">
+                        <div class="result-card highlight">
+                            <div class="result-label" id="main-result-label">Future Value</div>
+                            <div class="result-value" id="main-result-value">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Purchasing Power</div>
+                            <div class="result-value" id="purchasing-power">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Value Lost to Inflation</div>
+                            <div class="result-value" id="inflation-loss">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Inflation Impact</div>
+                            <div class="result-value" id="inflation-percentage">0%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="inflation-breakdown">
+                        <h4>Detailed Analysis</h4>
+                        <div class="breakdown-grid">
+                            <div class="breakdown-item">
+                                <span class="label">Original Amount:</span>
+                                <span id="original-amount-display">$0</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="label">Time Period:</span>
+                                <span id="time-period-display">0 years</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="label">Annual Inflation:</span>
+                                <span id="inflation-rate-display">0%</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="label">Total Inflation:</span>
+                                <span id="total-inflation-display">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="yearly-breakdown">
+                        <h4>Year-by-Year Breakdown</h4>
+                        <div id="yearly-table" class="table-container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Understanding Inflation</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📉 Purchasing Power</h3>
+                        <p>Inflation reduces the purchasing power of money over time. What costs $100 today will cost more in the future due to inflation.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 Historical Context</h3>
+                        <p>US inflation has averaged about 3% annually over the long term. Understanding this helps with financial planning and investment decisions.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>💡 Planning Tool</h3>
+                        <p>Use inflation calculations for retirement planning, salary negotiations, investment returns, and understanding real vs. nominal values.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Inflation Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What is inflation?</div>
+                        <div class="faq-answer">Inflation is the rate at which the general level of prices for goods and services rises, eroding purchasing power. A 3% inflation rate means what costs $100 today will cost $103 next year.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use this for retirement planning?</div>
+                        <div class="faq-answer">Calculate how much your current expenses will cost in retirement. If you spend $50,000 today and retire in 30 years with 3% inflation, you'll need about $121,363 to maintain the same lifestyle.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between nominal and real returns?</div>
+                        <div class="faq-answer">Nominal returns don't account for inflation, while real returns do. A 7% investment return with 3% inflation gives a real return of about 4%.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate are inflation projections?</div>
+                        <div class="faq-answer">This calculator uses compound growth formulas with your specified rate. Actual inflation varies year to year, so use historical averages for long-term planning and adjust periodically.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatCurrency, formatNumber } from '/assets/js/utils/math.js';
+        
+        document.getElementById('inflation-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateInflation();
+        });
+        
+        function calculateInflation() {
+            const initialAmount = parseFloat(document.getElementById('initial-amount').value);
+            const inflationRate = parseFloat(document.getElementById('inflation-rate').value) / 100;
+            const timePeriod = parseInt(document.getElementById('time-period').value);
+            const calculationType = document.getElementById('calculation-type').value;
+            
+            if (!initialAmount || !timePeriod) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            let results;
+            
+            switch (calculationType) {
+                case 'future':
+                    results = calculateFutureValue(initialAmount, inflationRate, timePeriod);
+                    break;
+                case 'past':
+                    results = calculatePastValue(initialAmount, inflationRate, timePeriod);
+                    break;
+                case 'purchasing-power':
+                    results = calculatePurchasingPowerLoss(initialAmount, inflationRate, timePeriod);
+                    break;
+            }
+            
+            displayResults(results, initialAmount, inflationRate, timePeriod, calculationType);
+        }
+        
+        function calculateFutureValue(amount, rate, years) {
+            const futureValue = amount * Math.pow(1 + rate, years);
+            const inflationLoss = futureValue - amount;
+            const totalInflation = (Math.pow(1 + rate, years) - 1) * 100;
+            
+            return {
+                mainValue: futureValue,
+                purchasingPower: amount, // Original purchasing power
+                inflationLoss: inflationLoss,
+                totalInflationPercent: totalInflation,
+                yearlyBreakdown: generateYearlyBreakdown(amount, rate, years, 'future')
+            };
+        }
+        
+        function calculatePastValue(amount, rate, years) {
+            const pastValue = amount / Math.pow(1 + rate, years);
+            const inflationGain = amount - pastValue;
+            const totalInflation = (Math.pow(1 + rate, years) - 1) * 100;
+            
+            return {
+                mainValue: pastValue,
+                purchasingPower: pastValue,
+                inflationLoss: inflationGain,
+                totalInflationPercent: totalInflation,
+                yearlyBreakdown: generateYearlyBreakdown(pastValue, rate, years, 'past')
+            };
+        }
+        
+        function calculatePurchasingPowerLoss(amount, rate, years) {
+            const futureValue = amount * Math.pow(1 + rate, years);
+            const purchasingPowerToday = amount / Math.pow(1 + rate, years);
+            const purchasingPowerLoss = amount - purchasingPowerToday;
+            const totalInflation = (Math.pow(1 + rate, years) - 1) * 100;
+            
+            return {
+                mainValue: purchasingPowerToday,
+                purchasingPower: purchasingPowerToday,
+                inflationLoss: purchasingPowerLoss,
+                totalInflationPercent: totalInflation,
+                yearlyBreakdown: generateYearlyBreakdown(amount, rate, years, 'purchasing-power')
+            };
+        }
+        
+        function generateYearlyBreakdown(initialAmount, rate, years, type) {
+            const breakdown = [];
+            
+            for (let year = 0; year <= years; year++) {
+                let value, purchasingPower;
+                
+                if (type === 'future') {
+                    value = initialAmount * Math.pow(1 + rate, year);
+                    purchasingPower = initialAmount;
+                } else if (type === 'past') {
+                    value = initialAmount * Math.pow(1 + rate, year);
+                    purchasingPower = value;
+                } else { // purchasing-power
+                    value = initialAmount * Math.pow(1 + rate, year);
+                    purchasingPower = initialAmount / Math.pow(1 + rate, year);
+                }
+                
+                breakdown.push({
+                    year: year,
+                    nominalValue: value,
+                    realValue: purchasingPower,
+                    inflationRate: rate * 100
+                });
+            }
+            
+            return breakdown;
+        }
+        
+        function displayResults(results, initialAmount, inflationRate, timePeriod, calculationType) {
+            // Update main result label based on calculation type
+            const labels = {
+                'future': 'Future Cost',
+                'past': 'Past Value',
+                'purchasing-power': 'Current Purchasing Power'
+            };
+            
+            document.getElementById('main-result-label').textContent = labels[calculationType];
+            document.getElementById('main-result-value').textContent = formatCurrency(results.mainValue);
+            document.getElementById('purchasing-power').textContent = formatCurrency(results.purchasingPower);
+            document.getElementById('inflation-loss').textContent = formatCurrency(Math.abs(results.inflationLoss));
+            document.getElementById('inflation-percentage').textContent = results.totalInflationPercent.toFixed(1) + '%';
+            
+            // Breakdown section
+            document.getElementById('original-amount-display').textContent = formatCurrency(initialAmount);
+            document.getElementById('time-period-display').textContent = timePeriod + ' years';
+            document.getElementById('inflation-rate-display').textContent = (inflationRate * 100).toFixed(1) + '%';
+            document.getElementById('total-inflation-display').textContent = results.totalInflationPercent.toFixed(1) + '%';
+            
+            // Yearly breakdown table
+            displayYearlyBreakdown(results.yearlyBreakdown, calculationType);
+            
+            document.getElementById('inflation-results').style.display = 'block';
+            document.getElementById('inflation-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function displayYearlyBreakdown(breakdown, type) {
+            const table = document.getElementById('yearly-table');
+            
+            let headers = '<table><thead><tr><th>Year</th>';
+            
+            if (type === 'future') {
+                headers += '<th>Future Cost</th><th>Original Value</th>';
+            } else if (type === 'past') {
+                headers += '<th>Historical Value</th><th>Equivalent Today</th>';
+            } else {
+                headers += '<th>Nominal Value</th><th>Real Purchasing Power</th>';
+            }
+            
+            headers += '<th>Cumulative Inflation</th></tr></thead><tbody>';
+            
+            let rows = '';
+            breakdown.forEach(item => {
+                const cumulativeInflation = ((item.nominalValue / breakdown[0].nominalValue - 1) * 100);
+                
+                rows += `<tr>
+                    <td>Year ${item.year}</td>
+                    <td>${formatCurrency(item.nominalValue)}</td>
+                    <td>${formatCurrency(item.realValue)}</td>
+                    <td>${cumulativeInflation.toFixed(1)}%</td>
+                </tr>`;
+            });
+            
+            table.innerHTML = headers + rows + '</tbody></table>';
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .breakdown-item .label {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        
+        .yearly-breakdown {
+            margin-top: 30px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .table-container th,
+        .table-container td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .table-container th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .table-container tbody tr:hover {
+            background: var(--hover-bg);
+        }
+        
+        .table-container tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 768px) {
+            .breakdown-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-container {
+                font-size: 0.9rem;
+            }
+            
+            .table-container th,
+            .table-container td {
+                padding: 8px;
+            }
+        }
+    </style>
+</body>
+</html>

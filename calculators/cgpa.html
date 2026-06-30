@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator - Calculate Cumulative Grade Point Average | FreebieCalculator</title>
+    <meta name="description" content="Free CGPA calculator to calculate your Cumulative Grade Point Average across multiple semesters. Track your academic progress with accurate calculations.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/cgpa.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CGPA Calculator - Calculate Cumulative Grade Point Average">
+    <meta property="og:description" content="Calculate your CGPA across multiple semesters with this free online calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/cgpa.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CGPA Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate Cumulative Grade Point Average (CGPA) across multiple semesters for academic tracking.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Education Calculators",
+                "item": "https://freebiecalculator.com/#education"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "CGPA Calculator",
+                "item": "https://freebiecalculator.com/calculators/cgpa.html"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What's the difference between GPA and CGPA?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPA is typically calculated for a single semester or term, while CGPA is the cumulative average across all semesters or terms in your academic program."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I improve my CGPA?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To improve CGPA, focus on earning higher grades in future semesters. The impact of new grades diminishes as you complete more semesters, so consistent performance is key."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>CGPA Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <div id="semesters-container">
+                        <h3>Enter Your Semester Data</h3>
+                        <div class="semester-row" data-semester="1">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="semester-name-1">Semester Name:</label>
+                                    <input type="text" id="semester-name-1" placeholder="e.g., Fall 2023">
+                                </div>
+                                <div class="form-group">
+                                    <label for="semester-gpa-1">Semester GPA:</label>
+                                    <input type="number" id="semester-gpa-1" step="0.01" placeholder="e.g., 3.75" min="0" max="4.0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="semester-credits-1">Credit Hours:</label>
+                                    <input type="number" id="semester-credits-1" step="0.5" placeholder="e.g., 15" min="0.5" max="30" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="add-semester" class="btn-secondary">Add Another Semester</button>
+                        <button type="button" id="calculate-cgpa">Calculate CGPA</button>
+                    </div>
+                    
+                    <div id="cgpa-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="cgpa-display"></div>
+                        <div class="result-details" id="cgpa-breakdown"></div>
+                        <div class="result-details" id="academic-standing"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>What is CGPA?</h2>
+                    <p>
+                        Cumulative Grade Point Average (CGPA) is the overall academic performance measure that reflects 
+                        your average grades across all completed semesters or terms in your academic program. Unlike 
+                        semester GPA which shows performance for a single term, CGPA provides a comprehensive view of 
+                        your entire academic journey.
+                    </p>
+                    <p>
+                        CGPA is crucial for academic standing, scholarship eligibility, graduation honors, graduate 
+                        school admissions, and employment opportunities. Understanding how to calculate and track your 
+                        CGPA helps you monitor your progress and make informed academic decisions.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>CGPA Calculation Formula</h2>
+                    
+                    <h4>Basic CGPA Formula</h4>
+                    <pre><code>
+CGPA = Total Quality Points ÷ Total Credit Hours Attempted
+
+Where:
+Quality Points = Semester GPA × Credit Hours for that semester
+
+Example:
+Semester 1: 3.5 GPA × 15 credits = 52.5 quality points
+Semester 2: 3.8 GPA × 16 credits = 60.8 quality points
+Semester 3: 3.2 GPA × 14 credits = 44.8 quality points
+
+CGPA = (52.5 + 60.8 + 44.8) ÷ (15 + 16 + 14) = 158.1 ÷ 45 = 3.51
+                    </code></pre>
+                    
+                    <h4>Alternative Calculation Method</h4>
+                    <p>If you have individual course grades instead of semester GPAs:</p>
+                    <pre><code>
+CGPA = Sum of (Grade Points × Credit Hours) ÷ Total Credit Hours
+
+This is equivalent to the weighted average of all your course grades
+across all semesters.
+                    </code></pre>
+                    
+                    <h4>Key Considerations</h4>
+                    <ul>
+                        <li><strong>Credit Hours:</strong> More credits = greater impact on CGPA</li>
+                        <li><strong>Time Factor:</strong> Early semesters have proportionally less impact as you progress</li>
+                        <li><strong>Retaken Courses:</strong> Check your institution's policy on grade replacement</li>
+                        <li><strong>Transfer Credits:</strong> May or may not be included in CGPA calculation</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: 4-Semester CGPA</h4>
+                        <p><strong>Academic Record:</strong></p>
+                        <ul>
+                            <li>Semester 1: 3.4 GPA, 15 credits → 51.0 quality points</li>
+                            <li>Semester 2: 3.7 GPA, 16 credits → 59.2 quality points</li>
+                            <li>Semester 3: 3.2 GPA, 15 credits → 48.0 quality points</li>
+                            <li>Semester 4: 3.9 GPA, 14 credits → 54.6 quality points</li>
+                        </ul>
+                        <p><strong>CGPA:</strong> 212.8 ÷ 60 = 3.55</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Improving CGPA Over Time</h4>
+                        <p><strong>Progression:</strong></p>
+                        <ul>
+                            <li>After Semester 1: 2.8 CGPA (poor start)</li>
+                            <li>After Semester 2: 3.1 CGPA (improvement)</li>
+                            <li>After Semester 3: 3.3 CGPA (continued growth)</li>
+                            <li>After Semester 4: 3.45 CGPA (strong finish)</li>
+                        </ul>
+                        <p><strong>Lesson:</strong> Consistent improvement can significantly raise CGPA over time</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Impact of Credit Load</h4>
+                        <p><strong>Comparison:</strong></p>
+                        <p><strong>Student A:</strong> 3.5 GPA × 12 credits = 42.0 points</p>
+                        <p><strong>Student B:</strong> 3.3 GPA × 18 credits = 59.4 points</p>
+                        <p><strong>Note:</strong> Student B contributes more to CGPA despite lower GPA due to higher credit load</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>CGPA Improvement Strategies</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>🎯 Academic Strategies</h4>
+                            <ul>
+                                <li>Focus on courses with more credit hours</li>
+                                <li>Prioritize subjects where you can excel</li>
+                                <li>Seek help early when struggling</li>
+                                <li>Form study groups with high-performing peers</li>
+                                <li>Utilize office hours and tutoring services</li>
+                                <li>Consider course load management</li>
+                                <li>Plan retakes for failed courses strategically</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>📈 Long-term Planning</h4>
+                            <ul>
+                                <li>Set realistic semester GPA targets</li>
+                                <li>Monitor progress regularly</li>
+                                <li>Balance challenging and manageable courses</li>
+                                <li>Consider summer courses for GPA boost</li>
+                                <li>Understand grade forgiveness policies</li>
+                                <li>Plan graduation timeline accordingly</li>
+                                <li>Keep scholarship requirements in mind</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between GPA and CGPA?</div>
+                        <div class="faq-answer">
+                            GPA is typically calculated for a single semester or term, while CGPA is the cumulative 
+                            average across all semesters or terms in your academic program. CGPA gives a broader 
+                            picture of your overall academic performance.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I improve my CGPA?</div>
+                        <div class="faq-answer">
+                            To improve CGPA, focus on earning higher grades in future semesters. The impact of new 
+                            grades diminishes as you complete more semesters, so consistent performance is key. 
+                            Consider retaking failed courses if your institution allows grade replacement.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do transfer credits affect my CGPA?</div>
+                        <div class="faq-answer">
+                            This varies by institution. Some schools include transfer grades in CGPA calculations, 
+                            others only count credits but not grades. Check with your registrar's office for your 
+                            school's specific policy on transfer credit treatment.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What CGPA do I need for graduation honors?</div>
+                        <div class="faq-answer">
+                            Honor requirements vary by institution, but common thresholds are: Cum Laude (3.5+), 
+                            Magna Cum Laude (3.7+), and Summa Cum Laude (3.9+). Some schools use different scales 
+                            or additional criteria beyond CGPA.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How often should I calculate my CGPA?</div>
+                        <div class="faq-answer">
+                            Calculate your CGPA at the end of each semester to track your progress. This helps you 
+                            understand trends in your performance and make adjustments for future semesters. Many 
+                            student portals also provide real-time CGPA calculations.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Educational Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/gpa.html">GPA Calculator</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/age.html">Age Calculator</a>
+                        <a href="/calculators/date-difference.html">Date Difference Calculator</a>
+                        <a href="/calculators/discount.html">Discount Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber, roundTo } from '/assets/js/utils/math.js';
+        
+        let semesterCount = 1;
+        
+        // Add semester functionality
+        document.getElementById('add-semester').addEventListener('click', function() {
+            semesterCount++;
+            const container = document.getElementById('semesters-container');
+            
+            const semesterRow = document.createElement('div');
+            semesterRow.className = 'semester-row';
+            semesterRow.setAttribute('data-semester', semesterCount);
+            
+            semesterRow.innerHTML = `
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="semester-name-${semesterCount}">Semester Name:</label>
+                        <input type="text" id="semester-name-${semesterCount}" placeholder="e.g., Spring 2024">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester-gpa-${semesterCount}">Semester GPA:</label>
+                        <input type="number" id="semester-gpa-${semesterCount}" step="0.01" placeholder="e.g., 3.75" min="0" max="4.0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="semester-credits-${semesterCount}">Credit Hours:</label>
+                        <input type="number" id="semester-credits-${semesterCount}" step="0.5" placeholder="e.g., 15" min="0.5" max="30" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn-secondary" onclick="removeSemester(${semesterCount})">Remove</button>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(semesterRow);
+        });
+        
+        // Remove semester functionality
+        window.removeSemester = function(semesterId) {
+            const semesterRow = document.querySelector(`[data-semester="${semesterId}"]`);
+            if (semesterRow && document.querySelectorAll('.semester-row').length > 1) {
+                semesterRow.remove();
+            }
+        };
+        
+        // Calculate CGPA
+        document.getElementById('calculate-cgpa').addEventListener('click', function() {
+            const semesterRows = document.querySelectorAll('.semester-row');
+            
+            let totalQualityPoints = 0;
+            let totalCredits = 0;
+            let semesters = [];
+            let validSemesters = 0;
+            
+            for (const row of semesterRows) {
+                const semesterId = row.getAttribute('data-semester');
+                const semesterName = document.getElementById(`semester-name-${semesterId}`).value || `Semester ${semesterId}`;
+                const gpa = parseFloat(document.getElementById(`semester-gpa-${semesterId}`).value);
+                const credits = parseFloat(document.getElementById(`semester-credits-${semesterId}`).value);
+                
+                if (isNaN(gpa) || isNaN(credits) || gpa < 0 || credits <= 0) {
+                    continue; // Skip incomplete or invalid entries
+                }
+                
+                if (gpa > 4.0) {
+                    alert(`GPA for ${semesterName} cannot exceed 4.0`);
+                    return;
+                }
+                
+                const qualityPoints = gpa * credits;
+                totalQualityPoints += qualityPoints;
+                totalCredits += credits;
+                validSemesters++;
+                
+                semesters.push({
+                    name: semesterName,
+                    gpa: gpa,
+                    credits: credits,
+                    qualityPoints: qualityPoints
+                });
+            }
+            
+            if (validSemesters === 0) {
+                alert('Please enter at least one semester with valid GPA and credit hours');
+                return;
+            }
+            
+            const cgpa = totalQualityPoints / totalCredits;
+            
+            // Display results
+            document.getElementById('cgpa-display').textContent = 
+                `Your CGPA: ${formatNumber(cgpa, 3)}`;
+            
+            let breakdownHtml = `<strong>Semester Breakdown:</strong><br>`;
+            semesters.forEach((semester, index) => {
+                const runningQualityPoints = semesters.slice(0, index + 1).reduce((sum, s) => sum + s.qualityPoints, 0);
+                const runningCredits = semesters.slice(0, index + 1).reduce((sum, s) => sum + s.credits, 0);
+                const runningCGPA = runningQualityPoints / runningCredits;
+                
+                breakdownHtml += `${semester.name}: ${formatNumber(semester.gpa, 2)} GPA × ${formatNumber(semester.credits, 1)} credits = ${formatNumber(semester.qualityPoints, 2)} points (CGPA: ${formatNumber(runningCGPA, 3)})<br>`;
+            });
+            breakdownHtml += `<br><strong>Total:</strong> ${formatNumber(totalQualityPoints, 2)} quality points ÷ ${formatNumber(totalCredits, 1)} credits = ${formatNumber(cgpa, 3)} CGPA`;
+            
+            document.getElementById('cgpa-breakdown').innerHTML = breakdownHtml;
+            
+            // Academic standing interpretation
+            let standing = '';
+            let standingColor = '';
+            if (cgpa >= 3.8) {
+                standing = 'Excellent (Summa Cum Laude level)';
+                standingColor = 'color: var(--success-color)';
+            } else if (cgpa >= 3.5) {
+                standing = 'Very Good (Magna Cum Laude level)';
+                standingColor = 'color: var(--success-color)';
+            } else if (cgpa >= 3.2) {
+                standing = 'Good (Cum Laude level)';
+                standingColor = 'color: var(--primary-color)';
+            } else if (cgpa >= 2.8) {
+                standing = 'Above Average';
+                standingColor = 'color: var(--primary-color)';
+            } else if (cgpa >= 2.5) {
+                standing = 'Average';
+                standingColor = 'color: var(--warning-color)';
+            } else if (cgpa >= 2.0) {
+                standing = 'Below Average';
+                standingColor = 'color: var(--warning-color)';
+            } else {
+                standing = 'Poor (at risk of academic probation)';
+                standingColor = 'color: var(--error-color)';
+            }
+            
+            const averageCreditsPerSemester = totalCredits / validSemesters;
+            
+            document.getElementById('academic-standing').innerHTML = `
+                <strong>Academic Performance:</strong><br>
+                <span style="${standingColor}">${standing}</span><br>
+                <br>
+                <strong>Summary Statistics:</strong><br>
+                Total Semesters: ${validSemesters}<br>
+                Total Credits Completed: ${formatNumber(totalCredits, 1)}<br>
+                Average Credits per Semester: ${formatNumber(averageCreditsPerSemester, 1)}<br>
+                Highest Semester GPA: ${formatNumber(Math.max(...semesters.map(s => s.gpa)), 2)}<br>
+                Lowest Semester GPA: ${formatNumber(Math.min(...semesters.map(s => s.gpa)), 2)}<br>
+                <br>
+                <em>Keep tracking your progress and aim for consistent improvement!</em>
+            `;
+            
+            document.getElementById('cgpa-result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

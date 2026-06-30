@@ -1,0 +1,240 @@
+{
+    "meta": {
+        "code": "es",
+        "name": "Español",
+        "flag": "🇪🇸"
+    },
+    "header": {
+        "home": "Inicio",
+        "guides": "Guías",
+        "help": "Ayuda",
+        "general": "General",
+        "health": "Salud",
+        "finance": "Finanzas",
+        "education": "Educación"
+    },
+    "homepage": {
+        "title": "Calculadoras en Línea Gratuitas — Hipoteca, IMC, Impuestos y 60+ Herramientas",
+        "description": "Calcula pagos de hipoteca, IMC, interés compuesto, salario, impuestos y más. Más de 60 calculadoras gratuitas para finanzas, salud y matemáticas — sin registro, sin descarga.",
+        "searchPlaceholder": "Buscar calculadoras...",
+        "categories": {
+            "math": "📐 Calculadoras de Matemáticas y Educación",
+            "health": "🏥 Calculadoras de Salud y Fitness",
+            "finance": "💰 Calculadoras Financieras",
+            "other": "🔧 Otras Calculadoras"
+        },
+        "browseAll": "Explorar las 60+ Calculadoras"
+    },
+    "calculators": {
+        "percentage": {
+            "name": "Calculadora de Porcentajes",
+            "description": "Calcular porcentajes, aumentos y disminuciones"
+        },
+        "area": {
+            "name": "Calculadora de Área",
+            "description": "Calcular el área de formas geométricas"
+        },
+        "volume": {
+            "name": "Calculadora de Volumen",
+            "description": "Calcular el volumen de formas 3D"
+        },
+        "triangle": {
+            "name": "Calculadora de Triángulos",
+            "description": "Calcular propiedades y medidas de triángulos"
+        },
+        "scientific": {
+            "name": "Calculadora Científica",
+            "description": "Calculadora avanzada con funciones científicas"
+        },
+        "average": {
+            "name": "Calculadora de Promedio",
+            "description": "Calcular media, mediana y moda de números"
+        },
+        "standardDeviation": {
+            "name": "Calculadora de Desviación Estándar",
+            "description": "Calcular desviación estándar y varianza"
+        },
+        "fraction": {
+            "name": "Calculadora de Fracciones",
+            "description": "Sumar, restar, multiplicar y dividir fracciones"
+        },
+        "unitConverter": {
+            "name": "Conversor de Unidades",
+            "description": "Convertir entre diferentes unidades de medida"
+        },
+        "binaryConverter": {
+            "name": "Conversor Binario",
+            "description": "Convertir entre binario, decimal, hex y octal"
+        },
+        "gpa": {
+            "name": "Calculadora GPA",
+            "description": "Calcular tu Promedio de Calificaciones"
+        },
+        "cgpa": {
+            "name": "Calculadora CGPA",
+            "description": "Calcular tu Promedio Acumulativo de Calificaciones"
+        },
+        "grade": {
+            "name": "Calculadora de Calificaciones",
+            "description": "Calcular calificaciones y notas"
+        },
+        "bmi": {
+            "name": "Calculadora IMC",
+            "description": "Calcular tu Índice de Masa Corporal"
+        },
+        "bmr": {
+            "name": "Calculadora TMB",
+            "description": "Calcular tu Tasa Metabólica Basal"
+        },
+        "calorie": {
+            "name": "Calculadora de Calorías Diarias",
+            "description": "Calcular tus necesidades calóricas diarias"
+        },
+        "waterIntake": {
+            "name": "Calculadora de Ingesta de Agua",
+            "description": "Calcular tus requerimientos diarios de agua"
+        },
+        "idealWeight": {
+            "name": "Calculadora de Peso Ideal",
+            "description": "Calcular tu peso corporal ideal"
+        },
+        "bodyFat": {
+            "name": "Calculadora de Grasa Corporal",
+            "description": "Calcular tu porcentaje de grasa corporal"
+        },
+        "pregnancy": {
+            "name": "Calculadora de Embarazo",
+            "description": "Calcular fecha de parto y cronograma del embarazo"
+        },
+        "pace": {
+            "name": "Calculadora de Ritmo",
+            "description": "Calcular ritmo de correr y caminar"
+        },
+        "tip": {
+            "name": "Calculadora de Propinas",
+            "description": "Calcular propinas y dividir cuentas"
+        },
+        "emi": {
+            "name": "Calculadora EMI",
+            "description": "Calcular EMI de préstamo y cronograma de pagos"
+        },
+        "mortgage": {
+            "name": "Calculadora de Hipoteca",
+            "description": "Calcular pagos hipotecarios y amortización"
+        },
+        "carLoan": {
+            "name": "Calculadora de Préstamo de Auto",
+            "description": "Calcular pagos de préstamo automotriz"
+        },
+        "compoundInterest": {
+            "name": "Calculadora de Interés Compuesto",
+            "description": "Calcular interés compuesto y crecimiento de inversión"
+        },
+        "simpleInterest": {
+            "name": "Calculadora de Interés Simple",
+            "description": "Calcular interés simple en préstamos e inversiones"
+        },
+        "investment": {
+            "name": "Calculadora ROI de Inversión",
+            "description": "Calcular retorno de la inversión"
+        },
+        "retirement": {
+            "name": "Calculadora de Jubilación",
+            "description": "Planificar tus ahorros para la jubilación"
+        },
+        "salaryAfterTax": {
+            "name": "Calculadora de Salario Después de Impuestos",
+            "description": "Calcular salario neto después de impuestos"
+        },
+        "tax": {
+            "name": "Calculadora de Impuestos",
+            "description": "Calcular impuesto sobre la renta y deducciones"
+        },
+        "salesTax": {
+            "name": "Calculadora de Impuesto a las Ventas",
+            "description": "Calcular impuesto a las ventas en compras"
+        },
+        "discount": {
+            "name": "Calculadora de Descuentos",
+            "description": "Calcular descuentos y ahorros"
+        },
+        "currencyConverter": {
+            "name": "Conversor de Monedas",
+            "description": "Convertir entre diferentes monedas"
+        },
+        "inflation": {
+            "name": "Calculadora de Inflación",
+            "description": "Calcular el impacto de la inflación a lo largo del tiempo"
+        },
+        "fuelCost": {
+            "name": "Calculadora de Costo de Combustible",
+            "description": "Calcular costos de combustible de viaje y eficiencia"
+        },
+        "amortization": {
+            "name": "Calculadora de Amortización",
+            "description": "Calcular cronograma de amortización de préstamo"
+        },
+        "payment": {
+            "name": "Calculadora de Pagos",
+            "description": "Calcular montos de pago de préstamo"
+        },
+        "qrCode": {
+            "name": "Generador de Código QR",
+            "description": "Generar códigos QR para texto y URLs"
+        },
+        "passwordGenerator": {
+            "name": "Generador de Contraseñas",
+            "description": "Generar contraseñas aleatorias seguras"
+        },
+        "randomNumber": {
+            "name": "Generador de Números Aleatorios",
+            "description": "Generar números y secuencias aleatorias"
+        },
+        "age": {
+            "name": "Calculadora de Edad",
+            "description": "Calcular edad y diferencias de tiempo"
+        },
+        "dateDifference": {
+            "name": "Calculadora de Diferencia de Fechas",
+            "description": "Calcular diferencias entre fechas"
+        },
+        "timeCalculator": {
+            "name": "Calculadora de Tiempo",
+            "description": "Sumar, restar y convertir tiempo"
+        },
+        "hours": {
+            "name": "Calculadora de Horas",
+            "description": "Calcular horas de trabajo y horas extras"
+        },
+        "concrete": {
+            "name": "Calculadora de Concreto",
+            "description": "Calcular volumen de concreto y materiales"
+        },
+        "subnet": {
+            "name": "Calculadora de Subred",
+            "description": "Calcular subredes de red y rangos IP"
+        }
+    },
+    "common": {
+        "calculate": "Calcular",
+        "reset": "Restablecer",
+        "result": "Resultado",
+        "loading": "Cargando...",
+        "error": "Error",
+        "close": "Cerrar",
+        "save": "Guardar",
+        "share": "Compartir",
+        "copy": "Copiar",
+        "copied": "¡Copiado!",
+        "required": "Requerido",
+        "optional": "Opcional"
+    },
+    "footer": {
+        "copyright": "© 2025 FreebieCalculator.com. Todos los derechos reservados.",
+        "privacy": "Política de Privacidad",
+        "terms": "Términos de Servicio",
+        "contact": "Contacto",
+        "about": "Acerca de",
+        "disclaimer": "Descargo de Responsabilidad"
+    }
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly to Salary Calculator – Convert Wage to Annual & Monthly Pay | FreebieCalculator</title>
+    <meta name="description" content="Free hourly to salary calculator. Convert your hourly wage to annual salary, monthly pay, weekly earnings, and daily income instantly. No signup needed.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/hourly-to-salary.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="Hourly to Salary Calculator – Convert Wage to Annual Pay">
+    <meta property="og:description" content="Convert hourly wage to annual salary, monthly, weekly, and daily pay instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/hourly-to-salary.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Hourly to Salary Calculator",
+        "description": "Convert hourly wage to annual salary, monthly, weekly, and daily pay",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web Browser",
+        "url": "https://freebiecalculator.com/calculators/hourly-to-salary.html",
+        "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"},
+        "isAccessibleForFree": true,
+        "provider": {"@type": "Organization","name": "FreebieCalculator.com","url": "https://freebiecalculator.com"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question","name": "How do I convert hourly wage to annual salary?","acceptedAnswer": {"@type": "Answer","text": "Multiply your hourly wage by the number of hours you work per week, then multiply by 52 (weeks in a year). Formula: Annual Salary = Hourly Rate × Hours per Week × 52. For example, $20/hour × 40 hours × 52 weeks = $41,600/year."}},
+            {"@type": "Question","name": "How many hours a year is a full-time job?","acceptedAnswer": {"@type": "Answer","text": "A standard full-time job is 40 hours per week × 52 weeks = 2,080 hours per year. However, this doesn't account for paid time off, holidays, or overtime."}},
+            {"@type": "Question","name": "What is $15 an hour annually?","acceptedAnswer": {"@type": "Answer","text": "$15 per hour working 40 hours/week equals $31,200 per year before taxes, $2,600 per month, $600 per week, and $120 per day."}},
+            {"@type": "Question","name": "How do I calculate my monthly salary from hourly pay?","acceptedAnswer": {"@type": "Answer","text": "To get monthly salary from hourly rate: multiply hourly rate × hours per week × 52 weeks ÷ 12 months. For $20/hour full-time: $20 × 40 × 52 ÷ 12 = $3,466.67 per month."}},
+            {"@type": "Question","name": "Does the hourly to salary calculator account for taxes?","acceptedAnswer": {"@type": "Answer","text": "This calculator shows gross (before tax) pay. Your take-home (net) pay depends on your tax bracket, deductions, and location. Use our salary after tax calculator to estimate net pay."}}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="/#math-calculators">General</a></li>
+                    <li><a href="/#health-calculators">Health</a></li>
+                    <li><a href="/#financial-calculators">Finance</a></li>
+                    <li><a href="/#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#financial-calculators">Finance Calculators</a> › <span>Hourly to Salary Calculator</span>
+            </nav>
+            <div class="calculator-header">
+                <h1>💼 Hourly to Salary Calculator</h1>
+                <p>Convert your hourly wage to annual salary, monthly, weekly, and daily pay instantly.</p>
+            </div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container">
+                <div class="calculator-tool">
+                    <form id="hourly-form">
+                        <div class="form-group">
+                            <label for="hourly-rate">Hourly Wage ($) <span class="required">*</span></label>
+                            <input type="number" id="hourly-rate" step="0.01" min="0.01" placeholder="e.g., 20.00" required>
+                        </div>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="hours-per-week">Hours per Week</label>
+                                <input type="number" id="hours-per-week" step="0.5" min="1" max="168" value="40">
+                            </div>
+                            <div class="form-group">
+                                <label for="weeks-per-year">Weeks per Year</label>
+                                <input type="number" id="weeks-per-year" step="1" min="1" max="52" value="52">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Calculate Salary</button>
+                    </form>
+                    <div id="hourly-result" class="result-container" style="display:none;">
+                        <h3>Your Earnings Breakdown</h3>
+                        <div class="result-grid" id="earnings-grid"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>How to Convert Hourly to Annual Salary</h2>
+                <p>Converting an hourly wage to an annual salary is straightforward. The standard formula assumes a 40-hour work week and 52 weeks per year:</p>
+                <div class="formula-box">
+                    <strong>Annual Salary = Hourly Rate × Hours per Week × Weeks per Year</strong>
+                </div>
+                <p>For a typical full-time employee working 40 hours/week for 52 weeks:</p>
+                <ul>
+                    <li><strong>Annual:</strong> Hourly Rate × 2,080</li>
+                    <li><strong>Monthly:</strong> Annual ÷ 12</li>
+                    <li><strong>Weekly:</strong> Hourly Rate × Hours per Week</li>
+                    <li><strong>Daily:</strong> Hourly Rate × Hours per Day (typically 8)</li>
+                </ul>
+            </section>
+            <section class="content-section">
+                <h2>Common Hourly to Salary Conversions</h2>
+                <table class="data-table">
+                    <thead><tr><th>Hourly Rate</th><th>Annual (40hr/wk)</th><th>Monthly</th><th>Weekly</th></tr></thead>
+                    <tbody>
+                        <tr><td>$12/hr</td><td>$24,960</td><td>$2,080</td><td>$480</td></tr>
+                        <tr><td>$15/hr</td><td>$31,200</td><td>$2,600</td><td>$600</td></tr>
+                        <tr><td>$20/hr</td><td>$41,600</td><td>$3,467</td><td>$800</td></tr>
+                        <tr><td>$25/hr</td><td>$52,000</td><td>$4,333</td><td>$1,000</td></tr>
+                        <tr><td>$30/hr</td><td>$62,400</td><td>$5,200</td><td>$1,200</td></tr>
+                        <tr><td>$40/hr</td><td>$83,200</td><td>$6,933</td><td>$1,600</td></tr>
+                        <tr><td>$50/hr</td><td>$104,000</td><td>$8,667</td><td>$2,000</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I convert hourly wage to annual salary?</div>
+                        <div class="faq-answer">Multiply your hourly wage × hours per week × 52 weeks. At 40 hrs/week: Annual = Hourly × 2,080. Example: $20/hr × 2,080 = $41,600/year.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How many hours a year is full-time?</div>
+                        <div class="faq-answer">A standard full-time job is 40 hours/week × 52 weeks = 2,080 hours per year. This doesn't account for paid time off or holidays.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is $15 an hour annually?</div>
+                        <div class="faq-answer">$15/hr × 40 hrs × 52 weeks = $31,200/year gross. That's $2,600/month, $600/week, or $120/day before taxes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Does this include overtime pay?</div>
+                        <div class="faq-answer">No — this calculator uses straight-time pay at the hours you enter. To include overtime, add overtime hours separately at 1.5× your base rate.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are these figures before or after taxes?</div>
+                        <div class="faq-answer">All figures shown are gross (before tax) earnings. Use our Salary After Tax Calculator to estimate your take-home pay.</div>
+                    </div>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Related Financial Calculators</h2>
+                <div class="calculator-links">
+                    <a href="/calculators/salary-after-tax.html">Salary After Tax Calculator</a>
+                    <a href="/calculators/tax.html">Tax Calculator</a>
+                    <a href="/calculators/tip.html">Tip Calculator</a>
+                    <a href="/calculators/discount.html">Discount Calculator</a>
+                    <a href="/calculators/inflation.html">Inflation Calculator</a>
+                    <a href="/calculators/retirement.html">Retirement Calculator</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+    document.getElementById('hourly-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const rate = parseFloat(document.getElementById('hourly-rate').value);
+        const hpw = parseFloat(document.getElementById('hours-per-week').value) || 40;
+        const wpy = parseFloat(document.getElementById('weeks-per-year').value) || 52;
+        if (!rate || rate <= 0) return;
+        const annual = rate * hpw * wpy;
+        const monthly = annual / 12;
+        const weekly = rate * hpw;
+        const daily = rate * (hpw / 5);
+        const biweekly = weekly * 2;
+        const fmt = n => '$' + n.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        const grid = document.getElementById('earnings-grid');
+        grid.innerHTML = `
+            <div class="result-card primary"><div class="result-label">Annual Salary</div><div class="result-value">${fmt(annual)}</div></div>
+            <div class="result-card"><div class="result-label">Monthly Pay</div><div class="result-value">${fmt(monthly)}</div></div>
+            <div class="result-card"><div class="result-label">Bi-Weekly Pay</div><div class="result-value">${fmt(biweekly)}</div></div>
+            <div class="result-card"><div class="result-label">Weekly Pay</div><div class="result-value">${fmt(weekly)}</div></div>
+            <div class="result-card"><div class="result-label">Daily Pay</div><div class="result-value">${fmt(daily)}</div></div>
+            <div class="result-card"><div class="result-label">Hourly Rate</div><div class="result-value">${fmt(rate)}</div></div>
+        `;
+        document.getElementById('hourly-result').style.display = 'block';
+    });
+    </script>
+    <style>
+        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .result-card { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; text-align: center; }
+        .result-card.primary { background: var(--primary-solid); color: white; border-color: var(--primary-solid); }
+        .result-card.primary .result-label { color: rgba(255,255,255,0.8); }
+        .result-card.primary .result-value { font-size: 1.4rem; }
+        .result-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+        .result-value { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+        .formula-box { background: var(--bg-secondary); border-left: 4px solid var(--primary-solid); padding: 1rem 1.25rem; border-radius: 0.25rem; margin: 1rem 0; font-family: monospace; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .data-table th, .data-table td { padding: 0.6rem 0.8rem; text-align: left; border: 1px solid var(--border-color); }
+        .data-table th { background: var(--bg-secondary); font-weight: 600; }
+        .data-table tr:nth-child(even) { background: var(--bg-secondary); }
+    </style>
+</body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Converter - Convert Binary, Decimal, Hex, and Octal | FreebieCalculator</title>
+    <meta name="description" content="Free binary converter to convert between binary, decimal, hexadecimal, and octal number systems. Perfect for programming and computer science students.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/binary-converter.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Binary Converter - Convert Binary, Decimal, Hex, and Octal">
+    <meta property="og:description" content="Convert between binary, decimal, hexadecimal, and octal number systems with our comprehensive binary converter.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/binary-converter.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Binary Converter",
+        "description": "Convert between binary, decimal, hexadecimal, and octal number systems",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Other Calculators",
+                "item": "https://freebiecalculator.com/#other"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Binary Converter",
+                "item": "https://freebiecalculator.com/calculators/binary-converter.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is binary code?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Binary is a base-2 number system using only 0s and 1s. It's the fundamental language of computers, where each digit represents a power of 2."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you convert decimal to binary?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Divide the decimal number by 2 repeatedly, keeping track of remainders. The binary number is the remainders read in reverse order."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is hexadecimal used for?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hexadecimal (base-16) is commonly used in programming, web colors, memory addresses, and debugging because it's more compact than binary but easily convertible."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why do programmers use different number systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Different bases are useful for different purposes: binary for computer logic, hex for memory addresses and colors, octal for file permissions in Unix systems."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#other-calculators">Other Calculators</a> › 
+                <span>Binary Converter</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>🔢 Binary Converter</h1>
+                <p>Convert between binary, decimal, hexadecimal, and octal number systems instantly.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <form class="calculator-form">
+                    <div class="conversion-grid">
+                        <div class="number-system">
+                            <label for="decimal">Decimal (Base 10)</label>
+                            <input type="text" id="decimal" placeholder="255" class="number-input">
+                            <small>Numbers 0-9</small>
+                        </div>
+                        
+                        <div class="number-system">
+                            <label for="binary">Binary (Base 2)</label>
+                            <input type="text" id="binary" placeholder="11111111" class="number-input">
+                            <small>Only 0s and 1s</small>
+                        </div>
+                        
+                        <div class="number-system">
+                            <label for="hexadecimal">Hexadecimal (Base 16)</label>
+                            <input type="text" id="hexadecimal" placeholder="FF" class="number-input">
+                            <small>0-9, A-F</small>
+                        </div>
+                        
+                        <div class="number-system">
+                            <label for="octal">Octal (Base 8)</label>
+                            <input type="text" id="octal" placeholder="377" class="number-input">
+                            <small>Numbers 0-7</small>
+                        </div>
+                    </div>
+                    
+                    <div class="conversion-info">
+                        <h4>Number System Information</h4>
+                        <div id="number-info" class="info-display">
+                            Enter a number in any base to see conversions and information.
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="quick-conversions">
+                    <h3>Quick Conversions</h3>
+                    <div class="quick-grid">
+                        <button onclick="setNumber(1)" class="quick-btn">1</button>
+                        <button onclick="setNumber(8)" class="quick-btn">8</button>
+                        <button onclick="setNumber(16)" class="quick-btn">16</button>
+                        <button onclick="setNumber(32)" class="quick-btn">32</button>
+                        <button onclick="setNumber(64)" class="quick-btn">64</button>
+                        <button onclick="setNumber(128)" class="quick-btn">128</button>
+                        <button onclick="setNumber(255)" class="quick-btn">255</button>
+                        <button onclick="setNumber(256)" class="quick-btn">256</button>
+                        <button onclick="setNumber(512)" class="quick-btn">512</button>
+                        <button onclick="setNumber(1024)" class="quick-btn">1024</button>
+                    </div>
+                </div>
+                
+                <div class="binary-operations">
+                    <h3>Binary Operations</h3>
+                    <div class="operations-grid">
+                        <div class="operation-section">
+                            <h4>Bitwise AND</h4>
+                            <div class="operation-inputs">
+                                <input type="text" id="and-a" placeholder="Binary A">
+                                <span>&</span>
+                                <input type="text" id="and-b" placeholder="Binary B">
+                                <button onclick="performAND()" class="op-btn">=</button>
+                                <span id="and-result">Result</span>
+                            </div>
+                        </div>
+                        
+                        <div class="operation-section">
+                            <h4>Bitwise OR</h4>
+                            <div class="operation-inputs">
+                                <input type="text" id="or-a" placeholder="Binary A">
+                                <span>|</span>
+                                <input type="text" id="or-b" placeholder="Binary B">
+                                <button onclick="performOR()" class="op-btn">=</button>
+                                <span id="or-result">Result</span>
+                            </div>
+                        </div>
+                        
+                        <div class="operation-section">
+                            <h4>Bitwise XOR</h4>
+                            <div class="operation-inputs">
+                                <input type="text" id="xor-a" placeholder="Binary A">
+                                <span>^</span>
+                                <input type="text" id="xor-b" placeholder="Binary B">
+                                <button onclick="performXOR()" class="op-btn">=</button>
+                                <span id="xor-result">Result</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Binary Converter Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🔄 Multi-Base Conversion</h3>
+                        <p>Convert instantly between binary (base 2), decimal (base 10), hexadecimal (base 16), and octal (base 8) number systems.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚡ Real-Time Updates</h3>
+                        <p>Type in any field and see all other number systems update automatically. Perfect for learning and verification.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🧮 Binary Operations</h3>
+                        <p>Perform bitwise operations (AND, OR, XOR) on binary numbers with visual results to understand binary logic.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Binary Converter FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What is binary code?</div>
+                        <div class="faq-answer">Binary is a base-2 number system using only 0s and 1s. It's the fundamental language of computers, where each digit represents a power of 2.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do you convert decimal to binary?</div>
+                        <div class="faq-answer">Divide the decimal number by 2 repeatedly, keeping track of remainders. The binary number is the remainders read in reverse order.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What is hexadecimal used for?</div>
+                        <div class="faq-answer">Hexadecimal (base-16) is commonly used in programming, web colors, memory addresses, and debugging because it's more compact than binary but easily convertible.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why do programmers use different number systems?</div>
+                        <div class="faq-answer">Different bases are useful for different purposes: binary for computer logic, hex for memory addresses and colors, octal for file permissions in Unix systems.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        // Add event listeners to all inputs
+        document.querySelectorAll('.number-input').forEach(input => {
+            input.addEventListener('input', function() {
+                convertFromInput(this.id, this.value);
+            });
+        });
+        
+        function convertFromInput(sourceType, value) {
+            if (!value.trim()) {
+                clearAllFields();
+                return;
+            }
+            
+            let decimal;
+            
+            try {
+                switch (sourceType) {
+                    case 'decimal':
+                        decimal = parseInt(value, 10);
+                        if (isNaN(decimal) || decimal < 0) throw new Error('Invalid decimal');
+                        break;
+                    case 'binary':
+                        if (!/^[01]+$/.test(value)) throw new Error('Invalid binary');
+                        decimal = parseInt(value, 2);
+                        break;
+                    case 'hexadecimal':
+                        if (!/^[0-9A-Fa-f]+$/.test(value)) throw new Error('Invalid hexadecimal');
+                        decimal = parseInt(value, 16);
+                        break;
+                    case 'octal':
+                        if (!/^[0-7]+$/.test(value)) throw new Error('Invalid octal');
+                        decimal = parseInt(value, 8);
+                        break;
+                    default:
+                        return;
+                }
+                
+                updateAllFields(decimal, sourceType);
+                updateNumberInfo(decimal);
+                
+            } catch (error) {
+                // Invalid input - clear other fields but don't show error
+                clearOtherFields(sourceType);
+                document.getElementById('number-info').innerHTML = 'Invalid input for ' + sourceType;
+            }
+        }
+        
+        function updateAllFields(decimal, sourceType) {
+            if (sourceType !== 'decimal') {
+                document.getElementById('decimal').value = decimal.toString(10);
+            }
+            if (sourceType !== 'binary') {
+                document.getElementById('binary').value = decimal.toString(2);
+            }
+            if (sourceType !== 'hexadecimal') {
+                document.getElementById('hexadecimal').value = decimal.toString(16).toUpperCase();
+            }
+            if (sourceType !== 'octal') {
+                document.getElementById('octal').value = decimal.toString(8);
+            }
+        }
+        
+        function clearAllFields() {
+            document.querySelectorAll('.number-input').forEach(input => {
+                input.value = '';
+            });
+            document.getElementById('number-info').innerHTML = 'Enter a number in any base to see conversions and information.';
+        }
+        
+        function clearOtherFields(sourceType) {
+            document.querySelectorAll('.number-input').forEach(input => {
+                if (input.id !== sourceType) {
+                    input.value = '';
+                }
+            });
+        }
+        
+        function updateNumberInfo(decimal) {
+            const binary = decimal.toString(2);
+            const hex = decimal.toString(16).toUpperCase();
+            const octal = decimal.toString(8);
+            
+            const bitCount = binary.length;
+            const powers = [];
+            
+            for (let i = 0; i < binary.length; i++) {
+                const bit = binary[i];
+                const power = binary.length - 1 - i;
+                if (bit === '1') {
+                    powers.push(`2^${power} = ${Math.pow(2, power)}`);
+                }
+            }
+            
+            const infoHtml = `
+                <div class="number-breakdown">
+                    <div class="info-item">
+                        <strong>Decimal:</strong> ${formatNumber(decimal)}
+                    </div>
+                    <div class="info-item">
+                        <strong>Binary:</strong> ${binary} (${bitCount} bits)
+                    </div>
+                    <div class="info-item">
+                        <strong>Hexadecimal:</strong> 0x${hex}
+                    </div>
+                    <div class="info-item">
+                        <strong>Octal:</strong> 0${octal}
+                    </div>
+                    ${powers.length > 0 ? `
+                        <div class="info-item">
+                            <strong>Powers of 2:</strong> ${powers.join(' + ')}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            
+            document.getElementById('number-info').innerHTML = infoHtml;
+        }
+        
+        window.setNumber = function(num) {
+            document.getElementById('decimal').value = num;
+            convertFromInput('decimal', num.toString());
+        };
+        
+        window.performAND = function() {
+            const a = document.getElementById('and-a').value;
+            const b = document.getElementById('and-b').value;
+            
+            if (!/^[01]+$/.test(a) || !/^[01]+$/.test(b)) {
+                document.getElementById('and-result').textContent = 'Invalid binary input';
+                return;
+            }
+            
+            const decimalA = parseInt(a, 2);
+            const decimalB = parseInt(b, 2);
+            const result = decimalA & decimalB;
+            
+            document.getElementById('and-result').textContent = result.toString(2);
+        };
+        
+        window.performOR = function() {
+            const a = document.getElementById('or-a').value;
+            const b = document.getElementById('or-b').value;
+            
+            if (!/^[01]+$/.test(a) || !/^[01]+$/.test(b)) {
+                document.getElementById('or-result').textContent = 'Invalid binary input';
+                return;
+            }
+            
+            const decimalA = parseInt(a, 2);
+            const decimalB = parseInt(b, 2);
+            const result = decimalA | decimalB;
+            
+            document.getElementById('or-result').textContent = result.toString(2);
+        };
+        
+        window.performXOR = function() {
+            const a = document.getElementById('xor-a').value;
+            const b = document.getElementById('xor-b').value;
+            
+            if (!/^[01]+$/.test(a) || !/^[01]+$/.test(b)) {
+                document.getElementById('xor-result').textContent = 'Invalid binary input';
+                return;
+            }
+            
+            const decimalA = parseInt(a, 2);
+            const decimalB = parseInt(b, 2);
+            const result = decimalA ^ decimalB;
+            
+            document.getElementById('xor-result').textContent = result.toString(2);
+        };
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .conversion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .number-system {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .number-system label {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .number-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .number-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .conversion-info {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .info-display {
+            margin-top: 15px;
+        }
+        
+        .number-breakdown {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .info-item {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .quick-conversions {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .quick-btn {
+            padding: 10px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .quick-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-1px);
+        }
+        
+        .binary-operations {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .operations-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .operation-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .operation-inputs {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .operation-inputs input {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            width: 120px;
+        }
+        
+        .operation-inputs span {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .op-btn {
+            padding: 8px 15px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .op-btn:hover {
+            background: #5a6fd8;
+        }
+        
+        #and-result,
+        #or-result,
+        #xor-result {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: var(--primary-color);
+            min-width: 80px;
+        }
+        
+        @media (max-width: 768px) {
+            .conversion-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            
+            .operation-inputs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .operation-inputs input {
+                width: 100%;
+            }
+        }
+    </style>
+</body>
+</html>

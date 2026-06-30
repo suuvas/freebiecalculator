@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator - Calculate Your Exact Age | FreebieCalculator</title>
+    <meta name="description" content="Calculate your exact age in years, months, and days. Free age calculator with precise results. Find out how old you are today!">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/age.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Age Calculator - Calculate Your Exact Age">
+    <meta property="og:description" content="Calculate your exact age in years, months, and days. Free age calculator with precise results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/age.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Age Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate your exact age in years, months, and days with this free online age calculator.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Other Calculators",
+                "item": "https://freebiecalculator.com/#other"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Age Calculator",
+                "item": "https://freebiecalculator.com/calculators/age.html"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How accurate is this age calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our age calculator is highly accurate as it calculates your age based on the exact number of days between your birth date and the current date, accounting for leap years."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why do I need to know my exact age?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Knowing your exact age can be important for various purposes including insurance applications, legal documents, eligibility requirements, and personal milestone tracking."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Age Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <form id="age-form">
+                        <div class="form-group">
+                            <label for="birth-date">Enter your birth date:</label>
+                            <input type="date" id="birth-date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="current-date">Calculate age as of (optional):</label>
+                            <input type="date" id="current-date" placeholder="Leave blank for today">
+                        </div>
+                        
+                        <button type="submit">Calculate Age</button>
+                    </form>
+                    
+                    <div id="age-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="age-display"></div>
+                        <div class="result-details" id="age-details"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>How the Age Calculator Works</h2>
+                    <p>
+                        Our age calculator determines your exact age by calculating the number of years, months, and days 
+                        between your birth date and the current date (or a specified date). The calculation takes into 
+                        account leap years and varying month lengths to provide the most accurate result possible.
+                    </p>
+                    <p>
+                        The calculator uses your browser's local time zone and handles edge cases like leap years, 
+                        different month lengths, and date transitions properly. This ensures that your age calculation 
+                        is always precise and reliable.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Age Calculation Formula</h2>
+                    <p>The age calculation follows these steps:</p>
+                    <ol>
+                        <li>Calculate the difference in years between birth year and current year</li>
+                        <li>Calculate the difference in months, adjusting for year rollover</li>
+                        <li>Calculate the difference in days, adjusting for month and year rollover</li>
+                        <li>Handle negative values by borrowing from the next higher unit</li>
+                    </ol>
+                    
+                    <p>Mathematical representation:</p>
+                    <pre><code>
+Age in Years = Current Year - Birth Year (adjusted for month/day)
+Age in Months = (Current Month - Birth Month) mod 12
+Age in Days = Current Day - Birth Day (adjusted for month length)
+                    </code></pre>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    <div class="example">
+                        <h4>Example 1: Simple Age Calculation</h4>
+                        <p><strong>Birth Date:</strong> January 15, 1990</p>
+                        <p><strong>Current Date:</strong> March 20, 2024</p>
+                        <p><strong>Result:</strong> 34 years, 2 months, and 5 days</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Leap Year Consideration</h4>
+                        <p><strong>Birth Date:</strong> February 29, 2000 (leap year)</p>
+                        <p><strong>Current Date:</strong> March 1, 2024</p>
+                        <p><strong>Result:</strong> 24 years, 0 months, and 1 day</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Month Rollover</h4>
+                        <p><strong>Birth Date:</strong> December 25, 1995</p>
+                        <p><strong>Current Date:</strong> January 10, 2024</p>
+                        <p><strong>Result:</strong> 28 years, 0 months, and 16 days</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is this age calculator?</div>
+                        <div class="faq-answer">
+                            Our age calculator is highly accurate as it calculates your age based on the exact number 
+                            of days between your birth date and the current date, accounting for leap years and varying 
+                            month lengths.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why do I need to know my exact age?</div>
+                        <div class="faq-answer">
+                            Knowing your exact age can be important for various purposes including insurance applications, 
+                            legal documents, eligibility requirements, milestone celebrations, and personal record keeping.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I calculate age for a future date?</div>
+                        <div class="faq-answer">
+                            Yes! You can enter any date in the "Calculate age as of" field to determine how old you will 
+                            be on that future date, or how old you were on a past date.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Does the calculator account for leap years?</div>
+                        <div class="faq-answer">
+                            Absolutely! Our calculator properly handles leap years and ensures accurate calculations 
+                            even for birth dates like February 29th.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is my birth date information stored or shared?</div>
+                        <div class="faq-answer">
+                            No, all calculations are performed in your browser. We do not store, collect, or share 
+                            any personal information including your birth date.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>More Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/date-difference.html">Date Difference Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/bmi.html">BMI Calculator</a>
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                        <a href="/calculators/discount.html">Discount Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { calculateAge, validateNumber } from '/assets/js/utils/math.js';
+        
+        document.getElementById('age-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const birthDateInput = document.getElementById('birth-date');
+            const currentDateInput = document.getElementById('current-date');
+            const resultDiv = document.getElementById('age-result');
+            const ageDisplay = document.getElementById('age-display');
+            const ageDetails = document.getElementById('age-details');
+            
+            const birthDate = new Date(birthDateInput.value);
+            const currentDate = currentDateInput.value ? 
+                new Date(currentDateInput.value) : new Date();
+            
+            if (!birthDateInput.value) {
+                alert('Please enter your birth date');
+                return;
+            }
+            
+            if (birthDate > currentDate) {
+                alert('Birth date cannot be in the future');
+                return;
+            }
+            
+            const age = calculateAge(birthDate, currentDate);
+            
+            ageDisplay.textContent = `${age.years} years, ${age.months} months, and ${age.days} days`;
+            
+            const totalDays = Math.floor((currentDate - birthDate) / (1000 * 60 * 60 * 24));
+            const totalWeeks = Math.floor(totalDays / 7);
+            const totalHours = totalDays * 24;
+            const totalMinutes = totalHours * 60;
+            
+            ageDetails.innerHTML = `
+                <strong>Additional Details:</strong><br>
+                Total days lived: ${totalDays.toLocaleString()}<br>
+                Total weeks lived: ${totalWeeks.toLocaleString()}<br>
+                Total hours lived: ${totalHours.toLocaleString()}<br>
+                Total minutes lived: ${totalMinutes.toLocaleString()}
+            `;
+            
+            resultDiv.style.display = 'block';
+        });
+        
+        // Set default current date to today
+        document.getElementById('current-date').value = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>

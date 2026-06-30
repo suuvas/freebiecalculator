@@ -1,0 +1,275 @@
+/* Enhanced Component Styles for Professional Theme */
+
+/* Modern Button Styles */
+.btn, .calculate-btn, .reset-btn, button[type="submit"], button[type="button"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.025em;
+    min-height: 48px;
+    gap: 0.5rem;
+}
+
+.btn-primary, .calculate-btn {
+    background: var(--bg-gradient);
+    color: white;
+    box-shadow: var(--shadow-colored);
+    transform: translateY(0);
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover, .calculate-btn:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #667eea 100%);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    filter: brightness(1.05);
+}
+
+.btn-secondary, .reset-btn {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover, .reset-btn:hover {
+    background: var(--bg-secondary);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Enhanced Card Styles */
+.calculator-card, .content-card, .category-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator-card:hover, .content-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--border-hover);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+}
+
+.calculator-card::before, .content-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--bg-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.calculator-card:hover::before, .content-card:hover::before {
+    opacity: 1;
+}
+
+/* Modern Form Elements */
+input[type="text"], 
+input[type="number"], 
+input[type="email"],
+select, 
+textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-solid);
+    box-shadow: 0 0 0 3px var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.925rem;
+}
+
+/* Calculator Grid Enhancement */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.calculator-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.calculator-card h3 {
+    color: var(--primary-solid);
+    margin-bottom: 1rem;
+    font-size: 1.375rem;
+}
+
+.calculator-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Search Enhancement */
+#calculator-search {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--border-color);
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-lg);
+}
+
+#calculator-search:focus {
+    border-color: var(--primary-solid);
+    box-shadow: var(--shadow-colored);
+}
+
+/* Category Section Enhancement */
+.category-section h2 {
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Result Display Enhancement */
+.result-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--success-color) 0%, #38a169 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    font-weight: 600;
+    text-align: center;
+}
+
+.result-section .result {
+    font-size: 1.25rem;
+}
+
+.error {
+    background: linear-gradient(135deg, var(--error-color) 0%, #e53e3e 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .calculator-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .calculator-card, .content-card {
+        padding: 1.5rem;
+    }
+    
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    h1 {
+        font-size: 2.25rem;
+    }
+    
+    .btn, .calculate-btn {
+        width: 100%;
+    }
+}
+
+/* Dark Mode Specific Enhancements */
+[data-theme="dark"] header {
+    background: rgba(45, 55, 72, 0.95);
+}
+
+[data-theme="dark"] .calculator-card:hover,
+[data-theme="dark"] .content-card:hover {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.9) 0%, rgba(74, 85, 104, 0.9) 100%);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: rgba(45, 55, 72, 0.8);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: rgba(45, 55, 72, 0.3);
+    border-color: var(--border-color);
+}

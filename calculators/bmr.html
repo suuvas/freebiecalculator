@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR Calculator - Calculate Basal Metabolic Rate | FreebieCalculator</title>
+    <meta name="description" content="Calculate your Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation. Find out how many calories you burn at rest daily.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/bmr.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="BMR Calculator - Calculate Basal Metabolic Rate">
+    <meta property="og:description" content="Calculate your Basal Metabolic Rate using the accurate Mifflin-St Jeor equation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/bmr.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "BMR Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate your Basal Metabolic Rate (BMR) to determine how many calories you burn at rest.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Health Calculators",
+                "item": "https://freebiecalculator.com/#health"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "BMR Calculator",
+                "item": "https://freebiecalculator.com/calculators/bmr.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the difference between BMR and RMR?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BMR (Basal Metabolic Rate) is measured under strict conditions after 12 hours of fasting and 8 hours of sleep. RMR (Resting Metabolic Rate) is measured under less restrictive conditions and is typically 10-20% higher than BMR."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I use BMR for weight management?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BMR tells you the minimum calories needed. To lose weight, consume fewer calories than your Total Daily Energy Expenditure (TDEE = BMR \u00d7 activity factor). To gain weight, consume more than your TDEE. Always consult healthcare providers for personalized advice."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why is my BMR different from online estimates?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Different equations (Harris-Benedict, Mifflin-St Jeor, etc.) can give varying results. Our calculator uses the Mifflin-St Jeor equation, which is considered most accurate for the general population. Individual metabolism can still vary significantly."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I increase my BMR?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Building muscle mass is the most effective way to increase BMR since muscle tissue burns more calories at rest than fat tissue. Regular strength training, adequate protein intake, and staying hydrated can help boost metabolism."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is BMR the same as metabolism?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BMR is a component of your metabolism, specifically the energy used for basic bodily functions at rest. Total metabolism includes BMR plus energy for digestion, physical activity, and thermogenesis."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>BMR Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <form id="bmr-form">
+                        <div class="form-group">
+                            <label for="unit-system">Unit System:</label>
+                            <select id="unit-system">
+                                <option value="metric">Metric (kg, cm)</option>
+                                <option value="imperial">Imperial (lbs, ft/in)</option>
+                            </select>
+                        </div>
+                        
+                        <div id="metric-inputs">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="weight-kg">Weight (kg):</label>
+                                    <input type="number" id="weight-kg" step="0.1" placeholder="e.g., 70" min="20" max="300" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="height-cm">Height (cm):</label>
+                                    <input type="number" id="height-cm" step="0.1" placeholder="e.g., 170" min="100" max="250" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="imperial-inputs" style="display: none;">
+                            <div class="form-group">
+                                <label for="weight-lbs">Weight (lbs):</label>
+                                <input type="number" id="weight-lbs" step="0.1" placeholder="e.g., 154" min="50" max="600" required>
+                            </div>
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="height-ft">Height (feet):</label>
+                                    <input type="number" id="height-ft" min="3" max="8" placeholder="e.g., 5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="height-in">Height (inches):</label>
+                                    <input type="number" id="height-in" min="0" max="11" placeholder="e.g., 7" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="age">Age (years):</label>
+                                <input type="number" id="age" min="13" max="120" placeholder="e.g., 30" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender:</label>
+                                <select id="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit">Calculate BMR</button>
+                    </form>
+                    
+                    <div id="bmr-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="bmr-value"></div>
+                        <div class="result-details" id="bmr-details"></div>
+                        <div class="result-details" id="bmr-breakdown"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>What is Basal Metabolic Rate (BMR)?</h2>
+                    <p>
+                        Basal Metabolic Rate (BMR) is the number of calories your body needs to perform basic 
+                        physiological functions while at complete rest. This includes breathing, circulation, 
+                        cell production, nutrient processing, protein synthesis, and maintaining body temperature.
+                    </p>
+                    <p>
+                        BMR represents the minimum amount of energy required to keep your body functioning and 
+                        typically accounts for 60-75% of your total daily energy expenditure. Understanding your 
+                        BMR is crucial for weight management, nutrition planning, and overall health assessment.
+                    </p>
+                    
+                    <div class="alert alert-info">
+                        <strong>Note:</strong> BMR calculations are estimates based on population averages. 
+                        Individual variations in metabolism, body composition, genetics, and health conditions 
+                        can affect actual metabolic rate.
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>BMR Calculation Formula</h2>
+                    
+                    <h4>Mifflin-St Jeor Equation</h4>
+                    <p>Our calculator uses the Mifflin-St Jeor equation, which is considered the most accurate for healthy individuals:</p>
+                    
+                    <h5>For Men:</h5>
+                    <pre><code>BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) + 5</code></pre>
+                    
+                    <h5>For Women:</h5>
+                    <pre><code>BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) - 161</code></pre>
+                    
+                    <h4>Imperial Unit Conversion</h4>
+                    <p>If using imperial units, first convert to metric:</p>
+                    <ul>
+                        <li>Weight in kg = Weight in lbs ÷ 2.20462</li>
+                        <li>Height in cm = (Height in feet × 12 + Height in inches) × 2.54</li>
+                    </ul>
+                    
+                    <h4>Alternative Equations</h4>
+                    <p>Other common BMR equations include:</p>
+                    <ul>
+                        <li><strong>Harris-Benedict:</strong> Older equation, tends to overestimate by 5%</li>
+                        <li><strong>Katch-McArdle:</strong> Uses body fat percentage, more accurate for lean individuals</li>
+                        <li><strong>Cunningham:</strong> Designed for athletes and very active individuals</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Adult Male</h4>
+                        <p><strong>Details:</strong> 30-year-old male, 180 cm, 80 kg</p>
+                        <p><strong>Calculation:</strong> BMR = (10 × 80) + (6.25 × 180) - (5 × 30) + 5</p>
+                        <p><strong>Result:</strong> BMR = 800 + 1,125 - 150 + 5 = 1,780 calories/day</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Adult Female</h4>
+                        <p><strong>Details:</strong> 25-year-old female, 165 cm, 60 kg</p>
+                        <p><strong>Calculation:</strong> BMR = (10 × 60) + (6.25 × 165) - (5 × 25) - 161</p>
+                        <p><strong>Result:</strong> BMR = 600 + 1,031.25 - 125 - 161 = 1,345 calories/day</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Imperial Units</h4>
+                        <p><strong>Details:</strong> 40-year-old male, 5'10" (70 inches), 180 lbs</p>
+                        <p><strong>Conversions:</strong> 81.6 kg, 178 cm</p>
+                        <p><strong>Result:</strong> BMR = 1,763 calories/day</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Factors Affecting BMR</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>📈 Factors That Increase BMR</h4>
+                            <ul>
+                                <li>Higher muscle mass</li>
+                                <li>Younger age</li>
+                                <li>Male gender</li>
+                                <li>Taller height</li>
+                                <li>Higher body weight</li>
+                                <li>Pregnancy and breastfeeding</li>
+                                <li>Fever or illness</li>
+                                <li>Certain medications</li>
+                                <li>Cold environments</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>📉 Factors That Decrease BMR</h4>
+                            <ul>
+                                <li>Older age</li>
+                                <li>Lower muscle mass</li>
+                                <li>Calorie restriction</li>
+                                <li>Prolonged dieting</li>
+                                <li>Certain medical conditions</li>
+                                <li>Some medications</li>
+                                <li>Sleep deprivation</li>
+                                <li>Genetics</li>
+                                <li>Menopause</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between BMR and RMR?</div>
+                        <div class="faq-answer">
+                            BMR (Basal Metabolic Rate) is measured under strict conditions after 12 hours of fasting 
+                            and 8 hours of sleep. RMR (Resting Metabolic Rate) is measured under less restrictive 
+                            conditions and is typically 10-20% higher than BMR.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use BMR for weight management?</div>
+                        <div class="faq-answer">
+                            BMR tells you the minimum calories needed. To lose weight, consume fewer calories than 
+                            your Total Daily Energy Expenditure (TDEE = BMR × activity factor). To gain weight, 
+                            consume more than your TDEE. Always consult healthcare providers for personalized advice.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why is my BMR different from online estimates?</div>
+                        <div class="faq-answer">
+                            Different equations (Harris-Benedict, Mifflin-St Jeor, etc.) can give varying results. 
+                            Our calculator uses the Mifflin-St Jeor equation, which is considered most accurate for 
+                            the general population. Individual metabolism can still vary significantly.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I increase my BMR?</div>
+                        <div class="faq-answer">
+                            Yes! Building muscle mass is the most effective way to increase BMR since muscle tissue 
+                            burns more calories at rest than fat tissue. Regular strength training, adequate protein 
+                            intake, and staying hydrated can help boost metabolism.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is BMR the same as metabolism?</div>
+                        <div class="faq-answer">
+                            BMR is a component of your metabolism, specifically the energy used for basic bodily 
+                            functions at rest. Total metabolism includes BMR plus energy for digestion, physical 
+                            activity, and thermogenesis.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Health Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/calorie.html">Daily Calorie Calculator</a>
+                        <a href="/calculators/bmi.html">BMI Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/age.html">Age Calculator</a>
+                        <a href="/calculators/unit-converter.html">Unit Converter</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { calculateBMR, formatNumber } from '/assets/js/utils/math.js';
+        
+        // Toggle between metric and imperial units
+        document.getElementById('unit-system').addEventListener('change', function(e) {
+            const metricInputs = document.getElementById('metric-inputs');
+            const imperialInputs = document.getElementById('imperial-inputs');
+            
+            if (e.target.value === 'metric') {
+                metricInputs.style.display = 'block';
+                imperialInputs.style.display = 'none';
+            } else {
+                metricInputs.style.display = 'none';
+                imperialInputs.style.display = 'block';
+            }
+            
+            // Hide result when switching units
+            document.getElementById('bmr-result').style.display = 'none';
+        });
+        
+        document.getElementById('bmr-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const unitSystem = document.getElementById('unit-system').value;
+            const age = parseInt(document.getElementById('age').value);
+            const gender = document.getElementById('gender').value;
+            
+            let weight, height;
+            
+            if (unitSystem === 'metric') {
+                weight = parseFloat(document.getElementById('weight-kg').value);
+                height = parseFloat(document.getElementById('height-cm').value);
+                
+                if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                    alert('Please enter valid weight and height values');
+                    return;
+                }
+            } else {
+                const weightLbs = parseFloat(document.getElementById('weight-lbs').value);
+                const heightFt = parseInt(document.getElementById('height-ft').value);
+                const heightIn = parseInt(document.getElementById('height-in').value);
+                
+                if (isNaN(weightLbs) || isNaN(heightFt) || isNaN(heightIn) || 
+                    weightLbs <= 0 || heightFt < 0 || heightIn < 0) {
+                    alert('Please enter valid weight and height values');
+                    return;
+                }
+                
+                // Convert to metric
+                weight = weightLbs * 0.453592; // lbs to kg
+                height = (heightFt * 12 + heightIn) * 2.54; // total inches to cm
+            }
+            
+            if (isNaN(age) || age < 13 || age > 120) {
+                alert('Please enter a valid age between 13 and 120');
+                return;
+            }
+            
+            if (!gender) {
+                alert('Please select your gender');
+                return;
+            }
+            
+            const bmr = calculateBMR(weight, height, age, gender);
+            
+            // Display results
+            document.getElementById('bmr-value').textContent = 
+                `Your BMR: ${formatNumber(bmr)} calories/day`;
+            
+            document.getElementById('bmr-details').innerHTML = `
+                <strong>What this means:</strong><br>
+                Your body burns approximately ${formatNumber(bmr)} calories per day just to maintain 
+                basic physiological functions like breathing, circulation, and cell production while at rest.
+            `;
+            
+            // Calculate weekly and yearly values
+            const weeklyBmr = bmr * 7;
+            const yearlyBmr = bmr * 365.25;
+            
+            document.getElementById('bmr-breakdown').innerHTML = `
+                <strong>Extended Calculations:</strong><br>
+                Per Week: ${formatNumber(weeklyBmr)} calories<br>
+                Per Year: ${formatNumber(yearlyBmr)} calories<br>
+                Per Hour: ${formatNumber(bmr / 24, 1)} calories<br>
+                <br>
+                <strong>Note:</strong> This is your resting metabolic rate. Your total daily calorie 
+                needs will be higher when accounting for physical activity and digestion.
+            `;
+            
+            document.getElementById('bmr-result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

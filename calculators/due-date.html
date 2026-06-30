@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Due Date Calculator – Estimate Your Baby Due Date | FreebieCalculator</title>
+    <meta name="description" content="Free pregnancy due date calculator. Estimate your baby's due date by last menstrual period, conception date, or IVF transfer date. Get your full pregnancy timeline.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/due-date.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="Due Date Calculator – Estimate Your Baby Due Date">
+    <meta property="og:description" content="Calculate your pregnancy due date and see your full trimester timeline.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/due-date.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Due Date Calculator","description":"Estimate pregnancy due date and trimester timeline","applicationCategory":"HealthApplication","operatingSystem":"Web Browser","url":"https://freebiecalculator.com/calculators/due-date.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"FreebieCalculator.com","url":"https://freebiecalculator.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"How is due date calculated?","acceptedAnswer":{"@type":"Answer","text":"The most common method (Naegele's Rule) adds 280 days (40 weeks) to the first day of your last menstrual period (LMP). Alternatively, add 266 days to your conception date, or 266 days to a day-3 IVF transfer (263 days for day-5)."}},
+        {"@type":"Question","name":"How accurate is the due date calculator?","acceptedAnswer":{"@type":"Answer","text":"Only about 5% of babies are born on their exact due date. Most are born within 2 weeks before or after. The due date is an estimate — actual delivery depends on many factors. Your doctor may adjust based on ultrasound measurements."}},
+        {"@type":"Question","name":"What is considered full term?","acceptedAnswer":{"@type":"Answer","text":"Full term is 39–40 weeks. Early term is 37–38 weeks. Late term is 41 weeks. Post term is 42+ weeks. Most deliveries happen between 37–42 weeks."}},
+        {"@type":"Question","name":"When does each trimester start and end?","acceptedAnswer":{"@type":"Answer","text":"First trimester: weeks 1–13. Second trimester: weeks 14–26. Third trimester: weeks 27–40. Our calculator shows exact dates for each trimester milestone."}}
+    ]}</script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/></svg>freebiecalculator.com</a>
+            <nav role="navigation" aria-label="Main navigation"><ul class="nav-menu"><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li><a href="/help/">Help</a></li><li><a href="/#math-calculators">General</a></li><li><a href="/#health-calculators">Health</a></li><li><a href="/#financial-calculators">Finance</a></li><li><a href="/#other-calculators">Other</a></li></ul></nav>
+            <div class="header-actions"><div id="language-selector-container"></div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button><button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/#health-calculators">Health Calculators</a> › <span>Due Date Calculator</span></nav>
+            <div class="calculator-header"><h1>🍼 Due Date Calculator</h1><p>Estimate your baby's due date and see your complete pregnancy timeline.</p></div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container"><div class="calculator-tool">
+                <div class="sleep-tabs">
+                    <button type="button" class="sleep-tab active" data-method="lmp">Last Period (LMP)</button>
+                    <button type="button" class="sleep-tab" data-method="conception">Conception Date</button>
+                    <button type="button" class="sleep-tab" data-method="ivf">IVF Transfer</button>
+                </div>
+                <form id="due-form">
+                    <div class="form-group">
+                        <label for="due-date-input" id="due-label">First Day of Last Menstrual Period</label>
+                        <input type="date" id="due-date-input" required>
+                    </div>
+                    <div id="ivf-field" style="display:none" class="form-group">
+                        <label for="ivf-type">Transfer Day</label>
+                        <select id="ivf-type"><option value="3">Day 3 Transfer</option><option value="5" selected>Day 5 Transfer (Blastocyst)</option></select>
+                    </div>
+                    <button type="submit" class="btn-primary">Calculate Due Date</button>
+                </form>
+                <div id="due-result" class="result-container" style="display:none">
+                    <h3>Your Pregnancy Timeline</h3>
+                    <div class="result-grid" id="due-grid"></div>
+                    <div id="due-milestones" style="margin-top:1.5rem"></div>
+                    <p style="font-size:.8rem;color:var(--text-muted);margin-top:1rem">⚕️ <em>This is an estimate. Your OB/GYN may adjust based on ultrasound measurements.</em></p>
+                </div>
+            </div></div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>FAQs</h2>
+                <div class="faq-container">
+                    <div class="faq-item"><div class="faq-question">How is due date calculated?</div><div class="faq-answer">Naegele's Rule: Add 280 days (40 weeks) to the first day of your last period. Or add 266 days to your conception date. Your doctor may adjust based on ultrasound.</div></div>
+                    <div class="faq-item"><div class="faq-question">How accurate is a due date calculator?</div><div class="faq-answer">Only ~5% of babies arrive on their exact due date. Most are born within 2 weeks before or after. It's an estimate, not a deadline!</div></div>
+                    <div class="faq-item"><div class="faq-question">What is considered full term?</div><div class="faq-answer">Full term = 39–40 weeks. Early term = 37–38 weeks. Late term = 41 weeks. Most healthy deliveries happen between 37–42 weeks.</div></div>
+                    <div class="faq-item"><div class="faq-question">When does each trimester start?</div><div class="faq-answer">1st trimester: Weeks 1–13. 2nd trimester: Weeks 14–26. 3rd trimester: Weeks 27–40. Our calculator shows exact dates for each milestone.</div></div>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section"><h2>Related Calculators</h2><div class="calculator-links"><a href="/calculators/pregnancy.html">Pregnancy Calculator</a><a href="/calculators/ovulation.html">Ovulation Calculator</a><a href="/calculators/age.html">Age Calculator</a><a href="/calculators/bmi.html">BMI Calculator</a></div></section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+    let method='lmp';
+    document.querySelectorAll('.sleep-tab').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            document.querySelectorAll('.sleep-tab').forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active'); method=btn.dataset.method;
+            const labels={lmp:'First Day of Last Menstrual Period',conception:'Conception Date',ivf:'IVF Transfer Date'};
+            document.getElementById('due-label').textContent=labels[method];
+            document.getElementById('ivf-field').style.display=method==='ivf'?'':'none';
+        });
+    });
+    document.getElementById('due-date-input').valueAsDate=new Date();
+    function addDays(d,n){const r=new Date(d);r.setDate(r.getDate()+n);return r;}
+    function fmtDate(d){return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
+    function fmtShort(d){return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+    document.getElementById('due-form').addEventListener('submit',function(e){
+        e.preventDefault();
+        const inputDate=new Date(document.getElementById('due-date-input').value+'T00:00:00');
+        let conceptionDate,dueDate;
+        if(method==='lmp'){conceptionDate=addDays(inputDate,14);dueDate=addDays(inputDate,280);}
+        else if(method==='conception'){conceptionDate=inputDate;dueDate=addDays(inputDate,266);}
+        else{const ivfDay=parseInt(document.getElementById('ivf-type').value);conceptionDate=addDays(inputDate,-(ivfDay-1));dueDate=addDays(inputDate,266-(ivfDay-1));}
+        const today=new Date();
+        const daysPreg=Math.floor((today-addDays(dueDate,-280))/86400000);
+        const weeksPreg=Math.floor(daysPreg/7);
+        const dayRem=daysPreg%7;
+        const daysLeft=Math.floor((dueDate-today)/86400000);
+        const t2=addDays(addDays(dueDate,-280),13*7);
+        const t3=addDays(addDays(dueDate,-280),26*7);
+        document.getElementById('due-grid').innerHTML=`
+            <div class="result-card primary"><div class="result-label">Due Date</div><div class="result-value" style="font-size:.9rem">${fmtShort(dueDate)}</div></div>
+            <div class="result-card"><div class="result-label">Days Until Due</div><div class="result-value">${daysLeft>0?daysLeft:'Arrived!'}</div></div>
+            <div class="result-card"><div class="result-label">Currently Pregnant</div><div class="result-value">${weeksPreg>0&&weeksPreg<42?weeksPreg+'w '+dayRem+'d':'—'}</div></div>
+            <div class="result-card"><div class="result-label">Conception Date</div><div class="result-value" style="font-size:.9rem">${fmtShort(conceptionDate)}</div></div>
+        `;
+        document.getElementById('due-milestones').innerHTML=`
+            <h4>Pregnancy Milestones</h4>
+            <table class="data-table">
+                <thead><tr><th>Milestone</th><th>Date</th><th>Week</th></tr></thead>
+                <tbody>
+                    <tr><td>🤰 Pregnancy Start (LMP)</td><td>${fmtShort(addDays(dueDate,-280))}</td><td>Week 1</td></tr>
+                    <tr><td>💊 First OB Visit (recommended)</td><td>${fmtShort(addDays(dueDate,-280+56))}</td><td>Week 8</td></tr>
+                    <tr><td>🩺 Nuchal Scan</td><td>${fmtShort(addDays(dueDate,-280+77))}</td><td>Week 11</td></tr>
+                    <tr><td>🌟 2nd Trimester Starts</td><td>${fmtShort(t2)}</td><td>Week 14</td></tr>
+                    <tr><td>👶 Anatomy Scan</td><td>${fmtShort(addDays(dueDate,-280+140))}</td><td>Week 20</td></tr>
+                    <tr><td>🌙 3rd Trimester Starts</td><td>${fmtShort(t3)}</td><td>Week 28</td></tr>
+                    <tr><td>🏥 Full Term</td><td>${fmtShort(addDays(dueDate,-7))}</td><td>Week 39</td></tr>
+                    <tr><td>🍼 Due Date</td><td>${fmtShort(dueDate)}</td><td>Week 40</td></tr>
+                </tbody>
+            </table>`;
+        document.getElementById('due-result').style.display='block';
+    });
+    </script>
+    <style>
+        .sleep-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+        .sleep-tab{padding:.5rem 1rem;border:2px solid var(--border-color);border-radius:.5rem;background:var(--bg-secondary);cursor:pointer;font-weight:500;transition:all .2s;font-size:.85rem}
+        .sleep-tab.active{border-color:var(--primary-solid);background:var(--primary-solid);color:white}
+        .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:1rem;margin-top:1rem}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:.5rem;padding:1rem;text-align:center}
+        .result-card.primary{background:var(--primary-solid);color:white;border-color:var(--primary-solid)}
+        .result-card.primary .result-label{color:rgba(255,255,255,.8)}
+        .result-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.25rem}
+        .result-value{font-size:1rem;font-weight:700;color:var(--text-primary)}
+        .data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+        .data-table th,.data-table td{padding:.5rem .75rem;text-align:left;border:1px solid var(--border-color);font-size:.85rem}
+        .data-table th{background:var(--bg-secondary);font-weight:600}
+        .data-table tr:nth-child(even){background:var(--bg-secondary)}
+    </style>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Ads.txt for FreebieCalculator.com
+# This file will be updated after Google AdSense approval
+
+# Placeholder - Add Google AdSense line after approval:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Instructions for after AdSense approval:
+# 1. Replace XXXXXXXXXXXXXXXX with your actual AdSense publisher ID
+# 2. Ensure the line format is exactly: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# 3. Remove these comment lines after adding the real entry
+# 4. Validate the ads.txt file using Google's ads.txt validator
+
+# For other ad networks (future):
+# Add additional lines following the same format
+# network.com, publisher-id, DIRECT/RESELLER, certification-authority-id

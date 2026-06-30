@@ -1,0 +1,240 @@
+{
+    "meta": {
+        "code": "en",
+        "name": "English",
+        "flag": "🇺🇸"
+    },
+    "header": {
+        "home": "Home",
+        "guides": "Guides",
+        "help": "Help",
+        "general": "General",
+        "health": "Health",
+        "finance": "Finance",
+        "education": "Education"
+    },
+    "homepage": {
+        "title": "Free Online Calculators — Mortgage, BMI, Tax & 60+ Tools",
+        "description": "Instantly calculate mortgage payments, BMI, compound interest, salary, tax, and more. 60+ free online calculators for finance, health & math — no signup, no download, works on any device.",
+        "searchPlaceholder": "Search calculators...",
+        "categories": {
+            "math": "📐 Math & Education Calculators",
+            "health": "🏥 Health & Fitness Calculators",
+            "finance": "💰 Financial Calculators",
+            "other": "🔧 Other Calculators"
+        },
+        "browseAll": "Browse All 60+ Calculators"
+    },
+    "calculators": {
+        "percentage": {
+            "name": "Percentage Calculator",
+            "description": "Calculate percentages, increases, and decreases"
+        },
+        "area": {
+            "name": "Area Calculator",
+            "description": "Calculate area of geometric shapes"
+        },
+        "volume": {
+            "name": "Volume Calculator",
+            "description": "Calculate volume of 3D shapes"
+        },
+        "triangle": {
+            "name": "Triangle Calculator",
+            "description": "Calculate triangle properties and measurements"
+        },
+        "scientific": {
+            "name": "Scientific Calculator",
+            "description": "Advanced calculator with scientific functions"
+        },
+        "average": {
+            "name": "Average Calculator",
+            "description": "Calculate mean, median, and mode of numbers"
+        },
+        "standardDeviation": {
+            "name": "Standard Deviation Calculator",
+            "description": "Calculate standard deviation and variance"
+        },
+        "fraction": {
+            "name": "Fraction Calculator",
+            "description": "Add, subtract, multiply, and divide fractions"
+        },
+        "unitConverter": {
+            "name": "Unit Converter",
+            "description": "Convert between different units of measurement"
+        },
+        "binaryConverter": {
+            "name": "Binary Converter",
+            "description": "Convert between binary, decimal, hex, and octal"
+        },
+        "gpa": {
+            "name": "GPA Calculator",
+            "description": "Calculate your Grade Point Average"
+        },
+        "cgpa": {
+            "name": "CGPA Calculator",
+            "description": "Calculate your Cumulative Grade Point Average"
+        },
+        "grade": {
+            "name": "Grade Calculator",
+            "description": "Calculate grades and letter grades"
+        },
+        "bmi": {
+            "name": "BMI Calculator",
+            "description": "Calculate your Body Mass Index"
+        },
+        "bmr": {
+            "name": "BMR Calculator",
+            "description": "Calculate your Basal Metabolic Rate"
+        },
+        "calorie": {
+            "name": "Daily Calorie Calculator",
+            "description": "Calculate your daily calorie needs"
+        },
+        "waterIntake": {
+            "name": "Water Intake Calculator",
+            "description": "Calculate your daily water requirements"
+        },
+        "idealWeight": {
+            "name": "Ideal Weight Calculator",
+            "description": "Calculate your ideal body weight"
+        },
+        "bodyFat": {
+            "name": "Body Fat Calculator",
+            "description": "Calculate your body fat percentage"
+        },
+        "pregnancy": {
+            "name": "Pregnancy Calculator",
+            "description": "Calculate due date and pregnancy timeline"
+        },
+        "pace": {
+            "name": "Pace Calculator",
+            "description": "Calculate running and walking pace"
+        },
+        "tip": {
+            "name": "Tip Calculator",
+            "description": "Calculate tips and split bills"
+        },
+        "emi": {
+            "name": "EMI Calculator",
+            "description": "Calculate loan EMI and payment schedule"
+        },
+        "mortgage": {
+            "name": "Mortgage Calculator",
+            "description": "Calculate mortgage payments and amortization"
+        },
+        "carLoan": {
+            "name": "Car Loan Calculator",
+            "description": "Calculate auto loan payments"
+        },
+        "compoundInterest": {
+            "name": "Compound Interest Calculator",
+            "description": "Calculate compound interest and investment growth"
+        },
+        "simpleInterest": {
+            "name": "Simple Interest Calculator",
+            "description": "Calculate simple interest on loans and investments"
+        },
+        "investment": {
+            "name": "Investment ROI Calculator",
+            "description": "Calculate return on investment"
+        },
+        "retirement": {
+            "name": "Retirement Calculator",
+            "description": "Plan your retirement savings"
+        },
+        "salaryAfterTax": {
+            "name": "Salary After Tax Calculator",
+            "description": "Calculate take-home pay after taxes"
+        },
+        "tax": {
+            "name": "Tax Calculator",
+            "description": "Calculate income tax and deductions"
+        },
+        "salesTax": {
+            "name": "Sales Tax Calculator",
+            "description": "Calculate sales tax on purchases"
+        },
+        "discount": {
+            "name": "Discount Calculator",
+            "description": "Calculate discounts and savings"
+        },
+        "currencyConverter": {
+            "name": "Currency Converter",
+            "description": "Convert between different currencies"
+        },
+        "inflation": {
+            "name": "Inflation Calculator",
+            "description": "Calculate inflation impact over time"
+        },
+        "fuelCost": {
+            "name": "Fuel Cost Calculator",
+            "description": "Calculate trip fuel costs and efficiency"
+        },
+        "amortization": {
+            "name": "Amortization Calculator",
+            "description": "Calculate loan amortization schedule"
+        },
+        "payment": {
+            "name": "Payment Calculator",
+            "description": "Calculate loan payment amounts"
+        },
+        "qrCode": {
+            "name": "QR Code Generator",
+            "description": "Generate QR codes for text and URLs"
+        },
+        "passwordGenerator": {
+            "name": "Password Generator",
+            "description": "Generate secure random passwords"
+        },
+        "randomNumber": {
+            "name": "Random Number Generator",
+            "description": "Generate random numbers and sequences"
+        },
+        "age": {
+            "name": "Age Calculator",
+            "description": "Calculate age and time differences"
+        },
+        "dateDifference": {
+            "name": "Date Difference Calculator",
+            "description": "Calculate differences between dates"
+        },
+        "timeCalculator": {
+            "name": "Time Calculator",
+            "description": "Add, subtract, and convert time"
+        },
+        "hours": {
+            "name": "Hours Calculator",
+            "description": "Calculate work hours and overtime"
+        },
+        "concrete": {
+            "name": "Concrete Calculator",
+            "description": "Calculate concrete volume and materials"
+        },
+        "subnet": {
+            "name": "Subnet Calculator",
+            "description": "Calculate network subnets and IP ranges"
+        }
+    },
+    "common": {
+        "calculate": "Calculate",
+        "reset": "Reset",
+        "result": "Result",
+        "loading": "Loading...",
+        "error": "Error",
+        "close": "Close",
+        "save": "Save",
+        "share": "Share",
+        "copy": "Copy",
+        "copied": "Copied!",
+        "required": "Required",
+        "optional": "Optional"
+    },
+    "footer": {
+        "copyright": "© 2025 FreebieCalculator.com. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "contact": "Contact",
+        "about": "About",
+        "disclaimer": "Disclaimer"
+    }
+}

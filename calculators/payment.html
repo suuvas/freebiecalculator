@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Calculator - Calculate Monthly Payments | FreebieCalculator</title>
+    <meta name="description" content="Free payment calculator to calculate monthly payments for loans, mortgages, and financing. Get accurate payment estimates with our easy-to-use tool.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/payment.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Payment Calculator - Calculate Monthly Payments">
+    <meta property="og:description" content="Calculate monthly payments for loans and financing with our free payment calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/payment.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Payment Calculator",
+        "description": "Calculate monthly payments for loans, mortgages, and financing options",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Calculators",
+                "item": "https://freebiecalculator.com/#finance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Payment Calculator",
+                "item": "https://freebiecalculator.com/calculators/payment.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What factors affect my monthly payment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your monthly payment is determined by three main factors: the loan amount (principal), the interest rate, and the loan term. Higher loan amounts and interest rates increase payments, while longer terms reduce monthly payments but increase total interest."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is the monthly payment calculated?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Monthly payments are calculated using the standard loan formula: M = P[r(1+r)^n]/[(1+r)^n-1], where M is monthly payment, P is principal, r is monthly interest rate, and n is number of payments."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I choose a shorter or longer loan term?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shorter terms have higher monthly payments but less total interest. Longer terms have lower monthly payments but more total interest. Choose based on your budget and financial goals."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does this include insurance and taxes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This calculator shows the loan payment only. For mortgages, add property taxes, insurance, and PMI. For auto loans, add insurance costs to get your total monthly expense."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#financial-calculators">Financial Calculators</a> › 
+                <span>Payment Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>💰 Payment Calculator</h1>
+                <p>Calculate monthly payments for loans, mortgages, and financing options with interest rates and loan terms.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <form id="payment-calculator" class="calculator-form">
+                    <div class="form-group">
+                        <label for="principal">Loan Amount ($)</label>
+                        <input type="number" id="principal" min="1" step="0.01" placeholder="e.g., 250000" required>
+                        <small>Enter the total amount you want to borrow</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest-rate">Interest Rate (%)</label>
+                        <input type="number" id="interest-rate" min="0" step="0.01" placeholder="e.g., 6.5" required>
+                        <small>Annual interest rate (APR)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loan-term">Loan Term</label>
+                        <input type="number" id="loan-term" min="1" placeholder="e.g., 30" required>
+                        <select id="term-unit">
+                            <option value="years">Years</option>
+                            <option value="months">Months</option>
+                        </select>
+                        <small>Duration of the loan</small>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">Calculate Payment</button>
+                </form>
+                
+                <div id="payment-results" class="results-container" style="display: none;">
+                    <h3>📊 Payment Results</h3>
+                    
+                    <div class="result-grid">
+                        <div class="result-card highlight">
+                            <div class="result-label">Monthly Payment</div>
+                            <div class="result-value" id="monthly-payment">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Total Interest</div>
+                            <div class="result-value" id="total-interest">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Total Paid</div>
+                            <div class="result-value" id="total-paid">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Interest Percentage</div>
+                            <div class="result-value" id="interest-percentage">0%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-breakdown">
+                        <h4>Payment Breakdown</h4>
+                        <div class="breakdown-item">
+                            <span>Principal Payment:</span>
+                            <span id="principal-payment">$0.00</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Interest Payment:</span>
+                            <span id="interest-payment">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>How to Use the Payment Calculator</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🔢 Enter Loan Details</h3>
+                        <p>Input your loan amount, interest rate, and loan term. The calculator works for any type of loan including mortgages, auto loans, and personal loans.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 View Results</h3>
+                        <p>Get instant calculations showing your monthly payment, total interest, and complete cost breakdown for informed financial planning.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>💡 Compare Options</h3>
+                        <p>Try different loan amounts, rates, and terms to find the payment option that best fits your budget and financial goals.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Payment Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What factors affect my monthly payment?</div>
+                        <div class="faq-answer">Your monthly payment is determined by three main factors: the loan amount (principal), the interest rate, and the loan term. Higher loan amounts and interest rates increase payments, while longer terms reduce monthly payments but increase total interest.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How is the monthly payment calculated?</div>
+                        <div class="faq-answer">Monthly payments are calculated using the standard loan formula: M = P[r(1+r)^n]/[(1+r)^n-1], where M is monthly payment, P is principal, r is monthly interest rate, and n is number of payments.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I choose a shorter or longer loan term?</div>
+                        <div class="faq-answer">Shorter terms have higher monthly payments but less total interest. Longer terms have lower monthly payments but more total interest. Choose based on your budget and financial goals.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Does this include insurance and taxes?</div>
+                        <div class="faq-answer">This calculator shows the loan payment only. For mortgages, add property taxes, insurance, and PMI. For auto loans, add insurance costs to get your total monthly expense.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ad Slot -->
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="related-calculators">
+                <h2>Related Financial Calculators</h2>
+                <div class="related-grid">
+                    <a href="/calculators/emi.html" class="related-calc">
+                        <span class="calc-icon">📊</span>
+                        <span class="calc-name">EMI Calculator</span>
+                    </a>
+                    <a href="/calculators/mortgage.html" class="related-calc">
+                        <span class="calc-icon">🏠</span>
+                        <span class="calc-name">Mortgage Calculator</span>
+                    </a>
+                    <a href="/calculators/car-loan.html" class="related-calc">
+                        <span class="calc-icon">🚗</span>
+                        <span class="calc-name">Auto Loan Calculator</span>
+                    </a>
+                    <a href="/calculators/compound-interest.html" class="related-calc">
+                        <span class="calc-icon">📈</span>
+                        <span class="calc-name">Interest Calculator</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatCurrency, formatNumber } from '/assets/js/utils/math.js';
+        
+        document.getElementById('payment-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculatePayment();
+        });
+        
+        function calculatePayment() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const annualRate = parseFloat(document.getElementById('interest-rate').value);
+            const termValue = parseFloat(document.getElementById('loan-term').value);
+            const termUnit = document.getElementById('term-unit').value;
+            
+            if (!principal || !annualRate || !termValue) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            const monthlyRate = annualRate / 100 / 12;
+            const numberOfPayments = termUnit === 'years' ? termValue * 12 : termValue;
+            
+            if (monthlyRate === 0) {
+                // No interest case
+                const monthlyPayment = principal / numberOfPayments;
+                const totalPaid = principal;
+                const totalInterest = 0;
+                
+                displayResults(monthlyPayment, totalInterest, totalPaid, principal);
+            } else {
+                // Standard loan calculation
+                const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
+                                     (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+                const totalPaid = monthlyPayment * numberOfPayments;
+                const totalInterest = totalPaid - principal;
+                
+                displayResults(monthlyPayment, totalInterest, totalPaid, principal);
+            }
+        }
+        
+        function displayResults(monthlyPayment, totalInterest, totalPaid, principal) {
+            document.getElementById('monthly-payment').textContent = formatCurrency(monthlyPayment);
+            document.getElementById('total-interest').textContent = formatCurrency(totalInterest);
+            document.getElementById('total-paid').textContent = formatCurrency(totalPaid);
+            
+            const interestPercentage = (totalInterest / principal * 100).toFixed(1);
+            document.getElementById('interest-percentage').textContent = interestPercentage + '%';
+            
+            // First payment breakdown (approximation)
+            const annualRate = parseFloat(document.getElementById('interest-rate').value);
+            const monthlyRate = annualRate / 100 / 12;
+            const firstInterest = principal * monthlyRate;
+            const firstPrincipal = monthlyPayment - firstInterest;
+            
+            document.getElementById('principal-payment').textContent = formatCurrency(firstPrincipal);
+            document.getElementById('interest-payment').textContent = formatCurrency(firstInterest);
+            
+            document.getElementById('payment-results').style.display = 'block';
+            document.getElementById('payment-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

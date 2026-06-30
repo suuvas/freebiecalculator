@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Intake Calculator - Daily Water Needs | FreebieCalculator</title>
+    <meta name="description" content="Calculate your daily water intake needs based on weight, activity level, climate, and health goals. Stay hydrated with personalized water recommendations.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/water-intake.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Water Intake Calculator - Daily Water Needs">
+    <meta property="og:description" content="Calculate your daily water intake needs based on weight, activity, and lifestyle factors.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/water-intake.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Water Intake Calculator",
+        "description": "Calculate daily water intake needs based on personal factors",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Health Calculators",
+                "item": "https://freebiecalculator.com/#health"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Water Intake Calculator",
+                "item": "https://freebiecalculator.com/calculators/water-intake.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How much water should I drink daily?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The general recommendation is about 2.7 liters (11 cups) for women and 3.7 liters (15 cups) for men, but this varies based on activity, climate, and individual factors."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do other beverages count toward water intake?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all fluids contribute to hydration, including tea, coffee, milk, and water-rich foods. However, plain water is the best choice for optimal hydration."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What are signs of dehydration?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Signs include thirst, dark yellow urine, fatigue, dizziness, headache, and reduced urination. Severe dehydration requires medical attention."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you drink too much water?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, drinking excessive amounts can lead to water intoxication or hyponatremia. Stick to recommended amounts unless advised otherwise by a healthcare provider."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#health-calculators">Health Calculators</a> › 
+                <span>Water Intake Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>💧 Water Intake Calculator</h1>
+                <p>Calculate your daily water intake needs based on weight, activity level, and lifestyle factors.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <form id="water-calculator" class="calculator-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="weight">Body Weight</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="weight" min="30" max="300" placeholder="70" required>
+                                <select id="weight-unit">
+                                    <option value="kg">kg</option>
+                                    <option value="lbs">lbs</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activity">Activity Level</label>
+                            <select id="activity" required>
+                                <option value="">Select activity level</option>
+                                <option value="sedentary">Sedentary (little/no exercise)</option>
+                                <option value="light">Light activity (light exercise 1-3 days/week)</option>
+                                <option value="moderate">Moderate activity (moderate exercise 3-5 days/week)</option>
+                                <option value="active">Very active (hard exercise 6-7 days/week)</option>
+                                <option value="extra">Extra active (very hard exercise, physical job)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="climate">Climate</label>
+                            <select id="climate">
+                                <option value="temperate">Temperate (normal)</option>
+                                <option value="hot">Hot/humid climate</option>
+                                <option value="cold">Cold climate</option>
+                                <option value="dry">Dry climate</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="health-conditions">Health Factors</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" id="fever"> Fever/illness</label>
+                                <label><input type="checkbox" id="pregnancy"> Pregnancy</label>
+                                <label><input type="checkbox" id="breastfeeding"> Breastfeeding</label>
+                                <label><input type="checkbox" id="medications"> Diuretic medications</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exercise-time">Exercise Duration (today)</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="exercise-time" min="0" max="300" placeholder="0">
+                                <span>minutes</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="caffeine">Caffeine/Alcohol Intake</label>
+                            <select id="caffeine">
+                                <option value="none">None</option>
+                                <option value="low">Low (1-2 cups coffee/drinks)</option>
+                                <option value="moderate">Moderate (3-4 cups/drinks)</option>
+                                <option value="high">High (5+ cups/drinks)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">Calculate Water Needs</button>
+                </form>
+                
+                <div id="water-results" class="results-container" style="display: none;">
+                    <h3>💧 Your Daily Water Needs</h3>
+                    
+                    <div class="result-grid">
+                        <div class="result-card highlight">
+                            <div class="result-label">Daily Water Goal</div>
+                            <div class="result-value" id="total-water">2.5 L</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Glasses (8 oz)</div>
+                            <div class="result-value" id="glasses-count">10</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Bottles (16.9 oz)</div>
+                            <div class="result-value" id="bottles-count">5</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Hourly Goal</div>
+                            <div class="result-value" id="hourly-intake">156 ml</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hydration-schedule">
+                        <h4>💧 Suggested Hydration Schedule</h4>
+                        <div id="schedule-display" class="schedule-grid">
+                        </div>
+                    </div>
+                    
+                    <div class="hydration-tips">
+                        <h4>💡 Hydration Tips</h4>
+                        <div id="tips-display" class="tips-grid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Water Intake Calculator Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🎯 Personalized Calculation</h3>
+                        <p>Calculate water needs based on your weight, activity level, climate, health conditions, and lifestyle factors.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📅 Daily Schedule</h3>
+                        <p>Get a suggested hydration schedule spread throughout the day to maintain optimal hydration levels.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>💡 Smart Tips</h3>
+                        <p>Receive personalized hydration tips based on your specific needs and circumstances.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Water Intake FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How much water should I drink daily?</div>
+                        <div class="faq-answer">The general recommendation is about 2.7 liters (11 cups) for women and 3.7 liters (15 cups) for men, but this varies based on activity, climate, and individual factors.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do other beverages count toward water intake?</div>
+                        <div class="faq-answer">Yes, all fluids contribute to hydration, including tea, coffee, milk, and water-rich foods. However, plain water is the best choice for optimal hydration.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What are signs of dehydration?</div>
+                        <div class="faq-answer">Signs include thirst, dark yellow urine, fatigue, dizziness, headache, and reduced urination. Severe dehydration requires medical attention.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can you drink too much water?</div>
+                        <div class="faq-answer">Yes, drinking excessive amounts can lead to water intoxication or hyponatremia. Stick to recommended amounts unless advised otherwise by a healthcare provider.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        document.getElementById('water-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateWaterIntake();
+        });
+        
+        function calculateWaterIntake() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const weightUnit = document.getElementById('weight-unit').value;
+            const activity = document.getElementById('activity').value;
+            const climate = document.getElementById('climate').value;
+            const exerciseTime = parseFloat(document.getElementById('exercise-time').value) || 0;
+            const caffeine = document.getElementById('caffeine').value;
+            
+            if (!weight || !activity) {
+                alert('Please fill in weight and activity level');
+                return;
+            }
+            
+            // Convert weight to kg if needed
+            const weightKg = weightUnit === 'lbs' ? weight * 0.453592 : weight;
+            
+            // Base water calculation: 35ml per kg body weight
+            let baseWater = weightKg * 35; // ml
+            
+            // Activity multiplier
+            const activityMultipliers = {
+                'sedentary': 1.0,
+                'light': 1.1,
+                'moderate': 1.2,
+                'active': 1.3,
+                'extra': 1.4
+            };
+            
+            baseWater *= activityMultipliers[activity];
+            
+            // Climate adjustments
+            const climateAdjustments = {
+                'temperate': 1.0,
+                'hot': 1.3,
+                'cold': 0.9,
+                'dry': 1.2
+            };
+            
+            baseWater *= climateAdjustments[climate];
+            
+            // Exercise adjustment: +150ml per 15 minutes
+            baseWater += (exerciseTime / 15) * 150;
+            
+            // Caffeine/alcohol adjustment
+            const caffeineAdjustments = {
+                'none': 1.0,
+                'low': 1.05,
+                'moderate': 1.1,
+                'high': 1.15
+            };
+            
+            baseWater *= caffeineAdjustments[caffeine];
+            
+            // Health condition adjustments
+            if (document.getElementById('fever').checked) baseWater *= 1.2;
+            if (document.getElementById('pregnancy').checked) baseWater *= 1.1;
+            if (document.getElementById('breastfeeding').checked) baseWater *= 1.3;
+            if (document.getElementById('medications').checked) baseWater *= 1.15;
+            
+            // Convert to different units
+            const waterLiters = baseWater / 1000;
+            const glasses8oz = Math.round(baseWater / 237); // 8 oz = 237ml
+            const bottles16oz = Math.round(baseWater / 500); // 16.9 oz ≈ 500ml
+            const hourlyIntake = Math.round(baseWater / 16); // Assuming 16 waking hours
+            
+            displayResults(waterLiters, glasses8oz, bottles16oz, hourlyIntake, baseWater);
+        }
+        
+        function displayResults(liters, glasses, bottles, hourly, totalMl) {
+            document.getElementById('total-water').textContent = `${formatNumber(liters)} L`;
+            document.getElementById('glasses-count').textContent = glasses.toString();
+            document.getElementById('bottles-count').textContent = bottles.toString();
+            document.getElementById('hourly-intake').textContent = `${hourly} ml`;
+            
+            generateHydrationSchedule(totalMl);
+            generateHydrationTips();
+            
+            document.getElementById('water-results').style.display = 'block';
+            document.getElementById('water-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function generateHydrationSchedule(totalMl) {
+            const schedule = [
+                { time: '7:00 AM', amount: Math.round(totalMl * 0.15), activity: 'Wake up boost' },
+                { time: '9:00 AM', amount: Math.round(totalMl * 0.10), activity: 'Mid-morning' },
+                { time: '12:00 PM', amount: Math.round(totalMl * 0.15), activity: 'Before lunch' },
+                { time: '3:00 PM', amount: Math.round(totalMl * 0.15), activity: 'Afternoon energy' },
+                { time: '6:00 PM', amount: Math.round(totalMl * 0.15), activity: 'Before dinner' },
+                { time: '8:00 PM', amount: Math.round(totalMl * 0.10), activity: 'Evening hydration' },
+                { time: 'Throughout', amount: Math.round(totalMl * 0.20), activity: 'Exercise & snacks' }
+            ];
+            
+            let scheduleHtml = '';
+            schedule.forEach(item => {
+                scheduleHtml += `
+                    <div class="schedule-item">
+                        <div class="schedule-time">${item.time}</div>
+                        <div class="schedule-amount">${item.amount} ml</div>
+                        <div class="schedule-activity">${item.activity}</div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('schedule-display').innerHTML = scheduleHtml;
+        }
+        
+        function generateHydrationTips() {
+            const climate = document.getElementById('climate').value;
+            const activity = document.getElementById('activity').value;
+            const exerciseTime = parseFloat(document.getElementById('exercise-time').value) || 0;
+            
+            const allTips = [
+                'Start your day with a glass of water to kickstart hydration',
+                'Keep a water bottle visible as a reminder to drink regularly',
+                'Set hourly reminders on your phone to drink water',
+                'Eat water-rich foods like watermelon, cucumber, and oranges',
+                'Monitor your urine color - pale yellow indicates good hydration',
+                'Drink water before, during, and after exercise',
+                'If plain water is boring, add lemon, mint, or cucumber for flavor'
+            ];
+            
+            const climateTips = {
+                'hot': 'In hot weather, increase intake and drink before you feel thirsty',
+                'cold': 'Cold weather can reduce thirst sensation - stay mindful of intake',
+                'dry': 'Dry climates increase water loss through breathing and skin'
+            };
+            
+            const activityTips = {
+                'active': 'Pre-hydrate before workouts and replace fluids lost through sweat',
+                'extra': 'Consider electrolyte replacement for extended intense activities'
+            };
+            
+            let selectedTips = allTips.slice(0, 4);
+            
+            if (climate !== 'temperate' && climateTips[climate]) {
+                selectedTips.push(climateTips[climate]);
+            }
+            
+            if (activityTips[activity]) {
+                selectedTips.push(activityTips[activity]);
+            }
+            
+            if (exerciseTime > 60) {
+                selectedTips.push('For workouts over 60 minutes, consider sports drinks for electrolyte replacement');
+            }
+            
+            let tipsHtml = '';
+            selectedTips.forEach(tip => {
+                tipsHtml += `<div class="tip-item">💡 ${tip}</div>`;
+            });
+            
+            document.getElementById('tips-display').innerHTML = tipsHtml;
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .input-with-unit {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .input-with-unit input {
+            flex: 1;
+        }
+        
+        .input-with-unit select,
+        .input-with-unit span {
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            gap: 8px;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            margin: 0;
+        }
+        
+        .hydration-schedule {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .schedule-grid {
+            display: grid;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .schedule-item {
+            display: grid;
+            grid-template-columns: 100px 80px 1fr;
+            gap: 15px;
+            align-items: center;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 6px;
+        }
+        
+        .schedule-time {
+            font-weight: bold;
+        }
+        
+        .schedule-amount {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .schedule-activity {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .hydration-tips {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .tips-grid {
+            display: grid;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tip-item {
+            padding: 12px;
+            background: #e8f5e8;
+            border-left: 4px solid #4caf50;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .schedule-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 8px;
+            }
+            
+            .schedule-amount {
+                align-self: center;
+            }
+        }
+    </style>
+</body>
+</html>

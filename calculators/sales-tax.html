@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Tax Calculator - Calculate Tax Amount and Total Price | FreebieCalculator</title>
+    <meta name="description" content="Free sales tax calculator to calculate tax amount, total price, and pre-tax price. Works with any tax rate for accurate pricing calculations.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/sales-tax.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sales Tax Calculator - Calculate Tax Amount and Total Price">
+    <meta property="og:description" content="Calculate sales tax, total price, and pre-tax amounts with our free sales tax calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/sales-tax.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Sales Tax Calculator",
+        "description": "Calculate sales tax amount, total price, and pre-tax price with any tax rate",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Calculators",
+                "item": "https://freebiecalculator.com/#finance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sales Tax Calculator",
+                "item": "https://freebiecalculator.com/calculators/sales-tax.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is sales tax calculated?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sales tax is calculated by multiplying the pre-tax price by the tax rate. For example: $100 \u00d7 8.25% = $8.25 tax, for a total of $108.25."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why do tax rates vary by location?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sales tax rates are set by state, county, and local governments. Some states have no sales tax, while others combine state, county, and city taxes reaching 10%+ in some areas."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What items are typically tax-exempt?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Common tax-exempt items include groceries, prescription medications, and clothing (in some states). Tax exemptions vary significantly by state and locality."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I find my local tax rate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Check your local government websites, recent receipts, or tax authority websites. Remember that your rate may include state, county, and city taxes combined."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#financial-calculators">Financial Calculators</a> › 
+                <span>Sales Tax Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>🧾 Sales Tax Calculator</h1>
+                <p>Calculate sales tax amount, total price with tax, and pre-tax price for any tax rate.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <div class="calculation-tabs">
+                    <button class="tab-btn active" data-tab="add-tax">Add Tax</button>
+                    <button class="tab-btn" data-tab="remove-tax">Remove Tax</button>
+                    <button class="tab-btn" data-tab="find-rate">Find Rate</button>
+                </div>
+                
+                <!-- Add Tax Tab -->
+                <div id="add-tax" class="tab-content active">
+                    <form id="add-tax-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="pre-tax-price">Price Before Tax ($)</label>
+                            <input type="number" id="pre-tax-price" min="0" step="0.01" placeholder="e.g., 100.00" required>
+                            <small>The original price without tax</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tax-rate-add">Tax Rate (%)</label>
+                            <input type="number" id="tax-rate-add" min="0" step="0.01" placeholder="e.g., 8.25" required>
+                            <small>Sales tax percentage in your area</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Total with Tax</button>
+                    </form>
+                </div>
+                
+                <!-- Remove Tax Tab -->
+                <div id="remove-tax" class="tab-content">
+                    <form id="remove-tax-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="total-price">Total Price with Tax ($)</label>
+                            <input type="number" id="total-price" min="0" step="0.01" placeholder="e.g., 108.25" required>
+                            <small>The final price including tax</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tax-rate-remove">Tax Rate (%)</label>
+                            <input type="number" id="tax-rate-remove" min="0" step="0.01" placeholder="e.g., 8.25" required>
+                            <small>Sales tax percentage that was applied</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Price Before Tax</button>
+                    </form>
+                </div>
+                
+                <!-- Find Rate Tab -->
+                <div id="find-rate" class="tab-content">
+                    <form id="find-rate-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="original-price">Original Price ($)</label>
+                            <input type="number" id="original-price" min="0" step="0.01" placeholder="e.g., 100.00" required>
+                            <small>Price before tax was added</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="final-price">Final Price ($)</label>
+                            <input type="number" id="final-price" min="0" step="0.01" placeholder="e.g., 108.25" required>
+                            <small>Price after tax was added</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Tax Rate</button>
+                    </form>
+                </div>
+                
+                <div id="tax-results" class="results-container" style="display: none;">
+                    <h3>📊 Tax Calculation Results</h3>
+                    
+                    <div class="result-grid">
+                        <div class="result-card highlight">
+                            <div class="result-label" id="main-result-label">Total Price</div>
+                            <div class="result-value" id="main-result-value">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Tax Amount</div>
+                            <div class="result-value" id="tax-amount">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Pre-Tax Price</div>
+                            <div class="result-value" id="pre-tax-amount">$0.00</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Tax Rate</div>
+                            <div class="result-value" id="tax-rate-result">0%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculation-breakdown">
+                        <h4>Calculation Breakdown</h4>
+                        <div id="breakdown-details" class="breakdown-content">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Common Tax Rates Reference -->
+                <div class="tax-rates-reference">
+                    <h3>Common US Sales Tax Rates</h3>
+                    <div class="tax-rates-grid">
+                        <div class="tax-rate-item" onclick="applyTaxRate(0)">
+                            <span class="state">No Tax</span>
+                            <span class="rate">0%</span>
+                        </div>
+                        <div class="tax-rate-item" onclick="applyTaxRate(4)">
+                            <span class="state">Low Tax States</span>
+                            <span class="rate">4%</span>
+                        </div>
+                        <div class="tax-rate-item" onclick="applyTaxRate(6)">
+                            <span class="state">Average</span>
+                            <span class="rate">6%</span>
+                        </div>
+                        <div class="tax-rate-item" onclick="applyTaxRate(8.25)">
+                            <span class="state">California Avg</span>
+                            <span class="rate">8.25%</span>
+                        </div>
+                        <div class="tax-rate-item" onclick="applyTaxRate(9.5)">
+                            <span class="state">High Tax Areas</span>
+                            <span class="rate">9.5%</span>
+                        </div>
+                        <div class="tax-rate-item" onclick="applyTaxRate(11)">
+                            <span class="state">NYC Area</span>
+                            <span class="rate">11%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Sales Tax Calculator Uses</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🛒 Shopping & Budgeting</h3>
+                        <p>Calculate total costs including tax for budgeting purchases, comparing prices across different tax jurisdictions, and planning expenses.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>💼 Business & Pricing</h3>
+                        <p>Determine pricing strategies, calculate costs for business purchases, and understand tax implications for different locations.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 Financial Planning</h3>
+                        <p>Factor sales tax into major purchases like cars, furniture, and electronics. Understand the real cost of items in different states.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Sales Tax FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How is sales tax calculated?</div>
+                        <div class="faq-answer">Sales tax is calculated by multiplying the pre-tax price by the tax rate. For example: $100 × 8.25% = $8.25 tax, for a total of $108.25.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why do tax rates vary by location?</div>
+                        <div class="faq-answer">Sales tax rates are set by state, county, and local governments. Some states have no sales tax, while others combine state, county, and city taxes reaching 10%+ in some areas.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What items are typically tax-exempt?</div>
+                        <div class="faq-answer">Common tax-exempt items include groceries, prescription medications, and clothing (in some states). Tax exemptions vary significantly by state and locality.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I find my local tax rate?</div>
+                        <div class="faq-answer">Check your local government websites, recent receipts, or tax authority websites. Remember that your rate may include state, county, and city taxes combined.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatCurrency, formatNumber } from '/assets/js/utils/math.js';
+        
+        let currentTab = 'add-tax';
+        
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                switchTab(tab);
+            });
+        });
+        
+        // Form submissions
+        document.getElementById('add-tax-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateAddTax();
+        });
+        
+        document.getElementById('remove-tax-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateRemoveTax();
+        });
+        
+        document.getElementById('find-rate-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateFindRate();
+        });
+        
+        function switchTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+            
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tab).classList.add('active');
+            
+            currentTab = tab;
+        }
+        
+        function calculateAddTax() {
+            const preTaxPrice = parseFloat(document.getElementById('pre-tax-price').value);
+            const taxRate = parseFloat(document.getElementById('tax-rate-add').value) / 100;
+            
+            if (!preTaxPrice || taxRate < 0) {
+                alert('Please enter valid values');
+                return;
+            }
+            
+            const taxAmount = preTaxPrice * taxRate;
+            const totalPrice = preTaxPrice + taxAmount;
+            
+            displayResults({
+                mainValue: totalPrice,
+                mainLabel: 'Total Price',
+                taxAmount: taxAmount,
+                preTaxAmount: preTaxPrice,
+                taxRate: taxRate * 100,
+                breakdown: `$${formatNumber(preTaxPrice)} + $${formatNumber(taxAmount)} (${formatNumber(taxRate * 100)}% tax) = $${formatNumber(totalPrice)}`
+            });
+        }
+        
+        function calculateRemoveTax() {
+            const totalPrice = parseFloat(document.getElementById('total-price').value);
+            const taxRate = parseFloat(document.getElementById('tax-rate-remove').value) / 100;
+            
+            if (!totalPrice || taxRate < 0) {
+                alert('Please enter valid values');
+                return;
+            }
+            
+            const preTaxPrice = totalPrice / (1 + taxRate);
+            const taxAmount = totalPrice - preTaxPrice;
+            
+            displayResults({
+                mainValue: preTaxPrice,
+                mainLabel: 'Pre-Tax Price',
+                taxAmount: taxAmount,
+                preTaxAmount: preTaxPrice,
+                taxRate: taxRate * 100,
+                breakdown: `$${formatNumber(totalPrice)} ÷ (1 + ${formatNumber(taxRate * 100)}%) = $${formatNumber(preTaxPrice)} + $${formatNumber(taxAmount)} tax`
+            });
+        }
+        
+        function calculateFindRate() {
+            const originalPrice = parseFloat(document.getElementById('original-price').value);
+            const finalPrice = parseFloat(document.getElementById('final-price').value);
+            
+            if (!originalPrice || !finalPrice || finalPrice <= originalPrice) {
+                alert('Please enter valid values (final price must be greater than original price)');
+                return;
+            }
+            
+            const taxAmount = finalPrice - originalPrice;
+            const taxRate = (taxAmount / originalPrice) * 100;
+            
+            displayResults({
+                mainValue: taxRate,
+                mainLabel: 'Tax Rate',
+                taxAmount: taxAmount,
+                preTaxAmount: originalPrice,
+                taxRate: taxRate,
+                breakdown: `($${formatNumber(finalPrice)} - $${formatNumber(originalPrice)}) ÷ $${formatNumber(originalPrice)} × 100 = ${formatNumber(taxRate)}%`
+            });
+        }
+        
+        function displayResults(results) {
+            document.getElementById('main-result-label').textContent = results.mainLabel;
+            
+            if (results.mainLabel === 'Tax Rate') {
+                document.getElementById('main-result-value').textContent = formatNumber(results.mainValue) + '%';
+            } else {
+                document.getElementById('main-result-value').textContent = formatCurrency(results.mainValue);
+            }
+            
+            document.getElementById('tax-amount').textContent = formatCurrency(results.taxAmount);
+            document.getElementById('pre-tax-amount').textContent = formatCurrency(results.preTaxAmount);
+            document.getElementById('tax-rate-result').textContent = formatNumber(results.taxRate) + '%';
+            
+            document.getElementById('breakdown-details').innerHTML = `
+                <div class="breakdown-formula">
+                    <strong>Calculation:</strong><br>
+                    ${results.breakdown}
+                </div>
+            `;
+            
+            document.getElementById('tax-results').style.display = 'block';
+            document.getElementById('tax-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Global function for tax rate buttons
+        window.applyTaxRate = function(rate) {
+            const activeTab = document.querySelector('.tab-content.active');
+            const taxInput = activeTab.querySelector('input[id*="tax-rate"]');
+            if (taxInput) {
+                taxInput.value = rate;
+            }
+        };
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .calculation-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .tax-rates-reference {
+            margin-top: 40px;
+            padding: 25px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .tax-rates-reference h3 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--text-color);
+        }
+        
+        .tax-rates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .tax-rate-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .tax-rate-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        .tax-rate-item .state {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .tax-rate-item .rate {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .breakdown-content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 15px;
+        }
+        
+        .breakdown-formula {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .calculation-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+                border-right: none;
+            }
+            
+            .tab-btn.active {
+                border-bottom-color: var(--border-color);
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            .tax-rates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</body>
+</html>

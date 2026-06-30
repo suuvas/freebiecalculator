@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideal Weight Calculator - Find Your Healthy Weight Range | FreebieCalculator</title>
+    <meta name="description" content="Free ideal weight calculator using multiple formulas. Find your healthy weight range based on height, age, gender, and frame size for optimal health.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/ideal-weight.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ideal Weight Calculator - Find Your Healthy Weight Range">
+    <meta property="og:description" content="Calculate your ideal weight range using multiple medical formulas for optimal health and fitness goals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/ideal-weight.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Ideal Weight Calculator",
+        "description": "Calculate ideal weight range using multiple medical formulas",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Health Calculators",
+                "item": "https://freebiecalculator.com/#health"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Ideal Weight Calculator",
+                "item": "https://freebiecalculator.com/calculators/ideal-weight.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I determine my body frame size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Measure your wrist circumference. For women: <6.25\" = small, 6.25-6.5\" = medium, >6.5\" = large. For men: <6.5\" = small, 6.5-7.5\" = medium, >7.5\" = large."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why do the formulas give different results?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Different formulas were developed for different populations and purposes. The range gives you a better understanding than a single number, as ideal weight varies individually."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I aim for the lowest weight in my range?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not necessarily. Aim for the middle of your range initially. Athletes with more muscle mass may be healthier at the higher end, while those with less muscle may prefer the lower end."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How does age affect ideal weight?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Metabolism slows with age, and muscle mass typically decreases. Some formulas account for this, suggesting slightly higher weights may be healthy for older adults."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#health-calculators">Health Calculators</a> › 
+                <span>Ideal Weight Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>⚖️ Ideal Weight Calculator</h1>
+                <p>Find your healthy weight range using multiple medical formulas based on height, age, and body frame.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <form id="ideal-weight-calculator" class="calculator-form">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age (years)</label>
+                        <input type="number" id="age" min="18" max="100" placeholder="e.g., 30" required>
+                        <small>Age affects ideal weight calculations</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <div class="input-group">
+                            <input type="number" id="height" min="1" step="0.1" placeholder="e.g., 70" required>
+                            <select id="height-unit">
+                                <option value="inches">inches</option>
+                                <option value="cm">cm</option>
+                                <option value="feet">feet</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="frame">Body Frame Size</label>
+                        <select id="frame" required>
+                            <option value="">Select Frame Size</option>
+                            <option value="small">Small Frame</option>
+                            <option value="medium">Medium Frame</option>
+                            <option value="large">Large Frame</option>
+                        </select>
+                        <small>Based on wrist circumference and bone structure</small>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">Calculate Ideal Weight</button>
+                </form>
+                
+                <div id="ideal-weight-results" class="results-container" style="display: none;">
+                    <h3>📊 Ideal Weight Results</h3>
+                    
+                    <div class="result-grid">
+                        <div class="result-card highlight">
+                            <div class="result-label">Recommended Range</div>
+                            <div class="result-value" id="weight-range">0 - 0 lbs</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Robinson Formula</div>
+                            <div class="result-value" id="robinson-weight">0 lbs</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Miller Formula</div>
+                            <div class="result-value" id="miller-weight">0 lbs</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Hamwi Formula</div>
+                            <div class="result-value" id="hamwi-weight">0 lbs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="weight-analysis">
+                        <h4>Weight Analysis</h4>
+                        <div class="analysis-grid">
+                            <div class="analysis-item">
+                                <span class="label">BMI Range:</span>
+                                <span id="bmi-range">18.5 - 24.9</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="label">Healthy Weight Loss:</span>
+                                <span id="weight-loss-rate">1-2 lbs/week</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="label">Frame Adjustment:</span>
+                                <span id="frame-adjustment">±10%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Understanding Ideal Weight</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📏 Multiple Formulas</h3>
+                        <p>We use Robinson, Miller, and Hamwi formulas developed by medical professionals to provide a comprehensive weight range rather than a single number.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🏗️ Frame Size Matters</h3>
+                        <p>Body frame size significantly affects ideal weight. Large frames can healthily carry 10% more weight, while small frames may be healthier at 10% less.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🎯 Health Focus</h3>
+                        <p>Ideal weight is about health, not appearance. Consider muscle mass, bone density, and overall fitness rather than just the number on the scale.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Ideal Weight FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I determine my body frame size?</div>
+                        <div class="faq-answer">Measure your wrist circumference. For women: <6.25" = small, 6.25-6.5" = medium, >6.5" = large. For men: <6.5" = small, 6.5-7.5" = medium, >7.5" = large.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why do the formulas give different results?</div>
+                        <div class="faq-answer">Different formulas were developed for different populations and purposes. The range gives you a better understanding than a single number, as ideal weight varies individually.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I aim for the lowest weight in my range?</div>
+                        <div class="faq-answer">Not necessarily. Aim for the middle of your range initially. Athletes with more muscle mass may be healthier at the higher end, while those with less muscle may prefer the lower end.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How does age affect ideal weight?</div>
+                        <div class="faq-answer">Metabolism slows with age, and muscle mass typically decreases. Some formulas account for this, suggesting slightly higher weights may be healthy for older adults.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        document.getElementById('ideal-weight-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateIdealWeight();
+        });
+        
+        function calculateIdealWeight() {
+            const gender = document.getElementById('gender').value;
+            const age = parseInt(document.getElementById('age').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const heightUnit = document.getElementById('height-unit').value;
+            const frame = document.getElementById('frame').value;
+            
+            if (!gender || !age || !height || !frame) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Convert height to inches
+            let heightInches;
+            if (heightUnit === 'cm') {
+                heightInches = height / 2.54;
+            } else if (heightUnit === 'feet') {
+                heightInches = height * 12;
+            } else {
+                heightInches = height;
+            }
+            
+            // Calculate using different formulas
+            const robinsonWeight = calculateRobinson(gender, heightInches);
+            const millerWeight = calculateMiller(gender, heightInches);
+            const hamwiWeight = calculateHamwi(gender, heightInches);
+            
+            // Calculate average and range
+            const averageWeight = (robinsonWeight + millerWeight + hamwiWeight) / 3;
+            
+            // Adjust for frame size
+            let frameAdjustment = 1;
+            if (frame === 'small') frameAdjustment = 0.9;
+            if (frame === 'large') frameAdjustment = 1.1;
+            
+            const adjustedWeight = averageWeight * frameAdjustment;
+            const minWeight = adjustedWeight * 0.9;
+            const maxWeight = adjustedWeight * 1.1;
+            
+            displayResults({
+                robinsonWeight,
+                millerWeight,
+                hamwiWeight,
+                minWeight,
+                maxWeight,
+                frameAdjustment,
+                heightInches
+            });
+        }
+        
+        function calculateRobinson(gender, heightInches) {
+            if (gender === 'male') {
+                return 52 + 1.9 * (heightInches - 60);
+            } else {
+                return 49 + 1.7 * (heightInches - 60);
+            }
+        }
+        
+        function calculateMiller(gender, heightInches) {
+            if (gender === 'male') {
+                return 56.2 + 1.41 * (heightInches - 60);
+            } else {
+                return 53.1 + 1.36 * (heightInches - 60);
+            }
+        }
+        
+        function calculateHamwi(gender, heightInches) {
+            if (gender === 'male') {
+                return 48 + 2.7 * (heightInches - 60);
+            } else {
+                return 45.5 + 2.2 * (heightInches - 60);
+            }
+        }
+        
+        function displayResults(results) {
+            // Convert kg to lbs (formulas return kg)
+            const kgToLbs = 2.20462;
+            
+            document.getElementById('weight-range').textContent = 
+                `${Math.round(results.minWeight * kgToLbs)} - ${Math.round(results.maxWeight * kgToLbs)} lbs`;
+            
+            document.getElementById('robinson-weight').textContent = 
+                `${Math.round(results.robinsonWeight * kgToLbs)} lbs`;
+            
+            document.getElementById('miller-weight').textContent = 
+                `${Math.round(results.millerWeight * kgToLbs)} lbs`;
+            
+            document.getElementById('hamwi-weight').textContent = 
+                `${Math.round(results.hamwiWeight * kgToLbs)} lbs`;
+            
+            // Calculate BMI range
+            const heightMeters = results.heightInches * 0.0254;
+            const minBMI = (results.minWeight) / (heightMeters * heightMeters);
+            const maxBMI = (results.maxWeight) / (heightMeters * heightMeters);
+            
+            document.getElementById('bmi-range').textContent = 
+                `${minBMI.toFixed(1)} - ${maxBMI.toFixed(1)}`;
+            
+            // Frame adjustment display
+            const frameText = results.frameAdjustment === 0.9 ? '-10%' : 
+                             results.frameAdjustment === 1.1 ? '+10%' : 'Standard';
+            document.getElementById('frame-adjustment').textContent = frameText;
+            
+            document.getElementById('ideal-weight-results').style.display = 'block';
+            document.getElementById('ideal-weight-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

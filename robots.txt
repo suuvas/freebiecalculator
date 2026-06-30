@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Allow access to all calculator pages
+Allow: /calculators/
+
+# Allow access to main pages
+Allow: /about.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /contact.html
+
+# Disallow access to assets if not needed for SEO
+# Uncomment the line below if you want to prevent crawling of CSS/JS files
+# Disallow: /assets/
+
+# Prevent crawling of any admin areas (if they exist in the future)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://freebiecalculator.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent overloading)
+Crawl-delay: 1

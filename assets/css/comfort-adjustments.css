@@ -1,0 +1,137 @@
+/* Comfort Adjustments for Eye Strain Reduction */
+
+/* Improved Typography for Comfortable Reading */
+body {
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p, li, td {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* Reduced Brightness for Backgrounds */
+.hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Gentler Button Colors */
+button, .btn {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+button:hover, .btn:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+}
+
+/* Softer Input Focus */
+input:focus, select:focus, textarea:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+    outline: none;
+}
+
+/* Reduced Card Contrast */
+.calculator-card, .content-card {
+    background-color: #fefefe;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.calculator-card:hover, .content-card:hover {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Comfortable Text Spacing */
+.form-group {
+    margin-bottom: 2rem;
+}
+
+label {
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Gentle Navigation */
+.nav-link {
+    color: #6c757d;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+}
+
+.nav-link:hover {
+    color: #495057;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Comfortable Dark Mode */
+[data-theme="dark"] {
+    --bg-color: #212529;
+    --bg-secondary: #343a40;
+    --bg-card: #2c2f33;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-color);
+}
+
+[data-theme="dark"] .calculator-card,
+[data-theme="dark"] .content-card {
+    background-color: var(--bg-card);
+    border-color: #495057;
+}
+
+[data-theme="dark"] button,
+[data-theme="dark"] .btn {
+    background-color: #495057;
+    border-color: #495057;
+}
+
+/* Reduced Motion for Sensitive Users */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Better readability for small text */
+small, .small {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Comfortable table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: 1px solid #e9ecef;
+    line-height: 1.6;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}

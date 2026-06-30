@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice de Pourcentage - Calculer Pourcentages, Augmentations et Diminutions | FreebieCalculator</title>
+    <meta name="description" content="Calculatrice de pourcentage gratuite pour calculer les pourcentages, augmentations, diminutions et changements en pourcentage. Rapide, précise et facile à utiliser.">
+    <link rel="canonical" href="https://freebiecalculator.com/fr/calculators/percentage.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="en" href="https://freebiecalculator.com/calculators/percentage.html">
+    <link rel="alternate" hreflang="es" href="https://freebiecalculator.com/es/calculators/percentage.html">
+    <link rel="alternate" hreflang="fr" href="https://freebiecalculator.com/fr/calculators/percentage.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calculatrice de Pourcentage - Calculer Pourcentages et Changements">
+    <meta property="og:description" content="Calculatrice gratuite de pourcentages pour calculer augmentations, diminutions et changements en pourcentage facilement.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/fr/calculators/percentage.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Calculatrice de Pourcentage",
+        "description": "Calculatrice gratuite de pourcentages pour calculer les pourcentages, augmentations, diminutions et changements en pourcentage",
+        "url": "https://freebiecalculator.com/fr/calculators/percentage.html",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "inLanguage": "fr"
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div id="breadcrumbs"></div>
+            
+            <article>
+                <header>
+                    <h1>Calculatrice de Pourcentage</h1>
+                    <p class="lead">Calculez les pourcentages, augmentations, diminutions et changements en pourcentage rapidement et précisément.</p>
+                </header>
+                
+                <div class="calculator-layout">
+                    <div class="calculator-section">
+                        <div class="calculator-card">
+                            <h2>Calculer le Pourcentage de Base</h2>
+                            <p>Quel pourcentage X représente-t-il de Y ?</p>
+                            
+                            <div class="form-group">
+                                <label for="basic-value">Valeur (X)</label>
+                                <input type="number" id="basic-value" step="any" placeholder="Ex: 25">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="basic-total">Total (Y)</label>
+                                <input type="number" id="basic-total" step="any" placeholder="Ex: 100">
+                            </div>
+                            
+                            <button type="button" class="calculate-btn" onclick="calculateBasicPercentage()">Calculer</button>
+                            
+                            <div class="result-section" id="basic-result"></div>
+                        </div>
+                        
+                        <div class="calculator-card">
+                            <h2>Calculer X% d'un Nombre</h2>
+                            <p>Combien représente X% de Y ?</p>
+                            
+                            <div class="form-group">
+                                <label for="of-percentage">Pourcentage (%)</label>
+                                <input type="number" id="of-percentage" step="any" placeholder="Ex: 15">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="of-number">Nombre</label>
+                                <input type="number" id="of-number" step="any" placeholder="Ex: 200">
+                            </div>
+                            
+                            <button type="button" class="calculate-btn" onclick="calculatePercentageOf()">Calculer</button>
+                            
+                            <div class="result-section" id="of-result"></div>
+                        </div>
+                        
+                        <div class="calculator-card">
+                            <h2>Changement en Pourcentage</h2>
+                            <p>Calculer l'augmentation ou la diminution en pourcentage</p>
+                            
+                            <div class="form-group">
+                                <label for="change-original">Valeur Originale</label>
+                                <input type="number" id="change-original" step="any" placeholder="Ex: 50">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="change-new">Nouvelle Valeur</label>
+                                <input type="number" id="change-new" step="any" placeholder="Ex: 65">
+                            </div>
+                            
+                            <button type="button" class="calculate-btn" onclick="calculatePercentageChange()">Calculer</button>
+                            
+                            <div class="result-section" id="change-result"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div id="ad-top" class="ad-slot" aria-label="Publicité"></div>
+                        
+                        <section class="content-section">
+                            <h2>Comment Fonctionne la Calculatrice de Pourcentage ?</h2>
+                            <p>Notre calculatrice de pourcentage vous aide à résoudre trois types principaux de problèmes de pourcentage :</p>
+                            
+                            <h3>1. Pourcentage de Base</h3>
+                            <p>Trouvez quel pourcentage un nombre représente d'un autre. La formule est :</p>
+                            <div class="formula-box">
+                                <strong>Pourcentage = (Partie ÷ Total) × 100</strong>
+                            </div>
+                            
+                            <h3>2. Pourcentage d'un Nombre</h3>
+                            <p>Calculez combien représente un pourcentage spécifique d'un nombre. La formule est :</p>
+                            <div class="formula-box">
+                                <strong>Résultat = (Pourcentage ÷ 100) × Nombre</strong>
+                            </div>
+                            
+                            <h3>3. Changement en Pourcentage</h3>
+                            <p>Déterminez l'augmentation ou la diminution en pourcentage entre deux valeurs. La formule est :</p>
+                            <div class="formula-box">
+                                <strong>Changement % = ((Nouvelle Valeur - Valeur Originale) ÷ Valeur Originale) × 100</strong>
+                            </div>
+                        </section>
+                        
+                        <div id="ad-mid" class="ad-slot" aria-label="Publicité"></div>
+                        
+                        <section class="content-section">
+                            <h2>Exemples Pratiques</h2>
+                            
+                            <div class="example-box">
+                                <h4>Exemple 1 : Remise sur Achats</h4>
+                                <p>Une chemise coûte 80€ et bénéficie d'une remise de 25%. Combien économisez-vous ?</p>
+                                <p><strong>Calcul :</strong> 25% de 80€ = (25 ÷ 100) × 80 = 20€</p>
+                                <p><strong>Prix final :</strong> 80€ - 20€ = 60€</p>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4>Exemple 2 : Augmentation de Salaire</h4>
+                                <p>Votre salaire a augmenté de 3 000€ à 3 300€. Quel est le pourcentage d'augmentation ?</p>
+                                <p><strong>Calcul :</strong> ((3 300 - 3 000) ÷ 3 000) × 100 = 10%</p>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4>Exemple 3 : Pourboire au Restaurant</h4>
+                                <p>L'addition du restaurant est de 120€ et vous voulez laisser 18% de pourboire.</p>
+                                <p><strong>Calcul :</strong> 18% de 120€ = (18 ÷ 100) × 120 = 21,60€</p>
+                            </div>
+                        </section>
+                        
+                        <section class="content-section">
+                            <h2>Applications Courantes</h2>
+                            <ul>
+                                <li><strong>Achats :</strong> Calculer remises et taxes</li>
+                                <li><strong>Finances :</strong> Taux d'intérêt et rendements d'investissement</li>
+                                <li><strong>Éducation :</strong> Notes et scores d'examens</li>
+                                <li><strong>Affaires :</strong> Marges bénéficiaires et métriques de croissance</li>
+                                <li><strong>Santé :</strong> Composition corporelle et statistiques nutritionnelles</li>
+                                <li><strong>Sports :</strong> Statistiques et pourcentages de performance</li>
+                            </ul>
+                        </section>
+                        
+                        <div id="ad-bottom" class="ad-slot" aria-label="Publicité"></div>
+                        
+                        <section class="faq-section">
+                            <h2>Questions Fréquemment Posées</h2>
+                            
+                            <div class="faq-item">
+                                <h3>Comment calculer une remise ?</h3>
+                                <p>Pour calculer une remise, utilisez la fonction "X% d'un nombre". Entrez le pourcentage de remise et le prix original pour obtenir le montant de la remise.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>Quelle est la différence entre augmentation et diminution en pourcentage ?</h3>
+                                <p>Une augmentation en pourcentage affiche un résultat positif quand la nouvelle valeur est supérieure à l'originale. Une diminution en pourcentage affiche un résultat négatif quand la nouvelle valeur est inférieure.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>Les pourcentages peuvent-ils être supérieurs à 100% ?</h3>
+                                <p>Oui, les pourcentages peuvent être supérieurs à 100%. Par exemple, si quelque chose augmente de 50 à 150, cela représente une augmentation de 200%.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3>Comment calculer la taxe sur les ventes ?</h3>
+                                <p>Pour calculer les taxes, utilisez "X% d'un nombre". Entrez le taux de taxe et le prix de l'article pour obtenir le montant de la taxe.</p>
+                            </div>
+                        </section>
+                        
+                        <div id="related-calculators"></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+        function calculateBasicPercentage() {
+            const value = parseFloat(document.getElementById('basic-value').value);
+            const total = parseFloat(document.getElementById('basic-total').value);
+            const resultDiv = document.getElementById('basic-result');
+            
+            if (isNaN(value) || isNaN(total) || total === 0) {
+                resultDiv.innerHTML = '<div class="error">Veuillez entrer des valeurs valides</div>';
+                return;
+            }
+            
+            const percentage = (value / total) * 100;
+            resultDiv.innerHTML = `
+                <div class="result">
+                    <strong>${percentage.toFixed(2)}%</strong>
+                    <p>${value} représente ${percentage.toFixed(2)}% de ${total}</p>
+                </div>
+            `;
+        }
+        
+        function calculatePercentageOf() {
+            const percentage = parseFloat(document.getElementById('of-percentage').value);
+            const number = parseFloat(document.getElementById('of-number').value);
+            const resultDiv = document.getElementById('of-result');
+            
+            if (isNaN(percentage) || isNaN(number)) {
+                resultDiv.innerHTML = '<div class="error">Veuillez entrer des valeurs valides</div>';
+                return;
+            }
+            
+            const result = (percentage / 100) * number;
+            resultDiv.innerHTML = `
+                <div class="result">
+                    <strong>${result.toFixed(2)}</strong>
+                    <p>${percentage}% de ${number} = ${result.toFixed(2)}</p>
+                </div>
+            `;
+        }
+        
+        function calculatePercentageChange() {
+            const original = parseFloat(document.getElementById('change-original').value);
+            const newValue = parseFloat(document.getElementById('change-new').value);
+            const resultDiv = document.getElementById('change-result');
+            
+            if (isNaN(original) || isNaN(newValue) || original === 0) {
+                resultDiv.innerHTML = '<div class="error">Veuillez entrer des valeurs valides</div>';
+                return;
+            }
+            
+            const change = ((newValue - original) / original) * 100;
+            const changeType = change >= 0 ? 'augmentation' : 'diminution';
+            const changeText = change >= 0 ? 'a augmenté' : 'a diminué';
+            
+            resultDiv.innerHTML = `
+                <div class="result">
+                    <strong>${Math.abs(change).toFixed(2)}% ${changeType}</strong>
+                    <p>La valeur ${changeText} de ${original} à ${newValue}</p>
+                    <p>Différence : ${(newValue - original).toFixed(2)}</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

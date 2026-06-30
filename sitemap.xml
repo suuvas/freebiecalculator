@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main Pages -->
+    <url>
+        <loc>https://freebiecalculator.com/</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/about.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/contact.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/search.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Legal and Trust Pages -->
+    <url>
+        <loc>https://freebiecalculator.com/privacy.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/terms.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/disclaimer.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- E-E-A-T Pages -->
+    
+    <url>
+        <loc>https://freebiecalculator.com/editorial-policy.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/review-process.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/update-log.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Blog Pages -->
+    <url>
+        <loc>https://freebiecalculator.com/blog/</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/how-to-use-loan-calculator.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/compound-interest-vs-simple-interest.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/bmi-vs-body-fat.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- General & Education Calculators -->
+    <url>
+        <loc>https://freebiecalculator.com/calculators/age.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/percentage.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/unit-converter.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/date-difference.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/gpa.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/cgpa.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/average.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/discount.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Health Calculators -->
+    <url>
+        <loc>https://freebiecalculator.com/calculators/bmi.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/bmr.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/calorie.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Finance Calculators -->
+    <url>
+        <loc>https://freebiecalculator.com/calculators/emi.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/mortgage.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/compound-interest.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/simple-interest.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/investment-roi.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/salary-after-tax.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/tax.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/car-loan.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/currency-converter.html</loc>
+        <lastmod>2025-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- New Calculators -->
+    <url>
+        <loc>https://freebiecalculator.com/calculators/tip.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/area.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/volume.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/binary-converter.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/fuel-cost.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/qr-code.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/calculators/water-intake.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Help Page -->
+    <url>
+        <loc>https://freebiecalculator.com/help/</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- New Blog Posts -->
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/percentage-formulas-explained.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/water-intake-science.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/tip-calculator-how-to.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/savings-vs-compound-interest.html</loc>
+        <lastmod>2025-08-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://freebiecalculator.com/calculators/hourly-to-salary.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://freebiecalculator.com/calculators/square-footage.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://freebiecalculator.com/calculators/love.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://freebiecalculator.com/calculators/cagr.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/paycheck.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/debt-to-income.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/sleep.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/ovulation.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/loan-to-value.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/due-date.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/net-worth.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/macro-calculator.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/how-to-calculate-hourly-to-salary.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/how-to-calculate-compound-interest.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/how-to-calculate-bmi.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/how-to-calculate-mortgage-payment.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/blog/posts/how-to-calculate-percentage.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/uk/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/ca/</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://freebiecalculator.com/calculators/gst-hst.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/help/google-search-console.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/help/backlink-kit.html</loc>
+        <lastmod>2026-06-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://freebiecalculator.com/privacy.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- 20 Missing Calculator Pages -->
+    <url>
+        <loc>https://freebiecalculator.com/calculators/amortization.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/body-fat.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/concrete.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/fraction.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/grade.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/hours.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/ideal-weight.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/inflation.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/pace.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/password-generator.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/payment.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/pregnancy.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/random-number.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/retirement.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/sales-tax.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/scientific.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/standard-deviation.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/subnet.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/time-calculator.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://freebiecalculator.com/calculators/triangle.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>

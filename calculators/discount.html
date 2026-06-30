@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator - Calculate Sale Prices & Savings | FreebieCalculator</title>
+    <meta name="description" content="Free discount calculator to find sale prices, percentage discounts, and savings. Calculate original prices and compare deals with our easy-to-use tool.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/discount.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Discount Calculator - Calculate Sale Prices & Savings">
+    <meta property="og:description" content="Calculate discount percentages, sale prices, and savings with this free online calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/discount.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Discount Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate discounts, sale prices, and savings for shopping and business purposes.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Other Calculators",
+                "item": "https://freebiecalculator.com/#other"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Discount Calculator",
+                "item": "https://freebiecalculator.com/calculators/discount.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I calculate multiple discounts?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Apply discounts sequentially, not additively. For example, 20% off then 10% off is not 30% off. Calculate: Original \u00d7 (1 - 0.20) \u00d7 (1 - 0.10) = Original \u00d7 0.80 \u00d7 0.90 = Original \u00d7 0.72 (28% total discount)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's better: percentage off or dollar amount off?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the original price. Percentage discounts are better for expensive items, while fixed dollar amounts can be better for cheaper items. Always calculate the actual savings to compare offers effectively."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I compare \"Buy X, Get Y Free\" deals?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Convert to equivalent percentage discount. \"Buy 2, Get 1 Free\" means you pay for 2 items but get 3, so you save 33.3%. \"Buy 3, Get 2 Free\" means you save 40%. Compare these percentages to other discount offers."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I consider tax when calculating discounts?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, for accurate comparisons. Discounts typically apply before tax, so calculate: (Original Price \u00d7 Discount) + Tax. Some promotional discounts might apply after tax, so read the terms carefully."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do cashback and discount percentages compare?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Direct discounts reduce your immediate payment, while cashback gives you money later. A 20% discount is immediately better than 20% cashback because you pay less upfront and don't have to wait for the cashback or meet minimum requirements."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Discount Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <div class="form-group">
+                        <label for="calc-type">What would you like to calculate?</label>
+                        <select id="calc-type">
+                            <option value="sale-price">Sale Price (from original price and discount %)</option>
+                            <option value="discount-amount">Discount Amount (from original and sale price)</option>
+                            <option value="discount-percent">Discount Percentage (from original and sale price)</option>
+                            <option value="original-price">Original Price (from sale price and discount %)</option>
+                        </select>
+                    </div>
+                    
+                    <div id="sale-price-calc" class="calc-section">
+                        <h3>Calculate Sale Price</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="original-price-1">Original Price ($):</label>
+                                <input type="number" id="original-price-1" step="0.01" placeholder="e.g., 100.00" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="discount-percent-1">Discount (%):</label>
+                                <input type="number" id="discount-percent-1" step="0.1" placeholder="e.g., 25" min="0" max="100">
+                            </div>
+                        </div>
+                        <button onclick="calculateSalePrice()">Calculate Sale Price</button>
+                    </div>
+                    
+                    <div id="discount-amount-calc" class="calc-section" style="display: none;">
+                        <h3>Calculate Discount Amount</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="original-price-2">Original Price ($):</label>
+                                <input type="number" id="original-price-2" step="0.01" placeholder="e.g., 100.00" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="sale-price-2">Sale Price ($):</label>
+                                <input type="number" id="sale-price-2" step="0.01" placeholder="e.g., 75.00" min="0">
+                            </div>
+                        </div>
+                        <button onclick="calculateDiscountAmount()">Calculate Discount</button>
+                    </div>
+                    
+                    <div id="discount-percent-calc" class="calc-section" style="display: none;">
+                        <h3>Calculate Discount Percentage</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="original-price-3">Original Price ($):</label>
+                                <input type="number" id="original-price-3" step="0.01" placeholder="e.g., 100.00" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="sale-price-3">Sale Price ($):</label>
+                                <input type="number" id="sale-price-3" step="0.01" placeholder="e.g., 75.00" min="0">
+                            </div>
+                        </div>
+                        <button onclick="calculateDiscountPercent()">Calculate Percentage</button>
+                    </div>
+                    
+                    <div id="original-price-calc" class="calc-section" style="display: none;">
+                        <h3>Calculate Original Price</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="sale-price-4">Sale Price ($):</label>
+                                <input type="number" id="sale-price-4" step="0.01" placeholder="e.g., 75.00" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="discount-percent-4">Discount (%):</label>
+                                <input type="number" id="discount-percent-4" step="0.1" placeholder="e.g., 25" min="0" max="100">
+                            </div>
+                        </div>
+                        <button onclick="calculateOriginalPrice()">Calculate Original Price</button>
+                    </div>
+                    
+                    <div id="discount-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="result-display"></div>
+                        <div class="result-details" id="result-breakdown"></div>
+                        <div class="result-details" id="savings-info"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>How Discount Calculations Work</h2>
+                    <p>
+                        Discount calculations are essential for smart shopping, business pricing, and financial planning. 
+                        Understanding how to calculate discounts helps you compare deals, determine actual savings, and 
+                        make informed purchasing decisions. Whether you're a shopper looking for the best deals or a 
+                        business owner setting prices, these calculations are invaluable.
+                    </p>
+                    <p>
+                        Our discount calculator handles all common scenarios: finding sale prices from percentage discounts, 
+                        calculating what percentage a discount represents, determining the original price from a sale price, 
+                        and computing the dollar amount saved.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Discount Calculation Formulas</h2>
+                    
+                    <h4>Sale Price Calculation</h4>
+                    <pre><code>
+Sale Price = Original Price × (1 - Discount Percentage ÷ 100)
+
+Alternative:
+Sale Price = Original Price - (Original Price × Discount Percentage ÷ 100)
+
+Example: $100 with 25% discount
+Sale Price = $100 × (1 - 0.25) = $100 × 0.75 = $75
+                    </code></pre>
+                    
+                    <h4>Discount Amount Calculation</h4>
+                    <pre><code>
+Discount Amount = Original Price - Sale Price
+
+Example: Original $100, Sale $75
+Discount Amount = $100 - $75 = $25
+                    </code></pre>
+                    
+                    <h4>Discount Percentage Calculation</h4>
+                    <pre><code>
+Discount Percentage = ((Original Price - Sale Price) ÷ Original Price) × 100
+
+Example: Original $100, Sale $75
+Discount % = (($100 - $75) ÷ $100) × 100 = 25%
+                    </code></pre>
+                    
+                    <h4>Original Price Calculation</h4>
+                    <pre><code>
+Original Price = Sale Price ÷ (1 - Discount Percentage ÷ 100)
+
+Example: Sale $75 with 25% discount
+Original Price = $75 ÷ (1 - 0.25) = $75 ÷ 0.75 = $100
+                    </code></pre>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Black Friday Sale</h4>
+                        <p><strong>Scenario:</strong> TV originally priced at $800 with 40% off</p>
+                        <p><strong>Calculation:</strong> $800 × (1 - 0.40) = $800 × 0.60 = $480</p>
+                        <p><strong>Result:</strong> Sale price: $480, You save: $320</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Clearance Item</h4>
+                        <p><strong>Scenario:</strong> Shirt was $60, now $39. What's the discount percentage?</p>
+                        <p><strong>Calculation:</strong> (($60 - $39) ÷ $60) × 100 = ($21 ÷ $60) × 100 = 35%</p>
+                        <p><strong>Result:</strong> 35% discount, saving $21</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Multiple Discounts</h4>
+                        <p><strong>Scenario:</strong> 30% off, then additional 10% off the sale price</p>
+                        <p><strong>Original:</strong> $100</p>
+                        <p><strong>After first discount:</strong> $100 × 0.70 = $70</p>
+                        <p><strong>After second discount:</strong> $70 × 0.90 = $63</p>
+                        <p><strong>Total savings:</strong> $37 (37% overall discount)</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Shopping Tips & Strategies</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>🛍️ Smart Shopping Tips</h4>
+                            <ul>
+                                <li>Compare percentage discounts vs. dollar amounts</li>
+                                <li>Calculate price per unit for bulk discounts</li>
+                                <li>Consider total cost including tax and shipping</li>
+                                <li>Check if you actually need the item</li>
+                                <li>Compare across multiple retailers</li>
+                                <li>Look for stackable discounts (coupon + sale)</li>
+                                <li>Time your purchases around sales cycles</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>💰 Business Pricing Tips</h4>
+                            <ul>
+                                <li>Set original prices to allow for desired margins</li>
+                                <li>Test different discount percentages</li>
+                                <li>Consider psychological pricing (e.g., $99 vs $100)</li>
+                                <li>Use discounts to clear inventory</li>
+                                <li>Offer tiered discounts for volume purchases</li>
+                                <li>Track which discount levels drive most sales</li>
+                                <li>Consider seasonal and promotional strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Common Discount Scenarios</h2>
+                    
+                    <h4>Retail Sales</h4>
+                    <ul>
+                        <li><strong>End-of-season clearance:</strong> 50-70% off</li>
+                        <li><strong>Black Friday/Cyber Monday:</strong> 20-60% off</li>
+                        <li><strong>Student discounts:</strong> 10-15% off</li>
+                        <li><strong>Senior discounts:</strong> 5-20% off</li>
+                        <li><strong>Employee discounts:</strong> 10-30% off</li>
+                    </ul>
+                    
+                    <h4>Bulk Purchase Discounts</h4>
+                    <ul>
+                        <li><strong>Buy 2, get 1 free:</strong> Equivalent to 33% off total</li>
+                        <li><strong>Buy 10, get 20% off:</strong> Calculate per-unit savings</li>
+                        <li><strong>Volume pricing tiers:</strong> Larger quantities = higher discounts</li>
+                    </ul>
+                    
+                    <h4>Service Discounts</h4>
+                    <ul>
+                        <li><strong>Early bird specials:</strong> 10-25% off</li>
+                        <li><strong>First-time customer:</strong> 15-30% off</li>
+                        <li><strong>Loyalty programs:</strong> 5-15% ongoing</li>
+                        <li><strong>Referral discounts:</strong> $X off or Y% off</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I calculate multiple discounts?</div>
+                        <div class="faq-answer">
+                            Apply discounts sequentially, not additively. For example, 20% off then 10% off is not 30% off. 
+                            Calculate: Original × (1 - 0.20) × (1 - 0.10) = Original × 0.80 × 0.90 = Original × 0.72 
+                            (28% total discount).
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's better: percentage off or dollar amount off?</div>
+                        <div class="faq-answer">
+                            It depends on the original price. Percentage discounts are better for expensive items, 
+                            while fixed dollar amounts can be better for cheaper items. Always calculate the actual 
+                            savings to compare offers effectively.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I compare "Buy X, Get Y Free" deals?</div>
+                        <div class="faq-answer">
+                            Convert to equivalent percentage discount. "Buy 2, Get 1 Free" means you pay for 2 items 
+                            but get 3, so you save 33.3%. "Buy 3, Get 2 Free" means you save 40%. Compare these 
+                            percentages to other discount offers.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I consider tax when calculating discounts?</div>
+                        <div class="faq-answer">
+                            Yes, for accurate comparisons. Discounts typically apply before tax, so calculate: 
+                            (Original Price × Discount) + Tax. Some promotional discounts might apply after tax, 
+                            so read the terms carefully.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do cashback and discount percentages compare?</div>
+                        <div class="faq-answer">
+                            Direct discounts reduce your immediate payment, while cashback gives you money later. 
+                            A 20% discount is immediately better than 20% cashback because you pay less upfront and 
+                            don't have to wait for the cashback or meet minimum requirements.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/tax.html">Tax Calculator</a>
+                        <a href="/calculators/investment-roi.html">Investment ROI Calculator</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/unit-converter.html">Unit Converter</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatCurrency, formatNumber, roundTo, calculatePercentage } from '/assets/js/utils/math.js';
+        
+        // Switch between calculation types
+        document.getElementById('calc-type').addEventListener('change', function(e) {
+            const sections = document.querySelectorAll('.calc-section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            const type = e.target.value;
+            document.getElementById(`${type}-calc`).style.display = 'block';
+            
+            // Hide result when switching
+            document.getElementById('discount-result').style.display = 'none';
+        });
+        
+        window.calculateSalePrice = function() {
+            const originalPrice = parseFloat(document.getElementById('original-price-1').value);
+            const discountPercent = parseFloat(document.getElementById('discount-percent-1').value);
+            
+            if (isNaN(originalPrice) || isNaN(discountPercent) || originalPrice < 0 || discountPercent < 0 || discountPercent > 100) {
+                alert('Please enter valid values');
+                return;
+            }
+            
+            const discountAmount = originalPrice * (discountPercent / 100);
+            const salePrice = originalPrice - discountAmount;
+            
+            showResult(
+                `Sale Price: ${formatCurrency(salePrice)}`,
+                `Original Price: ${formatCurrency(originalPrice)}<br>
+                 Discount: ${discountPercent}% (${formatCurrency(discountAmount)})<br>
+                 <strong>Final Price: ${formatCurrency(salePrice)}</strong>`,
+                `You save ${formatCurrency(discountAmount)} with this ${discountPercent}% discount!`
+            );
+        };
+        
+        window.calculateDiscountAmount = function() {
+            const originalPrice = parseFloat(document.getElementById('original-price-2').value);
+            const salePrice = parseFloat(document.getElementById('sale-price-2').value);
+            
+            if (isNaN(originalPrice) || isNaN(salePrice) || originalPrice < 0 || salePrice < 0) {
+                alert('Please enter valid values');
+                return;
+            }
+            
+            if (salePrice > originalPrice) {
+                alert('Sale price cannot be higher than original price');
+                return;
+            }
+            
+            const discountAmount = originalPrice - salePrice;
+            const discountPercent = calculatePercentage(discountAmount, originalPrice);
+            
+            showResult(
+                `Discount Amount: ${formatCurrency(discountAmount)}`,
+                `Original Price: ${formatCurrency(originalPrice)}<br>
+                 Sale Price: ${formatCurrency(salePrice)}<br>
+                 <strong>Discount: ${formatCurrency(discountAmount)} (${formatNumber(discountPercent, 1)}%)</strong>`,
+                `This represents a ${formatNumber(discountPercent, 1)}% savings!`
+            );
+        };
+        
+        window.calculateDiscountPercent = function() {
+            const originalPrice = parseFloat(document.getElementById('original-price-3').value);
+            const salePrice = parseFloat(document.getElementById('sale-price-3').value);
+            
+            if (isNaN(originalPrice) || isNaN(salePrice) || originalPrice <= 0 || salePrice < 0) {
+                alert('Please enter valid values');
+                return;
+            }
+            
+            if (salePrice > originalPrice) {
+                alert('Sale price cannot be higher than original price');
+                return;
+            }
+            
+            const discountAmount = originalPrice - salePrice;
+            const discountPercent = calculatePercentage(discountAmount, originalPrice);
+            
+            showResult(
+                `Discount Percentage: ${formatNumber(discountPercent, 1)}%`,
+                `Original Price: ${formatCurrency(originalPrice)}<br>
+                 Sale Price: ${formatCurrency(salePrice)}<br>
+                 Discount Amount: ${formatCurrency(discountAmount)}<br>
+                 <strong>Discount Percentage: ${formatNumber(discountPercent, 1)}%</strong>`,
+                `You're saving ${formatNumber(discountPercent, 1)}% on this purchase!`
+            );
+        };
+        
+        window.calculateOriginalPrice = function() {
+            const salePrice = parseFloat(document.getElementById('sale-price-4').value);
+            const discountPercent = parseFloat(document.getElementById('discount-percent-4').value);
+            
+            if (isNaN(salePrice) || isNaN(discountPercent) || salePrice < 0 || discountPercent < 0 || discountPercent >= 100) {
+                alert('Please enter valid values (discount must be less than 100%)');
+                return;
+            }
+            
+            const originalPrice = salePrice / (1 - discountPercent / 100);
+            const discountAmount = originalPrice - salePrice;
+            
+            showResult(
+                `Original Price: ${formatCurrency(originalPrice)}`,
+                `Sale Price: ${formatCurrency(salePrice)}<br>
+                 Discount: ${discountPercent}%<br>
+                 <strong>Original Price: ${formatCurrency(originalPrice)}</strong><br>
+                 Discount Amount: ${formatCurrency(discountAmount)}`,
+                `The item was originally ${formatCurrency(originalPrice)}, saving you ${formatCurrency(discountAmount)}!`
+            );
+        };
+        
+        function showResult(display, breakdown, savings) {
+            document.getElementById('result-display').textContent = display;
+            document.getElementById('result-breakdown').innerHTML = breakdown;
+            document.getElementById('savings-info').innerHTML = `<em>${savings}</em>`;
+            document.getElementById('discount-result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

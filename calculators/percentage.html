@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator - Calculate Percentages Online | FreebieCalculator</title>
+    <meta name="description" content="Free percentage calculator to find percentages, percentage increases, decreases, and more. Quick and accurate percentage calculations.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/percentage.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Percentage Calculator - Calculate Percentages Online">
+    <meta property="og:description" content="Free percentage calculator to find percentages, percentage increases, decreases, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/percentage.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Percentage Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate percentages, percentage increases, decreases, and more with this free online percentage calculator.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Math Calculators",
+                "item": "https://freebiecalculator.com/#math"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Percentage Calculator",
+                "item": "https://freebiecalculator.com/calculators/percentage.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I calculate a tip percentage?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To calculate a tip, use the basic percentage formula. For example, for an 18% tip on a $50 bill: (18 / 100) \u00d7 50 = $9. So the total would be $50 + $9 = $59."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between percentage increase and percentage change?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Percentage change can be positive (increase) or negative (decrease). Percentage increase specifically refers to when the new value is higher than the original value."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I calculate discount percentages?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For a discount, calculate what percentage the discount amount is of the original price. For example, if an item costs $100 and is discounted to $80, the discount is 20%."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can percentages be greater than 100%?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Percentages can exceed 100%. For example, if something doubles in value, that's a 100% increase. If it triples, that's a 200% increase."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Percentage Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <div class="form-group">
+                        <label for="calc-type">Calculation Type:</label>
+                        <select id="calc-type">
+                            <option value="basic">What is X% of Y?</option>
+                            <option value="percentage">X is what percent of Y?</option>
+                            <option value="increase">Percentage Increase</option>
+                            <option value="decrease">Percentage Decrease</option>
+                            <option value="change">Percentage Change</option>
+                        </select>
+                    </div>
+                    
+                    <div id="basic-calc" class="calc-section">
+                        <h3>What is X% of Y?</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="basic-percent">Percentage (%):</label>
+                                <input type="number" id="basic-percent" step="0.01" placeholder="e.g., 25">
+                            </div>
+                            <div class="form-group">
+                                <label for="basic-value">Of Value:</label>
+                                <input type="number" id="basic-value" step="0.01" placeholder="e.g., 200">
+                            </div>
+                        </div>
+                        <button onclick="calculateBasic()">Calculate</button>
+                    </div>
+                    
+                    <div id="percentage-calc" class="calc-section" style="display: none;">
+                        <h3>X is what percent of Y?</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="part-value">Part (X):</label>
+                                <input type="number" id="part-value" step="0.01" placeholder="e.g., 50">
+                            </div>
+                            <div class="form-group">
+                                <label for="whole-value">Whole (Y):</label>
+                                <input type="number" id="whole-value" step="0.01" placeholder="e.g., 200">
+                            </div>
+                        </div>
+                        <button onclick="calculatePercentage()">Calculate</button>
+                    </div>
+                    
+                    <div id="change-calc" class="calc-section" style="display: none;">
+                        <h3>Percentage Change</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="old-value">Original Value:</label>
+                                <input type="number" id="old-value" step="0.01" placeholder="e.g., 100">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-value">New Value:</label>
+                                <input type="number" id="new-value" step="0.01" placeholder="e.g., 120">
+                            </div>
+                        </div>
+                        <button onclick="calculateChange()">Calculate</button>
+                    </div>
+                    
+                    <div id="result" class="result-container" style="display: none;">
+                        <div class="result-value" id="result-display"></div>
+                        <div class="result-details" id="result-details"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>How Percentage Calculations Work</h2>
+                    <p>
+                        Percentage calculations are fundamental mathematical operations used in everyday life, from 
+                        calculating discounts and tips to analyzing data and financial metrics. Our percentage calculator 
+                        handles the most common percentage calculations with precision and ease.
+                    </p>
+                    <p>
+                        Understanding percentages is crucial for making informed decisions in shopping, finance, statistics, 
+                        and many other areas. A percentage represents a fraction of 100, making it easy to compare 
+                        proportions and changes.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Percentage Formulas</h2>
+                    
+                    <h4>Basic Percentage</h4>
+                    <p>To find what X% of Y is:</p>
+                    <pre><code>Result = (X / 100) × Y</code></pre>
+                    
+                    <h4>Percentage of a Number</h4>
+                    <p>To find what percentage X is of Y:</p>
+                    <pre><code>Percentage = (X / Y) × 100</code></pre>
+                    
+                    <h4>Percentage Change</h4>
+                    <p>To find the percentage change from old value to new value:</p>
+                    <pre><code>Percentage Change = ((New Value - Old Value) / Old Value) × 100</code></pre>
+                    
+                    <h4>Percentage Increase</h4>
+                    <p>When the new value is greater than the old value:</p>
+                    <pre><code>Percentage Increase = ((New Value - Old Value) / Old Value) × 100</code></pre>
+                    
+                    <h4>Percentage Decrease</h4>
+                    <p>When the new value is less than the old value:</p>
+                    <pre><code>Percentage Decrease = ((Old Value - New Value) / Old Value) × 100</code></pre>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Basic Percentage</h4>
+                        <p><strong>Question:</strong> What is 25% of 200?</p>
+                        <p><strong>Calculation:</strong> (25 / 100) × 200 = 0.25 × 200 = 50</p>
+                        <p><strong>Answer:</strong> 50</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Find Percentage</h4>
+                        <p><strong>Question:</strong> 40 is what percent of 160?</p>
+                        <p><strong>Calculation:</strong> (40 / 160) × 100 = 0.25 × 100 = 25%</p>
+                        <p><strong>Answer:</strong> 25%</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Percentage Increase</h4>
+                        <p><strong>Question:</strong> Price increased from $80 to $100. What's the percentage increase?</p>
+                        <p><strong>Calculation:</strong> ((100 - 80) / 80) × 100 = (20 / 80) × 100 = 25%</p>
+                        <p><strong>Answer:</strong> 25% increase</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I calculate a tip percentage?</div>
+                        <div class="faq-answer">
+                            To calculate a tip, use the basic percentage formula. For example, for an 18% tip on a $50 bill: 
+                            (18 / 100) × 50 = $9. So the total would be $50 + $9 = $59.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between percentage increase and percentage change?</div>
+                        <div class="faq-answer">
+                            Percentage change can be positive (increase) or negative (decrease). Percentage increase 
+                            specifically refers to when the new value is higher than the original value.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I calculate discount percentages?</div>
+                        <div class="faq-answer">
+                            For a discount, calculate what percentage the discount amount is of the original price. 
+                            For example, if an item costs $100 and is discounted to $80, the discount is 20%.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can percentages be greater than 100%?</div>
+                        <div class="faq-answer">
+                            Yes! Percentages can exceed 100%. For example, if something doubles in value, that's a 100% increase. 
+                            If it triples, that's a 200% increase.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>More Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/discount.html">Discount Calculator</a>
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/investment-roi.html">Investment ROI Calculator</a>
+                        <a href="/calculators/tax.html">Tax Calculator</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                        <a href="/calculators/gpa.html">GPA Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { calculatePercentage, calculatePercentageChange, applyPercentage, roundTo, formatNumber } from '/assets/js/utils/math.js';
+        
+        // Switch between calculation types
+        document.getElementById('calc-type').addEventListener('change', function(e) {
+            const sections = document.querySelectorAll('.calc-section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            const type = e.target.value;
+            if (type === 'basic') {
+                document.getElementById('basic-calc').style.display = 'block';
+            } else if (type === 'percentage') {
+                document.getElementById('percentage-calc').style.display = 'block';
+            } else {
+                document.getElementById('change-calc').style.display = 'block';
+            }
+            
+            // Hide result when switching
+            document.getElementById('result').style.display = 'none';
+        });
+        
+        window.calculateBasic = function() {
+            const percent = parseFloat(document.getElementById('basic-percent').value);
+            const value = parseFloat(document.getElementById('basic-value').value);
+            
+            if (isNaN(percent) || isNaN(value)) {
+                alert('Please enter valid numbers');
+                return;
+            }
+            
+            const result = applyPercentage(value, percent);
+            showResult(
+                formatNumber(result),
+                `${percent}% of ${formatNumber(value)} = ${formatNumber(result)}`
+            );
+        };
+        
+        window.calculatePercentage = function() {
+            const part = parseFloat(document.getElementById('part-value').value);
+            const whole = parseFloat(document.getElementById('whole-value').value);
+            
+            if (isNaN(part) || isNaN(whole) || whole === 0) {
+                alert('Please enter valid numbers (whole cannot be zero)');
+                return;
+            }
+            
+            const result = calculatePercentage(part, whole);
+            showResult(
+                `${formatNumber(result, 2)}%`,
+                `${formatNumber(part)} is ${formatNumber(result, 2)}% of ${formatNumber(whole)}`
+            );
+        };
+        
+        window.calculateChange = function() {
+            const oldValue = parseFloat(document.getElementById('old-value').value);
+            const newValue = parseFloat(document.getElementById('new-value').value);
+            
+            if (isNaN(oldValue) || isNaN(newValue)) {
+                alert('Please enter valid numbers');
+                return;
+            }
+            
+            const change = calculatePercentageChange(oldValue, newValue);
+            const changeType = change > 0 ? 'increase' : change < 0 ? 'decrease' : 'no change';
+            
+            showResult(
+                `${formatNumber(Math.abs(change), 2)}% ${changeType}`,
+                `From ${formatNumber(oldValue)} to ${formatNumber(newValue)} is a ${formatNumber(Math.abs(change), 2)}% ${changeType}`
+            );
+        };
+        
+        function showResult(display, details) {
+            document.getElementById('result-display').textContent = display;
+            document.getElementById('result-details').textContent = details;
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

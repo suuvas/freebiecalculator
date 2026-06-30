@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment ROI Calculator - Calculate Return on Investment | FreebieCalculator</title>
+    <meta name="description" content="Free ROI calculator to measure investment returns. Calculate percentage returns, annualized ROI, and compare investment performance with our comprehensive tool.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/investment-roi.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Investment ROI Calculator - Calculate Return on Investment">
+    <meta property="og:description" content="Calculate investment returns, ROI percentages, and annualized returns with this free calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/investment-roi.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Investment ROI Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate return on investment (ROI) percentages and annualized returns for investment analysis.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Calculators",
+                "item": "https://freebiecalculator.com/#finance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Investment ROI Calculator",
+                "item": "https://freebiecalculator.com/calculators/investment-roi.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's a good ROI for investments?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A \"good\" ROI depends on the investment type, risk level, and time period. Generally, beating the S&P 500's historical ~10% annual return is considered good for stock investments. For lower-risk investments, 3-6% might be acceptable. Always compare to relevant benchmarks and consider the risk involved."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I use simple ROI or annualized ROI?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use annualized ROI when comparing investments held for different time periods. Simple ROI is fine for short-term comparisons or when all investments have the same holding period. Annualized ROI gives a more accurate picture of investment efficiency."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I account for dividends and fees in ROI?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Add all income received (dividends, interest, rent) to your current value, and subtract all costs (purchase fees, management fees, taxes) from your gains. This gives you the total return for a more accurate ROI calculation."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between ROI and ROE?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ROI measures return on any investment relative to its cost. ROE (Return on Equity) specifically measures a company's profitability relative to shareholders' equity. ROI is broader and can apply to any investment, while ROE is a specific business profitability metric."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I calculate ROI for partial sales?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For partial sales, calculate ROI on the portion sold: ROI = ((Sale Proceeds - Proportional Initial Investment - Costs) \u00f7 Proportional Initial Investment) \u00d7 100. For the remaining holding, use current market value. Consider each transaction separately for accuracy."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Investment ROI Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <form id="roi-form">
+                        <div class="form-group">
+                            <label for="calc-type">Calculation Type:</label>
+                            <select id="calc-type">
+                                <option value="basic">Basic ROI (Current vs Initial Value)</option>
+                                <option value="with-time">ROI with Time Period (Annualized)</option>
+                                <option value="with-income">ROI with Income/Dividends</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="initial-investment">Initial Investment ($):</label>
+                                <input type="number" id="initial-investment" step="0.01" placeholder="e.g., 10000" min="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="current-value">Current Value ($):</label>
+                                <input type="number" id="current-value" step="0.01" placeholder="e.g., 12500" min="0" required>
+                            </div>
+                        </div>
+                        
+                        <div id="time-inputs" style="display: none;">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="time-period">Time Period:</label>
+                                    <input type="number" id="time-period" step="0.1" placeholder="e.g., 2.5" min="0.1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="time-unit">Time Unit:</label>
+                                    <select id="time-unit">
+                                        <option value="years">Years</option>
+                                        <option value="months">Months</option>
+                                        <option value="days">Days</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="income-inputs" style="display: none;">
+                            <div class="form-group">
+                                <label for="income-received">Income/Dividends Received ($):</label>
+                                <input type="number" id="income-received" step="0.01" placeholder="e.g., 500" min="0">
+                                <small>Total dividends, interest, or other income received during the investment period</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="additional-costs">Additional Costs ($):</label>
+                            <input type="number" id="additional-costs" step="0.01" placeholder="e.g., 100" min="0">
+                            <small>Fees, commissions, taxes, or other costs (optional)</small>
+                        </div>
+                        
+                        <button type="submit">Calculate ROI</button>
+                    </form>
+                    
+                    <div id="roi-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="roi-display"></div>
+                        <div class="result-details" id="roi-breakdown"></div>
+                        <div class="result-details" id="roi-analysis"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Understanding Return on Investment (ROI)</h2>
+                    <p>
+                        Return on Investment (ROI) is a fundamental financial metric used to evaluate the efficiency and 
+                        profitability of an investment. It measures how much profit or loss you've made relative to the 
+                        amount of money you initially invested, expressed as a percentage.
+                    </p>
+                    <p>
+                        ROI is crucial for comparing different investment opportunities, evaluating portfolio performance, 
+                        making investment decisions, and tracking financial progress over time. A positive ROI indicates 
+                        a profitable investment, while a negative ROI indicates a loss.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>ROI Calculation Formulas</h2>
+                    
+                    <h4>Basic ROI Formula</h4>
+                    <pre><code>
+ROI = ((Current Value - Initial Investment) ÷ Initial Investment) × 100
+
+Example:
+Initial Investment: $10,000
+Current Value: $12,500
+ROI = (($12,500 - $10,000) ÷ $10,000) × 100 = 25%
+                    </code></pre>
+                    
+                    <h4>ROI with Additional Costs</h4>
+                    <pre><code>
+ROI = ((Current Value - Initial Investment - Additional Costs) ÷ Initial Investment) × 100
+
+Example:
+Initial Investment: $10,000
+Current Value: $12,500
+Additional Costs: $200 (fees)
+ROI = (($12,500 - $10,000 - $200) ÷ $10,000) × 100 = 23%
+                    </code></pre>
+                    
+                    <h4>ROI with Income/Dividends</h4>
+                    <pre><code>
+ROI = ((Current Value + Income Received - Initial Investment - Costs) ÷ Initial Investment) × 100
+
+Example:
+Initial Investment: $10,000
+Current Value: $11,000
+Dividends Received: $800
+ROI = (($11,000 + $800 - $10,000) ÷ $10,000) × 100 = 18%
+                    </code></pre>
+                    
+                    <h4>Annualized ROI Formula</h4>
+                    <pre><code>
+Annualized ROI = ((Current Value ÷ Initial Investment)^(1 ÷ Years)) - 1) × 100
+
+Example:
+25% return over 2 years
+Annualized ROI = ((1.25)^(1÷2) - 1) × 100 = 11.8% per year
+                    </code></pre>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Stock Investment</h4>
+                        <p><strong>Initial Investment:</strong> $5,000</p>
+                        <p><strong>Current Value:</strong> $6,200</p>
+                        <p><strong>Dividends Received:</strong> $150</p>
+                        <p><strong>Trading Fees:</strong> $50</p>
+                        <p><strong>Total Return:</strong> $6,200 + $150 - $5,000 - $50 = $1,300</p>
+                        <p><strong>ROI:</strong> ($1,300 ÷ $5,000) × 100 = 26%</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Real Estate Investment</h4>
+                        <p><strong>Initial Investment:</strong> $200,000 (down payment + closing costs)</p>
+                        <p><strong>Current Property Value:</strong> $280,000</p>
+                        <p><strong>Net Rental Income:</strong> $24,000 (3 years)</p>
+                        <p><strong>Total Return:</strong> $280,000 + $24,000 - $200,000 = $104,000</p>
+                        <p><strong>ROI:</strong> ($104,000 ÷ $200,000) × 100 = 52%</p>
+                        <p><strong>Annualized ROI:</strong> ~15% per year over 3 years</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Bond Investment</h4>
+                        <p><strong>Initial Investment:</strong> $10,000</p>
+                        <p><strong>Current Value:</strong> $10,200</p>
+                        <p><strong>Interest Received:</strong> $600 (2 years)</p>
+                        <p><strong>Total Return:</strong> $10,200 + $600 - $10,000 = $800</p>
+                        <p><strong>ROI:</strong> ($800 ÷ $10,000) × 100 = 8%</p>
+                        <p><strong>Annualized ROI:</strong> 4% per year</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>ROI Benchmarks and Interpretation</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>📊 ROI Benchmarks</h4>
+                            <ul>
+                                <li><strong>S&P 500 Historical Average:</strong> ~10% annually</li>
+                                <li><strong>Real Estate:</strong> 8-12% annually (including rental income)</li>
+                                <li><strong>Bonds:</strong> 3-6% annually</li>
+                                <li><strong>High-Yield Savings:</strong> 2-5% annually</li>
+                                <li><strong>CDs:</strong> 3-5% annually</li>
+                                <li><strong>Treasury Bills:</strong> 2-4% annually</li>
+                                <li><strong>Inflation Rate:</strong> ~3% annually (to beat)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>📈 ROI Interpretation</h4>
+                            <ul>
+                                <li><strong>Positive ROI:</strong> Investment gained value</li>
+                                <li><strong>Negative ROI:</strong> Investment lost value</li>
+                                <li><strong>High ROI:</strong> Potentially high risk/reward</li>
+                                <li><strong>Consistent ROI:</strong> Stable investment</li>
+                                <li><strong>Above-market ROI:</strong> Outperforming benchmarks</li>
+                                <li><strong>Risk-adjusted ROI:</strong> Consider volatility</li>
+                                <li><strong>Time factor:</strong> Longer periods may be less reliable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>ROI Limitations and Considerations</h2>
+                    
+                    <h4>⚠️ Limitations of ROI</h4>
+                    <ul>
+                        <li><strong>Time factor:</strong> ROI doesn't account for time without annualization</li>
+                        <li><strong>Risk assessment:</strong> High ROI may indicate high risk</li>
+                        <li><strong>Opportunity cost:</strong> Doesn't compare to alternative investments</li>
+                        <li><strong>Inflation impact:</strong> Nominal vs. real returns</li>
+                        <li><strong>Cash flow timing:</strong> When money flows in/out matters</li>
+                        <li><strong>Tax implications:</strong> Pre-tax vs. after-tax returns</li>
+                    </ul>
+                    
+                    <h4>💡 Best Practices</h4>
+                    <ul>
+                        <li>Compare annualized ROI for different time periods</li>
+                        <li>Consider risk-adjusted returns (Sharpe ratio)</li>
+                        <li>Include all costs (fees, taxes, maintenance)</li>
+                        <li>Compare to relevant benchmarks</li>
+                        <li>Consider inflation-adjusted (real) returns</li>
+                        <li>Evaluate consistency of returns over time</li>
+                        <li>Don't chase past performance</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's a good ROI for investments?</div>
+                        <div class="faq-answer">
+                            A "good" ROI depends on the investment type, risk level, and time period. Generally, beating 
+                            the S&P 500's historical ~10% annual return is considered good for stock investments. For 
+                            lower-risk investments, 3-6% might be acceptable. Always compare to relevant benchmarks and 
+                            consider the risk involved.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I use simple ROI or annualized ROI?</div>
+                        <div class="faq-answer">
+                            Use annualized ROI when comparing investments held for different time periods. Simple ROI 
+                            is fine for short-term comparisons or when all investments have the same holding period. 
+                            Annualized ROI gives a more accurate picture of investment efficiency.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I account for dividends and fees in ROI?</div>
+                        <div class="faq-answer">
+                            Add all income received (dividends, interest, rent) to your current value, and subtract 
+                            all costs (purchase fees, management fees, taxes) from your gains. This gives you the 
+                            total return for a more accurate ROI calculation.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between ROI and ROE?</div>
+                        <div class="faq-answer">
+                            ROI measures return on any investment relative to its cost. ROE (Return on Equity) specifically 
+                            measures a company's profitability relative to shareholders' equity. ROI is broader and can 
+                            apply to any investment, while ROE is a specific business profitability metric.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I calculate ROI for partial sales?</div>
+                        <div class="faq-answer">
+                            For partial sales, calculate ROI on the portion sold: ROI = ((Sale Proceeds - Proportional 
+                            Initial Investment - Costs) ÷ Proportional Initial Investment) × 100. For the remaining 
+                            holding, use current market value. Consider each transaction separately for accuracy.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Investment Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/simple-interest.html">Simple Interest Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/mortgage.html">Mortgage Calculator</a>
+                        <a href="/calculators/tax.html">Tax Calculator</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatCurrency, formatNumber, roundTo } from '/assets/js/utils/math.js';
+        
+        // Show/hide input fields based on calculation type
+        document.getElementById('calc-type').addEventListener('change', function(e) {
+            const timeInputs = document.getElementById('time-inputs');
+            const incomeInputs = document.getElementById('income-inputs');
+            
+            const calcType = e.target.value;
+            
+            if (calcType === 'with-time' || calcType === 'with-income') {
+                timeInputs.style.display = 'block';
+            } else {
+                timeInputs.style.display = 'none';
+            }
+            
+            if (calcType === 'with-income') {
+                incomeInputs.style.display = 'block';
+            } else {
+                incomeInputs.style.display = 'none';
+            }
+            
+            // Hide result when switching
+            document.getElementById('roi-result').style.display = 'none';
+        });
+        
+        document.getElementById('roi-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const calcType = document.getElementById('calc-type').value;
+            const initialInvestment = parseFloat(document.getElementById('initial-investment').value);
+            const currentValue = parseFloat(document.getElementById('current-value').value);
+            const additionalCosts = parseFloat(document.getElementById('additional-costs').value) || 0;
+            
+            if (isNaN(initialInvestment) || isNaN(currentValue) || initialInvestment <= 0 || currentValue < 0) {
+                alert('Please enter valid investment amounts');
+                return;
+            }
+            
+            let incomeReceived = 0;
+            if (calcType === 'with-income') {
+                incomeReceived = parseFloat(document.getElementById('income-received').value) || 0;
+            }
+            
+            // Calculate basic ROI
+            const totalReturn = currentValue + incomeReceived - initialInvestment - additionalCosts;
+            const roiPercent = (totalReturn / initialInvestment) * 100;
+            
+            let annualizedROI = null;
+            let timeInYears = null;
+            
+            // Calculate annualized ROI if time period is provided
+            if (calcType === 'with-time' || calcType === 'with-income') {
+                const timePeriod = parseFloat(document.getElementById('time-period').value);
+                const timeUnit = document.getElementById('time-unit').value;
+                
+                if (!isNaN(timePeriod) && timePeriod > 0) {
+                    // Convert time to years
+                    switch (timeUnit) {
+                        case 'months':
+                            timeInYears = timePeriod / 12;
+                            break;
+                        case 'days':
+                            timeInYears = timePeriod / 365.25;
+                            break;
+                        default:
+                            timeInYears = timePeriod;
+                    }
+                    
+                    if (timeInYears > 0) {
+                        const growthFactor = (currentValue + incomeReceived) / (initialInvestment + additionalCosts);
+                        annualizedROI = (Math.pow(growthFactor, 1 / timeInYears) - 1) * 100;
+                    }
+                }
+            }
+            
+            // Determine investment performance
+            let performance = '';
+            let performanceColor = '';
+            
+            if (roiPercent > 15) {
+                performance = 'Excellent performance';
+                performanceColor = 'color: var(--success-color)';
+            } else if (roiPercent > 10) {
+                performance = 'Good performance';
+                performanceColor = 'color: var(--success-color)';
+            } else if (roiPercent > 5) {
+                performance = 'Moderate performance';
+                performanceColor = 'color: var(--primary-color)';
+            } else if (roiPercent > 0) {
+                performance = 'Low positive return';
+                performanceColor = 'color: var(--warning-color)';
+            } else {
+                performance = 'Loss on investment';
+                performanceColor = 'color: var(--error-color)';
+            }
+            
+            // Display results
+            document.getElementById('roi-display').textContent = 
+                `ROI: ${formatNumber(roiPercent, 2)}%`;
+            
+            let breakdownHtml = `
+                <strong>Investment Breakdown:</strong><br>
+                Initial Investment: ${formatCurrency(initialInvestment)}<br>
+                Current Value: ${formatCurrency(currentValue)}<br>
+            `;
+            
+            if (incomeReceived > 0) {
+                breakdownHtml += `Income/Dividends: ${formatCurrency(incomeReceived)}<br>`;
+            }
+            
+            if (additionalCosts > 0) {
+                breakdownHtml += `Additional Costs: ${formatCurrency(additionalCosts)}<br>`;
+            }
+            
+            breakdownHtml += `
+                <strong>Total Return: ${formatCurrency(totalReturn)}</strong><br>
+                <strong>ROI Percentage: ${formatNumber(roiPercent, 2)}%</strong>
+            `;
+            
+            if (annualizedROI !== null) {
+                breakdownHtml += `<br><strong>Annualized ROI: ${formatNumber(annualizedROI, 2)}% per year</strong>`;
+            }
+            
+            document.getElementById('roi-breakdown').innerHTML = breakdownHtml;
+            
+            // Analysis
+            let analysisHtml = `
+                <strong>Performance Analysis:</strong><br>
+                <span style="${performanceColor}">${performance}</span><br><br>
+            `;
+            
+            if (timeInYears) {
+                analysisHtml += `<strong>Time Analysis:</strong><br>`;
+                analysisHtml += `Investment Period: ${formatNumber(timeInYears, 1)} years<br>`;
+                
+                if (annualizedROI > 10) {
+                    analysisHtml += `Your annualized return of ${formatNumber(annualizedROI, 1)}% exceeds the historical S&P 500 average (~10%).<br>`;
+                } else if (annualizedROI > 3) {
+                    analysisHtml += `Your annualized return of ${formatNumber(annualizedROI, 1)}% is solid and beats inflation.<br>`;
+                } else if (annualizedROI > 0) {
+                    analysisHtml += `Your annualized return of ${formatNumber(annualizedROI, 1)}% is positive but may not beat inflation.<br>`;
+                } else {
+                    analysisHtml += `Your negative annualized return indicates a loss on this investment.<br>`;
+                }
+                
+                analysisHtml += `<br>`;
+            }
+            
+            analysisHtml += `<strong>Key Metrics:</strong><br>`;
+            analysisHtml += `Money Multiplier: ${formatNumber((currentValue + incomeReceived) / (initialInvestment + additionalCosts), 2)}x<br>`;
+            
+            if (totalReturn > 0) {
+                analysisHtml += `Profit Margin: ${formatNumber((totalReturn / (currentValue + incomeReceived)) * 100, 1)}%<br>`;
+            }
+            
+            if (incomeReceived > 0) {
+                const incomeYield = (incomeReceived / initialInvestment) * 100;
+                analysisHtml += `Income Yield: ${formatNumber(incomeYield, 2)}%<br>`;
+            }
+            
+            document.getElementById('roi-analysis').innerHTML = analysisHtml;
+            document.getElementById('roi-result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

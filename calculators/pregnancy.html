@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Calculator - Due Date and Week Calculator | FreebieCalculator</title>
+    <meta name="description" content="Free pregnancy calculator to calculate due date, current pregnancy week, trimester information, and important milestone dates during pregnancy.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/pregnancy.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pregnancy Calculator - Due Date and Week Calculator">
+    <meta property="og:description" content="Calculate due date, pregnancy weeks, trimester info, and milestone dates with our comprehensive pregnancy calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/pregnancy.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pregnancy Calculator",
+        "description": "Calculate due date, pregnancy weeks, trimesters, and milestone dates",
+        "url": "https://freebiecalculator.com/calculators/pregnancy.html",
+        "applicationCategory": "Health",
+        "operatingSystem": "Any",
+        "permissions": "browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How accurate is the due date calculation?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Due date calculations are estimates based on a 280-day (40-week) pregnancy from the last menstrual period. Only about 5% of babies are born on their exact due date, with most births occurring within 2 weeks of the estimated date."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Which calculation method is most accurate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Conception date is most accurate if known precisely. However, the last menstrual period method is most commonly used since conception dates are often uncertain. Ultrasound dating in early pregnancy is considered most reliable."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "When do the trimesters begin and end?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "First trimester: weeks 1-12, Second trimester: weeks 13-26, Third trimester: weeks 27-40. Each trimester brings different developments and potential symptoms."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I rely solely on this calculator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This calculator provides estimates for educational purposes. Always consult with your healthcare provider for official due dates and pregnancy monitoring. Ultrasounds and medical examinations provide more precise dating."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#health-calculators">Health Calculators</a> › 
+                <span>Pregnancy Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>🤱 Pregnancy Calculator</h1>
+                <p>Calculate due date, current pregnancy week, trimester information, and important milestone dates.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <div class="calculation-tabs">
+                    <button class="tab-btn active" data-tab="lmp-method">Last Menstrual Period</button>
+                    <button class="tab-btn" data-tab="conception-method">Conception Date</button>
+                    <button class="tab-btn" data-tab="due-date-method">Known Due Date</button>
+                </div>
+                
+                <!-- Last Menstrual Period Tab -->
+                <div id="lmp-method" class="tab-content active">
+                    <form id="lmp-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="lmp-date">First Day of Last Menstrual Period</label>
+                            <input type="date" id="lmp-date" required>
+                            <small>Enter the first day of your last menstrual period</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cycle-length">Average Cycle Length (days)</label>
+                            <input type="number" id="cycle-length" min="21" max="35" value="28" required>
+                            <small>Typical cycle length is 28 days</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Pregnancy</button>
+                    </form>
+                </div>
+                
+                <!-- Conception Date Tab -->
+                <div id="conception-method" class="tab-content">
+                    <form id="conception-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="conception-date">Conception Date</label>
+                            <input type="date" id="conception-date" required>
+                            <small>Date when conception occurred (if known)</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Pregnancy</button>
+                    </form>
+                </div>
+                
+                <!-- Known Due Date Tab -->
+                <div id="due-date-method" class="tab-content">
+                    <form id="due-date-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="known-due-date">Due Date</label>
+                            <input type="date" id="known-due-date" required>
+                            <small>Your known or estimated due date</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Pregnancy Info</button>
+                    </form>
+                </div>
+                
+                <div id="pregnancy-results" class="results-container" style="display: none;">
+                    <h3>🤰 Pregnancy Information</h3>
+                    
+                    <div class="result-grid">
+                        <div class="result-card highlight">
+                            <div class="result-label">Due Date</div>
+                            <div class="result-value" id="due-date-result">March 15, 2024</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Current Week</div>
+                            <div class="result-value" id="current-week">12 weeks</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Current Trimester</div>
+                            <div class="result-value" id="current-trimester">1st Trimester</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Days Until Due Date</div>
+                            <div class="result-value" id="days-remaining">196 days</div>
+                        </div>
+                    </div>
+                    
+                    <div class="pregnancy-timeline">
+                        <h4>Pregnancy Timeline</h4>
+                        <div class="timeline-visual">
+                            <div class="trimester-bar">
+                                <div class="trimester first-trimester">
+                                    <span>1st Trimester</span>
+                                    <small>Weeks 1-12</small>
+                                </div>
+                                <div class="trimester second-trimester">
+                                    <span>2nd Trimester</span>
+                                    <small>Weeks 13-26</small>
+                                </div>
+                                <div class="trimester third-trimester">
+                                    <span>3rd Trimester</span>
+                                    <small>Weeks 27-40</small>
+                                </div>
+                            </div>
+                            <div class="current-position" id="current-position"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-dates">
+                        <h4>Important Dates</h4>
+                        <div id="milestone-list" class="milestone-grid">
+                        </div>
+                    </div>
+                    
+                    <div class="baby-development">
+                        <h4>Baby Development This Week</h4>
+                        <div id="development-info" class="development-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Pregnancy Calculator Information</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📅 Accurate Dating</h3>
+                        <p>Calculate due dates using the most common methods: last menstrual period, conception date, or known due date from ultrasound.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 Weekly Tracking</h3>
+                        <p>Track your current pregnancy week, trimester, and important milestones throughout your pregnancy journey.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>👶 Development Info</h3>
+                        <p>Learn about your baby's development at each stage with week-by-week information and milestone tracking.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Pregnancy Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is the due date calculation?</div>
+                        <div class="faq-answer">Due date calculations are estimates based on a 280-day (40-week) pregnancy from the last menstrual period. Only about 5% of babies are born on their exact due date, with most births occurring within 2 weeks of the estimated date.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Which calculation method is most accurate?</div>
+                        <div class="faq-answer">Conception date is most accurate if known precisely. However, the last menstrual period method is most commonly used since conception dates are often uncertain. Ultrasound dating in early pregnancy is considered most reliable.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">When do the trimesters begin and end?</div>
+                        <div class="faq-answer">First trimester: weeks 1-12, Second trimester: weeks 13-26, Third trimester: weeks 27-40. Each trimester brings different developments and potential symptoms.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I rely solely on this calculator?</div>
+                        <div class="faq-answer">This calculator provides estimates for educational purposes. Always consult with your healthcare provider for official due dates and pregnancy monitoring. Ultrasounds and medical examinations provide more precise dating.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        let currentTab = 'lmp-method';
+        
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                switchTab(tab);
+            });
+        });
+        
+        // Form submissions
+        document.getElementById('lmp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateFromLMP();
+        });
+        
+        document.getElementById('conception-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateFromConception();
+        });
+        
+        document.getElementById('due-date-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateFromDueDate();
+        });
+        
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+            
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tab).classList.add('active');
+            
+            currentTab = tab;
+        }
+        
+        function calculateFromLMP() {
+            const lmpDate = new Date(document.getElementById('lmp-date').value);
+            const cycleLength = parseInt(document.getElementById('cycle-length').value);
+            
+            if (!lmpDate || isNaN(lmpDate.getTime())) {
+                alert('Please enter a valid date');
+                return;
+            }
+            
+            // Calculate due date (280 days from LMP)
+            const dueDate = new Date(lmpDate.getTime() + 280 * 24 * 60 * 60 * 1000);
+            
+            // Calculate conception date (approximately 14 days after LMP, adjusted for cycle length)
+            const ovulationDay = cycleLength - 14;
+            const conceptionDate = new Date(lmpDate.getTime() + ovulationDay * 24 * 60 * 60 * 1000);
+            
+            displayPregnancyResults({
+                dueDate,
+                conceptionDate,
+                lmpDate,
+                method: 'lmp'
+            });
+        }
+        
+        function calculateFromConception() {
+            const conceptionDate = new Date(document.getElementById('conception-date').value);
+            
+            if (!conceptionDate || isNaN(conceptionDate.getTime())) {
+                alert('Please enter a valid date');
+                return;
+            }
+            
+            // Calculate due date (266 days from conception)
+            const dueDate = new Date(conceptionDate.getTime() + 266 * 24 * 60 * 60 * 1000);
+            
+            // Calculate LMP date (approximately 14 days before conception)
+            const lmpDate = new Date(conceptionDate.getTime() - 14 * 24 * 60 * 60 * 1000);
+            
+            displayPregnancyResults({
+                dueDate,
+                conceptionDate,
+                lmpDate,
+                method: 'conception'
+            });
+        }
+        
+        function calculateFromDueDate() {
+            const dueDate = new Date(document.getElementById('known-due-date').value);
+            
+            if (!dueDate || isNaN(dueDate.getTime())) {
+                alert('Please enter a valid date');
+                return;
+            }
+            
+            // Calculate LMP date (280 days before due date)
+            const lmpDate = new Date(dueDate.getTime() - 280 * 24 * 60 * 60 * 1000);
+            
+            // Calculate conception date (266 days before due date)
+            const conceptionDate = new Date(dueDate.getTime() - 266 * 24 * 60 * 60 * 1000);
+            
+            displayPregnancyResults({
+                dueDate,
+                conceptionDate,
+                lmpDate,
+                method: 'due-date'
+            });
+        }
+        
+        function displayPregnancyResults(data) {
+            const { dueDate, conceptionDate, lmpDate } = data;
+            const today = new Date();
+            
+            // Calculate current pregnancy week
+            const daysSinceLMP = Math.floor((today - lmpDate) / (24 * 60 * 60 * 1000));
+            const currentWeek = Math.floor(daysSinceLMP / 7);
+            const currentDay = daysSinceLMP % 7;
+            
+            // Calculate days until due date
+            const daysUntilDue = Math.ceil((dueDate - today) / (24 * 60 * 60 * 1000));
+            
+            // Determine trimester
+            let trimester;
+            if (currentWeek <= 12) {
+                trimester = '1st Trimester';
+            } else if (currentWeek <= 26) {
+                trimester = '2nd Trimester';
+            } else {
+                trimester = '3rd Trimester';
+            }
+            
+            // Display results
+            document.getElementById('due-date-result').textContent = formatDate(dueDate);
+            document.getElementById('current-week').textContent = 
+                currentWeek > 0 ? `${currentWeek} weeks ${currentDay} days` : 'Not yet started';
+            document.getElementById('current-trimester').textContent = currentWeek > 0 ? trimester : 'Pre-pregnancy';
+            document.getElementById('days-remaining').textContent = 
+                daysUntilDue > 0 ? `${daysUntilDue} days` : 'Past due date';
+            
+            // Update timeline visual
+            updateTimelineVisual(currentWeek);
+            
+            // Display milestone dates
+            displayMilestones(lmpDate, dueDate);
+            
+            // Display development info
+            displayDevelopmentInfo(currentWeek);
+            
+            document.getElementById('pregnancy-results').style.display = 'block';
+            document.getElementById('pregnancy-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function updateTimelineVisual(currentWeek) {
+            const position = document.getElementById('current-position');
+            const progressPercent = Math.min((currentWeek / 40) * 100, 100);
+            
+            position.style.left = progressPercent + '%';
+            position.textContent = `Week ${currentWeek}`;
+            
+            // Highlight current trimester
+            document.querySelectorAll('.trimester').forEach(trimester => {
+                trimester.classList.remove('current');
+            });
+            
+            if (currentWeek <= 12) {
+                document.querySelector('.first-trimester').classList.add('current');
+            } else if (currentWeek <= 26) {
+                document.querySelector('.second-trimester').classList.add('current');
+            } else {
+                document.querySelector('.third-trimester').classList.add('current');
+            }
+        }
+        
+        function displayMilestones(lmpDate, dueDate) {
+            const milestones = [
+                { week: 4, title: 'Missed Period', description: 'First sign of pregnancy' },
+                { week: 6, title: 'Heartbeat Detectable', description: 'Baby\'s heart begins to beat' },
+                { week: 8, title: 'End of Embryonic Period', description: 'All major organs formed' },
+                { week: 12, title: 'End of 1st Trimester', description: 'Reduced miscarriage risk' },
+                { week: 16, title: 'Gender Determination', description: 'Sex may be visible on ultrasound' },
+                { week: 20, title: 'Anatomy Scan', description: 'Detailed ultrasound examination' },
+                { week: 24, title: 'Viability Milestone', description: 'Baby could survive outside womb' },
+                { week: 28, title: 'Start of 3rd Trimester', description: 'Rapid growth phase begins' },
+                { week: 36, title: 'Full Term Approaching', description: 'Baby is nearly ready' },
+                { week: 40, title: 'Due Date', description: 'Estimated delivery date' }
+            ];
+            
+            let milestonesHtml = '';
+            milestones.forEach(milestone => {
+                const milestoneDate = new Date(lmpDate.getTime() + milestone.week * 7 * 24 * 60 * 60 * 1000);
+                const isPast = milestoneDate < new Date();
+                
+                milestonesHtml += `
+                    <div class="milestone-item ${isPast ? 'past' : 'future'}">
+                        <div class="milestone-week">Week ${milestone.week}</div>
+                        <div class="milestone-date">${formatDate(milestoneDate)}</div>
+                        <div class="milestone-title">${milestone.title}</div>
+                        <div class="milestone-description">${milestone.description}</div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('milestone-list').innerHTML = milestonesHtml;
+        }
+        
+        function displayDevelopmentInfo(currentWeek) {
+            const developmentData = {
+                4: { size: 'Poppy seed', description: 'Neural tube forms, which becomes the brain and spinal cord.' },
+                8: { size: 'Raspberry', description: 'All major organs are forming. Limbs are developing.' },
+                12: { size: 'Lime', description: 'Reflexes develop. External genitals form.' },
+                16: { size: 'Avocado', description: 'Baby can hear sounds. Skeleton hardens.' },
+                20: { size: 'Banana', description: 'Halfway point! Baby moves actively.' },
+                24: { size: 'Corn', description: 'Lungs develop rapidly. Hearing improves.' },
+                28: { size: 'Eggplant', description: 'Eyes can open. Brain activity increases.' },
+                32: { size: 'Squash', description: 'Bones harden. Baby practices breathing.' },
+                36: { size: 'Honeydew', description: 'Immune system develops. Weight gain.' },
+                40: { size: 'Watermelon', description: 'Ready for birth! Average 7-8 pounds.' }
+            };
+            
+            const weekKey = Math.floor(currentWeek / 4) * 4;
+            const info = developmentData[weekKey] || developmentData[4];
+            
+            if (currentWeek > 0) {
+                document.getElementById('development-info').innerHTML = `
+                    <div class="development-size">
+                        <strong>Baby Size:</strong> ${info.size}
+                    </div>
+                    <div class="development-description">
+                        ${info.description}
+                    </div>
+                `;
+            } else {
+                document.getElementById('development-info').innerHTML = `
+                    <div class="development-description">
+                        Enter your information above to see baby development details.
+                    </div>
+                `;
+            }
+        }
+        
+        function formatDate(date) {
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .calculation-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .pregnancy-timeline {
+            margin: 30px 0;
+        }
+        
+        .timeline-visual {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .trimester-bar {
+            display: flex;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .trimester {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .first-trimester {
+            background: #ff6b6b;
+        }
+        
+        .second-trimester {
+            background: #4ecdc4;
+        }
+        
+        .third-trimester {
+            background: #45b7d1;
+        }
+        
+        .trimester.current {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .current-position {
+            position: absolute;
+            bottom: -30px;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .current-position::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid var(--primary-color);
+        }
+        
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .milestone-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.2s;
+        }
+        
+        .milestone-item.past {
+            background: #e8f5e8;
+            border-color: #4caf50;
+        }
+        
+        .milestone-item.future {
+            background: #fff3e0;
+            border-color: #ff9800;
+        }
+        
+        .milestone-week {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .milestone-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        
+        .milestone-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .milestone-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .development-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        
+        .development-size {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .development-description {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        @media (max-width: 768px) {
+            .calculation-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .tab-btn.active {
+                border-bottom-color: var(--border-color);
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            .trimester {
+                font-size: 0.7rem;
+            }
+            
+            .milestone-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

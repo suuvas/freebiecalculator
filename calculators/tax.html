@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator - Estimate Your Tax Liability | FreebieCalculator</title>
+    <meta name="description" content="Free tax calculator to estimate your income tax liability. Calculate federal and state taxes with deductions and exemptions. For educational purposes only.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/tax.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tax Calculator - Estimate Your Tax Liability">
+    <meta property="og:description" content="Calculate estimated income tax liability with deductions and exemptions for tax planning.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/tax.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Tax Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Estimate income tax liability with this educational tax calculator. For planning purposes only.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Calculators",
+                "item": "https://freebiecalculator.com/#finance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Tax Calculator",
+                "item": "https://freebiecalculator.com/calculators/tax.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the difference between marginal and effective tax rates?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your marginal tax rate is the rate you pay on your last dollar of income (your highest bracket). Your effective tax rate is your total tax divided by total income - this is your actual average tax rate and is always lower than your marginal rate due to progressive brackets."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I take the standard deduction or itemize?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Take whichever is higher. For 2024, standard deductions are $14,600 (single) and $29,200 (married filing jointly). If your itemized deductions (mortgage interest, state taxes, charity, etc.) exceed these amounts, itemize. Otherwise, take the standard deduction."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate is this calculator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This calculator provides rough estimates using simplified brackets and assumptions. It doesn't account for many specific credits, deductions, phase-outs, or complex situations. Use it for general planning, but consult tax software or professionals for accurate calculations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about FICA taxes (Social Security and Medicare)?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "FICA taxes are 7.65% on wages up to the Social Security wage base ($160,200 in 2024), then 1.45% Medicare tax on all wages, plus 0.9% additional Medicare tax on high earners. Our calculator includes a simplified FICA estimate."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do I need to pay state taxes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nine states have no income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Other states have varying rates and rules. Some cities also impose local income taxes."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Tax Calculator</h1>
+                
+                <div class="alert alert-warning">
+                    <strong>Important Disclaimer:</strong> This is a simplified tax calculator for educational and 
+                    estimation purposes only. Tax laws are complex and vary by jurisdiction. Always consult with 
+                    qualified tax professionals for accurate tax planning and filing.
+                </div>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <form id="tax-form">
+                        <div class="form-group">
+                            <label for="filing-status">Filing Status:</label>
+                            <select id="filing-status" required>
+                                <option value="">Select Filing Status</option>
+                                <option value="single">Single</option>
+                                <option value="married-jointly">Married Filing Jointly</option>
+                                <option value="married-separately">Married Filing Separately</option>
+                                <option value="head-of-household">Head of Household</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="annual-income">Annual Gross Income ($):</label>
+                            <input type="number" id="annual-income" step="1000" placeholder="e.g., 75000" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deduction-type">Deduction Method:</label>
+                            <select id="deduction-type" required>
+                                <option value="standard">Standard Deduction</option>
+                                <option value="itemized">Itemized Deductions</option>
+                            </select>
+                        </div>
+                        
+                        <div id="itemized-deductions" style="display: none;">
+                            <h4>Itemized Deductions</h4>
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="state-local-taxes">State & Local Taxes ($):</label>
+                                    <input type="number" id="state-local-taxes" step="100" placeholder="e.g., 8000" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mortgage-interest">Mortgage Interest ($):</label>
+                                    <input type="number" id="mortgage-interest" step="100" placeholder="e.g., 12000" min="0">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="charitable-gifts">Charitable Contributions ($):</label>
+                                    <input type="number" id="charitable-gifts" step="100" placeholder="e.g., 3000" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="other-deductions">Other Deductions ($):</label>
+                                    <input type="number" id="other-deductions" step="100" placeholder="e.g., 2000" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pre-tax-contributions">Pre-tax Contributions ($):</label>
+                            <input type="number" id="pre-tax-contributions" step="500" placeholder="401k, IRA, etc. e.g., 15000" min="0">
+                            <small>401(k), traditional IRA, HSA, etc.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="state-tax-rate">State Tax Rate (%):</label>
+                            <select id="state-tax-rate">
+                                <option value="0">No State Tax (AK, FL, NV, NH, SD, TN, TX, WA, WY)</option>
+                                <option value="3">Low Tax State (3% average)</option>
+                                <option value="6">Medium Tax State (6% average)</option>
+                                <option value="9">High Tax State (9% average)</option>
+                                <option value="12">Very High Tax State (12% average)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit">Calculate Tax</button>
+                    </form>
+                    
+                    <div id="tax-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="tax-display"></div>
+                        <div class="result-details" id="tax-breakdown"></div>
+                        <div class="result-details" id="take-home-summary"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>How Tax Calculations Work</h2>
+                    <p>
+                        Income tax calculations involve several steps: determining your adjusted gross income (AGI), 
+                        applying deductions to find taxable income, calculating tax using progressive tax brackets, 
+                        and then adding state and local taxes. This calculator provides a simplified estimation 
+                        based on general tax principles.
+                    </p>
+                    <p>
+                        The U.S. tax system is progressive, meaning higher income levels are taxed at higher rates. 
+                        However, you only pay the higher rate on income above each bracket threshold, not on your 
+                        entire income. This is often misunderstood but crucial for tax planning.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Tax Calculation Method</h2>
+                    
+                    <h4>Step-by-Step Process</h4>
+                    <ol>
+                        <li><strong>Gross Income:</strong> All income from wages, investments, etc.</li>
+                        <li><strong>Adjusted Gross Income (AGI):</strong> Gross income minus pre-tax contributions</li>
+                        <li><strong>Deductions:</strong> Subtract standard or itemized deductions</li>
+                        <li><strong>Taxable Income:</strong> AGI minus deductions</li>
+                        <li><strong>Federal Tax:</strong> Apply progressive tax brackets</li>
+                        <li><strong>State Tax:</strong> Apply state tax rate (varies by state)</li>
+                        <li><strong>Total Tax:</strong> Federal + State + FICA taxes</li>
+                    </ol>
+                    
+                    <h4>2024 Federal Tax Brackets (Simplified)</h4>
+                    <p>Single Filers:</p>
+                    <ul>
+                        <li>10% on income up to $11,000</li>
+                        <li>12% on income $11,001 to $44,725</li>
+                        <li>22% on income $44,726 to $95,375</li>
+                        <li>24% on income $95,376 to $182,050</li>
+                        <li>32% on income $182,051 to $231,250</li>
+                        <li>35% on income $231,251 to $578,125</li>
+                        <li>37% on income over $578,125</li>
+                    </ul>
+                    
+                    <div class="alert alert-info">
+                        <strong>Note:</strong> Tax brackets and deduction amounts change annually. This calculator 
+                        uses simplified 2024 estimates for educational purposes only.
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Single Filer with Standard Deduction</h4>
+                        <p><strong>Gross Income:</strong> $60,000</p>
+                        <p><strong>Pre-tax Contributions:</strong> $6,000 (401k)</p>
+                        <p><strong>AGI:</strong> $54,000</p>
+                        <p><strong>Standard Deduction:</strong> $14,600</p>
+                        <p><strong>Taxable Income:</strong> $39,400</p>
+                        <p><strong>Federal Tax:</strong> $4,530</p>
+                        <p><strong>State Tax (6%):</strong> $2,364</p>
+                        <p><strong>Total Tax:</strong> $6,894 (effective rate: 11.5%)</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Married Filing Jointly with Itemized Deductions</h4>
+                        <p><strong>Gross Income:</strong> $120,000</p>
+                        <p><strong>Pre-tax Contributions:</strong> $20,000</p>
+                        <p><strong>AGI:</strong> $100,000</p>
+                        <p><strong>Itemized Deductions:</strong> $35,000</p>
+                        <p><strong>Taxable Income:</strong> $65,000</p>
+                        <p><strong>Federal Tax:</strong> $7,040</p>
+                        <p><strong>State Tax (3%):</strong> $3,000</p>
+                        <p><strong>Total Tax:</strong> $10,040 (effective rate: 8.4%)</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Tax Planning Strategies</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>💰 Ways to Reduce Taxes</h4>
+                            <ul>
+                                <li>Maximize retirement contributions (401k, IRA)</li>
+                                <li>Contribute to Health Savings Account (HSA)</li>
+                                <li>Consider itemizing if deductions exceed standard</li>
+                                <li>Time capital gains and losses strategically</li>
+                                <li>Bunch deductions in alternating years</li>
+                                <li>Contribute to 529 education plans</li>
+                                <li>Consider tax-loss harvesting</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>📋 Tax Planning Tips</h4>
+                            <ul>
+                                <li>Plan throughout the year, not just at tax time</li>
+                                <li>Keep detailed records of deductible expenses</li>
+                                <li>Understand your marginal vs. effective tax rate</li>
+                                <li>Consider Roth vs. traditional retirement accounts</li>
+                                <li>Review withholdings annually</li>
+                                <li>Don't let tax tail wag the investment dog</li>
+                                <li>Consult professionals for complex situations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between marginal and effective tax rates?</div>
+                        <div class="faq-answer">
+                            Your marginal tax rate is the rate you pay on your last dollar of income (your highest bracket). 
+                            Your effective tax rate is your total tax divided by total income - this is your actual 
+                            average tax rate and is always lower than your marginal rate due to progressive brackets.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I take the standard deduction or itemize?</div>
+                        <div class="faq-answer">
+                            Take whichever is higher. For 2024, standard deductions are $14,600 (single) and $29,200 
+                            (married filing jointly). If your itemized deductions (mortgage interest, state taxes, 
+                            charity, etc.) exceed these amounts, itemize. Otherwise, take the standard deduction.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is this calculator?</div>
+                        <div class="faq-answer">
+                            This calculator provides rough estimates using simplified brackets and assumptions. 
+                            It doesn't account for many specific credits, deductions, phase-outs, or complex situations. 
+                            Use it for general planning, but consult tax software or professionals for accurate calculations.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What about FICA taxes (Social Security and Medicare)?</div>
+                        <div class="faq-answer">
+                            FICA taxes are 7.65% on wages up to the Social Security wage base ($160,200 in 2024), 
+                            then 1.45% Medicare tax on all wages, plus 0.9% additional Medicare tax on high earners. 
+                            Our calculator includes a simplified FICA estimate.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do I need to pay state taxes?</div>
+                        <div class="faq-answer">
+                            Nine states have no income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, 
+                            Tennessee, Texas, Washington, and Wyoming. Other states have varying rates and rules. 
+                            Some cities also impose local income taxes.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Financial Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/salary-after-tax.html">Salary After Tax Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/investment-roi.html">Investment ROI Calculator</a>
+                        <a href="/calculators/mortgage.html">Mortgage Calculator</a>
+                        <a href="/calculators/emi.html">EMI Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatCurrency, formatNumber, roundTo } from '/assets/js/utils/math.js';
+        
+        // Show/hide itemized deductions based on selection
+        document.getElementById('deduction-type').addEventListener('change', function(e) {
+            const itemizedDiv = document.getElementById('itemized-deductions');
+            if (e.target.value === 'itemized') {
+                itemizedDiv.style.display = 'block';
+            } else {
+                itemizedDiv.style.display = 'none';
+            }
+        });
+        
+        document.getElementById('tax-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const filingStatus = document.getElementById('filing-status').value;
+            const annualIncome = parseFloat(document.getElementById('annual-income').value);
+            const deductionType = document.getElementById('deduction-type').value;
+            const preTaxContributions = parseFloat(document.getElementById('pre-tax-contributions').value) || 0;
+            const stateTaxRate = parseFloat(document.getElementById('state-tax-rate').value) / 100;
+            
+            if (!filingStatus || isNaN(annualIncome) || annualIncome < 0) {
+                alert('Please fill in all required fields with valid values');
+                return;
+            }
+            
+            // Calculate AGI
+            const agi = Math.max(0, annualIncome - preTaxContributions);
+            
+            // Calculate deductions
+            let deductions = 0;
+            if (deductionType === 'standard') {
+                // 2024 standard deductions (simplified)
+                const standardDeductions = {
+                    'single': 14600,
+                    'married-jointly': 29200,
+                    'married-separately': 14600,
+                    'head-of-household': 21900
+                };
+                deductions = standardDeductions[filingStatus] || 14600;
+            } else {
+                // Itemized deductions
+                const stateTaxes = Math.min(10000, parseFloat(document.getElementById('state-local-taxes').value) || 0); // SALT cap
+                const mortgageInterest = parseFloat(document.getElementById('mortgage-interest').value) || 0;
+                const charitable = parseFloat(document.getElementById('charitable-gifts').value) || 0;
+                const otherDeductions = parseFloat(document.getElementById('other-deductions').value) || 0;
+                
+                deductions = stateTaxes + mortgageInterest + charitable + otherDeductions;
+            }
+            
+            // Calculate taxable income
+            const taxableIncome = Math.max(0, agi - deductions);
+            
+            // Calculate federal tax using simplified brackets (single filer example)
+            const federalTax = calculateFederalTax(taxableIncome, filingStatus);
+            
+            // Calculate state tax
+            const stateTax = agi * stateTaxRate;
+            
+            // Calculate FICA taxes (simplified)
+            const ficaTax = calculateFICA(annualIncome);
+            
+            const totalTax = federalTax + stateTax + ficaTax;
+            const afterTaxIncome = annualIncome - totalTax;
+            const effectiveRate = (totalTax / annualIncome) * 100;
+            const marginalRate = getMarginalRate(taxableIncome, filingStatus);
+            
+            // Display results
+            document.getElementById('tax-display').textContent = 
+                `Total Tax Liability: ${formatCurrency(totalTax)}`;
+            
+            document.getElementById('tax-breakdown').innerHTML = `
+                <strong>Tax Breakdown:</strong><br>
+                Federal Income Tax: ${formatCurrency(federalTax)}<br>
+                State Income Tax: ${formatCurrency(stateTax)}<br>
+                FICA Taxes (SS & Medicare): ${formatCurrency(ficaTax)}<br>
+                <strong>Total Tax: ${formatCurrency(totalTax)}</strong>
+            `;
+            
+            document.getElementById('take-home-summary').innerHTML = `
+                <strong>Income Summary:</strong><br>
+                Gross Income: ${formatCurrency(annualIncome)}<br>
+                Adjusted Gross Income: ${formatCurrency(agi)}<br>
+                Deductions: ${formatCurrency(deductions)} (${deductionType})<br>
+                Taxable Income: ${formatCurrency(taxableIncome)}<br>
+                <br>
+                <strong>After-Tax Income: ${formatCurrency(afterTaxIncome)}</strong><br>
+                Effective Tax Rate: ${formatNumber(effectiveRate, 1)}%<br>
+                Marginal Tax Rate: ${formatNumber(marginalRate, 1)}%<br>
+                Monthly Take-Home: ${formatCurrency(afterTaxIncome / 12)}
+            `;
+            
+            document.getElementById('tax-result').style.display = 'block';
+        });
+        
+        function calculateFederalTax(taxableIncome, filingStatus) {
+            // Simplified 2024 tax brackets for single filers
+            // In reality, brackets vary by filing status
+            const brackets = [
+                { min: 0, max: 11000, rate: 0.10 },
+                { min: 11000, max: 44725, rate: 0.12 },
+                { min: 44725, max: 95375, rate: 0.22 },
+                { min: 95375, max: 182050, rate: 0.24 },
+                { min: 182050, max: 231250, rate: 0.32 },
+                { min: 231250, max: 578125, rate: 0.35 },
+                { min: 578125, max: Infinity, rate: 0.37 }
+            ];
+            
+            let tax = 0;
+            let remainingIncome = taxableIncome;
+            
+            for (const bracket of brackets) {
+                if (remainingIncome <= 0) break;
+                
+                const taxableInBracket = Math.min(remainingIncome, bracket.max - bracket.min);
+                tax += taxableInBracket * bracket.rate;
+                remainingIncome -= taxableInBracket;
+            }
+            
+            return roundTo(tax, 2);
+        }
+        
+        function getMarginalRate(taxableIncome, filingStatus) {
+            // Return the marginal tax rate (highest bracket rate)
+            if (taxableIncome <= 11000) return 10;
+            if (taxableIncome <= 44725) return 12;
+            if (taxableIncome <= 95375) return 22;
+            if (taxableIncome <= 182050) return 24;
+            if (taxableIncome <= 231250) return 32;
+            if (taxableIncome <= 578125) return 35;
+            return 37;
+        }
+        
+        function calculateFICA(income) {
+            const socialSecurityWageBase = 160200; // 2024 wage base
+            const socialSecurityRate = 0.062;
+            const medicareRate = 0.0145;
+            const additionalMedicareThreshold = 200000; // Single filer threshold
+            const additionalMedicareRate = 0.009;
+            
+            let ficaTax = 0;
+            
+            // Social Security tax (capped at wage base)
+            ficaTax += Math.min(income, socialSecurityWageBase) * socialSecurityRate;
+            
+            // Medicare tax (no cap)
+            ficaTax += income * medicareRate;
+            
+            // Additional Medicare tax for high earners
+            if (income > additionalMedicareThreshold) {
+                ficaTax += (income - additionalMedicareThreshold) * additionalMedicareRate;
+            }
+            
+            return roundTo(ficaTax, 2);
+        }
+    </script>
+</body>
+</html>

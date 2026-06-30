@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter - Convert Between Currencies | FreebieCalculator</title>
+    <meta name="description" content="Free currency converter with manual exchange rate input. Convert between different currencies for travel, business, and financial planning.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/currency-converter.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Currency Converter - Convert Between Currencies">
+    <meta property="og:description" content="Convert currencies with manual exchange rate input for accurate financial calculations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/currency-converter.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Currency Converter",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Convert between different currencies using manual exchange rates for travel and business calculations.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Other Calculators",
+                "item": "https://freebiecalculator.com/#other"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Currency Converter",
+                "item": "https://freebiecalculator.com/calculators/currency-converter.html"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why do I need to enter exchange rates manually?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Manual rate entry ensures you use the most current rates from your preferred source, whether it's your bank, exchange service, or financial news site. This provides more accurate results for your specific transaction."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where can I find current exchange rates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can find current exchange rates from banks, financial websites like XE.com or OANDA, central banks, or currency exchange services. Always use rates from reliable, up-to-date sources."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Currency Converter</h1>
+                
+                <div class="alert alert-info">
+                    <strong>Educational Calculator:</strong> This calculator uses manual exchange rate input for 
+                    educational purposes. For exact exchange rates and fees, consult your bank or currency exchange 
+                    service. Exchange rates fluctuate constantly and may include service fees.
+                </div>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <form id="currency-form">
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="from-currency">From Currency:</label>
+                                <select id="from-currency" required>
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan</option>
+                                    <option value="INR">INR - Indian Rupee</option>
+                                    <option value="KRW">KRW - South Korean Won</option>
+                                    <option value="MXN">MXN - Mexican Peso</option>
+                                    <option value="SGD">SGD - Singapore Dollar</option>
+                                    <option value="NZD">NZD - New Zealand Dollar</option>
+                                    <option value="NOK">NOK - Norwegian Krone</option>
+                                    <option value="SEK">SEK - Swedish Krona</option>
+                                    <option value="OTHER">Other Currency</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="to-currency">To Currency:</label>
+                                <select id="to-currency" required>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan</option>
+                                    <option value="INR">INR - Indian Rupee</option>
+                                    <option value="KRW">KRW - South Korean Won</option>
+                                    <option value="MXN">MXN - Mexican Peso</option>
+                                    <option value="SGD">SGD - Singapore Dollar</option>
+                                    <option value="NZD">NZD - New Zealand Dollar</option>
+                                    <option value="NOK">NOK - Norwegian Krone</option>
+                                    <option value="SEK">SEK - Swedish Krona</option>
+                                    <option value="OTHER">Other Currency</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div id="custom-currencies" style="display: none;">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="custom-from">From Currency Code:</label>
+                                    <input type="text" id="custom-from" placeholder="e.g., BRL" maxlength="3" style="text-transform: uppercase;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="custom-to">To Currency Code:</label>
+                                    <input type="text" id="custom-to" placeholder="e.g., ZAR" maxlength="3" style="text-transform: uppercase;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="amount">Amount to Convert:</label>
+                            <input type="number" id="amount" step="0.01" placeholder="e.g., 1000" min="0.01" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exchange-rate">Exchange Rate:</label>
+                            <input type="number" id="exchange-rate" step="0.000001" placeholder="e.g., 1.0856" min="0.000001" required>
+                            <small id="rate-helper">Enter how many <span id="to-currency-name">EUR</span> you get for 1 <span id="from-currency-name">USD</span></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fee-percentage">Service Fee (%):</label>
+                            <input type="number" id="fee-percentage" step="0.1" placeholder="e.g., 2.5" min="0" max="20">
+                            <small>Optional: Bank or exchange service fee</small>
+                        </div>
+                        
+                        <button type="submit">Convert Currency</button>
+                    </form>
+                    
+                    <div id="currency-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="converted-amount"></div>
+                        <div class="result-details" id="conversion-breakdown"></div>
+                        <div class="result-details" id="rate-info"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>How Currency Conversion Works</h2>
+                    <p>
+                        Currency conversion is the process of exchanging one currency for another at a specific exchange rate. 
+                        Exchange rates fluctuate constantly based on economic factors, political stability, interest rates, 
+                        inflation, and market demand. Understanding currency conversion is essential for international travel, 
+                        business transactions, and global investments.
+                    </p>
+                    <p>
+                        Our converter uses manual rate input to ensure you get the most accurate calculations based on 
+                        current market rates or the specific rates offered by your bank or exchange service. This approach 
+                        gives you control over the rate used and helps you compare different exchange options.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Currency Conversion Formula</h2>
+                    
+                    <h4>Basic Conversion Formula</h4>
+                    <pre><code>
+Converted Amount = Original Amount × Exchange Rate
+
+Example:
+Convert $1,000 USD to EUR at rate 0.8500
+Converted Amount = $1,000 × 0.8500 = €850
+                    </code></pre>
+                    
+                    <h4>With Service Fees</h4>
+                    <pre><code>
+Net Amount = (Original Amount × Exchange Rate) × (1 - Fee Percentage)
+
+Example:
+Convert $1,000 USD to EUR at rate 0.8500 with 2% fee
+Gross Amount = $1,000 × 0.8500 = €850
+Net Amount = €850 × (1 - 0.02) = €850 × 0.98 = €833
+                    </code></pre>
+                    
+                    <h4>Understanding Exchange Rate Quotes</h4>
+                    <ul>
+                        <li><strong>Direct Quote:</strong> How much of your home currency you need to buy 1 unit of foreign currency</li>
+                        <li><strong>Indirect Quote:</strong> How much foreign currency you get for 1 unit of your home currency</li>
+                        <li><strong>Cross Rate:</strong> Exchange rate between two currencies, neither of which is the US dollar</li>
+                        <li><strong>Spot Rate:</strong> Current market rate for immediate delivery</li>
+                        <li><strong>Forward Rate:</strong> Agreed rate for future transaction</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Travel Money Exchange</h4>
+                        <p><strong>Converting:</strong> $2,000 USD to EUR for European vacation</p>
+                        <p><strong>Exchange Rate:</strong> 1 USD = 0.8456 EUR</p>
+                        <p><strong>Bank Fee:</strong> 1.5%</p>
+                        <p><strong>Gross Amount:</strong> $2,000 × 0.8456 = €1,691.20</p>
+                        <p><strong>Net Amount:</strong> €1,691.20 × 0.985 = €1,665.83</p>
+                        <p><strong>Effective Rate:</strong> 0.8329 EUR per USD</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Business Transaction</h4>
+                        <p><strong>Converting:</strong> £50,000 GBP to USD for equipment purchase</p>
+                        <p><strong>Exchange Rate:</strong> 1 GBP = 1.2678 USD</p>
+                        <p><strong>Wire Transfer Fee:</strong> 0.25%</p>
+                        <p><strong>Gross Amount:</strong> £50,000 × 1.2678 = $63,390</p>
+                        <p><strong>Net Amount:</strong> $63,390 × 0.9975 = $63,231.53</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Investment Conversion</h4>
+                        <p><strong>Converting:</strong> ¥1,000,000 JPY to USD for stock purchase</p>
+                        <p><strong>Exchange Rate:</strong> 1 USD = 148.75 JPY (or 1 JPY = 0.006723 USD)</p>
+                        <p><strong>Brokerage Fee:</strong> 0.5%</p>
+                        <p><strong>Gross Amount:</strong> ¥1,000,000 × 0.006723 = $6,723</p>
+                        <p><strong>Net Amount:</strong> $6,723 × 0.995 = $6,689.39</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Exchange Rate Sources & Tips</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>🌐 Reliable Rate Sources</h4>
+                            <ul>
+                                <li><strong>Central Banks:</strong> Federal Reserve, ECB, Bank of England</li>
+                                <li><strong>Financial Websites:</strong> XE.com, OANDA, Yahoo Finance</li>
+                                <li><strong>Banks:</strong> Your bank's current exchange rates</li>
+                                <li><strong>Currency Exchanges:</strong> Travelex, local exchange services</li>
+                                <li><strong>Financial News:</strong> Bloomberg, Reuters, MarketWatch</li>
+                                <li><strong>Trading Platforms:</strong> Real-time rates from forex platforms</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>💡 Money-Saving Tips</h4>
+                            <ul>
+                                <li>Compare rates from multiple sources</li>
+                                <li>Avoid airport and hotel exchanges (high fees)</li>
+                                <li>Use credit cards with no foreign transaction fees</li>
+                                <li>Consider online currency exchange services</li>
+                                <li>Monitor rates and exchange during favorable periods</li>
+                                <li>Use ATMs abroad for better rates (check fees)</li>
+                                <li>Consider multi-currency accounts for frequent travelers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Factors Affecting Exchange Rates</h2>
+                    
+                    <h4>Economic Factors</h4>
+                    <ul>
+                        <li><strong>Interest Rates:</strong> Higher rates attract foreign investment</li>
+                        <li><strong>Inflation:</strong> Lower inflation strengthens currency</li>
+                        <li><strong>Economic Growth:</strong> Strong GDP growth supports currency</li>
+                        <li><strong>Employment Rates:</strong> Low unemployment indicates strong economy</li>
+                        <li><strong>Trade Balance:</strong> Export surplus strengthens currency</li>
+                    </ul>
+                    
+                    <h4>Political & Market Factors</h4>
+                    <ul>
+                        <li><strong>Political Stability:</strong> Stable governments attract investment</li>
+                        <li><strong>Government Debt:</strong> High debt weakens currency</li>
+                        <li><strong>Market Speculation:</strong> Trader sentiment affects rates</li>
+                        <li><strong>Central Bank Policy:</strong> Monetary policy decisions</li>
+                        <li><strong>Global Events:</strong> Wars, pandemics, natural disasters</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why do I need to enter exchange rates manually?</div>
+                        <div class="faq-answer">
+                            Manual rate entry ensures you use the most current rates from your preferred source, whether 
+                            it's your bank, exchange service, or financial news site. This provides more accurate results 
+                            for your specific transaction and helps you compare different exchange options.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Where can I find current exchange rates?</div>
+                        <div class="faq-answer">
+                            You can find current exchange rates from banks, financial websites like XE.com or OANDA, 
+                            central banks, currency exchange services, or financial news sites. Always use rates from 
+                            reliable, up-to-date sources and check the timestamp.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What fees should I expect when exchanging currency?</div>
+                        <div class="faq-answer">
+                            Fees vary by service: banks typically charge 1-4%, exchange bureaus 2-6%, credit cards 0-3% 
+                            foreign transaction fees, and ATMs may charge $2-5 plus percentage fees. Compare total costs, 
+                            not just exchange rates.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">When is the best time to exchange currency?</div>
+                        <div class="faq-answer">
+                            There's no perfect time, as rates fluctuate constantly. For large amounts, monitor rates over 
+                            time and exchange when favorable. For travel, exchange some money in advance but not all, 
+                            as you might get better rates at your destination.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I avoid unfavorable exchange rates?</div>
+                        <div class="faq-answer">
+                            Research current market rates, avoid airport and hotel exchanges, use credit cards with no 
+                            foreign fees, compare multiple exchange services, and consider exchanging larger amounts 
+                            at once to reduce per-transaction fees.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Financial Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/discount.html">Discount Calculator</a>
+                        <a href="/calculators/investment-roi.html">Investment ROI Calculator</a>
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/tax.html">Tax Calculator</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber, roundTo } from '/assets/js/utils/math.js';
+        
+        // Currency symbols mapping
+        const currencySymbols = {
+            'USD': '$', 'EUR': '€', 'GBP': '£', 'JPY': '¥', 'CAD': 'C$',
+            'AUD': 'A$', 'CHF': 'CHF', 'CNY': '¥', 'INR': '₹', 'KRW': '₩',
+            'MXN': '$', 'SGD': 'S$', 'NZD': 'NZ$', 'NOK': 'kr', 'SEK': 'kr'
+        };
+        
+        // Update helper text when currencies change
+        function updateRateHelper() {
+            const fromCurrency = getFromCurrency();
+            const toCurrency = getToCurrency();
+            
+            document.getElementById('from-currency-name').textContent = fromCurrency;
+            document.getElementById('to-currency-name').textContent = toCurrency;
+        }
+        
+        function getFromCurrency() {
+            const fromSelect = document.getElementById('from-currency').value;
+            return fromSelect === 'OTHER' ? 
+                (document.getElementById('custom-from').value || 'XXX') : fromSelect;
+        }
+        
+        function getToCurrency() {
+            const toSelect = document.getElementById('to-currency').value;
+            return toSelect === 'OTHER' ? 
+                (document.getElementById('custom-to').value || 'XXX') : toSelect;
+        }
+        
+        function formatCurrency(amount, currencyCode) {
+            const symbol = currencySymbols[currencyCode] || currencyCode + ' ';
+            return symbol + formatNumber(amount, 2);
+        }
+        
+        // Show/hide custom currency inputs
+        function updateCustomCurrencyInputs() {
+            const fromCurrency = document.getElementById('from-currency').value;
+            const toCurrency = document.getElementById('to-currency').value;
+            const customDiv = document.getElementById('custom-currencies');
+            
+            if (fromCurrency === 'OTHER' || toCurrency === 'OTHER') {
+                customDiv.style.display = 'block';
+            } else {
+                customDiv.style.display = 'none';
+            }
+            
+            updateRateHelper();
+        }
+        
+        // Event listeners
+        document.getElementById('from-currency').addEventListener('change', updateCustomCurrencyInputs);
+        document.getElementById('to-currency').addEventListener('change', updateCustomCurrencyInputs);
+        document.getElementById('custom-from').addEventListener('input', updateRateHelper);
+        document.getElementById('custom-to').addEventListener('input', updateRateHelper);
+        
+        // Swap currencies button functionality
+        function swapCurrencies() {
+            const fromSelect = document.getElementById('from-currency');
+            const toSelect = document.getElementById('to-currency');
+            const customFrom = document.getElementById('custom-from');
+            const customTo = document.getElementById('custom-to');
+            const rateInput = document.getElementById('exchange-rate');
+            
+            // Swap select values
+            const tempFrom = fromSelect.value;
+            fromSelect.value = toSelect.value;
+            toSelect.value = tempFrom;
+            
+            // Swap custom values
+            const tempCustomFrom = customFrom.value;
+            customFrom.value = customTo.value;
+            customTo.value = tempCustomFrom;
+            
+            // Invert exchange rate if present
+            const currentRate = parseFloat(rateInput.value);
+            if (!isNaN(currentRate) && currentRate > 0) {
+                rateInput.value = formatNumber(1 / currentRate, 6);
+            }
+            
+            updateCustomCurrencyInputs();
+        }
+        
+        // Add swap button after the currency selects
+        const currencyRow = document.querySelector('.input-row');
+        const swapButton = document.createElement('div');
+        swapButton.className = 'form-group';
+        swapButton.innerHTML = '<button type="button" onclick="swapCurrencies()" class="btn-secondary">⇄ Swap</button>';
+        currencyRow.appendChild(swapButton);
+        
+        window.swapCurrencies = swapCurrencies;
+        
+        // Initialize
+        updateCustomCurrencyInputs();
+        
+        document.getElementById('currency-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const amount = parseFloat(document.getElementById('amount').value);
+            const exchangeRate = parseFloat(document.getElementById('exchange-rate').value);
+            const feePercentage = parseFloat(document.getElementById('fee-percentage').value) || 0;
+            
+            const fromCurrency = getFromCurrency();
+            const toCurrency = getToCurrency();
+            
+            if (isNaN(amount) || isNaN(exchangeRate) || amount <= 0 || exchangeRate <= 0) {
+                alert('Please enter valid positive amounts and exchange rate');
+                return;
+            }
+            
+            if (feePercentage < 0 || feePercentage > 20) {
+                alert('Fee percentage must be between 0 and 20');
+                return;
+            }
+            
+            if (fromCurrency === toCurrency) {
+                alert('From and To currencies cannot be the same');
+                return;
+            }
+            
+            // Calculate conversion
+            const grossAmount = amount * exchangeRate;
+            const feeAmount = grossAmount * (feePercentage / 100);
+            const netAmount = grossAmount - feeAmount;
+            const effectiveRate = netAmount / amount;
+            
+            // Display results
+            document.getElementById('converted-amount').textContent = 
+                `${formatCurrency(netAmount, toCurrency)}`;
+            
+            document.getElementById('conversion-breakdown').innerHTML = `
+                <strong>Conversion Details:</strong><br>
+                Original Amount: ${formatCurrency(amount, fromCurrency)}<br>
+                Exchange Rate: 1 ${fromCurrency} = ${formatNumber(exchangeRate, 6)} ${toCurrency}<br>
+                Gross Converted: ${formatCurrency(grossAmount, toCurrency)}<br>
+                ${feePercentage > 0 ? `Service Fee (${feePercentage}%): ${formatCurrency(feeAmount, toCurrency)}<br>` : ''}
+                <strong>Net Amount: ${formatCurrency(netAmount, toCurrency)}</strong>
+            `;
+            
+            const rateComparison = feePercentage > 0 ? 
+                `Effective Rate: 1 ${fromCurrency} = ${formatNumber(effectiveRate, 6)} ${toCurrency}<br>
+                 Rate Impact: ${formatNumber(((exchangeRate - effectiveRate) / exchangeRate) * 100, 2)}% reduction due to fees` :
+                `No fees applied - you receive the full exchange rate benefit`;
+            
+            document.getElementById('rate-info').innerHTML = `
+                <strong>Rate Analysis:</strong><br>
+                ${rateComparison}<br>
+                <br>
+                <em>Exchange rates fluctuate constantly. Always verify current rates with your exchange provider 
+                before making transactions. This calculation is for estimation purposes only.</em>
+            `;
+            
+            document.getElementById('currency-result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

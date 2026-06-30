@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Calculator – Calculate Your Daily Macros for Weight Loss or Muscle Gain | FreebieCalculator</title>
+    <meta name="description" content="Free macro calculator. Find your ideal daily protein, carbs, and fat targets for weight loss, muscle gain, or maintenance. Based on your TDEE and goals.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/macro-calculator.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="Macro Calculator – Daily Protein, Carbs & Fat Targets">
+    <meta property="og:description" content="Calculate your daily macro targets for weight loss, muscle gain, or maintenance based on your body and goals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/macro-calculator.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Macro Calculator","description":"Calculate daily macronutrient targets for protein, carbohydrates, and fat based on fitness goals","applicationCategory":"HealthApplication","operatingSystem":"Web Browser","url":"https://freebiecalculator.com/calculators/macro-calculator.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"FreebieCalculator.com","url":"https://freebiecalculator.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What are macros?","acceptedAnswer":{"@type":"Answer","text":"Macros (macronutrients) are the three main nutrients your body needs in large amounts: protein (4 cal/g), carbohydrates (4 cal/g), and fat (9 cal/g). Tracking macros helps you hit specific nutrition targets for your health and fitness goals."}},
+        {"@type":"Question","name":"How much protein do I need per day?","acceptedAnswer":{"@type":"Answer","text":"For general health: 0.8g per kg of body weight (0.36g/lb). For muscle building: 1.6–2.2g per kg (0.7–1g/lb). For weight loss while preserving muscle: 1.8–2.4g per kg (0.8–1.1g/lb)."}},
+        {"@type":"Question","name":"What is a good macro split for weight loss?","acceptedAnswer":{"@type":"Answer","text":"A common weight loss macro split is 40% protein, 30% carbs, 30% fat. High protein preserves muscle while in a calorie deficit. Some people prefer higher carbs (40/40/20) or low-carb approaches (30/20/50)."}},
+        {"@type":"Question","name":"What is TDEE?","acceptedAnswer":{"@type":"Answer","text":"TDEE (Total Daily Energy Expenditure) is the total calories your body burns in a day, including exercise. It's calculated from your BMR (Basal Metabolic Rate) multiplied by an activity factor. Your macro targets are based on your TDEE adjusted for your goal."}}
+    ]}</script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/></svg>freebiecalculator.com</a>
+            <nav role="navigation" aria-label="Main navigation"><ul class="nav-menu"><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li><a href="/help/">Help</a></li><li><a href="/#math-calculators">General</a></li><li><a href="/#health-calculators">Health</a></li><li><a href="/#financial-calculators">Finance</a></li><li><a href="/#other-calculators">Other</a></li></ul></nav>
+            <div class="header-actions"><div id="language-selector-container"></div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button><button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/#health-calculators">Health Calculators</a> › <span>Macro Calculator</span></nav>
+            <div class="calculator-header"><h1>🥩 Macro Calculator</h1><p>Calculate your ideal daily protein, carbs, and fat targets based on your body and goals.</p></div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container"><div class="calculator-tool">
+                <form id="macro-form">
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="m-age">Age</label>
+                            <input type="number" id="m-age" value="30" min="15" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="m-gender">Gender</label>
+                            <select id="m-gender"><option value="male">Male</option><option value="female">Female</option></select>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="m-weight">Weight (lbs)</label>
+                            <input type="number" id="m-weight" step="0.5" min="50" placeholder="e.g., 170" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="m-height-ft">Height</label>
+                            <div style="display:flex;gap:.5rem">
+                                <input type="number" id="m-height-ft" min="4" max="7" placeholder="ft" style="width:60px" required>
+                                <input type="number" id="m-height-in" min="0" max="11" placeholder="in" style="width:60px" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="m-activity">Activity Level</label>
+                        <select id="m-activity">
+                            <option value="1.2">Sedentary (desk job, little exercise)</option>
+                            <option value="1.375">Lightly Active (1–3 days/week)</option>
+                            <option value="1.55" selected>Moderately Active (3–5 days/week)</option>
+                            <option value="1.725">Very Active (6–7 days/week)</option>
+                            <option value="1.9">Extra Active (athlete / physical job)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="m-goal">Goal</label>
+                        <select id="m-goal">
+                            <option value="cut">Lose Weight (–500 cal/day)</option>
+                            <option value="maintain" selected>Maintain Weight</option>
+                            <option value="bulk">Build Muscle (+300 cal/day)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Calculate My Macros</button>
+                </form>
+                <div id="macro-result" class="result-container" style="display:none">
+                    <h3>Your Daily Macro Targets</h3>
+                    <div class="result-grid" id="macro-grid"></div>
+                    <div id="macro-breakdown" style="margin-top:1.5rem"></div>
+                </div>
+            </div></div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Common Macro Split Ratios</h2>
+                <table class="data-table">
+                    <thead><tr><th>Goal</th><th>Protein</th><th>Carbs</th><th>Fat</th></tr></thead>
+                    <tbody>
+                        <tr><td>Weight Loss</td><td>40%</td><td>30%</td><td>30%</td></tr>
+                        <tr><td>Maintenance</td><td>30%</td><td>40%</td><td>30%</td></tr>
+                        <tr><td>Muscle Gain</td><td>30%</td><td>50%</td><td>20%</td></tr>
+                        <tr><td>Low Carb / Keto</td><td>25%</td><td>5%</td><td>70%</td></tr>
+                        <tr><td>Endurance Athlete</td><td>20%</td><td>60%</td><td>20%</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>FAQs</h2>
+                <div class="faq-container">
+                    <div class="faq-item"><div class="faq-question">What are macros?</div><div class="faq-answer">Macros are protein (4 cal/g), carbohydrates (4 cal/g), and fat (9 cal/g). Tracking them lets you hit specific nutrition targets for your health and fitness goals.</div></div>
+                    <div class="faq-item"><div class="faq-question">How much protein do I need per day?</div><div class="faq-answer">General health: 0.8g/kg. Muscle building: 1.6–2.2g/kg (0.7–1g/lb). Weight loss with muscle preservation: 1.8–2.4g/kg.</div></div>
+                    <div class="faq-item"><div class="faq-question">What macro split is best for weight loss?</div><div class="faq-answer">40% protein / 30% carbs / 30% fat is popular for fat loss. High protein preserves muscle in a calorie deficit. Some prefer higher carbs (40/40/20) or ketogenic (5/25/70) approaches.</div></div>
+                    <div class="faq-item"><div class="faq-question">What is TDEE?</div><div class="faq-answer">TDEE (Total Daily Energy Expenditure) is all calories burned per day including exercise. Your macros are calculated from your TDEE adjusted by your goal (cut, maintain, or bulk).</div></div>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section"><h2>Related Health Calculators</h2><div class="calculator-links"><a href="/calculators/calorie.html">Calorie Calculator</a><a href="/calculators/bmr.html">BMR Calculator</a><a href="/calculators/bmi.html">BMI Calculator</a><a href="/calculators/body-fat.html">Body Fat Calculator</a><a href="/calculators/ideal-weight.html">Ideal Weight Calculator</a></div></section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+    document.getElementById('macro-form').addEventListener('submit',function(e){
+        e.preventDefault();
+        const age=parseInt(document.getElementById('m-age').value);
+        const gender=document.getElementById('m-gender').value;
+        const wlbs=parseFloat(document.getElementById('m-weight').value)||0;
+        const hft=parseInt(document.getElementById('m-height-ft').value)||0;
+        const hin=parseInt(document.getElementById('m-height-in').value)||0;
+        const activity=parseFloat(document.getElementById('m-activity').value);
+        const goal=document.getElementById('m-goal').value;
+        const wkg=wlbs*0.453592;
+        const hcm=(hft*30.48)+(hin*2.54);
+        // Mifflin-St Jeor
+        let bmr;
+        if(gender==='male') bmr=10*wkg+6.25*hcm-5*age+5;
+        else bmr=10*wkg+6.25*hcm-5*age-161;
+        let tdee=bmr*activity;
+        let targetCals=tdee;
+        if(goal==='cut') targetCals=tdee-500;
+        else if(goal==='bulk') targetCals=tdee+300;
+        const splits={cut:{p:.40,c:.30,f:.30},maintain:{p:.30,c:.40,f:.30},bulk:{p:.30,c:.50,f:.20}};
+        const s=splits[goal];
+        const protCal=targetCals*s.p; const carbCal=targetCals*s.c; const fatCal=targetCals*s.f;
+        const protG=Math.round(protCal/4); const carbG=Math.round(carbCal/4); const fatG=Math.round(fatCal/9);
+        const fmt=n=>Math.round(n).toLocaleString();
+        document.getElementById('macro-grid').innerHTML=`
+            <div class="result-card primary"><div class="result-label">Daily Calories</div><div class="result-value">${fmt(targetCals)} kcal</div></div>
+            <div class="result-card" style="border-color:#e74c3c"><div class="result-label">Protein</div><div class="result-value" style="color:#e74c3c">${protG}g</div></div>
+            <div class="result-card" style="border-color:#f39c12"><div class="result-label">Carbohydrates</div><div class="result-value" style="color:#f39c12">${carbG}g</div></div>
+            <div class="result-card" style="border-color:#3498db"><div class="result-label">Fat</div><div class="result-value" style="color:#3498db">${fatG}g</div></div>
+        `;
+        document.getElementById('macro-breakdown').innerHTML=`
+            <div style="background:var(--bg-secondary);border-radius:.5rem;padding:1rem">
+                <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:.75rem">Calorie & Macro Split</p>
+                <div style="display:flex;height:20px;border-radius:999px;overflow:hidden;gap:2px">
+                    <div style="width:${s.p*100}%;background:#e74c3c" title="Protein ${Math.round(s.p*100)}%"></div>
+                    <div style="width:${s.c*100}%;background:#f39c12" title="Carbs ${Math.round(s.c*100)}%"></div>
+                    <div style="width:${s.f*100}%;background:#3498db" title="Fat ${Math.round(s.f*100)}%"></div>
+                </div>
+                <div style="display:flex;gap:1rem;margin-top:.5rem;font-size:.8rem">
+                    <span style="color:#e74c3c">■ Protein ${Math.round(s.p*100)}%</span>
+                    <span style="color:#f39c12">■ Carbs ${Math.round(s.c*100)}%</span>
+                    <span style="color:#3498db">■ Fat ${Math.round(s.f*100)}%</span>
+                </div>
+                <p style="font-size:.8rem;color:var(--text-muted);margin-top:.75rem">TDEE: ${fmt(tdee)} kcal · BMR: ${fmt(bmr)} kcal</p>
+            </div>`;
+        document.getElementById('macro-result').style.display='block';
+    });
+    </script>
+    <style>
+        .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1rem}
+        .result-card{background:var(--bg-secondary);border:2px solid var(--border-color);border-radius:.5rem;padding:1rem;text-align:center}
+        .result-card.primary{background:var(--primary-solid);color:white;border-color:var(--primary-solid)}
+        .result-card.primary .result-label{color:rgba(255,255,255,.8)}
+        .result-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.25rem}
+        .result-value{font-size:1.2rem;font-weight:700;color:var(--text-primary)}
+        .data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+        .data-table th,.data-table td{padding:.5rem .75rem;text-align:left;border:1px solid var(--border-color);font-size:.85rem}
+        .data-table th{background:var(--bg-secondary);font-weight:600}
+        .data-table tr:nth-child(even){background:var(--bg-secondary)}
+    </style>
+</body>
+</html>

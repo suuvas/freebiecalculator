@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator - Calculate Loan EMI Online | FreebieCalculator</title>
+    <meta name="description" content="Calculate your loan EMI (Equated Monthly Installment) with our free EMI calculator. Get instant results for home loans, personal loans, and more.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/emi.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="EMI Calculator - Calculate Loan EMI Online">
+    <meta property="og:description" content="Calculate your loan EMI with our free calculator. Get instant results for home loans, personal loans, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/emi.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "EMI Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate your Equated Monthly Installment (EMI) for loans with this free online calculator.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Calculators",
+                "item": "https://freebiecalculator.com/#finance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "EMI Calculator",
+                "item": "https://freebiecalculator.com/calculators/emi.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What factors affect my EMI amount?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Three main factors affect your EMI: the loan amount (principal), interest rate, and loan tenure. Higher loan amounts and interest rates increase EMI, while longer tenure reduces monthly EMI but increases total interest paid."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How can I reduce my EMI burden?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can reduce EMI by: making a higher down payment to reduce principal, negotiating for lower interest rates, choosing longer tenure (but this increases total interest), or making prepayments when possible."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What happens if I miss an EMI payment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Missing EMI payments can result in late fees, penalty charges, negative impact on credit score, and in severe cases, legal action or asset seizure. Always contact your lender if you're facing payment difficulties."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is it better to choose shorter or longer loan tenure?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shorter tenure means higher EMI but lower total interest paid. Longer tenure means lower EMI but higher total interest. Choose based on your monthly budget and financial goals."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I prepay my loan to reduce EMI or tenure?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, most lenders allow prepayments. You can either reduce your EMI amount or loan tenure. Prepayments directly reduce the principal, saving significant interest over time."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>EMI Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <form id="emi-form">
+                        <div class="form-group">
+                            <label for="principal">Loan Amount (Principal):</label>
+                            <input type="number" id="principal" step="1" placeholder="e.g., 500000" min="1000" required>
+                        </div>
+                        
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="rate">Annual Interest Rate (%):</label>
+                                <input type="number" id="rate" step="0.01" placeholder="e.g., 8.5" min="0.1" max="50" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tenure">Loan Tenure (Years):</label>
+                                <input type="number" id="tenure" step="1" placeholder="e.g., 20" min="1" max="50" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit">Calculate EMI</button>
+                    </form>
+                    
+                    <div id="emi-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="emi-amount"></div>
+                        <div class="result-details" id="emi-breakdown"></div>
+                        <div class="result-details" id="emi-summary"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>How EMI Calculator Works</h2>
+                    <p>
+                        An EMI (Equated Monthly Installment) is a fixed payment amount made by a borrower to a lender 
+                        at a specified date each calendar month. EMIs are used to pay off both interest and principal 
+                        each month so that over a specified number of years, the loan is fully paid off.
+                    </p>
+                    <p>
+                        Our EMI calculator helps you determine your monthly payment for any loan, whether it's a home loan, 
+                        personal loan, car loan, or any other type of installment loan. Understanding your EMI helps you 
+                        plan your finances better and choose loan terms that fit your budget.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>EMI Calculation Formula</h2>
+                    <p>The EMI is calculated using the following mathematical formula:</p>
+                    
+                    <pre><code>
+EMI = P × r × (1 + r)ⁿ / ((1 + r)ⁿ - 1)
+
+Where:
+P = Principal loan amount
+r = Monthly interest rate (Annual rate / 12 / 100)
+n = Number of monthly installments (Years × 12)
+                    </code></pre>
+                    
+                    <h4>Component Breakdown</h4>
+                    <ul>
+                        <li><strong>Principal:</strong> The original loan amount borrowed</li>
+                        <li><strong>Interest Rate:</strong> Annual percentage rate charged by lender</li>
+                        <li><strong>Tenure:</strong> Total repayment period in years</li>
+                        <li><strong>Total Interest:</strong> Total amount paid as interest over loan tenure</li>
+                        <li><strong>Total Amount:</strong> Principal + Total Interest</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Home Loan</h4>
+                        <p><strong>Loan Amount:</strong> $300,000</p>
+                        <p><strong>Interest Rate:</strong> 7.5% per annum</p>
+                        <p><strong>Tenure:</strong> 25 years</p>
+                        <p><strong>Monthly EMI:</strong> $2,246.21</p>
+                        <p><strong>Total Interest:</strong> $373,863</p>
+                        <p><strong>Total Amount:</strong> $673,863</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Personal Loan</h4>
+                        <p><strong>Loan Amount:</strong> $50,000</p>
+                        <p><strong>Interest Rate:</strong> 12% per annum</p>
+                        <p><strong>Tenure:</strong> 5 years</p>
+                        <p><strong>Monthly EMI:</strong> $1,112.22</p>
+                        <p><strong>Total Interest:</strong> $16,733</p>
+                        <p><strong>Total Amount:</strong> $66,733</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Car Loan</h4>
+                        <p><strong>Loan Amount:</strong> $25,000</p>
+                        <p><strong>Interest Rate:</strong> 9% per annum</p>
+                        <p><strong>Tenure:</strong> 7 years</p>
+                        <p><strong>Monthly EMI:</strong> $389.29</p>
+                        <p><strong>Total Interest:</strong> $7,700</p>
+                        <p><strong>Total Amount:</strong> $32,700</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What factors affect my EMI amount?</div>
+                        <div class="faq-answer">
+                            Three main factors affect your EMI: the loan amount (principal), interest rate, and loan tenure. 
+                            Higher loan amounts and interest rates increase EMI, while longer tenure reduces monthly EMI 
+                            but increases total interest paid.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How can I reduce my EMI burden?</div>
+                        <div class="faq-answer">
+                            You can reduce EMI by: making a higher down payment to reduce principal, negotiating for 
+                            lower interest rates, choosing longer tenure (but this increases total interest), or making 
+                            prepayments when possible.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What happens if I miss an EMI payment?</div>
+                        <div class="faq-answer">
+                            Missing EMI payments can result in late fees, penalty charges, negative impact on credit score, 
+                            and in severe cases, legal action or asset seizure. Always contact your lender if you're 
+                            facing payment difficulties.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is it better to choose shorter or longer loan tenure?</div>
+                        <div class="faq-answer">
+                            Shorter tenure means higher EMI but lower total interest paid. Longer tenure means lower EMI 
+                            but higher total interest. Choose based on your monthly budget and financial goals.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I prepay my loan to reduce EMI or tenure?</div>
+                        <div class="faq-answer">
+                            Yes, most lenders allow prepayments. You can either reduce your EMI amount or loan tenure. 
+                            Prepayments directly reduce the principal, saving significant interest over time.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>More Financial Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/mortgage.html">Mortgage Calculator</a>
+                        <a href="/calculators/car-loan.html">Car Loan Calculator</a>
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/simple-interest.html">Simple Interest Calculator</a>
+                        <a href="/calculators/investment-roi.html">Investment ROI Calculator</a>
+                        <a href="/calculators/salary-after-tax.html">Salary After Tax Calculator</a>
+                    </div>
+                    
+                    <div class="last-updated">
+                        <small><strong>Last Updated:</strong> August 22, 2025</small>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { calculateEMI, formatCurrency, formatNumber } from '/assets/js/utils/math.js';
+        
+        document.getElementById('emi-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const tenure = parseFloat(document.getElementById('tenure').value);
+            
+            if (isNaN(principal) || isNaN(rate) || isNaN(tenure) || 
+                principal <= 0 || rate <= 0 || tenure <= 0) {
+                alert('Please enter valid positive numbers for all fields');
+                return;
+            }
+            
+            const tenureMonths = tenure * 12;
+            const result = calculateEMI(principal, rate, tenureMonths);
+            
+            // Display results
+            document.getElementById('emi-amount').textContent = 
+                `Monthly EMI: ${formatCurrency(result.emi)}`;
+            
+            document.getElementById('emi-breakdown').innerHTML = `
+                <strong>Loan Breakdown:</strong><br>
+                Principal Amount: ${formatCurrency(principal)}<br>
+                Total Interest: ${formatCurrency(result.totalInterest)}<br>
+                Total Amount Payable: ${formatCurrency(result.totalAmount)}
+            `;
+            
+            const interestPercentage = (result.totalInterest / principal) * 100;
+            document.getElementById('emi-summary').innerHTML = `
+                <strong>Summary:</strong><br>
+                Monthly Payment: ${formatCurrency(result.emi)}<br>
+                Interest Rate: ${rate}% per annum<br>
+                Loan Tenure: ${tenure} years (${tenureMonths} months)<br>
+                Interest as % of Principal: ${formatNumber(interestPercentage, 1)}%
+            `;
+            
+            document.getElementById('emi-result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

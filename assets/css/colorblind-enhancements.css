@@ -1,0 +1,207 @@
+/* Advanced Colorblind-Friendly Enhancements */
+
+/* Button variants with distinct patterns */
+.btn-primary, .calculate-btn {
+    background: linear-gradient(45deg, var(--primary-color) 25%, transparent 25%), 
+                linear-gradient(-45deg, var(--primary-color) 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, var(--primary-color) 75%), 
+                linear-gradient(-45deg, transparent 75%, var(--primary-color) 75%);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    background-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--bg-secondary),
+        var(--bg-secondary) 2px,
+        rgba(0, 86, 179, 0.1) 2px,
+        rgba(0, 86, 179, 0.1) 4px
+    );
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Form validation with multiple indicators */
+input:valid {
+    border: 2px solid var(--success-color);
+    border-left: 6px solid var(--success-color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%2328a745"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) center;
+    background-size: 16px 16px;
+    padding-right: 32px;
+}
+
+input:invalid {
+    border: 2px solid var(--error-color);
+    border-left: 6px solid var(--error-color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23dc3545"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) center;
+    background-size: 16px 16px;
+    padding-right: 32px;
+}
+
+/* Calculator cards with enhanced visual hierarchy */
+.calculator-card {
+    border: 3px solid var(--border-color);
+    position: relative;
+    overflow: visible;
+}
+
+.calculator-card::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: repeating-conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0deg 60deg,
+        var(--primary-color) 60deg 120deg,
+        transparent 120deg 180deg,
+        var(--primary-color) 180deg 240deg,
+        transparent 240deg 300deg,
+        var(--primary-color) 300deg 360deg
+    );
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.calculator-card:hover::before {
+    opacity: 0.3;
+}
+
+.calculator-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+/* Navigation with clear states */
+.nav-link {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    border-color: var(--primary-color);
+    background: rgba(0, 86, 179, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-link.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Enhanced search with clear focus */
+#calculator-search {
+    border: 3px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+#calculator-search:focus {
+    border-color: var(--primary-color);
+    background: rgba(0, 86, 179, 0.05);
+    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.2);
+}
+
+/* High contrast table styling */
+table {
+    border: 2px solid var(--border-color);
+}
+
+th {
+    background: var(--primary-color);
+    color: white;
+    border: 1px solid var(--primary-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+tr:nth-child(even) td {
+    background: rgba(0, 86, 179, 0.05);
+}
+
+tr:hover td {
+    background: rgba(0, 86, 179, 0.1);
+    color: var(--text-primary);
+}
+
+/* Clear visual hierarchy for headings */
+h1 {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+h2 {
+    border-left: 6px solid var(--primary-color);
+    padding-left: 16px;
+    background: rgba(0, 86, 179, 0.05);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+/* Loading states with clear animation */
+.loading {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 86, 179, 0.1) 25%, 
+        rgba(0, 86, 179, 0.2) 50%, 
+        rgba(0, 86, 179, 0.1) 75%, 
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: loading-sweep 2s infinite linear;
+    border: 2px dashed var(--primary-color);
+}
+
+@keyframes loading-sweep {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .success, 
+[data-theme="dark"] .result-success {
+    background-color: rgba(40, 167, 69, 0.2);
+    border-color: #40c463;
+}
+
+[data-theme="dark"] .error, 
+[data-theme="dark"] .result-error {
+    background-color: rgba(220, 53, 69, 0.2);
+    border-color: #f85359;
+}
+
+[data-theme="dark"] .warning, 
+[data-theme="dark"] .result-warning {
+    background-color: rgba(253, 126, 20, 0.2);
+    border-color: #fd9843;
+}

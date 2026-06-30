@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary After Tax Calculator - Calculate Take-Home Pay | FreebieCalculator</title>
+    <meta name="description" content="Free salary after tax calculator to estimate your take-home pay. Calculate net salary from gross income with federal, state, and payroll tax deductions.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/salary-after-tax.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Salary After Tax Calculator - Calculate Take-Home Pay">
+    <meta property="og:description" content="Calculate your net salary after taxes with this free take-home pay calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/salary-after-tax.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Salary After Tax Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate take-home salary after federal, state, and payroll tax deductions for salary planning.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Financial Calculators",
+                "item": "https://freebiecalculator.com/#finance"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Salary After Tax Calculator",
+                "item": "https://freebiecalculator.com/calculators/salary-after-tax.html"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How accurate is this salary calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This calculator provides estimates based on general tax brackets and standard deductions. Actual taxes may vary due to specific deductions, credits, state laws, and other factors. Consult a tax professional for precise calculations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What taxes are included in the calculation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The calculator includes federal income tax, state income tax (if applicable), Social Security tax (6.2%), Medicare tax (1.45%), and additional Medicare tax for high earners (0.9% over threshold)."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Salary After Tax Calculator</h1>
+                
+                <div class="alert alert-warning">
+                    <strong>Educational Purpose Only:</strong> This is a simplified calculator for estimation purposes. 
+                    Tax laws vary by location and individual circumstances. Always consult with qualified tax professionals 
+                    for accurate tax planning and preparation.
+                </div>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <form id="salary-form">
+                        <div class="form-group">
+                            <label for="pay-frequency">Pay Frequency:</label>
+                            <select id="pay-frequency" required>
+                                <option value="annual">Annual Salary</option>
+                                <option value="monthly">Monthly Salary</option>
+                                <option value="biweekly">Bi-weekly Salary</option>
+                                <option value="weekly">Weekly Salary</option>
+                                <option value="hourly">Hourly Wage</option>
+                            </select>
+                        </div>
+                        
+                        <div id="salary-input">
+                            <div class="form-group">
+                                <label for="gross-salary">Gross Annual Salary ($):</label>
+                                <input type="number" id="gross-salary" step="1000" placeholder="e.g., 75000" min="1000" required>
+                            </div>
+                        </div>
+                        
+                        <div id="hourly-input" style="display: none;">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label for="hourly-rate">Hourly Rate ($):</label>
+                                    <input type="number" id="hourly-rate" step="0.50" placeholder="e.g., 25.00" min="7.25">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hours-per-week">Hours per Week:</label>
+                                    <input type="number" id="hours-per-week" step="1" placeholder="e.g., 40" min="1" max="80">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="filing-status">Filing Status:</label>
+                                <select id="filing-status" required>
+                                    <option value="single">Single</option>
+                                    <option value="married-jointly">Married Filing Jointly</option>
+                                    <option value="married-separately">Married Filing Separately</option>
+                                    <option value="head-of-household">Head of Household</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="state-tax">State Income Tax Rate (%):</label>
+                                <select id="state-tax">
+                                    <option value="0">No State Tax (0%)</option>
+                                    <option value="3">Low Tax State (3%)</option>
+                                    <option value="6">Medium Tax State (6%)</option>
+                                    <option value="9">High Tax State (9%)</option>
+                                    <option value="13">Very High Tax State (13%)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pre-tax-deductions">Pre-tax Deductions ($):</label>
+                            <input type="number" id="pre-tax-deductions" step="100" placeholder="401k, health insurance, etc." min="0">
+                            <small>401(k), health insurance, HSA, etc. (annual amount)</small>
+                        </div>
+                        
+                        <button type="submit">Calculate Take-Home Pay</button>
+                    </form>
+                    
+                    <div id="salary-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="net-salary-display"></div>
+                        <div class="result-details" id="salary-breakdown"></div>
+                        <div class="result-details" id="pay-periods"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Understanding Salary After Tax Calculations</h2>
+                    <p>
+                        Your take-home pay is significantly different from your gross salary due to various tax deductions. 
+                        Understanding these deductions helps you budget effectively, negotiate salaries, and plan for major 
+                        purchases. Our calculator provides estimates based on current federal tax brackets and typical 
+                        state tax rates.
+                    </p>
+                    <p>
+                        The calculation includes federal income tax (progressive brackets), state income tax (varies by state), 
+                        FICA taxes (Social Security and Medicare), and accounts for pre-tax deductions that can reduce your 
+                        taxable income. These estimates help you understand your actual purchasing power and plan your finances.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Tax Deduction Components</h2>
+                    
+                    <h4>Federal Income Tax</h4>
+                    <p>Progressive tax system based on 2024 tax brackets:</p>
+                    <ul>
+                        <li>10% on income up to $11,000 (single) / $22,000 (married filing jointly)</li>
+                        <li>12% on income $11,001-$44,725 (single) / $22,001-$89,450 (married filing jointly)</li>
+                        <li>22% on income $44,726-$95,375 (single) / $89,451-$190,750 (married filing jointly)</li>
+                        <li>24% on income $95,376-$182,050 (single) / $190,751-$364,200 (married filing jointly)</li>
+                        <li>Higher brackets apply to higher income levels</li>
+                    </ul>
+                    
+                    <h4>FICA Taxes (Payroll Taxes)</h4>
+                    <pre><code>
+Social Security Tax: 6.2% (on wages up to $160,200 in 2024)
+Medicare Tax: 1.45% (on all wages)
+Additional Medicare Tax: 0.9% (on wages over $200,000 single / $250,000 married)
+Total FICA: 7.65% for most earners
+                    </code></pre>
+                    
+                    <h4>State Income Tax</h4>
+                    <p>Varies by state:</p>
+                    <ul>
+                        <li><strong>No State Tax:</strong> Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, Wyoming</li>
+                        <li><strong>Low Tax (0-5%):</strong> States like North Carolina, Utah, Colorado</li>
+                        <li><strong>Medium Tax (5-8%):</strong> States like Virginia, Georgia, Kansas</li>
+                        <li><strong>High Tax (8%+):</strong> States like California, New York, Hawaii</li>
+                    </ul>
+                    
+                    <h4>Pre-tax Deductions</h4>
+                    <p>Reduce taxable income:</p>
+                    <ul>
+                        <li>401(k) contributions (up to $23,000 in 2024)</li>
+                        <li>Health insurance premiums</li>
+                        <li>HSA contributions (up to $4,150 individual / $8,300 family in 2024)</li>
+                        <li>Dental and vision insurance</li>
+                        <li>Flexible Spending Accounts (FSA)</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Single Filer, Medium Tax State</h4>
+                        <p><strong>Gross Salary:</strong> $60,000</p>
+                        <p><strong>Pre-tax Deductions:</strong> $6,000 (401k)</p>
+                        <p><strong>Taxable Income:</strong> $54,000</p>
+                        <p><strong>Federal Tax:</strong> ~$6,200</p>
+                        <p><strong>State Tax (6%):</strong> ~$3,240</p>
+                        <p><strong>FICA Taxes:</strong> ~$4,590</p>
+                        <p><strong>Net Take-Home:</strong> ~$39,970 (66.6% of gross)</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Married Filing Jointly, High Tax State</h4>
+                        <p><strong>Gross Salary:</strong> $100,000</p>
+                        <p><strong>Pre-tax Deductions:</strong> $12,000</p>
+                        <p><strong>Taxable Income:</strong> $88,000</p>
+                        <p><strong>Federal Tax:</strong> ~$9,700</p>
+                        <p><strong>State Tax (9%):</strong> ~$7,920</p>
+                        <p><strong>FICA Taxes:</strong> ~$7,650</p>
+                        <p><strong>Net Take-Home:</strong> ~$62,730 (62.7% of gross)</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: High Earner with No State Tax</h4>
+                        <p><strong>Gross Salary:</strong> $150,000</p>
+                        <p><strong>Pre-tax Deductions:</strong> $20,000</p>
+                        <p><strong>Taxable Income:</strong> $130,000</p>
+                        <p><strong>Federal Tax:</strong> ~$24,000</p>
+                        <p><strong>State Tax:</strong> $0</p>
+                        <p><strong>FICA Taxes:</strong> ~$11,475</p>
+                        <p><strong>Net Take-Home:</strong> ~$94,525 (63.0% of gross)</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Strategies to Increase Take-Home Pay</h2>
+                    
+                    <div class="input-row">
+                        <div>
+                            <h4>💰 Maximize Pre-Tax Benefits</h4>
+                            <ul>
+                                <li>Contribute to 401(k) up to employer match</li>
+                                <li>Use Health Savings Account (HSA) if eligible</li>
+                                <li>Opt for employer health insurance</li>
+                                <li>Utilize Flexible Spending Accounts</li>
+                                <li>Consider pre-tax commuter benefits</li>
+                                <li>Take advantage of dependent care FSA</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>📋 Tax Planning Tips</h4>
+                            <ul>
+                                <li>Adjust withholdings to avoid large refunds</li>
+                                <li>Consider Roth vs traditional retirement accounts</li>
+                                <li>Plan for tax-efficient investments</li>
+                                <li>Understand your marginal tax bracket</li>
+                                <li>Time income and deductions strategically</li>
+                                <li>Consult with tax professionals annually</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is this salary calculator?</div>
+                        <div class="faq-answer">
+                            This calculator provides estimates based on general tax brackets and standard deductions. 
+                            Actual taxes may vary due to specific deductions, credits, state laws, local taxes, and 
+                            other factors. Consult a tax professional for precise calculations.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What taxes are included in the calculation?</div>
+                        <div class="faq-answer">
+                            The calculator includes federal income tax, state income tax (if applicable), Social Security 
+                            tax (6.2%), Medicare tax (1.45%), and additional Medicare tax for high earners (0.9% over 
+                            threshold). It doesn't include local taxes, disability insurance, or union dues.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why is my actual paycheck different from this calculation?</div>
+                        <div class="faq-answer">
+                            Actual paychecks may differ due to local taxes, state disability insurance, union dues, 
+                            voluntary deductions, different withholding elections, or employer-specific benefits. 
+                            This calculator provides federal and state estimates only.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Should I adjust my tax withholdings?</div>
+                        <div class="faq-answer">
+                            If you consistently get large refunds, you may be over-withholding and giving the government 
+                            an interest-free loan. If you owe money at tax time, you may be under-withholding. Use IRS 
+                            Form W-4 and their withholding calculator to adjust appropriately.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do bonuses and overtime affect take-home pay?</div>
+                        <div class="faq-answer">
+                            Bonuses are often withheld at a flat 22% federal rate (supplemental wage rate), which may 
+                            result in over or under-withholding depending on your actual tax bracket. Overtime is taxed 
+                            as regular income but may push you into higher brackets.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>Related Financial Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/tax.html">Tax Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/mortgage.html">Mortgage Calculator</a>
+                        <a href="/calculators/emi.html">EMI Calculator</a>
+                        <a href="/calculators/investment-roi.html">Investment ROI Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatCurrency, formatNumber, roundTo } from '/assets/js/utils/math.js';
+        
+        // Switch between salary and hourly input
+        document.getElementById('pay-frequency').addEventListener('change', function(e) {
+            const salaryInput = document.getElementById('salary-input');
+            const hourlyInput = document.getElementById('hourly-input');
+            const grossSalaryInput = document.getElementById('gross-salary');
+            
+            if (e.target.value === 'hourly') {
+                salaryInput.style.display = 'none';
+                hourlyInput.style.display = 'block';
+                grossSalaryInput.required = false;
+            } else {
+                salaryInput.style.display = 'block';
+                hourlyInput.style.display = 'none';
+                grossSalaryInput.required = true;
+                
+                // Update label based on frequency
+                const label = document.querySelector('label[for="gross-salary"]');
+                switch (e.target.value) {
+                    case 'monthly':
+                        label.textContent = 'Gross Monthly Salary ($):';
+                        break;
+                    case 'biweekly':
+                        label.textContent = 'Gross Bi-weekly Salary ($):';
+                        break;
+                    case 'weekly':
+                        label.textContent = 'Gross Weekly Salary ($):';
+                        break;
+                    default:
+                        label.textContent = 'Gross Annual Salary ($):';
+                }
+            }
+            
+            // Hide result when switching
+            document.getElementById('salary-result').style.display = 'none';
+        });
+        
+        document.getElementById('salary-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const payFrequency = document.getElementById('pay-frequency').value;
+            const filingStatus = document.getElementById('filing-status').value;
+            const stateTaxRate = parseFloat(document.getElementById('state-tax').value) / 100;
+            const preTaxDeductions = parseFloat(document.getElementById('pre-tax-deductions').value) || 0;
+            
+            let annualGrossSalary;
+            
+            if (payFrequency === 'hourly') {
+                const hourlyRate = parseFloat(document.getElementById('hourly-rate').value);
+                const hoursPerWeek = parseFloat(document.getElementById('hours-per-week').value);
+                
+                if (isNaN(hourlyRate) || isNaN(hoursPerWeek) || hourlyRate <= 0 || hoursPerWeek <= 0) {
+                    alert('Please enter valid hourly rate and hours per week');
+                    return;
+                }
+                
+                annualGrossSalary = hourlyRate * hoursPerWeek * 52;
+            } else {
+                const salaryInput = parseFloat(document.getElementById('gross-salary').value);
+                
+                if (isNaN(salaryInput) || salaryInput <= 0) {
+                    alert('Please enter a valid salary amount');
+                    return;
+                }
+                
+                // Convert to annual
+                switch (payFrequency) {
+                    case 'monthly':
+                        annualGrossSalary = salaryInput * 12;
+                        break;
+                    case 'biweekly':
+                        annualGrossSalary = salaryInput * 26;
+                        break;
+                    case 'weekly':
+                        annualGrossSalary = salaryInput * 52;
+                        break;
+                    default:
+                        annualGrossSalary = salaryInput;
+                }
+            }
+            
+            // Calculate taxes
+            const taxableIncome = Math.max(0, annualGrossSalary - preTaxDeductions);
+            
+            // Federal tax (simplified progressive brackets)
+            const federalTax = calculateFederalTax(taxableIncome, filingStatus);
+            
+            // State tax
+            const stateTax = taxableIncome * stateTaxRate;
+            
+            // FICA taxes
+            const ficaTax = calculateFICA(annualGrossSalary);
+            
+            const totalTaxes = federalTax + stateTax + ficaTax;
+            const netSalary = annualGrossSalary - totalTaxes;
+            const effectiveTaxRate = (totalTaxes / annualGrossSalary) * 100;
+            
+            // Display results
+            document.getElementById('net-salary-display').textContent = 
+                `Annual Take-Home: ${formatCurrency(netSalary)}`;
+            
+            document.getElementById('salary-breakdown').innerHTML = `
+                <strong>Tax Breakdown:</strong><br>
+                Gross Annual Salary: ${formatCurrency(annualGrossSalary)}<br>
+                Pre-tax Deductions: ${formatCurrency(preTaxDeductions)}<br>
+                Taxable Income: ${formatCurrency(taxableIncome)}<br>
+                <br>
+                Federal Income Tax: ${formatCurrency(federalTax)}<br>
+                State Income Tax: ${formatCurrency(stateTax)}<br>
+                FICA Taxes (SS + Medicare): ${formatCurrency(ficaTax)}<br>
+                <strong>Total Taxes: ${formatCurrency(totalTaxes)}</strong><br>
+                <br>
+                <strong>Net Take-Home: ${formatCurrency(netSalary)}</strong><br>
+                Effective Tax Rate: ${formatNumber(effectiveTaxRate, 1)}%
+            `;
+            
+            // Calculate pay periods
+            const monthlyNet = netSalary / 12;
+            const biweeklyNet = netSalary / 26;
+            const weeklyNet = netSalary / 52;
+            const dailyNet = netSalary / 260; // Assuming 5 work days per week
+            
+            document.getElementById('pay-periods').innerHTML = `
+                <strong>Take-Home Pay by Period:</strong><br>
+                Monthly: ${formatCurrency(monthlyNet)}<br>
+                Bi-weekly: ${formatCurrency(biweeklyNet)}<br>
+                Weekly: ${formatCurrency(weeklyNet)}<br>
+                Daily: ${formatCurrency(dailyNet)}<br>
+                <br>
+                <em>This is a simplified estimate for educational purposes. Actual taxes may vary based on 
+                specific deductions, credits, local taxes, and individual circumstances.</em>
+            `;
+            
+            document.getElementById('salary-result').style.display = 'block';
+        });
+        
+        function calculateFederalTax(taxableIncome, filingStatus) {
+            // Simplified 2024 tax brackets
+            let brackets;
+            
+            if (filingStatus === 'married-jointly') {
+                brackets = [
+                    { min: 0, max: 22000, rate: 0.10 },
+                    { min: 22000, max: 89450, rate: 0.12 },
+                    { min: 89450, max: 190750, rate: 0.22 },
+                    { min: 190750, max: 364200, rate: 0.24 },
+                    { min: 364200, max: 462500, rate: 0.32 },
+                    { min: 462500, max: 693750, rate: 0.35 },
+                    { min: 693750, max: Infinity, rate: 0.37 }
+                ];
+            } else {
+                // Single, married separately, head of household (simplified)
+                brackets = [
+                    { min: 0, max: 11000, rate: 0.10 },
+                    { min: 11000, max: 44725, rate: 0.12 },
+                    { min: 44725, max: 95375, rate: 0.22 },
+                    { min: 95375, max: 182050, rate: 0.24 },
+                    { min: 182050, max: 231250, rate: 0.32 },
+                    { min: 231250, max: 578125, rate: 0.35 },
+                    { min: 578125, max: Infinity, rate: 0.37 }
+                ];
+            }
+            
+            let tax = 0;
+            let remainingIncome = taxableIncome;
+            
+            for (const bracket of brackets) {
+                if (remainingIncome <= 0) break;
+                
+                const taxableInBracket = Math.min(remainingIncome, bracket.max - bracket.min);
+                tax += taxableInBracket * bracket.rate;
+                remainingIncome -= taxableInBracket;
+            }
+            
+            return roundTo(tax, 2);
+        }
+        
+        function calculateFICA(grossIncome) {
+            const socialSecurityWageBase = 160200; // 2024 wage base
+            const socialSecurityRate = 0.062;
+            const medicareRate = 0.0145;
+            const additionalMedicareThreshold = 200000; // Single threshold
+            const additionalMedicareRate = 0.009;
+            
+            let ficaTax = 0;
+            
+            // Social Security tax (capped)
+            ficaTax += Math.min(grossIncome, socialSecurityWageBase) * socialSecurityRate;
+            
+            // Medicare tax (no cap)
+            ficaTax += grossIncome * medicareRate;
+            
+            // Additional Medicare tax for high earners
+            if (grossIncome > additionalMedicareThreshold) {
+                ficaTax += (grossIncome - additionalMedicareThreshold) * additionalMedicareRate;
+            }
+            
+            return roundTo(ficaTax, 2);
+        }
+    </script>
+</body>
+</html>

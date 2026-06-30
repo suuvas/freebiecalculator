@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator - Advanced Online Calculator | FreebieCalculator</title>
+    <meta name="description" content="Free scientific calculator with trigonometry, logarithms, exponentials, and advanced mathematical functions. Perfect for students and professionals.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/scientific.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Scientific Calculator - Advanced Online Calculator">
+    <meta property="og:description" content="Advanced scientific calculator with trigonometry, logarithms, and mathematical functions for students and professionals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/scientific.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Scientific Calculator",
+        "description": "Advanced scientific calculator with trigonometry, logarithms, and mathematical functions",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Math Calculators",
+                "item": "https://freebiecalculator.com/#math"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Scientific Calculator",
+                "item": "https://freebiecalculator.com/calculators/scientific.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I use trigonometric functions?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Click the trig function (sin, cos, tan), enter your angle, then press equals. Make sure you're in the correct angle mode (degrees or radians) for your calculation."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between log and ln?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Log is the common logarithm (base 10), while ln is the natural logarithm (base e). Use log for most engineering calculations and ln for advanced mathematics."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I calculate powers and roots?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use x^y for any power, x\u00b2 for squares, x\u00b3 for cubes, or \u221a for square roots. For other roots, use x^(1/n) where n is the root."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use parentheses for complex expressions?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Use parentheses to group operations and ensure correct order of calculation. The calculator follows proper mathematical precedence rules."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#math-calculators">Math Calculators</a> › 
+                <span>Scientific Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>🔬 Scientific Calculator</h1>
+                <p>Advanced calculator with trigonometry, logarithms, exponentials, and mathematical functions.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <div class="scientific-calculator">
+                    <div class="calculator-display">
+                        <div id="display" class="display">0</div>
+                        <div id="expression" class="expression"></div>
+                    </div>
+                    
+                    <div class="calculator-buttons">
+                        <!-- Row 1 - Memory and Clear -->
+                        <button class="btn secondary" onclick="clearMemory()">MC</button>
+                        <button class="btn secondary" onclick="recallMemory()">MR</button>
+                        <button class="btn secondary" onclick="addToMemory()">M+</button>
+                        <button class="btn secondary" onclick="subtractFromMemory()">M-</button>
+                        <button class="btn secondary" onclick="storeMemory()">MS</button>
+                        <button class="btn danger" onclick="clearAll()">C</button>
+                        <button class="btn danger" onclick="clearEntry()">CE</button>
+                        <button class="btn secondary" onclick="backspace()">⌫</button>
+                        
+                        <!-- Row 2 - Scientific Functions -->
+                        <button class="btn function" onclick="insertFunction('Math.sin(')">sin</button>
+                        <button class="btn function" onclick="insertFunction('Math.cos(')">cos</button>
+                        <button class="btn function" onclick="insertFunction('Math.tan(')">tan</button>
+                        <button class="btn function" onclick="insertFunction('Math.log10(')">log</button>
+                        <button class="btn function" onclick="insertFunction('Math.log(')">ln</button>
+                        <button class="btn function" onclick="insertFunction('Math.sqrt(')">√</button>
+                        <button class="btn function" onclick="insertFunction('Math.pow(')">x^y</button>
+                        <button class="btn operator" onclick="insertValue('/')">/</button>
+                        
+                        <!-- Row 3 - Inverse Functions -->
+                        <button class="btn function" onclick="insertFunction('Math.asin(')">sin⁻¹</button>
+                        <button class="btn function" onclick="insertFunction('Math.acos(')">cos⁻¹</button>
+                        <button class="btn function" onclick="insertFunction('Math.atan(')">tan⁻¹</button>
+                        <button class="btn function" onclick="insertFunction('1/(')">1/x</button>
+                        <button class="btn function" onclick="insertFunction('Math.exp(')">eˣ</button>
+                        <button class="btn number" onclick="insertValue('7')">7</button>
+                        <button class="btn number" onclick="insertValue('8')">8</button>
+                        <button class="btn number" onclick="insertValue('9')">9</button>
+                        
+                        <!-- Row 4 -->
+                        <button class="btn function" onclick="insertValue('Math.PI')">π</button>
+                        <button class="btn function" onclick="insertValue('Math.E')">e</button>
+                        <button class="btn function" onclick="insertFunction('Math.pow(10,')">10ˣ</button>
+                        <button class="btn function" onclick="insertFunction('Math.pow(', 2)">x²</button>
+                        <button class="btn function" onclick="insertFunction('Math.pow(', 3)">x³</button>
+                        <button class="btn number" onclick="insertValue('4')">4</button>
+                        <button class="btn number" onclick="insertValue('5')">5</button>
+                        <button class="btn number" onclick="insertValue('6')">6</button>
+                        
+                        <!-- Row 5 -->
+                        <button class="btn function" onclick="insertFunction('Math.abs(')">|x|</button>
+                        <button class="btn function" onclick="insertFunction('Math.floor(')">⌊x⌋</button>
+                        <button class="btn function" onclick="insertFunction('Math.ceil(')">⌈x⌉</button>
+                        <button class="btn function" onclick="insertFunction('factorial(')">n!</button>
+                        <button class="btn operator" onclick="insertValue('*')">×</button>
+                        <button class="btn number" onclick="insertValue('1')">1</button>
+                        <button class="btn number" onclick="insertValue('2')">2</button>
+                        <button class="btn number" onclick="insertValue('3')">3</button>
+                        
+                        <!-- Row 6 -->
+                        <button class="btn function" onclick="insertValue('(')">(</button>
+                        <button class="btn function" onclick="insertValue(')')">)</button>
+                        <button class="btn function" onclick="toggleSign()">±</button>
+                        <button class="btn function" onclick="insertValue('%')">%</button>
+                        <button class="btn operator" onclick="insertValue('-')">-</button>
+                        <button class="btn number zero" onclick="insertValue('0')">0</button>
+                        <button class="btn number" onclick="insertValue('.')">.</button>
+                        <button class="btn operator" onclick="insertValue('+')">+</button>
+                        
+                        <!-- Row 7 -->
+                        <button class="btn equals" onclick="calculate()" style="grid-column: span 8">=</button>
+                    </div>
+                    
+                    <div class="calculator-modes">
+                        <label>
+                            <input type="radio" name="angle" value="deg" checked> Degrees
+                        </label>
+                        <label>
+                            <input type="radio" name="angle" value="rad"> Radians
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Scientific Calculator Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🔢 Basic Operations</h3>
+                        <p>Addition, subtraction, multiplication, division, and percentage calculations with full order of operations support.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📐 Trigonometry</h3>
+                        <p>Sine, cosine, tangent, and their inverse functions. Switch between degrees and radians mode for accurate calculations.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📊 Advanced Functions</h3>
+                        <p>Logarithms, exponentials, square roots, powers, factorials, and absolute values for complex mathematical operations.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Scientific Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use trigonometric functions?</div>
+                        <div class="faq-answer">Click the trig function (sin, cos, tan), enter your angle, then press equals. Make sure you're in the correct angle mode (degrees or radians) for your calculation.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between log and ln?</div>
+                        <div class="faq-answer">Log is the common logarithm (base 10), while ln is the natural logarithm (base e). Use log for most engineering calculations and ln for advanced mathematics.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I calculate powers and roots?</div>
+                        <div class="faq-answer">Use x^y for any power, x² for squares, x³ for cubes, or √ for square roots. For other roots, use x^(1/n) where n is the root.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use parentheses for complex expressions?</div>
+                        <div class="faq-answer">Yes! Use parentheses to group operations and ensure correct order of calculation. The calculator follows proper mathematical precedence rules.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+        let currentInput = '0';
+        let expression = '';
+        let memory = 0;
+        let shouldResetDisplay = false;
+        
+        function updateDisplay() {
+            document.getElementById('display').textContent = currentInput;
+            document.getElementById('expression').textContent = expression;
+        }
+        
+        function insertValue(value) {
+            if (shouldResetDisplay) {
+                currentInput = '';
+                shouldResetDisplay = false;
+            }
+            
+            if (currentInput === '0' && value !== '.') {
+                currentInput = value;
+            } else {
+                currentInput += value;
+            }
+            
+            expression += value;
+            updateDisplay();
+        }
+        
+        function insertFunction(func, power = null) {
+            if (shouldResetDisplay) {
+                currentInput = '';
+                expression = '';
+                shouldResetDisplay = false;
+            }
+            
+            if (power) {
+                currentInput += func.replace('(', `(${currentInput},${power})`);
+                expression += func.replace('(', `(${currentInput},${power})`);
+            } else {
+                currentInput += func;
+                expression += func;
+            }
+            
+            updateDisplay();
+        }
+        
+        function calculate() {
+            try {
+                // Convert angle units for trig functions
+                const angleMode = document.querySelector('input[name="angle"]:checked').value;
+                let evalExpression = expression;
+                
+                if (angleMode === 'deg') {
+                    evalExpression = evalExpression
+                        .replace(/Math\.sin\(/g, 'Math.sin(Math.PI/180*(')
+                        .replace(/Math\.cos\(/g, 'Math.cos(Math.PI/180*(')
+                        .replace(/Math\.tan\(/g, 'Math.tan(Math.PI/180*(');
+                }
+                
+                // Handle factorial function
+                evalExpression = evalExpression.replace(/factorial\(([^)]+)\)/g, (match, num) => {
+                    return factorial(parseFloat(num));
+                });
+                
+                // Handle percentage
+                evalExpression = evalExpression.replace(/(\d+)%/g, '($1/100)');
+                
+                const result = eval(evalExpression);
+                
+                if (isNaN(result) || !isFinite(result)) {
+                    throw new Error('Invalid calculation');
+                }
+                
+                currentInput = result.toString();
+                expression = '';
+                shouldResetDisplay = true;
+                updateDisplay();
+                
+            } catch (error) {
+                currentInput = 'Error';
+                expression = '';
+                shouldResetDisplay = true;
+                updateDisplay();
+            }
+        }
+        
+        function factorial(n) {
+            if (n < 0) return NaN;
+            if (n === 0 || n === 1) return 1;
+            let result = 1;
+            for (let i = 2; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        
+        function clearAll() {
+            currentInput = '0';
+            expression = '';
+            updateDisplay();
+        }
+        
+        function clearEntry() {
+            currentInput = '0';
+            updateDisplay();
+        }
+        
+        function backspace() {
+            if (currentInput.length > 1) {
+                currentInput = currentInput.slice(0, -1);
+                expression = expression.slice(0, -1);
+            } else {
+                currentInput = '0';
+                expression = '';
+            }
+            updateDisplay();
+        }
+        
+        function toggleSign() {
+            if (currentInput !== '0') {
+                if (currentInput.startsWith('-')) {
+                    currentInput = currentInput.substring(1);
+                } else {
+                    currentInput = '-' + currentInput;
+                }
+                updateDisplay();
+            }
+        }
+        
+        // Memory functions
+        function clearMemory() {
+            memory = 0;
+        }
+        
+        function recallMemory() {
+            currentInput = memory.toString();
+            expression = memory.toString();
+            updateDisplay();
+        }
+        
+        function addToMemory() {
+            memory += parseFloat(currentInput) || 0;
+        }
+        
+        function subtractFromMemory() {
+            memory -= parseFloat(currentInput) || 0;
+        }
+        
+        function storeMemory() {
+            memory = parseFloat(currentInput) || 0;
+        }
+        
+        // Keyboard support
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            
+            if (key >= '0' && key <= '9' || key === '.') {
+                insertValue(key);
+            } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+                insertValue(key);
+            } else if (key === 'Enter' || key === '=') {
+                calculate();
+            } else if (key === 'Escape') {
+                clearAll();
+            } else if (key === 'Backspace') {
+                backspace();
+            } else if (key === '(' || key === ')') {
+                insertValue(key);
+            }
+        });
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .scientific-calculator {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .calculator-display {
+            background: #000;
+            color: #0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .display {
+            font-size: 2.5rem;
+            min-height: 60px;
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+        
+        .expression {
+            font-size: 1rem;
+            color: #888;
+            min-height: 20px;
+        }
+        
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            padding: 15px 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--button-bg);
+            color: var(--text-color);
+        }
+        
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn.number {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .btn.operator {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .btn.function {
+            background: #f3e5f5;
+            color: #7b1fa2;
+            font-size: 0.9rem;
+        }
+        
+        .btn.secondary {
+            background: #f5f5f5;
+            color: #666;
+        }
+        
+        .btn.danger {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+        
+        .btn.equals {
+            background: #e8f5e8;
+            color: #2e7d32;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .btn.zero {
+            grid-column: span 1;
+        }
+        
+        .calculator-modes {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .calculator-modes label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-buttons {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .btn {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .display {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>

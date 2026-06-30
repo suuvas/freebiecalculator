@@ -1,0 +1,507 @@
+/* Revenue Optimization Widgets - AdSense Compliant Styling */
+
+/* Recently Viewed Calculators Widget */
+.recently-viewed-widget {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.recently-viewed-widget h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recent-calculators-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.recent-calculator-link {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    background: var(--background-color);
+}
+
+.recent-calculator-link:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.recent-calculator-link.revenue-high {
+    border-left: 4px solid #28a745; /* High-revenue calculators */
+}
+
+.recent-calculator-link.revenue-medium {
+    border-left: 4px solid #ffc107; /* Medium-revenue calculators */
+}
+
+.calculator-icon {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    min-width: 24px;
+}
+
+.calculator-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.calculator-category {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.recent-indicator {
+    color: #28a745;
+    font-size: 0.9rem;
+}
+
+.no-recent {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 20px;
+}
+
+.widget-footer {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.widget-footer small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Top Calculators Widget - Sidebar Variant */
+.top-calculators-widget.sidebar-variant {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.widget-header h3 {
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.widget-subtitle {
+    margin: 0 0 15px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.top-calculators-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.top-calc-card {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    background: var(--background-color);
+}
+
+.top-calc-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.top-calc-card.premium-tier {
+    border-left: 4px solid #dc3545; /* Premium CPC calculators */
+}
+
+.top-calc-card.high-tier {
+    border-left: 4px solid #fd7e14; /* High CPC calculators */
+}
+
+.calc-icon {
+    font-size: 1.3rem;
+    margin-right: 12px;
+    min-width: 28px;
+}
+
+.calc-content {
+    flex: 1;
+}
+
+.calc-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0 0 3px 0;
+    color: var(--text-color);
+}
+
+.calc-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0 0 3px 0;
+    line-height: 1.3;
+}
+
+.calc-category {
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calc-arrow {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.view-all-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+/* Top Calculators - Homepage Variant */
+.featured-calculators-section {
+    margin: 40px 0;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, var(--primary-color-light) 0%, var(--card-background) 100%);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    margin: 0 0 8px 0;
+    color: var(--text-color);
+    font-size: 1.8rem;
+}
+
+.section-subtitle {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.featured-calculators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.featured-calc-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-calc-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
+}
+
+.featured-calc-card.premium-tier::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #dc3545, #fd7e14);
+}
+
+.featured-calc-card.high-tier::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #fd7e14;
+}
+
+.calc-badge {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.featured-calc-card .calc-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: var(--text-color);
+}
+
+.calc-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+.calc-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.calc-popularity {
+    color: #ffc107;
+    font-weight: 500;
+}
+
+.section-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.section-note {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Footer Top Calculators */
+.footer-top-calculators {
+    margin-bottom: 25px;
+}
+
+.footer-top-calculators h4 {
+    color: var(--text-color);
+    margin: 0 0 15px 0;
+    font-size: 1rem;
+}
+
+.footer-calc-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+}
+
+.footer-calc-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-calc-link:hover {
+    color: var(--primary-color);
+    background: var(--primary-color-light);
+}
+
+.footer-calc-link.premium-tier {
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featured-calculators-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .featured-calc-card {
+        padding: 15px;
+    }
+    
+    .calc-badge {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .footer-calc-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .top-calculators-grid {
+        gap: 8px;
+    }
+    
+    .top-calc-card {
+        padding: 10px;
+    }
+}
+
+/* Enhanced Ad Slot Styling for A/B Testing */
+.ad-slot {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-background);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.ad-slot.ad-loading {
+    background: linear-gradient(90deg, var(--card-background) 0%, var(--border-light) 50%, var(--card-background) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.ad-slot.ad-loaded {
+    border-color: var(--primary-color-light);
+    background: var(--background-color);
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* A/B Testing Ad Sizes */
+.ad-size-banner {
+    max-width: 728px;
+    min-height: 90px;
+    width: 100%;
+}
+
+.ad-size-mobile-banner {
+    max-width: 320px;
+    min-height: 50px;
+    width: 100%;
+}
+
+.ad-size-rectangle {
+    max-width: 300px;
+    min-height: 250px;
+    width: 100%;
+}
+
+.ad-size-default {
+    max-width: 728px;
+    min-height: 90px;
+    width: 100%;
+}
+
+/* Responsive ad sizing */
+@media (max-width: 768px) {
+    .ad-size-banner {
+        max-width: 320px;
+        min-height: 50px;
+    }
+    
+    .ad-size-rectangle {
+        max-width: 300px;
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 320px) {
+    .ad-slot {
+        margin: 15px auto;
+        padding: 8px;
+    }
+    
+    .ad-size-banner,
+    .ad-size-mobile-banner {
+        max-width: 100%;
+        min-height: 50px;
+    }
+}
+
+/* Blog-specific ad styling */
+.blog-page .ad-slot {
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.blog-page #ad-mid2 {
+    margin: 40px auto;
+    background: linear-gradient(135deg, var(--card-background) 0%, var(--primary-color-light) 100%);
+    border: 2px solid var(--primary-color-light);
+}
+
+/* Dark theme compatibility */
+[data-theme="dark"] .recently-viewed-widget,
+[data-theme="dark"] .top-calculators-widget,
+[data-theme="dark"] .featured-calc-card {
+    background: var(--card-background-dark);
+    border-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] .recent-calculator-link,
+[data-theme="dark"] .top-calc-card {
+    background: var(--background-dark);
+    border-color: var(--border-light-dark);
+}
+
+[data-theme="dark"] .ad-slot {
+    background: var(--card-background-dark);
+    border-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] .ad-slot.ad-loaded {
+    background: var(--background-dark);
+    border-color: var(--primary-color-light);
+}

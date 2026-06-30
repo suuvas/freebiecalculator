@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator - Calculate Letter Grades and Percentages | FreebieCalculator</title>
+    <meta name="description" content="Free grade calculator to convert between letter grades, percentages, and GPA points. Calculate final grades with weighted assignments and tests.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/grade.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Grade Calculator - Calculate Letter Grades and Percentages">
+    <meta property="og:description" content="Calculate grades, convert between letter grades and percentages, and determine final grades with weighted categories.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/grade.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Grade Calculator",
+        "description": "Calculate letter grades, percentages, and weighted final grades",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Education Calculators",
+                "item": "https://freebiecalculator.com/#education"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Grade Calculator",
+                "item": "https://freebiecalculator.com/calculators/grade.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do weighted grades work?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Weighted grades multiply each category average by its weight percentage. For example, if tests are 60% and you have 85% average, that contributes 51 points (85 \u00d7 0.6) to your final grade."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if my weights don't add up to 100%?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The calculator will warn you if weights don't total 100%. Make sure all category weights sum to exactly 100% for accurate final grade calculations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate is the \"grade needed\" calculator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Very accurate if you input correct values. It uses the formula: Required Score = (Desired Grade - Current Grade \u00d7 Current Weight) \u00f7 Final Exam Weight."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use this for different grading systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! The custom scale option lets you set your own grade boundaries to match your school's specific grading system."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#other-calculators">Other Calculators</a> › 
+                <span>Grade Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>📊 Grade Calculator</h1>
+                <p>Calculate letter grades, percentages, and weighted final grades for courses and assignments.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <div class="calculation-tabs">
+                    <button class="tab-btn active" data-tab="weighted-grade">Weighted Grade</button>
+                    <button class="tab-btn" data-tab="percentage-grade">Percentage to Grade</button>
+                    <button class="tab-btn" data-tab="grade-needed">Grade Needed</button>
+                </div>
+                
+                <!-- Weighted Grade Tab -->
+                <div id="weighted-grade" class="tab-content active">
+                    <div id="grade-categories">
+                        <div class="grade-category">
+                            <h3>Grade Categories</h3>
+                            <div class="category-item">
+                                <input type="text" placeholder="Category name (e.g., Tests)" class="category-name">
+                                <input type="number" placeholder="Weight %" class="category-weight" min="0" max="100">
+                                <input type="number" placeholder="Average %" class="category-grade" min="0" max="100">
+                                <button type="button" class="remove-category" onclick="removeCategory(this)">×</button>
+                            </div>
+                        </div>
+                        
+                        <button type="button" id="add-category" class="add-btn">+ Add Category</button>
+                        <button type="button" id="calculate-weighted" class="calculate-btn">Calculate Final Grade</button>
+                    </div>
+                </div>
+                
+                <!-- Percentage to Grade Tab -->
+                <div id="percentage-grade" class="tab-content">
+                    <form id="percentage-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="percentage-input">Percentage Score</label>
+                            <input type="number" id="percentage-input" min="0" max="100" step="0.1" placeholder="e.g., 87.5" required>
+                            <small>Enter the percentage score to convert to letter grade</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="grading-scale">Grading Scale</label>
+                            <select id="grading-scale" required>
+                                <option value="standard">Standard (A: 90-100, B: 80-89, etc.)</option>
+                                <option value="strict">Strict (A: 93-100, B: 85-92, etc.)</option>
+                                <option value="lenient">Lenient (A: 87-100, B: 77-86, etc.)</option>
+                                <option value="custom">Custom Scale</option>
+                            </select>
+                        </div>
+                        
+                        <div id="custom-scale" style="display: none;">
+                            <h4>Custom Grade Boundaries</h4>
+                            <div class="custom-scale-grid">
+                                <div><label>A+:</label><input type="number" id="a-plus" value="97" min="0" max="100"></div>
+                                <div><label>A:</label><input type="number" id="a-grade" value="93" min="0" max="100"></div>
+                                <div><label>A-:</label><input type="number" id="a-minus" value="90" min="0" max="100"></div>
+                                <div><label>B+:</label><input type="number" id="b-plus" value="87" min="0" max="100"></div>
+                                <div><label>B:</label><input type="number" id="b-grade" value="83" min="0" max="100"></div>
+                                <div><label>B-:</label><input type="number" id="b-minus" value="80" min="0" max="100"></div>
+                                <div><label>C+:</label><input type="number" id="c-plus" value="77" min="0" max="100"></div>
+                                <div><label>C:</label><input type="number" id="c-grade" value="73" min="0" max="100"></div>
+                                <div><label>C-:</label><input type="number" id="c-minus" value="70" min="0" max="100"></div>
+                                <div><label>D:</label><input type="number" id="d-grade" value="60" min="0" max="100"></div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Convert to Letter Grade</button>
+                    </form>
+                </div>
+                
+                <!-- Grade Needed Tab -->
+                <div id="grade-needed" class="tab-content">
+                    <form id="grade-needed-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="current-grade">Current Grade (%)</label>
+                            <input type="number" id="current-grade" min="0" max="100" step="0.1" placeholder="e.g., 82.5" required>
+                            <small>Your current average in the class</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="desired-grade">Desired Final Grade (%)</label>
+                            <input type="number" id="desired-grade" min="0" max="100" step="0.1" placeholder="e.g., 90" required>
+                            <small>The final grade you want to achieve</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="final-exam-weight">Final Exam Weight (%)</label>
+                            <input type="number" id="final-exam-weight" min="0" max="100" step="0.1" placeholder="e.g., 25" required>
+                            <small>What percentage of your final grade is the final exam</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Required Score</button>
+                    </form>
+                </div>
+                
+                <div id="grade-results" class="results-container" style="display: none;">
+                    <h3>📋 Grade Results</h3>
+                    
+                    <div class="result-display">
+                        <div class="main-result">
+                            <div class="result-label" id="grade-result-label">Final Grade</div>
+                            <div class="result-value" id="grade-result-value">A</div>
+                        </div>
+                        
+                        <div class="grade-details" id="grade-details">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Grade Calculator Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>⚖️ Weighted Grades</h3>
+                        <p>Calculate final grades using weighted categories like tests, homework, and projects with different percentage values.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🔤 Grade Conversion</h3>
+                        <p>Convert between percentage scores and letter grades using standard, strict, lenient, or custom grading scales.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🎯 Target Planning</h3>
+                        <p>Calculate what score you need on a final exam to achieve your desired final grade in the course.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Grade Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do weighted grades work?</div>
+                        <div class="faq-answer">Weighted grades multiply each category average by its weight percentage. For example, if tests are 60% and you have 85% average, that contributes 51 points (85 × 0.6) to your final grade.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What if my weights don't add up to 100%?</div>
+                        <div class="faq-answer">The calculator will warn you if weights don't total 100%. Make sure all category weights sum to exactly 100% for accurate final grade calculations.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is the "grade needed" calculator?</div>
+                        <div class="faq-answer">Very accurate if you input correct values. It uses the formula: Required Score = (Desired Grade - Current Grade × Current Weight) ÷ Final Exam Weight.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use this for different grading systems?</div>
+                        <div class="faq-answer">Yes! The custom scale option lets you set your own grade boundaries to match your school's specific grading system.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        let currentTab = 'weighted-grade';
+        
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                switchTab(tab);
+            });
+        });
+        
+        // Form submissions
+        document.getElementById('calculate-weighted').addEventListener('click', calculateWeightedGrade);
+        document.getElementById('percentage-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            convertPercentageToGrade();
+        });
+        document.getElementById('grade-needed-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateGradeNeeded();
+        });
+        
+        // Add category functionality
+        document.getElementById('add-category').addEventListener('click', addCategory);
+        
+        // Custom scale toggle
+        document.getElementById('grading-scale').addEventListener('change', function() {
+            const customScale = document.getElementById('custom-scale');
+            if (this.value === 'custom') {
+                customScale.style.display = 'block';
+            } else {
+                customScale.style.display = 'none';
+            }
+        });
+        
+        function switchTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+            
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tab).classList.add('active');
+            
+            currentTab = tab;
+        }
+        
+        function addCategory() {
+            const categoryItem = document.createElement('div');
+            categoryItem.className = 'category-item';
+            categoryItem.innerHTML = `
+                <input type="text" placeholder="Category name" class="category-name">
+                <input type="number" placeholder="Weight %" class="category-weight" min="0" max="100">
+                <input type="number" placeholder="Average %" class="category-grade" min="0" max="100">
+                <button type="button" class="remove-category" onclick="removeCategory(this)">×</button>
+            `;
+            
+            document.querySelector('.grade-category').appendChild(categoryItem);
+        }
+        
+        window.removeCategory = function(button) {
+            const categoryItems = document.querySelectorAll('.category-item');
+            if (categoryItems.length > 1) {
+                button.parentElement.remove();
+            }
+        };
+        
+        function calculateWeightedGrade() {
+            const categories = document.querySelectorAll('.category-item');
+            let totalWeight = 0;
+            let weightedSum = 0;
+            let validCategories = [];
+            
+            categories.forEach(category => {
+                const name = category.querySelector('.category-name').value;
+                const weight = parseFloat(category.querySelector('.category-weight').value);
+                const grade = parseFloat(category.querySelector('.category-grade').value);
+                
+                if (name && !isNaN(weight) && !isNaN(grade)) {
+                    totalWeight += weight;
+                    weightedSum += (grade * weight);
+                    validCategories.push({ name, weight, grade });
+                }
+            });
+            
+            if (validCategories.length === 0) {
+                alert('Please enter at least one complete category');
+                return;
+            }
+            
+            if (Math.abs(totalWeight - 100) > 0.01) {
+                alert(`Warning: Weights total ${totalWeight.toFixed(1)}% instead of 100%`);
+            }
+            
+            const finalGrade = weightedSum / 100;
+            const letterGrade = getLetterGrade(finalGrade, 'standard');
+            
+            displayGradeResult(finalGrade, letterGrade, 'Final Grade', {
+                categories: validCategories,
+                totalWeight: totalWeight
+            });
+        }
+        
+        function convertPercentageToGrade() {
+            const percentage = parseFloat(document.getElementById('percentage-input').value);
+            const scale = document.getElementById('grading-scale').value;
+            
+            if (isNaN(percentage)) {
+                alert('Please enter a valid percentage');
+                return;
+            }
+            
+            const letterGrade = getLetterGrade(percentage, scale);
+            const gpaPoints = getGPAPoints(letterGrade);
+            
+            displayGradeResult(percentage, letterGrade, 'Letter Grade', {
+                percentage: percentage,
+                gpaPoints: gpaPoints,
+                scale: scale
+            });
+        }
+        
+        function calculateGradeNeeded() {
+            const currentGrade = parseFloat(document.getElementById('current-grade').value);
+            const desiredGrade = parseFloat(document.getElementById('desired-grade').value);
+            const finalExamWeight = parseFloat(document.getElementById('final-exam-weight').value);
+            
+            if (isNaN(currentGrade) || isNaN(desiredGrade) || isNaN(finalExamWeight)) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            const currentWeight = 100 - finalExamWeight;
+            const neededScore = (desiredGrade - (currentGrade * currentWeight / 100)) / (finalExamWeight / 100);
+            
+            const letterGrade = getLetterGrade(neededScore, 'standard');
+            
+            displayGradeResult(neededScore, letterGrade, 'Required Score', {
+                currentGrade: currentGrade,
+                desiredGrade: desiredGrade,
+                finalExamWeight: finalExamWeight,
+                currentWeight: currentWeight
+            });
+        }
+        
+        function getLetterGrade(percentage, scale) {
+            let boundaries;
+            
+            if (scale === 'custom') {
+                boundaries = {
+                    'A+': parseFloat(document.getElementById('a-plus').value),
+                    'A': parseFloat(document.getElementById('a-grade').value),
+                    'A-': parseFloat(document.getElementById('a-minus').value),
+                    'B+': parseFloat(document.getElementById('b-plus').value),
+                    'B': parseFloat(document.getElementById('b-grade').value),
+                    'B-': parseFloat(document.getElementById('b-minus').value),
+                    'C+': parseFloat(document.getElementById('c-plus').value),
+                    'C': parseFloat(document.getElementById('c-grade').value),
+                    'C-': parseFloat(document.getElementById('c-minus').value),
+                    'D': parseFloat(document.getElementById('d-grade').value)
+                };
+            } else {
+                const scales = {
+                    standard: { 'A+': 97, 'A': 93, 'A-': 90, 'B+': 87, 'B': 83, 'B-': 80, 'C+': 77, 'C': 73, 'C-': 70, 'D': 60 },
+                    strict: { 'A+': 98, 'A': 95, 'A-': 93, 'B+': 90, 'B': 87, 'B-': 85, 'C+': 82, 'C': 78, 'C-': 75, 'D': 65 },
+                    lenient: { 'A+': 95, 'A': 90, 'A-': 87, 'B+': 84, 'B': 80, 'B-': 77, 'C+': 74, 'C': 70, 'C-': 67, 'D': 55 }
+                };
+                boundaries = scales[scale];
+            }
+            
+            for (const [grade, threshold] of Object.entries(boundaries)) {
+                if (percentage >= threshold) {
+                    return grade;
+                }
+            }
+            return 'F';
+        }
+        
+        function getGPAPoints(letterGrade) {
+            const gpaScale = {
+                'A+': 4.0, 'A': 4.0, 'A-': 3.7,
+                'B+': 3.3, 'B': 3.0, 'B-': 2.7,
+                'C+': 2.3, 'C': 2.0, 'C-': 1.7,
+                'D+': 1.3, 'D': 1.0, 'D-': 0.7,
+                'F': 0.0
+            };
+            return gpaScale[letterGrade] || 0.0;
+        }
+        
+        function displayGradeResult(numericGrade, letterGrade, label, details) {
+            document.getElementById('grade-result-label').textContent = label;
+            document.getElementById('grade-result-value').textContent = 
+                label === 'Letter Grade' ? letterGrade : `${numericGrade.toFixed(1)}%`;
+            
+            let detailsHtml = '<div class="details-grid">';
+            
+            if (details.categories) {
+                detailsHtml += `<div class="detail-item">
+                    <span class="detail-label">Final Percentage:</span>
+                    <span class="detail-value">${numericGrade.toFixed(2)}%</span>
+                </div>`;
+                detailsHtml += `<div class="detail-item">
+                    <span class="detail-label">Letter Grade:</span>
+                    <span class="detail-value">${letterGrade}</span>
+                </div>`;
+                
+                detailsHtml += '<div class="category-breakdown"><h4>Category Breakdown:</h4>';
+                details.categories.forEach(cat => {
+                    const contribution = (cat.grade * cat.weight / 100).toFixed(1);
+                    detailsHtml += `<div class="category-detail">
+                        ${cat.name}: ${cat.grade}% (${cat.weight}% weight) = ${contribution} points
+                    </div>`;
+                });
+                detailsHtml += '</div>';
+            }
+            
+            if (details.percentage !== undefined) {
+                detailsHtml += `<div class="detail-item">
+                    <span class="detail-label">Percentage:</span>
+                    <span class="detail-value">${details.percentage}%</span>
+                </div>`;
+                detailsHtml += `<div class="detail-item">
+                    <span class="detail-label">Letter Grade:</span>
+                    <span class="detail-value">${letterGrade}</span>
+                </div>`;
+                detailsHtml += `<div class="detail-item">
+                    <span class="detail-label">GPA Points:</span>
+                    <span class="detail-value">${details.gpaPoints.toFixed(1)}</span>
+                </div>`;
+            }
+            
+            if (details.currentGrade !== undefined) {
+                const feasible = numericGrade <= 100;
+                detailsHtml += `<div class="detail-item">
+                    <span class="detail-label">Current Grade:</span>
+                    <span class="detail-value">${details.currentGrade}%</span>
+                </div>`;
+                detailsHtml += `<div class="detail-item">
+                    <span class="detail-label">Desired Grade:</span>
+                    <span class="detail-value">${details.desiredGrade}%</span>
+                </div>`;
+                detailsHtml += `<div class="detail-item">
+                    <span class="detail-label">Required Score:</span>
+                    <span class="detail-value ${!feasible ? 'impossible' : ''}">${numericGrade.toFixed(1)}% ${!feasible ? '(Impossible!)' : ''}</span>
+                </div>`;
+            }
+            
+            detailsHtml += '</div>';
+            
+            document.getElementById('grade-details').innerHTML = detailsHtml;
+            
+            document.getElementById('grade-results').style.display = 'block';
+            document.getElementById('grade-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .calculation-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .category-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            gap: 10px;
+            align-items: center;
+            margin: 10px 0;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .category-item input {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        
+        .remove-category {
+            background: #dc3545;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .add-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        
+        .custom-scale-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .custom-scale-grid > div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .custom-scale-grid label {
+            font-weight: bold;
+            min-width: 30px;
+        }
+        
+        .custom-scale-grid input {
+            width: 60px;
+            padding: 5px;
+        }
+        
+        .main-result {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .main-result .result-label {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        
+        .main-result .result-value {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        
+        .detail-value {
+            font-weight: 500;
+        }
+        
+        .detail-value.impossible {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .category-breakdown {
+            grid-column: 1 / -1;
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .category-detail {
+            padding: 5px 0;
+            font-family: 'Courier New', monospace;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .category-detail:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 768px) {
+            .calculation-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .tab-btn.active {
+                border-bottom-color: var(--border-color);
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            .category-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .main-result .result-value {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</body>
+</html>

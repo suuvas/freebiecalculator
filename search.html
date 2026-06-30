@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - FreebieCalculator</title>
+    <meta name="description" content="Search our collection of free online calculators for finance, health, education, and general math. Find the calculation tool you need quickly.">
+    <link rel="canonical" href="https://freebiecalculator.com/search.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Search Calculators - FreebieCalculator">
+    <meta property="og:description" content="Search our collection of free online calculators for finance, health, education, and general math.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/search.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SearchResultsPage",
+        "name": "Calculator Search Results",
+        "url": "https://freebiecalculator.com/search.html",
+        "mainEntity": {
+            "@type": "WebSite",
+            "name": "FreebieCalculator",
+            "url": "https://freebiecalculator.com",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://freebiecalculator.com/search.html?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Search",
+                "item": "https://freebiecalculator.com/search.html"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › <span>Search</span>
+            </nav>
+            
+            <div class="search-page">
+                <h1>Search Calculators</h1>
+                
+                <div class="search-form-container">
+                    <form class="search-form" id="search-form">
+                        <div class="search-input-group">
+                            <input 
+                                type="text" 
+                                name="q" 
+                                id="search-input" 
+                                placeholder="Search calculators and guides..." 
+                                aria-label="Search calculators and guides"
+                                autocomplete="off"
+                            >
+                            <button type="submit" class="search-button">Search</button>
+                        </div>
+                    </form>
+                    
+                    <div class="search-filters">
+                        <label>Filter by category:</label>
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="finance">Finance</option>
+                            <option value="health">Health</option>
+                            <option value="education">Education</option>
+                            <option value="general">General</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="search-results" class="search-results">
+                    <div class="search-status" id="search-status">
+                        <p>Enter a search term to find calculators and guides.</p>
+                    </div>
+                </div>
+                
+                <div class="popular-searches">
+                    <h2>Popular Searches</h2>
+                    <div class="search-tags">
+                        <button class="tag-button" data-search="loan">Loan Calculator</button>
+                        <button class="tag-button" data-search="bmi">BMI</button>
+                        <button class="tag-button" data-search="percentage">Percentage</button>
+                        <button class="tag-button" data-search="mortgage">Mortgage</button>
+                        <button class="tag-button" data-search="age">Age Calculator</button>
+                        <button class="tag-button" data-search="interest">Interest</button>
+                        <button class="tag-button" data-search="calorie">Calorie</button>
+                        <button class="tag-button" data-search="gpa">GPA</button>
+                        <button class="tag-button" data-search="tax">Tax</button>
+                        <button class="tag-button" data-search="unit converter">Unit Converter</button>
+                    </div>
+                </div>
+                
+                <div class="browse-categories">
+                    <h2>Browse by Category</h2>
+                    <div class="category-links">
+                        <a href="/" class="category-card">
+                            <h3>🏦 Finance Calculators</h3>
+                            <p>EMI, Mortgage, Interest, Investment, Tax calculations</p>
+                        </a>
+                        <a href="/" class="category-card">
+                            <h3>💪 Health Calculators</h3>
+                            <p>BMI, BMR, Calorie, Body composition tools</p>
+                        </a>
+                        <a href="/" class="category-card">
+                            <h3>📚 Education Calculators</h3>
+                            <p>GPA, CGPA, Grade calculation tools</p>
+                        </a>
+                        <a href="/" class="category-card">
+                            <h3>🔧 General Calculators</h3>
+                            <p>Age, Percentage, Unit conversion, Date tools</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import searchIndex from '/assets/js/search-index.js?v=2';
+        
+        class SearchPage {
+            constructor() {
+                this.searchIndex = searchIndex;
+                this.currentQuery = '';
+                this.currentCategory = 'all';
+                this.results = [];
+                
+                this.initializeSearch();
+            }
+            
+            initializeSearch() {
+                const searchForm = document.getElementById('search-form');
+                const searchInput = document.getElementById('search-input');
+                const categoryFilter = document.getElementById('category-filter');
+                const tagButtons = document.querySelectorAll('.tag-button');
+                
+                // Get query from URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const query = urlParams.get('q');
+                if (query) {
+                    searchInput.value = query;
+                    this.performSearch(query);
+                }
+                
+                // Search form submission
+                searchForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        this.performSearch(query);
+                        this.updateURL(query);
+                    }
+                });
+                
+                // Real-time search as user types
+                let searchTimeout;
+                searchInput.addEventListener('input', (e) => {
+                    clearTimeout(searchTimeout);
+                    const query = e.target.value.trim();
+                    
+                    if (query.length >= 2) {
+                        searchTimeout = setTimeout(() => {
+                            this.performSearch(query);
+                        }, 300);
+                    } else if (query.length === 0) {
+                        this.clearResults();
+                    }
+                });
+                
+                // Category filter
+                categoryFilter.addEventListener('change', (e) => {
+                    this.currentCategory = e.target.value;
+                    if (this.currentQuery) {
+                        this.performSearch(this.currentQuery);
+                    }
+                });
+                
+                // Popular search tags
+                tagButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const query = button.dataset.search;
+                        searchInput.value = query;
+                        this.performSearch(query);
+                        this.updateURL(query);
+                    });
+                });
+                
+                // Focus search input
+                searchInput.focus();
+            }
+            
+            performSearch(query) {
+                this.currentQuery = query;
+                const lowerQuery = query.toLowerCase();
+                
+                // Search through the index
+                this.results = this.searchIndex.filter(item => {
+                    // Category filter
+                    if (this.currentCategory !== 'all' && item.category.toLowerCase() !== this.currentCategory) {
+                        return false;
+                    }
+                    
+                    // Text search in title, description, and tags
+                    const searchText = `${item.title} ${item.description} ${item.tags.join(' ')}`.toLowerCase();
+                    return searchText.includes(lowerQuery);
+                });
+                
+                // Sort results by relevance
+                this.results.sort((a, b) => {
+                    const aTitle = a.title.toLowerCase().includes(lowerQuery);
+                    const bTitle = b.title.toLowerCase().includes(lowerQuery);
+                    
+                    if (aTitle && !bTitle) return -1;
+                    if (!aTitle && bTitle) return 1;
+                    
+                    return a.title.localeCompare(b.title);
+                });
+                
+                this.displayResults();
+            }
+            
+            displayResults() {
+                const resultsContainer = document.getElementById('search-results');
+                const statusElement = document.getElementById('search-status');
+                
+                if (this.results.length === 0) {
+                    statusElement.innerHTML = `
+                        <p>No results found for "${this.currentQuery}". Try different keywords or browse our categories below.</p>
+                    `;
+                    resultsContainer.innerHTML = '<div class="search-status" id="search-status"><p>No results found for "' + this.currentQuery + '". Try different keywords or browse our categories below.</p></div>';
+                    return;
+                }
+                
+                statusElement.innerHTML = `
+                    <p>Found ${this.results.length} result${this.results.length === 1 ? '' : 's'} for "${this.currentQuery}"</p>
+                `;
+                
+                const resultsHtml = this.results.map(item => `
+                    <article class="search-result">
+                        <h3><a href="${item.url}">${this.highlightText(item.title, this.currentQuery)}</a></h3>
+                        <div class="result-meta">
+                            <span class="category">${item.category}</span>
+                            <span class="type">${item.type}</span>
+                        </div>
+                        <p>${this.highlightText(item.description, this.currentQuery)}</p>
+                        ${item.tags.length > 0 ? `
+                            <div class="result-tags">
+                                ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </article>
+                `).join('');
+                
+                resultsContainer.innerHTML = `
+                    <div class="search-status" id="search-status">
+                        <p>Found ${this.results.length} result${this.results.length === 1 ? '' : 's'} for "${this.currentQuery}"</p>
+                    </div>
+                    <div class="results-list">
+                        ${resultsHtml}
+                    </div>
+                `;
+            }
+            
+            highlightText(text, query) {
+                if (!query) return text;
+                
+                const regex = new RegExp(`(${query})`, 'gi');
+                return text.replace(regex, '<mark>$1</mark>');
+            }
+            
+            clearResults() {
+                const resultsContainer = document.getElementById('search-results');
+                resultsContainer.innerHTML = `
+                    <div class="search-status" id="search-status">
+                        <p>Enter a search term to find calculators and guides.</p>
+                    </div>
+                `;
+                this.currentQuery = '';
+                this.results = [];
+            }
+            
+            updateURL(query) {
+                const url = new URL(window.location);
+                url.searchParams.set('q', query);
+                window.history.pushState({}, '', url);
+            }
+        }
+        
+        // Initialize search page
+        document.addEventListener('DOMContentLoaded', () => {
+            new SearchPage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* Facebook-Style Theme Enhancements */
+
+/* Accessible, clear buttons with visual indicators */
+button, .btn {
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover, .btn:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Facebook-style cards */
+.calculator-card, .content-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s ease;
+}
+
+.calculator-card:hover, .content-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: none;
+    border-color: var(--border-color);
+}
+
+/* Facebook-like form inputs */
+input[type="text"], 
+input[type="number"], 
+input[type="email"],
+select, 
+textarea {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-primary);
+    font-size: 14px;
+    padding: 8px 12px;
+    transition: border-color 0.2s ease;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: none;
+}
+
+/* Hero section Facebook style */
+.hero {
+    background: var(--bg-card);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin: 16px 0;
+}
+
+.hero h1 {
+    color: var(--text-primary);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.34;
+    margin: 0;
+}
+
+/* Facebook-style navigation */
+.nav-link {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: #e4e6ea;
+    color: var(--text-primary);
+}
+
+/* Labels like Facebook */
+label {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+/* Facebook-style secondary buttons */
+.btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background: #e4e6ea;
+}
+
+/* Clean table styling */
+table {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+th {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+/* Facebook-style results */
+.result-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 16px;
+    margin-top: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.result-section .result {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Search bar Facebook style */
+#calculator-search {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: var(--text-primary);
+    width: 100%;
+    max-width: 400px;
+    margin: 16px auto;
+    display: block;
+}
+
+#calculator-search:focus {
+    background: var(--bg-card);
+    border-color: var(--primary-color);
+}
+
+#calculator-search::placeholder {
+    color: var(--text-muted);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .nav-link:hover {
+    background-color: #3a3b3c;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: #3a3b3c;
+}
+
+[data-theme="dark"] #calculator-search {
+    background: #3a3b3c;
+}

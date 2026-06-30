@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Calculator - Calculate Area, Perimeter, and Angles | FreebieCalculator</title>
+    <meta name="description" content="Free triangle calculator to find area, perimeter, angles, and side lengths. Works with all triangle types including right, isosceles, and scalene triangles.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/triangle.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Triangle Calculator - Calculate Area, Perimeter, and Angles">
+    <meta property="og:description" content="Calculate triangle area, perimeter, angles, and side lengths with our comprehensive triangle calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/triangle.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Triangle Calculator",
+        "description": "Calculate triangle area, perimeter, angles, and side lengths for all triangle types",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Math Calculators",
+                "item": "https://freebiecalculator.com/#math"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Triangle Calculator",
+                "item": "https://freebiecalculator.com/calculators/triangle.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What information do I need to calculate a triangle?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You need at least 3 pieces of information: either 3 sides, 2 sides and 1 angle, or 2 angles and 1 side. For right triangles, you only need 2 pieces of information."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between SSS, SAS, and ASA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SSS = three sides known, SAS = two sides and included angle known, ASA = two angles and included side known. Each method uses different formulas to solve the triangle."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is triangle area calculated?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Area can be calculated using Heron's formula (with three sides), base \u00d7 height \u00f7 2, or \u00bdab sin(C) where a and b are sides and C is the included angle."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What makes a valid triangle?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The triangle inequality theorem: the sum of any two sides must be greater than the third side. Also, the sum of all angles must equal 180\u00b0."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#math-calculators">Math Calculators</a> › 
+                <span>Triangle Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>📐 Triangle Calculator</h1>
+                <p>Calculate area, perimeter, angles, and side lengths for all types of triangles.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <div class="calculation-tabs">
+                    <button class="tab-btn active" data-tab="sss">3 Sides (SSS)</button>
+                    <button class="tab-btn" data-tab="sas">2 Sides + Angle (SAS)</button>
+                    <button class="tab-btn" data-tab="asa">2 Angles + Side (ASA)</button>
+                    <button class="tab-btn" data-tab="right-triangle">Right Triangle</button>
+                </div>
+                
+                <!-- 3 Sides (SSS) Tab -->
+                <div id="sss" class="tab-content active">
+                    <form id="sss-form" class="calculator-form">
+                        <h3>Enter the three side lengths</h3>
+                        
+                        <div class="form-group">
+                            <label for="side-a">Side A</label>
+                            <input type="number" id="side-a" min="0.01" step="0.01" placeholder="e.g., 5" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="side-b">Side B</label>
+                            <input type="number" id="side-b" min="0.01" step="0.01" placeholder="e.g., 6" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="side-c">Side C</label>
+                            <input type="number" id="side-c" min="0.01" step="0.01" placeholder="e.g., 7" required>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Triangle</button>
+                    </form>
+                </div>
+                
+                <!-- 2 Sides + Angle (SAS) Tab -->
+                <div id="sas" class="tab-content">
+                    <form id="sas-form" class="calculator-form">
+                        <h3>Enter two sides and the included angle</h3>
+                        
+                        <div class="form-group">
+                            <label for="sas-side-a">Side A</label>
+                            <input type="number" id="sas-side-a" min="0.01" step="0.01" placeholder="e.g., 5" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sas-angle-c">Angle C (between sides A and B)</label>
+                            <input type="number" id="sas-angle-c" min="0.01" max="179.99" step="0.01" placeholder="e.g., 60" required>
+                            <small>Enter angle in degrees</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sas-side-b">Side B</label>
+                            <input type="number" id="sas-side-b" min="0.01" step="0.01" placeholder="e.g., 6" required>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Triangle</button>
+                    </form>
+                </div>
+                
+                <!-- 2 Angles + Side (ASA) Tab -->
+                <div id="asa" class="tab-content">
+                    <form id="asa-form" class="calculator-form">
+                        <h3>Enter two angles and the included side</h3>
+                        
+                        <div class="form-group">
+                            <label for="asa-angle-a">Angle A</label>
+                            <input type="number" id="asa-angle-a" min="0.01" max="179.99" step="0.01" placeholder="e.g., 45" required>
+                            <small>Enter angle in degrees</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asa-side-c">Side C (between angles A and B)</label>
+                            <input type="number" id="asa-side-c" min="0.01" step="0.01" placeholder="e.g., 5" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asa-angle-b">Angle B</label>
+                            <input type="number" id="asa-angle-b" min="0.01" max="179.99" step="0.01" placeholder="e.g., 60" required>
+                            <small>Enter angle in degrees</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Triangle</button>
+                    </form>
+                </div>
+                
+                <!-- Right Triangle Tab -->
+                <div id="right-triangle" class="tab-content">
+                    <form id="right-form" class="calculator-form">
+                        <h3>Enter two known values for a right triangle</h3>
+                        
+                        <div class="form-group">
+                            <label for="right-side-a">Side A (leg)</label>
+                            <input type="number" id="right-side-a" min="0" step="0.01" placeholder="Leave empty if unknown">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="right-side-b">Side B (leg)</label>
+                            <input type="number" id="right-side-b" min="0" step="0.01" placeholder="Leave empty if unknown">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="right-hypotenuse">Hypotenuse (side C)</label>
+                            <input type="number" id="right-hypotenuse" min="0" step="0.01" placeholder="Leave empty if unknown">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="right-angle-a">Angle A</label>
+                            <input type="number" id="right-angle-a" min="0" max="89.99" step="0.01" placeholder="Leave empty if unknown">
+                            <small>Enter angle in degrees (0-90°)</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="right-angle-b">Angle B</label>
+                            <input type="number" id="right-angle-b" min="0" max="89.99" step="0.01" placeholder="Leave empty if unknown">
+                            <small>Enter angle in degrees (0-90°)</small>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Right Triangle</button>
+                    </form>
+                </div>
+                
+                <div id="triangle-results" class="results-container" style="display: none;">
+                    <h3>📊 Triangle Results</h3>
+                    
+                    <div class="triangle-visual">
+                        <canvas id="triangle-canvas" width="300" height="200"></canvas>
+                    </div>
+                    
+                    <div class="result-grid">
+                        <div class="result-section">
+                            <h4>Sides</h4>
+                            <div id="sides-results">
+                            </div>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Angles</h4>
+                            <div id="angles-results">
+                            </div>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Properties</h4>
+                            <div id="properties-results">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="triangle-info">
+                        <h4>Triangle Classification</h4>
+                        <div id="triangle-classification">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Triangle Calculator Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📏 All Triangle Types</h3>
+                        <p>Calculate properties for right triangles, isosceles, equilateral, scalene, acute, and obtuse triangles using various input combinations.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🔢 Multiple Methods</h3>
+                        <p>Use different calculation methods: three sides (SSS), two sides and angle (SAS), two angles and side (ASA), or right triangle properties.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📐 Visual Display</h3>
+                        <p>See your triangle drawn to scale with labeled sides and angles. Understand triangle properties through visual representation.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Triangle Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What information do I need to calculate a triangle?</div>
+                        <div class="faq-answer">You need at least 3 pieces of information: either 3 sides, 2 sides and 1 angle, or 2 angles and 1 side. For right triangles, you only need 2 pieces of information.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between SSS, SAS, and ASA?</div>
+                        <div class="faq-answer">SSS = three sides known, SAS = two sides and included angle known, ASA = two angles and included side known. Each method uses different formulas to solve the triangle.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How is triangle area calculated?</div>
+                        <div class="faq-answer">Area can be calculated using Heron's formula (with three sides), base × height ÷ 2, or ½ab sin(C) where a and b are sides and C is the included angle.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What makes a valid triangle?</div>
+                        <div class="faq-answer">The triangle inequality theorem: the sum of any two sides must be greater than the third side. Also, the sum of all angles must equal 180°.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        let currentTab = 'sss';
+        
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                switchTab(tab);
+            });
+        });
+        
+        // Form submissions
+        document.getElementById('sss-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateSSS();
+        });
+        
+        document.getElementById('sas-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateSAS();
+        });
+        
+        document.getElementById('asa-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateASA();
+        });
+        
+        document.getElementById('right-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateRightTriangle();
+        });
+        
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+            
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tab).classList.add('active');
+            
+            currentTab = tab;
+        }
+        
+        function calculateSSS() {
+            const a = parseFloat(document.getElementById('side-a').value);
+            const b = parseFloat(document.getElementById('side-b').value);
+            const c = parseFloat(document.getElementById('side-c').value);
+            
+            if (!a || !b || !c) {
+                alert('Please enter all three side lengths');
+                return;
+            }
+            
+            // Check triangle inequality
+            if (a + b <= c || a + c <= b || b + c <= a) {
+                alert('Invalid triangle: The sum of any two sides must be greater than the third side');
+                return;
+            }
+            
+            // Calculate angles using Law of Cosines
+            const angleA = Math.acos((b*b + c*c - a*a) / (2*b*c)) * 180 / Math.PI;
+            const angleB = Math.acos((a*a + c*c - b*b) / (2*a*c)) * 180 / Math.PI;
+            const angleC = 180 - angleA - angleB;
+            
+            const triangle = {
+                sides: { a, b, c },
+                angles: { A: angleA, B: angleB, C: angleC }
+            };
+            
+            displayTriangleResults(triangle);
+        }
+        
+        function calculateSAS() {
+            const a = parseFloat(document.getElementById('sas-side-a').value);
+            const b = parseFloat(document.getElementById('sas-side-b').value);
+            const angleC = parseFloat(document.getElementById('sas-angle-c').value);
+            
+            if (!a || !b || !angleC) {
+                alert('Please enter both sides and the included angle');
+                return;
+            }
+            
+            if (angleC >= 180) {
+                alert('Angle must be less than 180 degrees');
+                return;
+            }
+            
+            // Calculate third side using Law of Cosines
+            const angleCRad = angleC * Math.PI / 180;
+            const c = Math.sqrt(a*a + b*b - 2*a*b*Math.cos(angleCRad));
+            
+            // Calculate other angles
+            const angleA = Math.acos((b*b + c*c - a*a) / (2*b*c)) * 180 / Math.PI;
+            const angleB = 180 - angleA - angleC;
+            
+            const triangle = {
+                sides: { a, b, c },
+                angles: { A: angleA, B: angleB, C: angleC }
+            };
+            
+            displayTriangleResults(triangle);
+        }
+        
+        function calculateASA() {
+            const angleA = parseFloat(document.getElementById('asa-angle-a').value);
+            const angleB = parseFloat(document.getElementById('asa-angle-b').value);
+            const c = parseFloat(document.getElementById('asa-side-c').value);
+            
+            if (!angleA || !angleB || !c) {
+                alert('Please enter both angles and the included side');
+                return;
+            }
+            
+            if (angleA + angleB >= 180) {
+                alert('The sum of the two angles must be less than 180 degrees');
+                return;
+            }
+            
+            const angleC = 180 - angleA - angleB;
+            
+            // Calculate other sides using Law of Sines
+            const angleARad = angleA * Math.PI / 180;
+            const angleBRad = angleB * Math.PI / 180;
+            const angleCRad = angleC * Math.PI / 180;
+            
+            const a = c * Math.sin(angleARad) / Math.sin(angleCRad);
+            const b = c * Math.sin(angleBRad) / Math.sin(angleCRad);
+            
+            const triangle = {
+                sides: { a, b, c },
+                angles: { A: angleA, B: angleB, C: angleC }
+            };
+            
+            displayTriangleResults(triangle);
+        }
+        
+        function calculateRightTriangle() {
+            const sideA = parseFloat(document.getElementById('right-side-a').value) || null;
+            const sideB = parseFloat(document.getElementById('right-side-b').value) || null;
+            const hypotenuse = parseFloat(document.getElementById('right-hypotenuse').value) || null;
+            const angleA = parseFloat(document.getElementById('right-angle-a').value) || null;
+            const angleB = parseFloat(document.getElementById('right-angle-b').value) || null;
+            
+            const knownValues = [sideA, sideB, hypotenuse, angleA, angleB].filter(v => v !== null).length;
+            
+            if (knownValues < 2) {
+                alert('Please enter at least 2 known values');
+                return;
+            }
+            
+            let a = sideA, b = sideB, c = hypotenuse;
+            let angA = angleA, angB = angleB;
+            const angC = 90; // Right angle
+            
+            // Calculate missing sides and angles
+            if (angA && !angB) angB = 90 - angA;
+            if (angB && !angA) angA = 90 - angB;
+            
+            if (angA && c && !a) a = c * Math.sin(angA * Math.PI / 180);
+            if (angA && c && !b) b = c * Math.cos(angA * Math.PI / 180);
+            if (angB && c && !a) a = c * Math.cos(angB * Math.PI / 180);
+            if (angB && c && !b) b = c * Math.sin(angB * Math.PI / 180);
+            
+            if (a && b && !c) c = Math.sqrt(a*a + b*b);
+            if (a && c && !b) b = Math.sqrt(c*c - a*a);
+            if (b && c && !a) a = Math.sqrt(c*c - b*b);
+            
+            if (a && b && !angA) angA = Math.atan(a/b) * 180 / Math.PI;
+            if (a && c && !angA) angA = Math.asin(a/c) * 180 / Math.PI;
+            if (b && c && !angA) angA = Math.acos(b/c) * 180 / Math.PI;
+            
+            if (!angB) angB = 90 - angA;
+            
+            const triangle = {
+                sides: { a, b, c },
+                angles: { A: angA, B: angB, C: angC },
+                isRight: true
+            };
+            
+            displayTriangleResults(triangle);
+        }
+        
+        function displayTriangleResults(triangle) {
+            const { sides, angles } = triangle;
+            
+            // Display sides
+            document.getElementById('sides-results').innerHTML = `
+                <div class="result-item">Side A: ${formatNumber(sides.a)}</div>
+                <div class="result-item">Side B: ${formatNumber(sides.b)}</div>
+                <div class="result-item">Side C: ${formatNumber(sides.c)}</div>
+            `;
+            
+            // Display angles
+            document.getElementById('angles-results').innerHTML = `
+                <div class="result-item">Angle A: ${formatNumber(angles.A)}°</div>
+                <div class="result-item">Angle B: ${formatNumber(angles.B)}°</div>
+                <div class="result-item">Angle C: ${formatNumber(angles.C)}°</div>
+            `;
+            
+            // Calculate properties
+            const perimeter = sides.a + sides.b + sides.c;
+            const semiperimeter = perimeter / 2;
+            const area = Math.sqrt(semiperimeter * (semiperimeter - sides.a) * (semiperimeter - sides.b) * (semiperimeter - sides.c));
+            
+            // Calculate triangle type
+            const triangleType = getTriangleType(sides, angles);
+            
+            document.getElementById('properties-results').innerHTML = `
+                <div class="result-item">Area: ${formatNumber(area)}</div>
+                <div class="result-item">Perimeter: ${formatNumber(perimeter)}</div>
+                <div class="result-item">Semiperimeter: ${formatNumber(semiperimeter)}</div>
+            `;
+            
+            document.getElementById('triangle-classification').innerHTML = `
+                <div class="classification-item">
+                    <strong>By Sides:</strong> ${triangleType.bySides}
+                </div>
+                <div class="classification-item">
+                    <strong>By Angles:</strong> ${triangleType.byAngles}
+                </div>
+            `;
+            
+            // Draw triangle
+            drawTriangle(sides, angles);
+            
+            document.getElementById('triangle-results').style.display = 'block';
+            document.getElementById('triangle-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function getTriangleType(sides, angles) {
+            const { a, b, c } = sides;
+            const { A, B, C } = angles;
+            
+            let bySides, byAngles;
+            
+            // Classification by sides
+            if (Math.abs(a - b) < 0.001 && Math.abs(b - c) < 0.001) {
+                bySides = 'Equilateral';
+            } else if (Math.abs(a - b) < 0.001 || Math.abs(b - c) < 0.001 || Math.abs(a - c) < 0.001) {
+                bySides = 'Isosceles';
+            } else {
+                bySides = 'Scalene';
+            }
+            
+            // Classification by angles
+            if (Math.abs(A - 90) < 0.001 || Math.abs(B - 90) < 0.001 || Math.abs(C - 90) < 0.001) {
+                byAngles = 'Right';
+            } else if (A > 90 || B > 90 || C > 90) {
+                byAngles = 'Obtuse';
+            } else {
+                byAngles = 'Acute';
+            }
+            
+            return { bySides, byAngles };
+        }
+        
+        function drawTriangle(sides, angles) {
+            const canvas = document.getElementById('triangle-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Scale triangle to fit canvas
+            const maxSide = Math.max(sides.a, sides.b, sides.c);
+            const scale = 150 / maxSide;
+            
+            // Calculate triangle coordinates
+            const x1 = 50;
+            const y1 = 150;
+            const x2 = x1 + sides.c * scale;
+            const y2 = y1;
+            const x3 = x1 + sides.b * scale * Math.cos(angles.A * Math.PI / 180);
+            const y3 = y1 - sides.b * scale * Math.sin(angles.A * Math.PI / 180);
+            
+            // Draw triangle
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo(x3, y3);
+            ctx.closePath();
+            ctx.strokeStyle = '#667eea';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            // Label vertices
+            ctx.fillStyle = '#333';
+            ctx.font = '14px Arial';
+            ctx.fillText('A', x1 - 15, y1 + 5);
+            ctx.fillText('B', x2 + 5, y2 + 5);
+            ctx.fillText('C', x3 - 5, y3 - 10);
+            
+            // Label sides
+            ctx.font = '12px Arial';
+            ctx.fillStyle = '#666';
+            ctx.fillText(`a = ${formatNumber(sides.a)}`, (x2 + x3) / 2 + 5, (y2 + y3) / 2);
+            ctx.fillText(`b = ${formatNumber(sides.b)}`, (x1 + x3) / 2 - 20, (y1 + y3) / 2);
+            ctx.fillText(`c = ${formatNumber(sides.c)}`, (x1 + x2) / 2, y1 + 20);
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .calculation-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .triangle-visual {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        #triangle-canvas {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .result-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .result-item {
+            padding: 8px 12px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin: 5px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .triangle-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .classification-item {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .classification-item:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 768px) {
+            .calculation-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+                border-right: none;
+            }
+            
+            .tab-btn.active {
+                border-bottom-color: var(--border-color);
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            #triangle-canvas {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+        }
+    </style>
+</body>
+</html>

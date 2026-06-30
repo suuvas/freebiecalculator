@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST/HST Calculator Canada – Calculate Canadian Sales Tax | FreebieCalculator</title>
+    <meta name="description" content="Free Canadian GST/HST calculator. Calculate goods and services tax for all provinces. Includes GST, HST, PST, and QST rates for every Canadian province and territory.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/gst-hst.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta property="og:title" content="GST/HST Calculator Canada">
+    <meta property="og:description" content="Calculate Canadian sales tax (GST, HST, PST, QST) for any province or territory.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/gst-hst.html">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Canadian GST/HST Calculator","description":"Calculate GST, HST, PST and QST for all Canadian provinces and territories","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","url":"https://freebiecalculator.com/calculators/gst-hst.html","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"isAccessibleForFree":true,"provider":{"@type":"Organization","name":"FreebieCalculator.com","url":"https://freebiecalculator.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is the GST rate in Canada?","acceptedAnswer":{"@type":"Answer","text":"The federal GST (Goods and Services Tax) rate in Canada is 5%. Some provinces combine it with provincial tax into HST (Harmonized Sales Tax) ranging from 13% to 15%."}},
+        {"@type":"Question","name":"Which Canadian provinces have HST?","acceptedAnswer":{"@type":"Answer","text":"Provinces with HST: Ontario (13%), New Brunswick (15%), Nova Scotia (15%), Newfoundland and Labrador (15%), Prince Edward Island (15%). Other provinces charge GST (5%) plus separate PST."}},
+        {"@type":"Question","name":"What is the sales tax in Ontario?","acceptedAnswer":{"@type":"Answer","text":"Ontario charges HST at 13% (combining 5% federal GST and 8% provincial portion). This applies to most goods and services."}},
+        {"@type":"Question","name":"Does Alberta have provincial sales tax?","acceptedAnswer":{"@type":"Answer","text":"No. Alberta is the only province with no provincial sales tax. Residents pay only the 5% federal GST. This makes Alberta the lowest-tax province for consumer purchases."}},
+        {"@type":"Question","name":"How do I calculate the pre-tax price from a total?","acceptedAnswer":{"@type":"Answer","text":"To find the pre-tax price: Pre-tax = Total ÷ (1 + tax rate). Example: $113 total in Ontario (13% HST): $113 ÷ 1.13 = $100 pre-tax. Our calculator handles this automatically with the reverse calculation."}}
+    ]}</script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="6" fill="currentColor"/><rect x="6" y="6" width="20" height="20" rx="2" fill="white"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="14" y="8" width="4" height="2" fill="currentColor"/><rect x="20" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="12" width="4" height="2" fill="currentColor"/><rect x="14" y="12" width="4" height="2" fill="currentColor"/><rect x="20" y="12" width="4" height="2" fill="currentColor"/><rect x="8" y="16" width="4" height="2" fill="currentColor"/><rect x="14" y="16" width="4" height="2" fill="currentColor"/><rect x="20" y="16" width="4" height="2" fill="currentColor"/><rect x="8" y="20" width="16" height="2" fill="#f59e0b"/></svg>freebiecalculator.com</a>
+            <nav role="navigation" aria-label="Main navigation"><ul class="nav-menu"><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li><a href="/help/">Help</a></li><li><a href="/#math-calculators">General</a></li><li><a href="/#health-calculators">Health</a></li><li><a href="/#financial-calculators">Finance</a></li><li><a href="/#other-calculators">Other</a></li></ul></nav>
+            <div class="header-actions"><div id="language-selector-container"></div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button><button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/ca/">Canada</a> › <span>GST/HST Calculator</span></nav>
+            <div class="calculator-header"><h1>🍁 Canadian GST/HST Calculator</h1><p>Calculate sales tax for any Canadian province or territory — GST, HST, PST, and QST.</p></div>
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            <div class="calculator-container"><div class="calculator-tool">
+                <form id="gst-form">
+                    <div class="form-group">
+                        <label for="province">Province / Territory</label>
+                        <select id="province">
+                            <option value="AB|5|0">Alberta (GST only)</option>
+                            <option value="BC|5|7">British Columbia (GST + PST)</option>
+                            <option value="MB|5|7">Manitoba (GST + PST)</option>
+                            <option value="NB|15|0">New Brunswick (HST)</option>
+                            <option value="NL|15|0">Newfoundland & Labrador (HST)</option>
+                            <option value="NS|15|0">Nova Scotia (HST)</option>
+                            <option value="NT|5|0">Northwest Territories (GST only)</option>
+                            <option value="NU|5|0">Nunavut (GST only)</option>
+                            <option value="ON|13|0" selected>Ontario (HST)</option>
+                            <option value="PE|15|0">Prince Edward Island (HST)</option>
+                            <option value="QC|5|9.975">Quebec (GST + QST)</option>
+                            <option value="SK|5|6">Saskatchewan (GST + PST)</option>
+                            <option value="YT|5|0">Yukon (GST only)</option>
+                        </select>
+                    </div>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="calc-direction">Calculate</label>
+                            <select id="calc-direction">
+                                <option value="add">Add tax to pre-tax price</option>
+                                <option value="remove">Remove tax from total price</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount (CAD $)</label>
+                            <input type="number" id="amount" step="0.01" min="0" placeholder="e.g., 100.00" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Calculate Tax</button>
+                </form>
+                <div id="gst-result" class="result-container" style="display:none">
+                    <div class="result-grid" id="gst-grid"></div>
+                </div>
+            </div></div>
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section">
+                <h2>Canadian Sales Tax Rates by Province (2024)</h2>
+                <table class="data-table">
+                    <thead><tr><th>Province</th><th>GST</th><th>PST/QST</th><th>Total Tax</th><th>Tax Type</th></tr></thead>
+                    <tbody>
+                        <tr><td>🏔️ Alberta</td><td>5%</td><td>0%</td><td>5%</td><td>GST only</td></tr>
+                        <tr><td>🌊 British Columbia</td><td>5%</td><td>7%</td><td>12%</td><td>GST + PST</td></tr>
+                        <tr><td>🌾 Manitoba</td><td>5%</td><td>7%</td><td>12%</td><td>GST + PST</td></tr>
+                        <tr><td>🦞 New Brunswick</td><td>—</td><td>—</td><td>15%</td><td>HST</td></tr>
+                        <tr><td>🐟 Newfoundland & Labrador</td><td>—</td><td>—</td><td>15%</td><td>HST</td></tr>
+                        <tr><td>🦞 Nova Scotia</td><td>—</td><td>—</td><td>15%</td><td>HST</td></tr>
+                        <tr><td>❄️ Northwest Territories</td><td>5%</td><td>0%</td><td>5%</td><td>GST only</td></tr>
+                        <tr><td>❄️ Nunavut</td><td>5%</td><td>0%</td><td>5%</td><td>GST only</td></tr>
+                        <tr><td>🍁 Ontario</td><td>—</td><td>—</td><td>13%</td><td>HST</td></tr>
+                        <tr><td>🥔 Prince Edward Island</td><td>—</td><td>—</td><td>15%</td><td>HST</td></tr>
+                        <tr><td>⚜️ Quebec</td><td>5%</td><td>9.975%</td><td>14.975%</td><td>GST + QST</td></tr>
+                        <tr><td>🌻 Saskatchewan</td><td>5%</td><td>6%</td><td>11%</td><td>GST + PST</td></tr>
+                        <tr><td>🥇 Yukon</td><td>5%</td><td>0%</td><td>5%</td><td>GST only</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>FAQs</h2>
+                <div class="faq-container">
+                    <div class="faq-item"><div class="faq-question">What is the GST rate in Canada?</div><div class="faq-answer">Federal GST is 5%. Some provinces combine it with provincial tax into HST (13–15%). Others charge GST separately plus PST or QST.</div></div>
+                    <div class="faq-item"><div class="faq-question">Which provinces have HST?</div><div class="faq-answer">Ontario (13%), New Brunswick (15%), Nova Scotia (15%), Newfoundland & Labrador (15%), and PEI (15%) use HST — a combined federal/provincial tax.</div></div>
+                    <div class="faq-item"><div class="faq-question">Does Alberta have sales tax?</div><div class="faq-answer">Alberta has no provincial sales tax — only the 5% federal GST. This makes Alberta the lowest-tax province for consumer purchases in Canada.</div></div>
+                    <div class="faq-item"><div class="faq-question">How do I find the pre-tax price from a total?</div><div class="faq-answer">Pre-tax = Total ÷ (1 + tax rate). Example: $113 in Ontario (13% HST): $113 ÷ 1.13 = $100 pre-tax, $13 tax.</div></div>
+                </div>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+            <section class="content-section"><h2>Related Calculators</h2><div class="calculator-links"><a href="/calculators/sales-tax.html">US Sales Tax Calculator</a><a href="/calculators/tax.html">Income Tax Calculator</a><a href="/calculators/discount.html">Discount Calculator</a><a href="/calculators/tip.html">Tip Calculator</a><a href="/ca/">Canada Calculator Hub</a></div></section>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script>
+    document.getElementById('gst-form').addEventListener('submit',function(e){
+        e.preventDefault();
+        const prov=document.getElementById('province').value.split('|');
+        const dir=document.getElementById('calc-direction').value;
+        const amt=parseFloat(document.getElementById('amount').value)||0;
+        const gstRate=parseFloat(prov[1])/100;
+        const pstRate=parseFloat(prov[2])/100;
+        const isHST=pstRate===0&&gstRate>0.05;
+        const totalRate=gstRate+pstRate;
+        let preTax,gstAmt,pstAmt,total;
+        if(dir==='add'){
+            preTax=amt;
+            gstAmt=preTax*gstRate;
+            pstAmt=preTax*pstRate;
+            total=preTax+gstAmt+pstAmt;
+        } else {
+            total=amt;
+            preTax=amt/(1+totalRate);
+            gstAmt=preTax*gstRate;
+            pstAmt=preTax*pstRate;
+        }
+        const fmt=n=>'C$'+n.toFixed(2);
+        const pstLabel=prov[0]==='QC'?'QST':'PST';
+        const gstLabel=gstRate>0.05?'HST':'GST';
+        document.getElementById('gst-grid').innerHTML=`
+            <div class="result-card"><div class="result-label">Pre-Tax Amount</div><div class="result-value">${fmt(preTax)}</div></div>
+            <div class="result-card"><div class="result-label">${gstLabel} (${(gstRate*100).toFixed(1)}%)</div><div class="result-value">${fmt(gstAmt)}</div></div>
+            ${pstRate>0?`<div class="result-card"><div class="result-label">${pstLabel} (${(pstRate*100).toFixed(3).replace(/\.?0+$/,'')}%)</div><div class="result-value">${fmt(pstAmt)}</div></div>`:''}
+            <div class="result-card primary"><div class="result-label">Total (incl. tax)</div><div class="result-value">${fmt(total)}</div></div>
+            <div class="result-card"><div class="result-label">Total Tax</div><div class="result-value">${fmt(gstAmt+pstAmt)}</div></div>
+            <div class="result-card"><div class="result-label">Effective Rate</div><div class="result-value">${(totalRate*100).toFixed(3).replace(/\.?0+$/,'')}%</div></div>
+        `;
+        document.getElementById('gst-result').style.display='block';
+    });
+    </script>
+    <style>
+        .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1rem}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:.5rem;padding:1rem;text-align:center}
+        .result-card.primary{background:var(--primary-solid);color:white;border-color:var(--primary-solid)}
+        .result-card.primary .result-label{color:rgba(255,255,255,.8)}
+        .result-label{font-size:.8rem;color:var(--text-muted);margin-bottom:.25rem}
+        .result-value{font-size:1.1rem;font-weight:700;color:var(--text-primary)}
+        .data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+        .data-table th,.data-table td{padding:.5rem .75rem;text-align:left;border:1px solid var(--border-color);font-size:.85rem}
+        .data-table th{background:var(--bg-secondary);font-weight:600}
+        .data-table tr:nth-child(even){background:var(--bg-secondary)}
+    </style>
+</body>
+</html>

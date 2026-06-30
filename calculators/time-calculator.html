@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Calculator - Add, Subtract, and Convert Time | FreebieCalculator</title>
+    <meta name="description" content="Free time calculator for adding, subtracting, and converting time. Calculate hours, minutes, seconds, and time differences with precision.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/time-calculator.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Time Calculator - Add, Subtract, and Convert Time">
+    <meta property="og:description" content="Calculate time differences, add/subtract time, and convert between time units with our comprehensive time calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/time-calculator.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Time Calculator",
+        "description": "Add, subtract, and convert time with hours, minutes, and seconds calculations",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Other Calculators",
+                "item": "https://freebiecalculator.com/#other"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Time Calculator",
+                "item": "https://freebiecalculator.com/calculators/time-calculator.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I calculate overtime hours?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use the time difference calculator. Enter your start time and end time, check \"crosses midnight\" if needed, and the result shows your total work time. Subtract 8 hours for overtime."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I add multiple time periods?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Calculate the first addition, then use that result as the starting time for the next addition. Repeat as needed for multiple time periods."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if the result is negative?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When subtracting time, if you subtract more time than you started with, the result will show as a negative time, indicating you went backwards."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate are the calculations?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The calculator is precise to the second. All calculations handle proper time arithmetic including minute and hour rollovers automatically."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#other-calculators">Other Calculators</a> › 
+                <span>Time Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>⏰ Time Calculator</h1>
+                <p>Add, subtract, and convert time with precision. Calculate time differences and perform time arithmetic.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <div class="calculation-tabs">
+                    <button class="tab-btn active" data-tab="add-subtract">Add/Subtract Time</button>
+                    <button class="tab-btn" data-tab="time-difference">Time Difference</button>
+                    <button class="tab-btn" data-tab="time-conversion">Time Conversion</button>
+                </div>
+                
+                <!-- Add/Subtract Time Tab -->
+                <div id="add-subtract" class="tab-content active">
+                    <form id="add-subtract-form" class="calculator-form">
+                        <div class="time-input-section">
+                            <h3>Starting Time</h3>
+                            <div class="time-input-group">
+                                <input type="number" id="start-hours" min="0" max="23" placeholder="Hours" required>
+                                <span>:</span>
+                                <input type="number" id="start-minutes" min="0" max="59" placeholder="Minutes" required>
+                                <span>:</span>
+                                <input type="number" id="start-seconds" min="0" max="59" placeholder="Seconds" value="0">
+                            </div>
+                        </div>
+                        
+                        <div class="operation-section">
+                            <select id="operation">
+                                <option value="add">+ Add</option>
+                                <option value="subtract">− Subtract</option>
+                            </select>
+                        </div>
+                        
+                        <div class="time-input-section">
+                            <h3>Time to Add/Subtract</h3>
+                            <div class="time-input-group">
+                                <input type="number" id="change-hours" min="0" placeholder="Hours" value="0">
+                                <span>:</span>
+                                <input type="number" id="change-minutes" min="0" placeholder="Minutes" value="0">
+                                <span>:</span>
+                                <input type="number" id="change-seconds" min="0" placeholder="Seconds" value="0">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Time</button>
+                    </form>
+                </div>
+                
+                <!-- Time Difference Tab -->
+                <div id="time-difference" class="tab-content">
+                    <form id="time-difference-form" class="calculator-form">
+                        <div class="time-input-section">
+                            <h3>Start Time</h3>
+                            <div class="time-input-group">
+                                <input type="number" id="diff-start-hours" min="0" max="23" placeholder="Hours" required>
+                                <span>:</span>
+                                <input type="number" id="diff-start-minutes" min="0" max="59" placeholder="Minutes" required>
+                                <span>:</span>
+                                <input type="number" id="diff-start-seconds" min="0" max="59" placeholder="Seconds" value="0">
+                            </div>
+                        </div>
+                        
+                        <div class="time-input-section">
+                            <h3>End Time</h3>
+                            <div class="time-input-group">
+                                <input type="number" id="diff-end-hours" min="0" max="23" placeholder="Hours" required>
+                                <span>:</span>
+                                <input type="number" id="diff-end-minutes" min="0" max="59" placeholder="Minutes" required>
+                                <span>:</span>
+                                <input type="number" id="diff-end-seconds" min="0" max="59" placeholder="Seconds" value="0">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="cross-midnight">
+                                End time is next day (crosses midnight)
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Difference</button>
+                    </form>
+                </div>
+                
+                <!-- Time Conversion Tab -->
+                <div id="time-conversion" class="tab-content">
+                    <form id="time-conversion-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="conversion-value">Value to Convert</label>
+                            <input type="number" id="conversion-value" min="0" step="0.01" placeholder="e.g., 2.5" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="from-unit">From Unit</label>
+                            <select id="from-unit" required>
+                                <option value="seconds">Seconds</option>
+                                <option value="minutes">Minutes</option>
+                                <option value="hours">Hours</option>
+                                <option value="days">Days</option>
+                                <option value="weeks">Weeks</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="to-unit">To Unit</label>
+                            <select id="to-unit" required>
+                                <option value="seconds">Seconds</option>
+                                <option value="minutes">Minutes</option>
+                                <option value="hours">Hours</option>
+                                <option value="days">Days</option>
+                                <option value="weeks">Weeks</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Convert Time</button>
+                    </form>
+                </div>
+                
+                <div id="time-results" class="results-container" style="display: none;">
+                    <h3>⏱️ Time Calculation Results</h3>
+                    
+                    <div class="result-display">
+                        <div class="main-result">
+                            <div class="result-label" id="main-result-label">Result</div>
+                            <div class="result-value" id="main-result-value">0:00:00</div>
+                        </div>
+                        
+                        <div class="time-formats" id="time-formats">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Time Calculator Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>➕ Time Arithmetic</h3>
+                        <p>Add or subtract hours, minutes, and seconds. Perfect for calculating work hours, project time, or scheduling.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⏰ Time Differences</h3>
+                        <p>Calculate the exact time difference between two times, including support for times that cross midnight.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🔄 Unit Conversion</h3>
+                        <p>Convert between seconds, minutes, hours, days, and weeks for any time-related calculations.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Time Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I calculate overtime hours?</div>
+                        <div class="faq-answer">Use the time difference calculator. Enter your start time and end time, check "crosses midnight" if needed, and the result shows your total work time. Subtract 8 hours for overtime.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I add multiple time periods?</div>
+                        <div class="faq-answer">Yes! Calculate the first addition, then use that result as the starting time for the next addition. Repeat as needed for multiple time periods.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What if the result is negative?</div>
+                        <div class="faq-answer">When subtracting time, if you subtract more time than you started with, the result will show as a negative time, indicating you went backwards.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate are the calculations?</div>
+                        <div class="faq-answer">The calculator is precise to the second. All calculations handle proper time arithmetic including minute and hour rollovers automatically.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        let currentTab = 'add-subtract';
+        
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                switchTab(tab);
+            });
+        });
+        
+        // Form submissions
+        document.getElementById('add-subtract-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateAddSubtract();
+        });
+        
+        document.getElementById('time-difference-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateTimeDifference();
+        });
+        
+        document.getElementById('time-conversion-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateTimeConversion();
+        });
+        
+        function switchTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+            
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tab).classList.add('active');
+            
+            currentTab = tab;
+        }
+        
+        function calculateAddSubtract() {
+            const startHours = parseInt(document.getElementById('start-hours').value) || 0;
+            const startMinutes = parseInt(document.getElementById('start-minutes').value) || 0;
+            const startSeconds = parseInt(document.getElementById('start-seconds').value) || 0;
+            
+            const changeHours = parseInt(document.getElementById('change-hours').value) || 0;
+            const changeMinutes = parseInt(document.getElementById('change-minutes').value) || 0;
+            const changeSeconds = parseInt(document.getElementById('change-seconds').value) || 0;
+            
+            const operation = document.getElementById('operation').value;
+            
+            // Convert to total seconds
+            let startTotalSeconds = startHours * 3600 + startMinutes * 60 + startSeconds;
+            let changeTotalSeconds = changeHours * 3600 + changeMinutes * 60 + changeSeconds;
+            
+            let resultSeconds;
+            if (operation === 'add') {
+                resultSeconds = startTotalSeconds + changeTotalSeconds;
+            } else {
+                resultSeconds = startTotalSeconds - changeTotalSeconds;
+            }
+            
+            const resultTime = secondsToTime(resultSeconds);
+            
+            displayTimeResult(resultTime, 'Result Time', {
+                originalTime: `${formatTime(startHours, startMinutes, startSeconds)}`,
+                operation: operation === 'add' ? 'Added' : 'Subtracted',
+                changeTime: `${formatTime(changeHours, changeMinutes, changeSeconds)}`,
+                resultTime: resultTime.formatted
+            });
+        }
+        
+        function calculateTimeDifference() {
+            const startHours = parseInt(document.getElementById('diff-start-hours').value) || 0;
+            const startMinutes = parseInt(document.getElementById('diff-start-minutes').value) || 0;
+            const startSeconds = parseInt(document.getElementById('diff-start-seconds').value) || 0;
+            
+            const endHours = parseInt(document.getElementById('diff-end-hours').value) || 0;
+            const endMinutes = parseInt(document.getElementById('diff-end-minutes').value) || 0;
+            const endSeconds = parseInt(document.getElementById('diff-end-seconds').value) || 0;
+            
+            const crossMidnight = document.getElementById('cross-midnight').checked;
+            
+            let startTotalSeconds = startHours * 3600 + startMinutes * 60 + startSeconds;
+            let endTotalSeconds = endHours * 3600 + endMinutes * 60 + endSeconds;
+            
+            if (crossMidnight) {
+                endTotalSeconds += 24 * 3600; // Add 24 hours
+            }
+            
+            const diffSeconds = endTotalSeconds - startTotalSeconds;
+            const resultTime = secondsToTime(diffSeconds);
+            
+            displayTimeResult(resultTime, 'Time Difference', {
+                startTime: `${formatTime(startHours, startMinutes, startSeconds)}`,
+                endTime: `${formatTime(endHours, endMinutes, endSeconds)}${crossMidnight ? ' (+1 day)' : ''}`,
+                difference: resultTime.formatted
+            });
+        }
+        
+        function calculateTimeConversion() {
+            const value = parseFloat(document.getElementById('conversion-value').value);
+            const fromUnit = document.getElementById('from-unit').value;
+            const toUnit = document.getElementById('to-unit').value;
+            
+            if (!value) {
+                alert('Please enter a value to convert');
+                return;
+            }
+            
+            // Convert to seconds first
+            const conversionFactors = {
+                seconds: 1,
+                minutes: 60,
+                hours: 3600,
+                days: 86400,
+                weeks: 604800
+            };
+            
+            const valueInSeconds = value * conversionFactors[fromUnit];
+            const result = valueInSeconds / conversionFactors[toUnit];
+            
+            displayConversionResult(value, fromUnit, result, toUnit);
+        }
+        
+        function secondsToTime(totalSeconds) {
+            const isNegative = totalSeconds < 0;
+            totalSeconds = Math.abs(totalSeconds);
+            
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            
+            return {
+                hours,
+                minutes,
+                seconds,
+                isNegative,
+                formatted: `${isNegative ? '-' : ''}${formatTime(hours, minutes, seconds)}`,
+                totalSeconds: isNegative ? -totalSeconds : totalSeconds
+            };
+        }
+        
+        function formatTime(hours, minutes, seconds) {
+            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        function displayTimeResult(timeObj, label, details) {
+            document.getElementById('main-result-label').textContent = label;
+            document.getElementById('main-result-value').textContent = timeObj.formatted;
+            
+            let formatsHtml = '<div class="format-grid">';
+            
+            // Different format representations
+            formatsHtml += `<div class="format-item">
+                <span class="format-label">Decimal Hours:</span>
+                <span class="format-value">${(Math.abs(timeObj.totalSeconds) / 3600).toFixed(4)} hours</span>
+            </div>`;
+            
+            formatsHtml += `<div class="format-item">
+                <span class="format-label">Total Minutes:</span>
+                <span class="format-value">${(Math.abs(timeObj.totalSeconds) / 60).toFixed(2)} minutes</span>
+            </div>`;
+            
+            formatsHtml += `<div class="format-item">
+                <span class="format-label">Total Seconds:</span>
+                <span class="format-value">${Math.abs(timeObj.totalSeconds)} seconds</span>
+            </div>`;
+            
+            if (details.originalTime) {
+                formatsHtml += `<div class="format-item">
+                    <span class="format-label">Calculation:</span>
+                    <span class="format-value">${details.originalTime} ${details.operation.toLowerCase()} ${details.changeTime} = ${details.resultTime}</span>
+                </div>`;
+            }
+            
+            if (details.startTime) {
+                formatsHtml += `<div class="format-item">
+                    <span class="format-label">From:</span>
+                    <span class="format-value">${details.startTime}</span>
+                </div>`;
+                formatsHtml += `<div class="format-item">
+                    <span class="format-label">To:</span>
+                    <span class="format-value">${details.endTime}</span>
+                </div>`;
+            }
+            
+            formatsHtml += '</div>';
+            
+            document.getElementById('time-formats').innerHTML = formatsHtml;
+            
+            document.getElementById('time-results').style.display = 'block';
+            document.getElementById('time-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function displayConversionResult(originalValue, fromUnit, result, toUnit) {
+            document.getElementById('main-result-label').textContent = 'Converted Value';
+            document.getElementById('main-result-value').textContent = `${formatNumber(result)} ${toUnit}`;
+            
+            let formatsHtml = `<div class="format-grid">
+                <div class="format-item">
+                    <span class="format-label">Original:</span>
+                    <span class="format-value">${formatNumber(originalValue)} ${fromUnit}</span>
+                </div>
+                <div class="format-item">
+                    <span class="format-label">Converted:</span>
+                    <span class="format-value">${formatNumber(result)} ${toUnit}</span>
+                </div>
+            </div>`;
+            
+            document.getElementById('time-formats').innerHTML = formatsHtml;
+            
+            document.getElementById('time-results').style.display = 'block';
+            document.getElementById('time-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .calculation-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .time-input-section {
+            margin: 25px 0;
+        }
+        
+        .time-input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .time-input-group input {
+            width: 80px;
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 12px;
+        }
+        
+        .time-input-group span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-secondary);
+        }
+        
+        .operation-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .operation-section select {
+            font-size: 1.1rem;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: 2px solid var(--border-color);
+        }
+        
+        .main-result {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .main-result .result-label {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        
+        .main-result .result-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .format-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .format-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        
+        .format-value {
+            font-family: 'Courier New', monospace;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .calculation-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .tab-btn.active {
+                border-bottom-color: var(--border-color);
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            .time-input-group {
+                gap: 5px;
+            }
+            
+            .time-input-group input {
+                width: 60px;
+                font-size: 1rem;
+                padding: 8px;
+            }
+            
+            .main-result .result-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>

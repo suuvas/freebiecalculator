@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Difference Calculator - Calculate Days Between Dates | FreebieCalculator</title>
+    <meta name="description" content="Calculate the difference between two dates, add or subtract days from a date. Free date calculator with precise results in days, weeks, months, and years.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/date-difference.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Date Difference Calculator - Calculate Days Between Dates">
+    <meta property="og:description" content="Calculate the difference between two dates or add/subtract days from a date.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/date-difference.html">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Date Difference Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Calculate the difference between two dates or add/subtract days from a date with precise results.",
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Other Calculators",
+                "item": "https://freebiecalculator.com/#other"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Date Difference Calculator",
+                "item": "https://freebiecalculator.com/calculators/date-difference.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How does the calculator handle time zones?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our calculator works with dates only (not times), so time zones don't affect the results. All calculations are based on calendar days, making results consistent regardless of your location."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between calendar days and business days?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Calendar days include all days (weekends and holidays), while business days typically exclude weekends and sometimes holidays. Our calculator shows calendar days by default, which is the most commonly needed calculation."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why might my calculation differ slightly from other tools?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Small differences can occur based on how leap years are handled or whether the start/end dates are included in the count. Our calculator uses inclusive counting for the end date and follows standard calendar conventions."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I calculate dates far in the past or future?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our calculator can handle dates from the year 1900 to 2100. For historical dates before 1582, note that the Gregorian calendar wasn't in use, which might affect accuracy for very old dates."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate is the month and year conversion?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Months and years are approximate since they vary in length. We use average values (30.44 days per month, 365.25 days per year) for these conversions. For precise calculations, use the day count."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator-container">
+                <h1>Date Difference Calculator</h1>
+                
+                <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <div class="calculator-tool">
+                    <div class="form-group">
+                        <label for="calc-mode">Calculation Mode:</label>
+                        <select id="calc-mode">
+                            <option value="difference">Calculate difference between two dates</option>
+                            <option value="add-subtract">Add or subtract days from a date</option>
+                        </select>
+                    </div>
+                    
+                    <div id="difference-mode" class="calc-mode-section">
+                        <h3>Calculate Date Difference</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="start-date">Start Date:</label>
+                                <input type="date" id="start-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="end-date">End Date:</label>
+                                <input type="date" id="end-date" required>
+                            </div>
+                        </div>
+                        <button onclick="calculateDifference()">Calculate Difference</button>
+                    </div>
+                    
+                    <div id="add-subtract-mode" class="calc-mode-section" style="display: none;">
+                        <h3>Add or Subtract Days</h3>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="base-date">Base Date:</label>
+                                <input type="date" id="base-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="days-to-modify">Days to Add/Subtract:</label>
+                                <input type="number" id="days-to-modify" placeholder="Enter number (negative to subtract)">
+                            </div>
+                        </div>
+                        <button onclick="calculateNewDate()">Calculate New Date</button>
+                    </div>
+                    
+                    <div id="date-result" class="result-container" style="display: none;">
+                        <div class="result-value" id="result-display"></div>
+                        <div class="result-details" id="result-breakdown"></div>
+                        <div class="result-details" id="result-additional"></div>
+                    </div>
+                </div>
+                
+                <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>How Date Calculations Work</h2>
+                    <p>
+                        Date calculations involve working with the calendar system to determine time differences or 
+                        calculate future/past dates. Our calculator handles all the complexities of different month 
+                        lengths, leap years, and various calendar quirks to provide accurate results.
+                    </p>
+                    <p>
+                        Whether you need to calculate project durations, determine ages, plan events, or calculate 
+                        deadlines, our date calculator provides precise results in multiple formats including days, 
+                        weeks, months, and years.
+                    </p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Date Calculation Methods</h2>
+                    
+                    <h4>Date Difference Calculation</h4>
+                    <p>To calculate the difference between two dates:</p>
+                    <pre><code>
+1. Convert both dates to a common format (milliseconds since epoch)
+2. Subtract the earlier date from the later date
+3. Convert the result back to days, weeks, months, or years
+4. Account for leap years and varying month lengths
+
+Formula:
+Difference in days = (End Date - Start Date) / (1000 × 60 × 60 × 24)
+                    </code></pre>
+                    
+                    <h4>Adding/Subtracting Days</h4>
+                    <p>To add or subtract days from a date:</p>
+                    <pre><code>
+1. Convert the base date to milliseconds
+2. Add or subtract the specified number of days (in milliseconds)
+3. Convert back to a readable date format
+4. Handle month and year transitions automatically
+
+Formula:
+New Date = Base Date + (Days × 24 × 60 × 60 × 1000 milliseconds)
+                    </code></pre>
+                    
+                    <h4>Leap Year Handling</h4>
+                    <p>Leap years occur every 4 years, except for century years which must be divisible by 400:</p>
+                    <ul>
+                        <li>2000: Leap year (divisible by 400)</li>
+                        <li>1900: Not a leap year (divisible by 100 but not 400)</li>
+                        <li>2024: Leap year (divisible by 4)</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Examples</h2>
+                    
+                    <div class="example">
+                        <h4>Example 1: Project Duration</h4>
+                        <p><strong>Start Date:</strong> January 15, 2024</p>
+                        <p><strong>End Date:</strong> March 20, 2024</p>
+                        <p><strong>Result:</strong> 65 days (9 weeks, 2 days)</p>
+                        <p><strong>Use Case:</strong> Calculating project timeline duration</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 2: Adding Business Days</h4>
+                        <p><strong>Base Date:</strong> December 15, 2023</p>
+                        <p><strong>Add:</strong> 30 days</p>
+                        <p><strong>Result:</strong> January 14, 2024</p>
+                        <p><strong>Use Case:</strong> Calculating payment due dates or contract deadlines</p>
+                    </div>
+                    
+                    <div class="example">
+                        <h4>Example 3: Historical Time Span</h4>
+                        <p><strong>Start Date:</strong> July 20, 1969 (Moon landing)</p>
+                        <p><strong>End Date:</strong> January 1, 2024</p>
+                        <p><strong>Result:</strong> 19,888 days (54 years, 5 months, 12 days)</p>
+                        <p><strong>Use Case:</strong> Calculating historical time periods</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How does the calculator handle time zones?</div>
+                        <div class="faq-answer">
+                            Our calculator works with dates only (not times), so time zones don't affect the results. 
+                            All calculations are based on calendar days, making results consistent regardless of your location.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between calendar days and business days?</div>
+                        <div class="faq-answer">
+                            Calendar days include all days (weekends and holidays), while business days typically 
+                            exclude weekends and sometimes holidays. Our calculator shows calendar days by default, 
+                            which is the most commonly needed calculation.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why might my calculation differ slightly from other tools?</div>
+                        <div class="faq-answer">
+                            Small differences can occur based on how leap years are handled or whether the start/end 
+                            dates are included in the count. Our calculator uses inclusive counting for the end date 
+                            and follows standard calendar conventions.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can I calculate dates far in the past or future?</div>
+                        <div class="faq-answer">
+                            Yes, our calculator can handle dates from the year 1900 to 2100. For historical dates 
+                            before 1582, note that the Gregorian calendar wasn't in use, which might affect accuracy 
+                            for very old dates.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is the month and year conversion?</div>
+                        <div class="faq-answer">
+                            Months and years are approximate since they vary in length. We use average values 
+                            (30.44 days per month, 365.25 days per year) for these conversions. For precise 
+                            calculations, use the day count.
+                        </div>
+                    </div>
+                </section>
+                
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                
+                <section class="content-section">
+                    <h2>More Date & Time Calculators</h2>
+                    <div class="calculator-links">
+                        <a href="/calculators/age.html">Age Calculator</a>
+                        <a href="/calculators/percentage.html">Percentage Calculator</a>
+                        <a href="/calculators/unit-converter.html">Unit Converter</a>
+                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
+                        <a href="/calculators/average.html">Average Calculator</a>
+                        <a href="/calculators/discount.html">Discount Calculator</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { calculateDateDifference, formatNumber } from '/assets/js/utils/math.js';
+        
+        // Switch between calculation modes
+        document.getElementById('calc-mode').addEventListener('change', function(e) {
+            const sections = document.querySelectorAll('.calc-mode-section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            const mode = e.target.value;
+            document.getElementById(`${mode.replace('-', '-')}-mode`).style.display = 'block';
+            
+            // Hide result when switching
+            document.getElementById('date-result').style.display = 'none';
+        });
+        
+        // Set default dates
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('start-date').value = today;
+        document.getElementById('end-date').value = today;
+        document.getElementById('base-date').value = today;
+        
+        window.calculateDifference = function() {
+            const startDate = new Date(document.getElementById('start-date').value);
+            const endDate = new Date(document.getElementById('end-date').value);
+            
+            if (!document.getElementById('start-date').value || !document.getElementById('end-date').value) {
+                alert('Please select both start and end dates');
+                return;
+            }
+            
+            if (startDate > endDate) {
+                alert('Start date cannot be later than end date');
+                return;
+            }
+            
+            const difference = calculateDateDifference(startDate, endDate);
+            
+            document.getElementById('result-display').textContent = 
+                `${difference.days} days`;
+            
+            document.getElementById('result-breakdown').innerHTML = `
+                <strong>Detailed Breakdown:</strong><br>
+                Days: ${formatNumber(difference.days)}<br>
+                Weeks: ${formatNumber(difference.weeks)}<br>
+                Months (approx): ${formatNumber(difference.months)}<br>
+                Years (approx): ${formatNumber(difference.years)}
+            `;
+            
+            document.getElementById('result-additional').innerHTML = `
+                <strong>Additional Information:</strong><br>
+                Total Hours: ${formatNumber(difference.totalHours)}<br>
+                Total Minutes: ${formatNumber(difference.totalMinutes)}<br>
+                Weekdays (approx): ${Math.floor(difference.days * 5/7)}
+            `;
+            
+            document.getElementById('date-result').style.display = 'block';
+        };
+        
+        window.calculateNewDate = function() {
+            const baseDate = new Date(document.getElementById('base-date').value);
+            const daysToModify = parseInt(document.getElementById('days-to-modify').value);
+            
+            if (!document.getElementById('base-date').value) {
+                alert('Please select a base date');
+                return;
+            }
+            
+            if (isNaN(daysToModify)) {
+                alert('Please enter a valid number of days');
+                return;
+            }
+            
+            const newDate = new Date(baseDate);
+            newDate.setDate(newDate.getDate() + daysToModify);
+            
+            const operation = daysToModify >= 0 ? 'added to' : 'subtracted from';
+            const absoluteDays = Math.abs(daysToModify);
+            
+            document.getElementById('result-display').textContent = 
+                newDate.toLocaleDateString('en-US', { 
+                    weekday: 'long',
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+            
+            document.getElementById('result-breakdown').innerHTML = `
+                <strong>Calculation:</strong><br>
+                Base Date: ${baseDate.toLocaleDateString()}<br>
+                Days ${operation}: ${absoluteDays}<br>
+                Result Date: ${newDate.toLocaleDateString()}
+            `;
+            
+            const dayOfWeek = newDate.toLocaleDateString('en-US', { weekday: 'long' });
+            const isWeekend = dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+            
+            document.getElementById('result-additional').innerHTML = `
+                <strong>Additional Information:</strong><br>
+                Day of Week: ${dayOfWeek}<br>
+                Weekend: ${isWeekend ? 'Yes' : 'No'}<br>
+                ISO Date: ${newDate.toISOString().split('T')[0]}
+            `;
+            
+            document.getElementById('date-result').style.display = 'block';
+        };
+    </script>
+</body>
+</html>

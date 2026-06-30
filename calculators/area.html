@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator - Calculate Area of Shapes | FreebieCalculator</title>
+    <meta name="description" content="Free area calculator for squares, rectangles, circles, triangles, and other shapes. Calculate area with step-by-step solutions and unit conversions.">
+    <link rel="canonical" href="https://freebiecalculator.com/calculators/area.html">
+    <link rel="stylesheet" href="/assets/css/base.css?v=7">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Area Calculator - Calculate Area of Shapes">
+    <meta property="og:description" content="Calculate area of geometric shapes with our comprehensive area calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/area.html">
+    
+    <!-- JSON-LD SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Area Calculator",
+        "description": "Calculate area of geometric shapes including squares, circles, triangles",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "dateModified": "2025-08-22"
+    }
+    </script>
+    
+    <!-- JSON-LD BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freebiecalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Math Calculators",
+                "item": "https://freebiecalculator.com/#math"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Area Calculator",
+                "item": "https://freebiecalculator.com/calculators/area.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is the formula for calculating area?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The formula depends on the shape: Square = side\u00b2, Rectangle = length \u00d7 width, Circle = \u03c0 \u00d7 radius\u00b2, Triangle = \u00bd \u00d7 base \u00d7 height."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What units can I use for area calculations?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can input measurements in meters, centimeters, feet, or inches. The area will be calculated in square units (m\u00b2, cm\u00b2, ft\u00b2, in\u00b2)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I convert between area units?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To convert area units, remember that 1 m\u00b2 = 10,000 cm\u00b2, 1 ft\u00b2 = 144 in\u00b2, 1 m\u00b2 \u2248 10.764 ft\u00b2. Use our unit converter for precise conversions."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between perimeter and area?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Perimeter is the distance around the outside of a shape (measured in linear units), while area is the space inside a shape (measured in square units)."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor"/>
+                    <rect x="6" y="6" width="20" height="20" rx="2" fill="white"/>
+                    <rect x="8" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="8" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="12" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="14" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
+                </svg>
+                freebiecalculator.com
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Guides</a></li>
+                    <li><a href="/help/">Help</a></li>
+                    <li><a href="#math-calculators">General</a></li>
+                    <li><a href="#health-calculators">Health</a></li>
+                    <li><a href="#financial-calculators">Finance</a></li>
+                    <li><a href="#other-calculators">Other</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div id="language-selector-container"></div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> › 
+                <a href="/#math-calculators">Math Calculators</a> › 
+                <span>Area Calculator</span>
+            </nav>
+            
+            <div class="calculator-header">
+                <h1>📐 Area Calculator</h1>
+                <p>Calculate the area of geometric shapes including squares, rectangles, circles, triangles, and more.</p>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <div class="calculator-container">
+                <div class="shape-tabs">
+                    <button class="shape-tab active" data-shape="square">Square</button>
+                    <button class="shape-tab" data-shape="rectangle">Rectangle</button>
+                    <button class="shape-tab" data-shape="circle">Circle</button>
+                    <button class="shape-tab" data-shape="triangle">Triangle</button>
+                    <button class="shape-tab" data-shape="trapezoid">Trapezoid</button>
+                    <button class="shape-tab" data-shape="parallelogram">Parallelogram</button>
+                </div>
+                
+                <!-- Square -->
+                <div id="square-calc" class="shape-calculator active">
+                    <h3>Square Area</h3>
+                    <div class="shape-visual">
+                        <div class="square-diagram"></div>
+                        <p>Area = side²</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="square-side">Side Length</label>
+                        <input type="number" id="square-side" min="0" step="0.01" placeholder="5">
+                        <select id="square-unit">
+                            <option value="m">meters</option>
+                            <option value="cm">cm</option>
+                            <option value="ft">feet</option>
+                            <option value="in">inches</option>
+                        </select>
+                    </div>
+                    <button onclick="calculateSquare()" class="calculate-btn">Calculate Area</button>
+                    <div id="square-result" class="result-display"></div>
+                </div>
+                
+                <!-- Rectangle -->
+                <div id="rectangle-calc" class="shape-calculator">
+                    <h3>Rectangle Area</h3>
+                    <div class="shape-visual">
+                        <div class="rectangle-diagram"></div>
+                        <p>Area = length × width</p>
+                    </div>
+                    <div class="dimension-inputs">
+                        <div class="form-group">
+                            <label for="rect-length">Length</label>
+                            <input type="number" id="rect-length" min="0" step="0.01" placeholder="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="rect-width">Width</label>
+                            <input type="number" id="rect-width" min="0" step="0.01" placeholder="5">
+                        </div>
+                        <div class="form-group">
+                            <label>Unit</label>
+                            <select id="rect-unit">
+                                <option value="m">meters</option>
+                                <option value="cm">cm</option>
+                                <option value="ft">feet</option>
+                                <option value="in">inches</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="calculateRectangle()" class="calculate-btn">Calculate Area</button>
+                    <div id="rect-result" class="result-display"></div>
+                </div>
+                
+                <!-- Circle -->
+                <div id="circle-calc" class="shape-calculator">
+                    <h3>Circle Area</h3>
+                    <div class="shape-visual">
+                        <div class="circle-diagram"></div>
+                        <p>Area = π × radius²</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="circle-radius">Radius</label>
+                        <input type="number" id="circle-radius" min="0" step="0.01" placeholder="3">
+                        <select id="circle-unit">
+                            <option value="m">meters</option>
+                            <option value="cm">cm</option>
+                            <option value="ft">feet</option>
+                            <option value="in">inches</option>
+                        </select>
+                    </div>
+                    <button onclick="calculateCircle()" class="calculate-btn">Calculate Area</button>
+                    <div id="circle-result" class="result-display"></div>
+                </div>
+                
+                <!-- Triangle -->
+                <div id="triangle-calc" class="shape-calculator">
+                    <h3>Triangle Area</h3>
+                    <div class="shape-visual">
+                        <div class="triangle-diagram"></div>
+                        <p>Area = ½ × base × height</p>
+                    </div>
+                    <div class="dimension-inputs">
+                        <div class="form-group">
+                            <label for="tri-base">Base</label>
+                            <input type="number" id="tri-base" min="0" step="0.01" placeholder="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="tri-height">Height</label>
+                            <input type="number" id="tri-height" min="0" step="0.01" placeholder="4">
+                        </div>
+                        <div class="form-group">
+                            <label>Unit</label>
+                            <select id="tri-unit">
+                                <option value="m">meters</option>
+                                <option value="cm">cm</option>
+                                <option value="ft">feet</option>
+                                <option value="in">inches</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="calculateTriangle()" class="calculate-btn">Calculate Area</button>
+                    <div id="tri-result" class="result-display"></div>
+                </div>
+                
+                <!-- Trapezoid -->
+                <div id="trapezoid-calc" class="shape-calculator">
+                    <h3>Trapezoid Area</h3>
+                    <div class="shape-visual">
+                        <div class="trapezoid-diagram"></div>
+                        <p>Area = ½ × (a + b) × height</p>
+                    </div>
+                    <div class="dimension-inputs">
+                        <div class="form-group">
+                            <label for="trap-a">Base A</label>
+                            <input type="number" id="trap-a" min="0" step="0.01" placeholder="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="trap-b">Base B</label>
+                            <input type="number" id="trap-b" min="0" step="0.01" placeholder="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="trap-height">Height</label>
+                            <input type="number" id="trap-height" min="0" step="0.01" placeholder="3">
+                        </div>
+                        <div class="form-group">
+                            <label>Unit</label>
+                            <select id="trap-unit">
+                                <option value="m">meters</option>
+                                <option value="cm">cm</option>
+                                <option value="ft">feet</option>
+                                <option value="in">inches</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="calculateTrapezoid()" class="calculate-btn">Calculate Area</button>
+                    <div id="trap-result" class="result-display"></div>
+                </div>
+                
+                <!-- Parallelogram -->
+                <div id="parallelogram-calc" class="shape-calculator">
+                    <h3>Parallelogram Area</h3>
+                    <div class="shape-visual">
+                        <div class="parallelogram-diagram"></div>
+                        <p>Area = base × height</p>
+                    </div>
+                    <div class="dimension-inputs">
+                        <div class="form-group">
+                            <label for="para-base">Base</label>
+                            <input type="number" id="para-base" min="0" step="0.01" placeholder="7">
+                        </div>
+                        <div class="form-group">
+                            <label for="para-height">Height</label>
+                            <input type="number" id="para-height" min="0" step="0.01" placeholder="4">
+                        </div>
+                        <div class="form-group">
+                            <label>Unit</label>
+                            <select id="para-unit">
+                                <option value="m">meters</option>
+                                <option value="cm">cm</option>
+                                <option value="ft">feet</option>
+                                <option value="in">inches</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="calculateParallelogram()" class="calculate-btn">Calculate Area</button>
+                    <div id="para-result" class="result-display"></div>
+                </div>
+            </div>
+            
+            <!-- Ad Slot -->
+            <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+            
+            <section class="calculator-info">
+                <h2>Area Calculator Features</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📐 Multiple Shapes</h3>
+                        <p>Calculate areas for squares, rectangles, circles, triangles, trapezoids, and parallelograms with visual diagrams.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📏 Unit Flexibility</h3>
+                        <p>Work with meters, centimeters, feet, or inches. Get results in the same unit with automatic conversions available.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🧮 Step-by-Step</h3>
+                        <p>See the formula used and step-by-step calculation process for each shape to understand the math behind area calculations.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Area Calculator FAQ</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What is the formula for calculating area?</div>
+                        <div class="faq-answer">The formula depends on the shape: Square = side², Rectangle = length × width, Circle = π × radius², Triangle = ½ × base × height.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What units can I use for area calculations?</div>
+                        <div class="faq-answer">You can input measurements in meters, centimeters, feet, or inches. The area will be calculated in square units (m², cm², ft², in²).</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I convert between area units?</div>
+                        <div class="faq-answer">To convert area units, remember that 1 m² = 10,000 cm², 1 ft² = 144 in², 1 m² ≈ 10.764 ft². Use our unit converter for precise conversions.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between perimeter and area?</div>
+                        <div class="faq-answer">Perimeter is the distance around the outside of a shape (measured in linear units), while area is the space inside a shape (measured in square units).</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+</main>
+    
+    <footer id="footer"></footer>
+    
+    <script type="module" src="/assets/js/main.js?v=108"></script>
+    <script type="module">
+        import { formatNumber } from '/assets/js/utils/math.js';
+        
+        let currentShape = 'square';
+        
+        // Shape tab switching
+        document.querySelectorAll('.shape-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const shape = this.dataset.shape;
+                switchShape(shape);
+            });
+        });
+        
+        function switchShape(shape) {
+            // Update tab buttons
+            document.querySelectorAll('.shape-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-shape="${shape}"]`).classList.add('active');
+            
+            // Update shape calculators
+            document.querySelectorAll('.shape-calculator').forEach(calc => {
+                calc.classList.remove('active');
+            });
+            document.getElementById(`${shape}-calc`).classList.add('active');
+            
+            currentShape = shape;
+        }
+        
+        window.calculateSquare = function() {
+            const side = parseFloat(document.getElementById('square-side').value);
+            const unit = document.getElementById('square-unit').value;
+            
+            if (!side || side <= 0) {
+                alert('Please enter a valid side length');
+                return;
+            }
+            
+            const area = side * side;
+            displayResult('square-result', area, unit, `${formatNumber(side)}²`, 'side²');
+        };
+        
+        window.calculateRectangle = function() {
+            const length = parseFloat(document.getElementById('rect-length').value);
+            const width = parseFloat(document.getElementById('rect-width').value);
+            const unit = document.getElementById('rect-unit').value;
+            
+            if (!length || !width || length <= 0 || width <= 0) {
+                alert('Please enter valid length and width');
+                return;
+            }
+            
+            const area = length * width;
+            displayResult('rect-result', area, unit, `${formatNumber(length)} × ${formatNumber(width)}`, 'length × width');
+        };
+        
+        window.calculateCircle = function() {
+            const radius = parseFloat(document.getElementById('circle-radius').value);
+            const unit = document.getElementById('circle-unit').value;
+            
+            if (!radius || radius <= 0) {
+                alert('Please enter a valid radius');
+                return;
+            }
+            
+            const area = Math.PI * radius * radius;
+            displayResult('circle-result', area, unit, `π × ${formatNumber(radius)}²`, 'π × radius²');
+        };
+        
+        window.calculateTriangle = function() {
+            const base = parseFloat(document.getElementById('tri-base').value);
+            const height = parseFloat(document.getElementById('tri-height').value);
+            const unit = document.getElementById('tri-unit').value;
+            
+            if (!base || !height || base <= 0 || height <= 0) {
+                alert('Please enter valid base and height');
+                return;
+            }
+            
+            const area = 0.5 * base * height;
+            displayResult('tri-result', area, unit, `½ × ${formatNumber(base)} × ${formatNumber(height)}`, '½ × base × height');
+        };
+        
+        window.calculateTrapezoid = function() {
+            const a = parseFloat(document.getElementById('trap-a').value);
+            const b = parseFloat(document.getElementById('trap-b').value);
+            const height = parseFloat(document.getElementById('trap-height').value);
+            const unit = document.getElementById('trap-unit').value;
+            
+            if (!a || !b || !height || a <= 0 || b <= 0 || height <= 0) {
+                alert('Please enter valid dimensions');
+                return;
+            }
+            
+            const area = 0.5 * (a + b) * height;
+            displayResult('trap-result', area, unit, `½ × (${formatNumber(a)} + ${formatNumber(b)}) × ${formatNumber(height)}`, '½ × (a + b) × height');
+        };
+        
+        window.calculateParallelogram = function() {
+            const base = parseFloat(document.getElementById('para-base').value);
+            const height = parseFloat(document.getElementById('para-height').value);
+            const unit = document.getElementById('para-unit').value;
+            
+            if (!base || !height || base <= 0 || height <= 0) {
+                alert('Please enter valid base and height');
+                return;
+            }
+            
+            const area = base * height;
+            displayResult('para-result', area, unit, `${formatNumber(base)} × ${formatNumber(height)}`, 'base × height');
+        };
+        
+        function displayResult(elementId, area, unit, calculation, formula) {
+            const unitSymbol = unit === 'm' ? 'm²' : unit === 'cm' ? 'cm²' : unit === 'ft' ? 'ft²' : 'in²';
+            
+            document.getElementById(elementId).innerHTML = `
+                <div class="result-content">
+                    <div class="area-result">
+                        <strong>Area: ${formatNumber(area)} ${unitSymbol}</strong>
+                    </div>
+                    <div class="calculation-steps">
+                        <div>Formula: ${formula}</div>
+                        <div>Calculation: ${calculation} = ${formatNumber(area)} ${unitSymbol}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .shape-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .shape-tab {
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .shape-tab:hover {
+            color: var(--primary-color);
+        }
+        
+        .shape-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .shape-calculator {
+            display: none;
+        }
+        
+        .shape-calculator.active {
+            display: block;
+        }
+        
+        .shape-visual {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .shape-visual p {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 10px;
+        }
+        
+        .square-diagram {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--primary-color);
+            margin: 0 auto;
+        }
+        
+        .rectangle-diagram {
+            width: 80px;
+            height: 50px;
+            border: 3px solid var(--primary-color);
+            margin: 0 auto;
+        }
+        
+        .circle-diagram {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        
+        .triangle-diagram {
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 60px solid var(--primary-color);
+            margin: 0 auto;
+        }
+        
+        .trapezoid-diagram {
+            width: 60px;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 40px solid var(--primary-color);
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .trapezoid-diagram::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: -30px;
+            width: 120px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .parallelogram-diagram {
+            width: 80px;
+            height: 50px;
+            background: var(--primary-color);
+            transform: skew(-20deg);
+            margin: 0 auto;
+        }
+        
+        .dimension-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .result-display {
+            margin-top: 20px;
+        }
+        
+        .result-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .area-result {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .calculation-steps {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .calculation-steps div {
+            margin: 5px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .shape-tabs {
+                flex-direction: column;
+            }
+            
+            .shape-tab {
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .shape-tab.active {
+                border-bottom-color: var(--border-color);
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            .dimension-inputs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
