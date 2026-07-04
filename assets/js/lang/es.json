@@ -14,8 +14,8 @@
         "education": "Educación"
     },
     "homepage": {
-        "title": "Calculadoras en Línea Gratuitas — Hipoteca, IMC, Impuestos y 60+ Herramientas",
-        "description": "Calcula pagos de hipoteca, IMC, interés compuesto, salario, impuestos y más. Más de 60 calculadoras gratuitas para finanzas, salud y matemáticas — sin registro, sin descarga.",
+        "title": "Calculadoras en Línea Gratuitas — Hipoteca, IMC, Impuestos y 99+ Herramientas",
+        "description": "Calcula pagos de hipoteca, IMC, interés compuesto, salario, impuestos y más. Más de 99 calculadoras gratuitas para finanzas, salud y matemáticas — sin registro, sin descarga.",
         "searchPlaceholder": "Buscar calculadoras...",
         "categories": {
             "math": "📐 Calculadoras de Matemáticas y Educación",
@@ -23,7 +23,7 @@
             "finance": "💰 Calculadoras Financieras",
             "other": "🔧 Otras Calculadoras"
         },
-        "browseAll": "Explorar las 60+ Calculadoras"
+        "browseAll": "Explorar las 99+ Calculadoras"
     },
     "calculators": {
         "percentage": {

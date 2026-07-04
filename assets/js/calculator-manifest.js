@@ -1,5 +1,5 @@
 // Calculator Manifest for FreebieCalculator.com Blog Engine
-// All 60+ calculators with categories and related tools for maximum AdSense revenue
+// All 99+ calculators with categories and related tools for maximum AdSense revenue
 
 export const CALCULATORS = [
     // HIGH-CPC FINANCE CALCULATORS (Premium AdSense Revenue)

@@ -14,16 +14,16 @@
         "education": "Education"
     },
     "homepage": {
-        "title": "Free Online Calculators — Mortgage, BMI, Tax & 60+ Tools",
-        "description": "Instantly calculate mortgage payments, BMI, compound interest, salary, tax, and more. 60+ free online calculators for finance, health & math — no signup, no download, works on any device.",
+        "title": "Free Online Calculators — Mortgage, BMI, Tax & 99+ Tools",
+        "description": "Instantly calculate mortgage payments, BMI, compound interest, salary, tax, and more. 99+ free online calculators for finance, health & math — no signup, no download, works on any device.",
         "searchPlaceholder": "Search calculators...",
         "categories": {
-            "math": "📐 Math & Education Calculators",
+            "math": "📐 Math Calculators",
             "health": "🏥 Health & Fitness Calculators",
             "finance": "💰 Financial Calculators",
-            "other": "🔧 Other Calculators"
+            "other": "🔧 Utility & Conversion Tools"
         },
-        "browseAll": "Browse All 60+ Calculators"
+        "browseAll": "Browse All 99+ Calculators"
     },
     "calculators": {
         "percentage": {
