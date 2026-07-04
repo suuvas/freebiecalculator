@@ -943,30 +943,18 @@ button:disabled {
 /* ── Homepage Ad Slots ─────────────────────────────────────── */
 .ad-homepage {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 100%;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
     overflow: hidden;
     box-sizing: border-box;
+    /* No background or border — collapses cleanly when no real ad is loaded.
+       Real AdSense fills the <ins> naturally; placeholder box is gone. */
 }
 
-/* Visible "Advertisement" label above each slot */
+/* "Advertisement" label — hidden by default, shown only on desktop where
+   the leaderboard/rectangle slots are visible and expected to carry an ad */
 .ad-homepage::before {
-    content: "Advertisement";
-    position: absolute;
-    top: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    pointer-events: none;
-    white-space: nowrap;
+    content: none;
 }
 
 /* Leaderboard: 728×90 responsive — full width, short */
