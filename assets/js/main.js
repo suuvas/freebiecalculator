@@ -1,5 +1,5 @@
 // Main application entry point
-import { initHeader } from './components/header.js?v=101';
+import { initHeader } from './components/header.js?v=110';
 import { initFooter } from './components/footer.js';
 import { initThemeToggle } from './components/theme-toggle.js';
 import { initAdSlots, insertBlogAdSlots } from './components/ad-slots.js';
@@ -7,11 +7,25 @@ import AccessibilityEnhancements from './components/accessibility.js';
 import { LanguageSwitcher } from './components/language-switcher.js?v=3';
 import { RecentlyViewed } from './components/recently-viewed.js';
 import { TopCalculators } from './components/top-calculators.js?v=3';
+import searchIndex from './search-index.js?v=2';
+
+// Load Google AdSense script once per page (all pages share this entry point)
+// Replace ca-pub-XXXXXXXXXXXXXXXX with your real publisher ID after approval
+function loadAdSenseScript() {
+    if (document.querySelector('script[src*="adsbygoogle"]')) return;
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+    s.setAttribute('crossorigin', 'anonymous');
+    document.head.appendChild(s);
+}
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
+    loadAdSenseScript();
+
     // Initialize components
-    initHeader(); // Re-enabled - with protection for hardcoded HTML
+    initHeader();
     initFooter();
     initThemeToggle();
     initAdSlots();
@@ -71,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize mobile navigation
     initMobileNav();
     
-    console.log('freebiecalculator.com initialized - VERSION 108 LOADED');
+    console.log('freebiecalculator.com initialized - VERSION 109 LOADED');
 });
 
 // Simple language dropdown creator
@@ -126,38 +140,65 @@ function createLanguageDropdown(switcher) {
     return container;
 }
 
-// Homepage search functionality
+// Homepage search functionality — live dropdown
 function initHomepageSearch() {
     const searchInput = document.getElementById('calculator-search');
-    const calculatorCards = document.querySelectorAll('.calculator-card');
-    
-    if (!searchInput || calculatorCards.length === 0) return;
-    
-    searchInput.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase().trim();
-        
-        calculatorCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const description = card.querySelector('p').textContent.toLowerCase();
-            const matches = title.includes(searchTerm) || description.includes(searchTerm);
-            
-            if (matches || searchTerm === '') {
-                card.style.display = 'block';
-                card.parentElement.style.display = 'grid';
-            } else {
-                card.style.display = 'none';
-            }
+    if (!searchInput) return;
+
+    // Build dropdown container
+    const container = searchInput.parentElement;
+    container.style.position = 'relative';
+
+    const dropdown = document.createElement('div');
+    dropdown.id = 'search-dropdown';
+    dropdown.setAttribute('role', 'listbox');
+    dropdown.setAttribute('aria-label', 'Search results');
+    container.appendChild(dropdown);
+
+    function showDropdown(term) {
+        dropdown.innerHTML = '';
+        if (!term) { dropdown.classList.remove('active'); return; }
+
+        const results = searchIndex.filter(item => {
+            const haystack = (item.title + ' ' + item.description + ' ' + (item.tags || []).join(' ')).toLowerCase();
+            return haystack.includes(term);
+        }).slice(0, 8);
+
+        if (results.length === 0) {
+            dropdown.innerHTML = `<div class="search-no-results">No calculators found for "<strong>${term}</strong>"</div>`;
+            dropdown.classList.add('active');
+            return;
+        }
+
+        results.forEach(item => {
+            const el = document.createElement('a');
+            el.href = item.url;
+            el.className = 'search-result-item';
+            el.setAttribute('role', 'option');
+            el.innerHTML = `
+                <span class="search-result-badge">${item.category || item.type}</span>
+                <span class="search-result-title">${item.title}</span>
+                <span class="search-result-desc">${item.description.substring(0, 70)}…</span>`;
+            dropdown.appendChild(el);
         });
-        
-        // Hide empty categories
-        document.querySelectorAll('.calculator-grid').forEach(grid => {
-            const visibleCards = grid.querySelectorAll('.calculator-card[style*="block"], .calculator-card:not([style])');
-            if (visibleCards.length === 0 && searchTerm !== '') {
-                grid.style.display = 'none';
-            } else {
-                grid.style.display = 'grid';
-            }
-        });
+
+        dropdown.classList.add('active');
+    }
+
+    searchInput.addEventListener('input', e => {
+        showDropdown(e.target.value.toLowerCase().trim());
+    });
+
+    searchInput.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { dropdown.classList.remove('active'); searchInput.value = ''; }
+    });
+
+    document.addEventListener('click', e => {
+        if (!container.contains(e.target)) dropdown.classList.remove('active');
+    });
+
+    searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim()) showDropdown(searchInput.value.toLowerCase().trim());
     });
 }
 

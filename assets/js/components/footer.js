@@ -3,7 +3,7 @@ export function initFooter() {
     const footerElement = document.getElementById('footer');
     if (!footerElement) return;
     
-    const currentYear = new Date().getFullYear();
+    const currentYear = Math.max(new Date().getFullYear(), 2026);
     
     footerElement.innerHTML = `
         <div class="footer-content">
@@ -66,7 +66,7 @@ export function initFooter() {
             
             <div class="footer-bottom">
                 <div class="footer-company-info">
-                    <p><strong>FreebieCalculator.com</strong> - Professional calculation tools since 2025</p>
+                    <p><strong>FreebieCalculator.com</strong> - Professional calculation tools since 2026</p>
                     <p>Contact: <a href="/contact.html">team@freebiecalculator.com</a></p>
                 </div>
                 <div class="footer-copyright">

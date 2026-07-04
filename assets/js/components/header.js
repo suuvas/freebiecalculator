@@ -29,7 +29,7 @@ export function initHeader() {
                     <rect x="20" y="16" width="4" height="2" fill="currentColor"/>
                     <rect x="8" y="20" width="16" height="2" fill="#f59e0b"/>
                 </svg>
-                freebiecalculator.com
+                <span class="logo-text">freebiecalculator.com</span>
             </a>
             
             <nav role="navigation" aria-label="Main navigation">
@@ -50,7 +50,11 @@ export function initHeader() {
                     <span class="theme-icon">🌙</span>
                 </button>
                 <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
-                    ☰
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                        <rect y="3" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+                        <rect y="10" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+                        <rect y="17" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+                    </svg>
                 </button>
             </div>
         </div>
@@ -69,25 +73,19 @@ function setupHeaderInteractions(headerElement) {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            // Close mobile menu after clicking a section link
+            const navMenu = headerElement.querySelector('.nav-menu');
+            const mobileMenuBtn = headerElement.querySelector('.mobile-menu-btn');
+            if (navMenu) navMenu.classList.remove('active');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.classList.remove('active');
             }
         });
     });
-
-    // Mobile menu functionality
-    const mobileMenuBtn = headerElement.querySelector('.mobile-menu-btn');
-    const navMenu = headerElement.querySelector('.nav-menu');
-    
-    if (mobileMenuBtn && navMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-            navMenu.classList.toggle('active');
-        });
-    }
+    // NOTE: Mobile menu toggle is handled by initMobileNav() in main.js
+    // to avoid double-toggle (both attaching a click handler to the same button)
 }
