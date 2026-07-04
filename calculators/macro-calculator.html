@@ -6,7 +6,7 @@
     <title>Macro Calculator – Calculate Your Daily Macros for Weight Loss or Muscle Gain | FreebieCalculator</title>
     <meta name="description" content="Free macro calculator. Find your ideal daily protein, carbs, and fat targets for weight loss, muscle gain, or maintenance. Based on your TDEE and goals.">
     <link rel="canonical" href="https://freebiecalculator.com/calculators/macro-calculator.html">
-    <link rel="stylesheet" href="/assets/css/base.css?v=14">
+    <link rel="stylesheet" href="/assets/css/base.css?v=15">
     <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
     <meta property="og:title" content="Macro Calculator – Daily Protein, Carbs & Fat Targets">
     <meta property="og:description" content="Calculate your daily macro targets for weight loss, muscle gain, or maintenance based on your body and goals.">
@@ -32,7 +32,6 @@
         <div class="container">
             <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/#health-calculators">Health Calculators</a> › <span>Macro Calculator</span></nav>
             <div class="calculator-header"><h1>🥩 Macro Calculator</h1><p>Calculate your ideal daily protein, carbs, and fat targets based on your body and goals.</p></div>
-            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
             <div class="calculator-container"><div class="calculator-tool">
                 <form id="macro-form">
                     <div class="input-row">
@@ -86,6 +85,18 @@
             </div></div>
             <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
             <section class="content-section">
+                <h2>What Are Macros and Why Do They Matter?</h2>
+                <p>Macronutrients — or "macros" — are the three main categories of nutrients your body uses for energy: <strong>protein</strong>, <strong>carbohydrates</strong>, and <strong>fat</strong>. Alcohol is sometimes counted as a fourth macro. Each has a specific caloric value:</p>
+                <ul style="margin-left:1.5rem">
+                    <li><strong>Protein</strong> — 4 calories per gram. Builds and repairs muscle tissue, keeps you full longer, and supports immune function. Especially important if you exercise regularly.</li>
+                    <li><strong>Carbohydrates</strong> — 4 calories per gram. Your body's preferred fuel source for high-intensity activity and brain function. Includes sugars, starches, and fiber.</li>
+                    <li><strong>Fat</strong> — 9 calories per gram. Essential for hormone production, vitamin absorption, and cell membrane health. Higher calorie density means smaller portions matter more.</li>
+                </ul>
+                <p>Tracking macros — rather than just total calories — gives you a more precise way to reach body composition goals. Two people can eat the same number of calories but get very different results depending on how those calories are split between protein, carbs, and fat.</p>
+                <h3>How This Calculator Works</h3>
+                <p>Your daily calorie target is calculated using the Mifflin-St Jeor equation (the most validated formula for estimating BMR), then adjusted for your activity level. Your macro targets are then derived from that calorie number based on your goal: cutting, maintaining, or building muscle.</p>
+            </section>
+            <section class="content-section">
                 <h2>Common Macro Split Ratios</h2>
                 <table class="data-table">
                     <thead><tr><th>Goal</th><th>Protein</th><th>Carbs</th><th>Fat</th></tr></thead>
@@ -112,7 +123,7 @@
         </div>
     </main>
     <footer id="footer"></footer>
-    <script type="module" src="/assets/js/main.js?v=114"></script>
+    <script type="module" src="/assets/js/main.js?v=115"></script>
     <script>
     document.getElementById('macro-form').addEventListener('submit',function(e){
         e.preventDefault();

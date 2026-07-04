@@ -6,7 +6,7 @@
     <title>Due Date Calculator – Estimate Your Baby Due Date | FreebieCalculator</title>
     <meta name="description" content="Free pregnancy due date calculator. Estimate your baby's due date by last menstrual period, conception date, or IVF transfer date. Get your full pregnancy timeline.">
     <link rel="canonical" href="https://freebiecalculator.com/calculators/due-date.html">
-    <link rel="stylesheet" href="/assets/css/base.css?v=14">
+    <link rel="stylesheet" href="/assets/css/base.css?v=15">
     <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
     <meta property="og:title" content="Due Date Calculator – Estimate Your Baby Due Date">
     <meta property="og:description" content="Calculate your pregnancy due date and see your full trimester timeline.">
@@ -32,7 +32,6 @@
         <div class="container">
             <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/#health-calculators">Health Calculators</a> › <span>Due Date Calculator</span></nav>
             <div class="calculator-header"><h1>🍼 Due Date Calculator</h1><p>Estimate your baby's due date and see your complete pregnancy timeline.</p></div>
-            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
             <div class="calculator-container"><div class="calculator-tool">
                 <div class="sleep-tabs">
                     <button type="button" class="sleep-tab active" data-method="lmp">Last Period (LMP)</button>
@@ -59,6 +58,25 @@
             </div></div>
             <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
             <section class="content-section">
+                <h2>How Due Date Calculations Work</h2>
+                <p>The most common method is <strong>Naegele's Rule</strong>: add 280 days (40 weeks) to the first day of your last menstrual period (LMP). This assumes a 28-day cycle and ovulation on day 14. If your cycle is longer or shorter, your actual due date may shift slightly.</p>
+                <p>For IVF pregnancies, the calculation starts from egg retrieval: a Day 3 transfer adds 263 days, and a Day 5 (blastocyst) transfer adds 261 days. Your doctor may adjust all estimates after your first ultrasound.</p>
+                <h3>Important: Only ~5% of babies arrive on their exact due date</h3>
+                <p>A due date is an estimate, not a deadline. Most healthy births happen within the two-week window before and after the estimated date. The medical term for this full-term range is 37–42 weeks of gestation.</p>
+            </section>
+            <section class="content-section">
+                <h2>Your Three Trimesters at a Glance</h2>
+                <table class="data-table">
+                    <thead><tr><th>Trimester</th><th>Weeks</th><th>Key Milestones</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>First</strong></td><td>1–13</td><td>Heart begins beating (week 6), major organs form, first prenatal visit</td></tr>
+                        <tr><td><strong>Second</strong></td><td>14–26</td><td>Baby moves (week 18–22), anatomy scan ultrasound, gender can be detected</td></tr>
+                        <tr><td><strong>Third</strong></td><td>27–40</td><td>Rapid weight gain, lungs mature, baby repositions head-down, birth preparation</td></tr>
+                    </tbody>
+                </table>
+                <p style="margin-top:1rem">🏥 <em>Always follow your OB/GYN's guidance. This calculator provides estimates — your doctor's ultrasound measurements are the gold standard for dating your pregnancy.</em></p>
+            </section>
+            <section class="content-section">
                 <h2>FAQs</h2>
                 <div class="faq-container">
                     <div class="faq-item"><div class="faq-question">How is due date calculated?</div><div class="faq-answer">Naegele's Rule: Add 280 days (40 weeks) to the first day of your last period. Or add 266 days to your conception date. Your doctor may adjust based on ultrasound.</div></div>
@@ -72,7 +90,7 @@
         </div>
     </main>
     <footer id="footer"></footer>
-    <script type="module" src="/assets/js/main.js?v=114"></script>
+    <script type="module" src="/assets/js/main.js?v=115"></script>
     <script>
     let method='lmp';
     document.querySelectorAll('.sleep-tab').forEach(btn=>{

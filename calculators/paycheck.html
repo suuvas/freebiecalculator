@@ -6,7 +6,7 @@
     <title>Paycheck Calculator – Calculate Take-Home Pay After Tax | FreebieCalculator</title>
     <meta name="description" content="Free paycheck calculator. Estimate your take-home pay after federal and state taxes, Social Security, Medicare, and other deductions. Works for hourly and salaried workers.">
     <link rel="canonical" href="https://freebiecalculator.com/calculators/paycheck.html">
-    <link rel="stylesheet" href="/assets/css/base.css?v=14">
+    <link rel="stylesheet" href="/assets/css/base.css?v=15">
     <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
     <meta property="og:title" content="Paycheck Calculator – Estimate Your Take-Home Pay">
     <meta property="og:description" content="Calculate net pay after taxes and deductions for hourly and salaried employees.">
@@ -39,7 +39,6 @@
                 <h1>💵 Paycheck Calculator</h1>
                 <p>Estimate your take-home pay after federal taxes, Social Security, Medicare, and deductions.</p>
             </div>
-            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
             <div class="calculator-container">
                 <div class="calculator-tool">
                     <form id="paycheck-form">
@@ -109,6 +108,18 @@
             </div>
             <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
             <section class="content-section">
+                <h2>How Your Paycheck Is Actually Calculated</h2>
+                <p>Your gross pay is your total earnings before any deductions. From that, your employer automatically withholds several amounts before you see a single dollar:</p>
+                <ul style="margin-left:1.5rem">
+                    <li><strong>Federal income tax</strong> — Withheld based on your W-4 filing status and allowances. Uses a progressive bracket system (10%–37%).</li>
+                    <li><strong>Social Security</strong> — 6.2% on wages up to $168,600 (2024 wage base). Employers match this 6.2% separately.</li>
+                    <li><strong>Medicare</strong> — 1.45% on all wages with no cap. An extra 0.9% applies if you earn over $200,000 as a single filer.</li>
+                    <li><strong>State income tax</strong> — Varies by state: 0% in TX, FL, NV, WA, SD, WY, and AK; up to 13.3% in California.</li>
+                    <li><strong>Pre-tax deductions</strong> — 401(k), HSA, and health insurance premiums are deducted before taxes, reducing your taxable income.</li>
+                </ul>
+                <p>Your <strong>net pay</strong> (take-home pay) is what remains after all the above deductions are removed. The gap between gross and net pay is typically 20–35% for most workers.</p>
+            </section>
+            <section class="content-section">
                 <h2>2024 Federal Tax Brackets (Single)</h2>
                 <table class="data-table">
                     <thead><tr><th>Taxable Income</th><th>Tax Rate</th></tr></thead>
@@ -133,6 +144,16 @@
                     <div class="faq-item"><div class="faq-question">How do I increase my take-home pay?</div><div class="faq-answer">Maximize pre-tax contributions (401k, HSA, FSA), claim all W-4 deductions, and consider that states like TX, FL, NV, and WA have no state income tax.</div></div>
                 </div>
             </section>
+            <section class="content-section">
+                <h2>5 Ways to Keep More of Your Paycheck</h2>
+                <ul style="margin-left:1.5rem">
+                    <li><strong>Max out your 401(k) contributions</strong> — The 2024 limit is $23,000 ($30,500 if 50+). Every dollar you contribute reduces your taxable income dollar-for-dollar.</li>
+                    <li><strong>Open a Health Savings Account (HSA)</strong> — If you have a high-deductible health plan, contributions are triple-tax-advantaged: pre-tax in, tax-free growth, tax-free withdrawals for medical expenses.</li>
+                    <li><strong>Update your W-4 accurately</strong> — Claiming fewer allowances leads to over-withholding. Use the IRS Tax Withholding Estimator to optimize your W-4 so you're not giving the government an interest-free loan.</li>
+                    <li><strong>Contribute to a Dependent Care FSA</strong> — If you pay for childcare or elder care, you can shield up to $5,000 per year in pre-tax dollars.</li>
+                    <li><strong>Consider relocating to a no-income-tax state</strong> — Workers in TX, FL, NV, WA, SD, WY, or AK save an additional 3–10% compared to high-tax states like CA or NY.</li>
+                </ul>
+            </section>
             <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
             <section class="content-section">
                 <h2>Related Calculators</h2>
@@ -147,7 +168,7 @@
         </div>
     </main>
     <footer id="footer"></footer>
-    <script type="module" src="/assets/js/main.js?v=114"></script>
+    <script type="module" src="/assets/js/main.js?v=115"></script>
     <script>
     document.getElementById('pay-type').addEventListener('change',function(){
         document.getElementById('hourly-fields').style.display=this.value==='hourly'?'':'none';

@@ -6,7 +6,7 @@
     <title>GST/HST Calculator Canada – Calculate Canadian Sales Tax | FreebieCalculator</title>
     <meta name="description" content="Free Canadian GST/HST calculator. Calculate goods and services tax for all provinces. Includes GST, HST, PST, and QST rates for every Canadian province and territory.">
     <link rel="canonical" href="https://freebiecalculator.com/calculators/gst-hst.html">
-    <link rel="stylesheet" href="/assets/css/base.css?v=14">
+    <link rel="stylesheet" href="/assets/css/base.css?v=15">
     <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
     <meta property="og:title" content="GST/HST Calculator Canada">
     <meta property="og:description" content="Calculate Canadian sales tax (GST, HST, PST, QST) for any province or territory.">
@@ -33,7 +33,6 @@
         <div class="container">
             <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/ca/">Canada</a> › <span>GST/HST Calculator</span></nav>
             <div class="calculator-header"><h1>🍁 Canadian GST/HST Calculator</h1><p>Calculate sales tax for any Canadian province or territory — GST, HST, PST, and QST.</p></div>
-            <div id="ad-top" class="ad-slot" aria-label="Advertisement"></div>
             <div class="calculator-container"><div class="calculator-tool">
                 <form id="gst-form">
                     <div class="form-group">
@@ -75,6 +74,18 @@
             </div></div>
             <div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
             <section class="content-section">
+                <h2>Understanding GST, HST and PST in Canada</h2>
+                <p>Canada uses three types of sales tax, and which ones apply to you depends on the province where the sale takes place:</p>
+                <ul style="margin-left:1.5rem">
+                    <li><strong>GST (Goods and Services Tax)</strong> — A 5% federal tax applied in every province and territory.</li>
+                    <li><strong>HST (Harmonized Sales Tax)</strong> — A single combined tax used in Ontario, New Brunswick, Nova Scotia, Newfoundland &amp; Labrador, and PEI. It replaces both GST and PST in those provinces.</li>
+                    <li><strong>PST (Provincial Sales Tax)</strong> — A provincial-only tax charged separately in BC (7%), Saskatchewan (6%), and Manitoba (7%). Quebec uses its own version called QST (9.975%).</li>
+                </ul>
+                <p>Alberta, Yukon, Northwest Territories, and Nunavut have no provincial sales tax — only the 5% federal GST applies.</p>
+                <h3>GST/HST Input Tax Credits for Businesses</h3>
+                <p>If you are a GST/HST-registered business, you can claim Input Tax Credits (ITCs) to recover the GST/HST you paid on business purchases. This prevents tax-on-tax stacking. For example, if you paid $130 in HST on supplies, you can deduct that $130 from the HST you collect from customers. You must file GST/HST returns quarterly or annually depending on your revenue.</p>
+            </section>
+            <section class="content-section">
                 <h2>Canadian Sales Tax Rates by Province (2024)</h2>
                 <table class="data-table">
                     <thead><tr><th>Province</th><th>GST</th><th>PST/QST</th><th>Total Tax</th><th>Tax Type</th></tr></thead>
@@ -109,7 +120,7 @@
         </div>
     </main>
     <footer id="footer"></footer>
-    <script type="module" src="/assets/js/main.js?v=114"></script>
+    <script type="module" src="/assets/js/main.js?v=115"></script>
     <script>
     document.getElementById('gst-form').addEventListener('submit',function(e){
         e.preventDefault();
