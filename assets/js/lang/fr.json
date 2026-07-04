@@ -14,8 +14,8 @@
         "education": "Éducation"
     },
     "homepage": {
-        "title": "Calculatrices en Ligne Gratuites — Hypothèque, IMC, Impôts et 99+ Outils",
-        "description": "Calculez instantanément les paiements hypothécaires, l'IMC, les intérêts composés, le salaire, les impôts et plus. 99+ calculatrices gratuites pour la finance, la santé et les mathématiques.",
+        "title": "Calculatrices en Ligne Gratuites — Hypothèque, IMC, Impôts et 60+ Outils",
+        "description": "Calculez instantanément les paiements hypothécaires, l'IMC, les intérêts composés, le salaire, les impôts et plus. 60+ calculatrices gratuites pour la finance, la santé et les mathématiques.",
         "searchPlaceholder": "Rechercher des calculatrices...",
         "categories": {
             "math": "📐 Calculatrices de Mathématiques et Éducation",
@@ -23,7 +23,7 @@
             "finance": "💰 Calculatrices Financières",
             "other": "🔧 Autres Calculatrices"
         },
-        "browseAll": "Parcourir les 99+ Calculatrices"
+        "browseAll": "Parcourir les 60+ Calculatrices"
     },
     "calculators": {
         "percentage": {

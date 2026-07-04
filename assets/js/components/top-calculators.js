@@ -168,7 +168,7 @@ class TopCalculators {
                     ${calculatorCards}
                 </div>
                 <div class="widget-footer">
-                    <a href="/search.html" class="view-all-link">View All 99+ Calculators →</a>
+                    <a href="/search.html" class="view-all-link">View All 60+ Calculators →</a>
                 </div>
             </div>
         `;

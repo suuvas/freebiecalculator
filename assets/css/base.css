@@ -777,8 +777,9 @@ button:disabled {
 /* ── Base ad slot ────────────────────────────────────────────────────── */
 .ad-slot {
     position: relative;
-    min-height: 0;        /* collapse when no real ad is loaded */
+    min-height: 90px;
     margin: 1.5rem 0;
+    background-color: var(--bg-secondary);
     border-radius: 6px;
     display: block;
     box-sizing: border-box;
@@ -787,16 +788,8 @@ button:disabled {
     text-align: center;
 }
 
-/* Show gray background + label only when an <ins> has been injected */
-.ad-slot.ad-active {
-    background-color: var(--bg-secondary);
-    border: 1px dashed var(--border-color);
-    min-height: 90px;       /* enough space to show label + ad placeholder */
-    padding: 4px 0 8px;
-}
-
-/* "Advertisement" label — only visible on active (injected) slots */
-.ad-slot.ad-active::before {
+/* "Advertisement" label shown above slot (not overlapping the actual ad) */
+.ad-slot::before {
     content: "Advertisement";
     display: block;
     font-size: 0.6875rem;
@@ -816,29 +809,29 @@ button:disabled {
 /* ── Calculator page slots ────────────────────────────────────────────── */
 
 /* Top: leaderboard — repositioned by JS between content sections 1 and 2.
-   Only created on desktop (JS guard). Collapses when no real ad loaded. */
+   Hidden on mobile: the long form pushes it far below fold (near-zero viewability).
+   Mobile coverage is handled by the sticky bottom banner instead. */
 #ad-top {
+    min-height: 100px;
     max-width: 728px;
     margin: 2rem auto;
 }
 
-/* Mid: 300×250 rectangle between form and content.
-   HIDDEN on mobile — on mobile it sits inside the form flow and blocks usability.
-   JS also skips injecting <ins> on mobile so no hidden-ad policy violation occurs. */
+@media (max-width: 900px) {
+    #ad-top { display: none; }
+}
+
+/* Mid: 300×250 rectangle between form and content — solid CTR */
 #ad-mid {
+    min-height: 260px;
     max-width: 336px;
     margin: 2rem auto;
 }
-@media (max-width: 900px) {
-    #ad-mid {
-        display: none !important;
-    }
-}
 
-/* Result: highest CTR — user just got their answer.
-   Hidden by JS initially; revealed only after calculation completes. */
+/* Result: 336×280 — HIGHEST CTR position: user just got their answer */
 .ad-result-slot,
 #ad-result {
+    min-height: 280px;
     max-width: 336px;
     margin: 1.5rem auto 2rem;
     border-top: 2px solid var(--border-color);
@@ -847,57 +840,12 @@ button:disabled {
 
 /* Bottom: leaderboard before related links */
 #ad-bottom {
+    min-height: 100px;
     max-width: 728px;
     margin: 2rem auto 1rem;
 }
 
-/* Mobile in-article ad — REMOVED from rotation.
-   Mobile uses only #ad-result (post-calculation) + sticky anchor.
-   Two-ad mobile layout is cleaner and fully within AdSense policy. */
-.ad-mobile-article {
-    display: none !important;
-}
-
-/* ── Compact calculator page layout (new 2026 pages) ────────────────── */
-/* Two-column layout: main content + sidebar ad on desktop */
-.calculator-page-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.calculator-main {
-    flex: 1;
-    min-width: 0;
-}
-
-/* Sidebar ad column for compact calc pages — desktop only */
-.calculator-sidebar {
-    flex-shrink: 0;
-    width: 300px;
-    position: sticky;
-    top: 90px;
-    display: none; /* hidden by default, shown on desktop only */
-}
-
-.calculator-sidebar .ad-slot {
-    width: 300px;
-    min-height: 250px;
-    margin: 0;
-    max-width: 300px;
-}
-
-/* Show sidebar only on desktop */
-@media (min-width: 1025px) {
-    .calculator-sidebar {
-        display: block;
-    }
-}
-
-/* ── Desktop sidebar (JS-injected for old calc pages) ────────────────── */
+/* ── Desktop sidebar ─────────────────────────────────────────────────── */
 /* Flex wrapper injected by JS around .calculator-container + aside */
 .calculator-with-sidebar {
     display: flex;
@@ -946,38 +894,42 @@ button:disabled {
 /* ── Homepage Ad Slots ─────────────────────────────────────── */
 .ad-homepage {
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
     overflow: hidden;
     box-sizing: border-box;
-    background-color: var(--bg-secondary);
-    border: 1px dashed var(--border-color);
-    border-radius: 0.5rem;
-    min-height: 90px;       /* minimal visible slot — not huge, just enough */
-    padding: 4px 0 8px;
-    text-align: center;
 }
 
-/* "Advertisement" label */
+/* Visible "Advertisement" label above each slot */
 .ad-homepage::before {
     content: "Advertisement";
-    display: block;
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 0.65rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-muted);
-    padding-top: 6px;
-    margin-bottom: 4px;
+    pointer-events: none;
+    white-space: nowrap;
 }
 
 /* Leaderboard: 728×90 responsive — full width, short */
 .ad-homepage.ad-leaderboard {
+    min-height: 100px;
     max-width: 970px;
     margin: 1.5rem auto;
 }
 
 /* Medium rectangle: 300×250 — centered, better CTR */
 .ad-homepage.ad-rectangle {
+    min-height: 280px;
     max-width: 336px;
     margin: 1.5rem auto;
 }
@@ -988,22 +940,14 @@ button:disabled {
     margin: 2rem auto 1rem;
 }
 
-/* Mobile: collapse all homepage ad containers — no forced blank space */
+/* Mobile: stack all ads to full width */
 @media (max-width: 767px) {
     .ad-homepage.ad-leaderboard,
     .ad-homepage.ad-rectangle,
     .ad-homepage.ad-prefooter {
         max-width: 100%;
-        margin: 0.5rem 0;
-    }
-
-    /* On mobile the sticky anchor handles coverage — hide the two mid-page
-       rectangle slots so the homepage isn't ad-heavy for reviewers/users.
-       hp-ad-1 (hero), hp-ad-5 (pre-footer) remain visible. */
-    #hp-ad-2,
-    #hp-ad-3,
-    #hp-ad-4 {
-        display: none !important;
+        min-height: 60px;
+        margin: 1rem 0;
     }
 }
 
@@ -1662,22 +1606,20 @@ textarea:focus-visible {
 
     /* Ad slots on mobile — full width, proper heights */
     .ad-slot {
-        min-height: 90px;
+        min-height: 100px;
         margin: 1rem auto;
         max-width: 100%;
         overflow: hidden;
     }
 
-    /* ad-mid is hidden on mobile via its own rule above — no min-height needed.
-       ad-result only appears after calculation (JS-controlled display:none→block).
-       Containers collapse naturally when no real AdSense ad is loaded. */
-    #ad-result {
+    #ad-mid, #ad-result {
+        min-height: 250px;
         max-width: 100%;
     }
 
-    /* Bottom leaderboard — full width on mobile */
-    #ad-bottom {
-        max-width: 100%;
+    /* Show sticky mobile banner on small screens */
+    .ad-sticky-mobile {
+        display: flex;
     }
     
     /* Form Group Spacing */
@@ -1872,112 +1814,4 @@ textarea:focus-visible {
         border: 1px solid #ccc;
         box-shadow: none;
     }
-}
-
-/* ===== DISCLAIMER NOTICE BOXES ===== */
-.disclaimer-notice {
-    background: #fff8e1;
-    border: 1px solid #f59e0b;
-    border-left: 4px solid #f59e0b;
-    border-radius: 0.5rem;
-    padding: 0.9rem 1.2rem;
-    margin: 1.5rem 0;
-    font-size: 0.92rem;
-    line-height: 1.6;
-    color: #7c5a00;
-}
-.dark .disclaimer-notice {
-    background: #2a2000;
-    border-color: #c78000;
-    color: #f9d97a;
-}
-.finance-disclaimer {
-    background: #e8f5e9;
-    border-color: #2e7d32;
-    color: #1b5e20;
-}
-.dark .finance-disclaimer {
-    background: #0a2a0d;
-    border-color: #388e3c;
-    color: #a5d6a7;
-}
-
-/* ===== SOURCES PAGE DATA TABLE ===== */
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0 1.5rem;
-    font-size: 0.9rem;
-    overflow-x: auto;
-    display: block;
-}
-.data-table th {
-    background: var(--primary-color, #3b82f6);
-    color: #fff;
-    text-align: left;
-    padding: 0.7rem 1rem;
-    font-weight: 600;
-}
-.data-table td {
-    padding: 0.6rem 1rem;
-    border-bottom: 1px solid var(--border-color, #e5e7eb);
-    vertical-align: top;
-}
-.data-table tr:nth-child(even) td {
-    background: var(--bg-secondary, #f9fafb);
-}
-.dark .data-table th {
-    background: #1e3a5f;
-}
-.dark .data-table tr:nth-child(even) td {
-    background: #1a2233;
-}
-
-/* ===== RECENTLY ADDED SECTION ===== */
-.recently-added-section {
-    margin: 2.5rem 0;
-    padding: 2rem;
-    background: var(--bg-secondary, #f9fafb);
-    border-radius: 1rem;
-    border: 1px solid var(--border-color, #e5e7eb);
-}
-.recently-added-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1.2rem;
-}
-.recently-added-card {
-    background: var(--bg-primary, #fff);
-    border: 1px solid var(--border-color, #e5e7eb);
-    border-radius: 0.75rem;
-    padding: 1rem;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text-primary, #1f2937);
-    transition: box-shadow 0.2s, transform 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-}
-.recently-added-card:hover {
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    transform: translateY(-2px);
-    color: var(--primary-color, #3b82f6);
-}
-.recently-added-card .calc-icon {
-    font-size: 1.8rem;
-}
-.recently-added-card .calc-name {
-    font-size: 0.88rem;
-    font-weight: 600;
-}
-.recently-added-card .new-badge {
-    font-size: 0.7rem;
-    background: #10b981;
-    color: #fff;
-    padding: 0.15rem 0.45rem;
-    border-radius: 9999px;
-    font-weight: 700;
 }
