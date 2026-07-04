@@ -790,6 +790,9 @@ button:disabled {
 /* Show gray background + label only when an <ins> has been injected */
 .ad-slot.ad-active {
     background-color: var(--bg-secondary);
+    border: 1px dashed var(--border-color);
+    min-height: 90px;       /* enough space to show label + ad placeholder */
+    padding: 4px 0 8px;
 }
 
 /* "Advertisement" label — only visible on active (injected) slots */
@@ -947,14 +950,24 @@ button:disabled {
     width: 100%;
     overflow: hidden;
     box-sizing: border-box;
-    /* No background or border — collapses cleanly when no real ad is loaded.
-       Real AdSense fills the <ins> naturally; placeholder box is gone. */
+    background-color: var(--bg-secondary);
+    border: 1px dashed var(--border-color);
+    border-radius: 0.5rem;
+    min-height: 90px;       /* minimal visible slot — not huge, just enough */
+    padding: 4px 0 8px;
+    text-align: center;
 }
 
-/* "Advertisement" label — hidden by default, shown only on desktop where
-   the leaderboard/rectangle slots are visible and expected to carry an ad */
+/* "Advertisement" label */
 .ad-homepage::before {
-    content: none;
+    content: "Advertisement";
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-top: 6px;
+    margin-bottom: 4px;
 }
 
 /* Leaderboard: 728×90 responsive — full width, short */

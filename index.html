@@ -11,7 +11,7 @@
             content="Use free, fast, and accurate online calculators for finance, health, education, and everyday math. No login. Mobile-friendly."
         />
         <link rel="canonical" href="https://freebiecalculator.com/" />
-        <link rel="stylesheet" href="/assets/css/base.css?v=17" />
+        <link rel="stylesheet" href="/assets/css/base.css?v=18" />
         <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
 
@@ -619,5 +619,24 @@
         <footer id="footer"></footer>
 
         <script type="module" src="/assets/js/main.js?v=116"></script>
+
+        <!-- Push homepage ad slots once AdSense script is ready -->
+        <script>
+            (function() {
+                var ids = ['hp-ad-1','hp-ad-2','hp-ad-3','hp-ad-4','hp-ad-5'];
+                function pushAds() {
+                    ids.forEach(function(id) {
+                        var el = document.getElementById(id);
+                        if (el && el.querySelector('ins.adsbygoogle')) {
+                            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); }
+                            catch(e) {}
+                        }
+                    });
+                }
+                // Wait for AdSense script to load before pushing
+                if (document.readyState === 'complete') { pushAds(); }
+                else { window.addEventListener('load', pushAds); }
+            })();
+        </script>
     </body>
 </html>
