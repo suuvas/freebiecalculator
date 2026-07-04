@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markup Calculator — Selling Price from Cost and Markup % | FreebieCalculator.com</title>
+<meta name="description" content="Calculate selling price from cost and markup percentage, or find markup % from cost and price.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/markup.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Markup Calculator — Selling Price from Cost and Markup %"><meta property="og:description" content="Calculate selling price from cost and markup percentage, or find markup % from cost and price."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Markup Calculator — Selling Price from Cost and Markup %","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate selling price from cost and markup percentage, or find markup % from cost and price.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Business","item":"/calculators/discount.html"},{"@type":"ListItem","position":3,"name":"Markup Calculator — Selling Price from Cost and Markup %","item":"https://freebiecalculator.com/calculators/markup.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Standard retail markup?',"acceptedAnswer":{"@type":"Answer","text":'Keystone = 100% markup (50% margin). Modern retail: 50–80%.'}},{"@type":"Question","name":'Markup vs margin relationship?',"acceptedAnswer":{"@type":"Answer","text":'100% markup = 50% margin. 50% markup = 33% margin. 25% markup = 20% margin.'}},{"@type":"Question","name":'Restaurant markup?',"acceptedAnswer":{"@type":"Answer","text":'Typically 300%+ on food cost (food cost = 25–33% of menu price).'}},{"@type":"Question","name":'Can markup be negative?',"acceptedAnswer":{"@type":"Answer","text":'Yes — selling below cost is negative markup (loss leader strategy).'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/discount.html">Business</a> &rsaquo; Markup Calculator — Selling Price from Cost and Markup %</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Markup Calculator</h1>
+<p class="calc-intro">Set prices confidently. Enter cost and markup % to find selling price, or enter cost and price to find markup %.</p>
+<div class="calculator-tool">
+<form onsubmit="calcMarkup(event)">
+<div class="form-group"><label for="mum">Mode</label><select id="mum" onchange="toggleMU()"><option value="price">Find Price (Cost + Markup %)</option><option value="pct">Find Markup % (Cost + Selling Price)</option></select></div>
+<div id="mu-pi"><div class="form-group"><label for="muc">Cost ($)</label><input type="number" id="muc" step="0.01" min="0" placeholder="e.g., 25"></div><div class="form-group"><label for="mup">Markup (%)</label><input type="number" id="mup" step="0.1" min="0" placeholder="e.g., 80"></div></div>
+<div id="mu-pi2" hidden><div class="form-group"><label for="muc2">Cost ($)</label><input type="number" id="muc2" step="0.01" min="0" placeholder="e.g., 25"></div><div class="form-group"><label for="mupr">Selling Price ($)</label><input type="number" id="mupr" step="0.01" min="0" placeholder="e.g., 45"></div></div>
+<button type="submit" class="btn btn-primary">Calculate Markup</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Markup is % of cost added to find selling price. Calculates in both directions: price from markup, or markup from price.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Selling Price = Cost &times; (1 + Markup/100)<br>Markup % = (Price &minus; Cost) / Cost &times; 100</p></section>
+<section class="content-section"><h2>Example</h2><p>Cost $25, markup 80%:<br>Price = $25 &times; 1.80 = <strong>$45</strong>. Gross margin = 44.4%.</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when pricing wholesale-to-retail products, creating a standard pricing policy, or verifying prices against cost targets.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Confusing markup with margin — 50% markup ≠ 50% margin.</li>
+<li>Not covering all costs — include indirect and overhead.</li>
+<li>Same markup for all products — commodity items need lower markup.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Standard retail markup?</div><div class="faq-answer">Keystone = 100% markup (50% margin). Modern retail: 50–80%.</div></div>
+<div class="faq-item"><div class="faq-question">Markup vs margin relationship?</div><div class="faq-answer">100% markup = 50% margin. 50% markup = 33% margin. 25% markup = 20% margin.</div></div>
+<div class="faq-item"><div class="faq-question">Restaurant markup?</div><div class="faq-answer">Typically 300%+ on food cost (food cost = 25–33% of menu price).</div></div>
+<div class="faq-item"><div class="faq-question">Can markup be negative?</div><div class="faq-answer">Yes — selling below cost is negative markup (loss leader strategy).</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/profit-margin.html" class="related-calc-link">Profit Margin</a>
+<a href="/calculators/discount.html" class="related-calc-link">Discount Calculator</a>
+<a href="/calculators/break-even.html" class="related-calc-link">Break-Even Calculator</a>
+<a href="/calculators/pricing.html" class="related-calc-link">Product Pricing</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function toggleMU(){var m=document.getElementById('mum').value;document.getElementById('mu-pi').hidden=m!=='price';document.getElementById('mu-pi2').hidden=m==='price';}
+function calcMarkup(e){e.preventDefault();var mode=document.getElementById('mum').value,out;if(mode==='price'){var cost=parseFloat(document.getElementById('muc').value),pct=parseFloat(document.getElementById('mup').value)/100,price=cost*(1+pct);out='<strong>Selling Price: $'+price.toFixed(2)+'</strong><br>Profit: $'+(price-cost).toFixed(2)+'<br>Margin: '+((price-cost)/price*100).toFixed(2)+'%';}else{var cost2=parseFloat(document.getElementById('muc2').value),price2=parseFloat(document.getElementById('mupr').value),mu=(price2-cost2)/cost2*100;out='<strong>Markup: '+mu.toFixed(2)+'%</strong><br>Profit: $'+(price2-cost2).toFixed(2)+'<br>Margin: '+((price2-cost2)/price2*100).toFixed(2)+'%';}document.getElementById('result-text').innerHTML=out;document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

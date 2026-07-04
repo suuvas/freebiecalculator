@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profit Margin Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Calculate gross profit margin and markup. Find the selling price needed to achieve any target margin.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/profit-margin.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Profit Margin Calculator"><meta property="og:description" content="Calculate gross profit margin and markup. Find the selling price needed to achieve any target margin."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Profit Margin Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate gross profit margin and markup. Find the selling price needed to achieve any target margin.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Business","item":"/calculators/discount.html"},{"@type":"ListItem","position":3,"name":"Profit Margin Calculator","item":"https://freebiecalculator.com/calculators/profit-margin.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Good profit margin?',"acceptedAnswer":{"@type":"Answer","text":'Grocery: 1–3%. Software: 60–80%. Retail: 10–30%. Services: 20–40%.'}},{"@type":"Question","name":'Gross vs net margin?',"acceptedAnswer":{"@type":"Answer","text":'Gross margin deducts only COGS. Net margin deducts all expenses including operating costs and taxes.'}},{"@type":"Question","name":'Price for target margin?',"acceptedAnswer":{"@type":"Answer","text":'Price = Cost / (1 − Margin%). For 40% margin on $50 cost: $50/0.60 = $83.33.'}},{"@type":"Question","name":'What is contribution margin?',"acceptedAnswer":{"@type":"Answer","text":'Revenue − Variable Costs. Shows how much each unit contributes toward fixed costs and profit.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/discount.html">Business</a> &rsaquo; Profit Margin Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Profit Margin Calculator</h1>
+<p class="calc-intro">Know exactly how profitable your products are. Calculate gross margin, markup %, and find the right price for any target margin.</p>
+<div class="calculator-tool">
+<form onsubmit="calcPM(event)">
+<div class="form-group"><label for="pmm">Mode</label><select id="pmm" onchange="togglePM()"><option value="calc">Calculate Margin (from Price + Cost)</option><option value="target">Find Price for Target Margin</option></select></div>
+<div id="pm-ci"><div class="form-group"><label for="pmr">Selling Price ($)</label><input type="number" id="pmr" step="0.01" min="0" placeholder="e.g., 100"></div><div class="form-group"><label for="pmc">Cost / COGS ($)</label><input type="number" id="pmc" step="0.01" min="0" placeholder="e.g., 40"></div></div>
+<div id="pm-ti" hidden><div class="form-group"><label for="pmtc">Cost ($)</label><input type="number" id="pmtc" step="0.01" min="0" placeholder="e.g., 40"></div><div class="form-group"><label for="pmtm">Target Margin (%)</label><input type="number" id="pmtm" step="0.1" min="0" max="99" placeholder="e.g., 40"></div></div>
+<button type="submit" class="btn btn-primary">Calculate</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Enter selling price and cost to calculate margin and markup. Or enter cost and target margin to find the required price.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Gross Profit = Revenue &minus; COGS<br>Margin % = (Profit / Revenue) &times; 100<br>Markup % = (Profit / Cost) &times; 100</p></section>
+<section class="content-section"><h2>Example</h2><p>Cost $40, price $100: Profit=$60. Margin=<strong>60%</strong>. Markup=150%.<br>Target 40% margin on $40 cost: Price = $40/0.60 = <strong>$66.67</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use for pricing decisions, evaluating product profitability, comparing margins across lines, or preparing financial projections.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Confusing margin with markup — 50% margin ≠ 50% markup.</li>
+<li>Using price instead of cost in markup formula — markup is always relative to cost.</li>
+<li>Using gross margin alone — high gross margin with high overhead can still produce losses.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Good profit margin?</div><div class="faq-answer">Grocery: 1–3%. Software: 60–80%. Retail: 10–30%. Services: 20–40%.</div></div>
+<div class="faq-item"><div class="faq-question">Gross vs net margin?</div><div class="faq-answer">Gross margin deducts only COGS. Net margin deducts all expenses including operating costs and taxes.</div></div>
+<div class="faq-item"><div class="faq-question">Price for target margin?</div><div class="faq-answer">Price = Cost / (1 − Margin%). For 40% margin on $50 cost: $50/0.60 = $83.33.</div></div>
+<div class="faq-item"><div class="faq-question">What is contribution margin?</div><div class="faq-answer">Revenue − Variable Costs. Shows how much each unit contributes toward fixed costs and profit.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/markup.html" class="related-calc-link">Markup Calculator</a>
+<a href="/calculators/break-even.html" class="related-calc-link">Break-Even Calculator</a>
+<a href="/calculators/discount.html" class="related-calc-link">Discount Calculator</a>
+<a href="/calculators/gross-profit.html" class="related-calc-link">Gross Profit</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function togglePM(){var m=document.getElementById('pmm').value;document.getElementById('pm-ci').hidden=m!=='calc';document.getElementById('pm-ti').hidden=m==='calc';}
+function calcPM(e){e.preventDefault();var mode=document.getElementById('pmm').value,out;if(mode==='calc'){var rev=parseFloat(document.getElementById('pmr').value),cost=parseFloat(document.getElementById('pmc').value),gp=rev-cost;out='<strong>Gross Profit: $'+gp.toFixed(2)+'</strong><br>Margin: '+(gp/rev*100).toFixed(2)+'%<br>Markup: '+(gp/cost*100).toFixed(2)+'%';}else{var tc=parseFloat(document.getElementById('pmtc').value),tgt=parseFloat(document.getElementById('pmtm').value)/100,price=tc/(1-tgt);out='<strong>Required Price: $'+price.toFixed(2)+'</strong><br>Profit: $'+(price-tc).toFixed(2)+'<br>Markup: '+((tgt/(1-tgt))*100).toFixed(2)+'%';}document.getElementById('result-text').innerHTML=out;document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Site Files — FreebieCalculator.com</title>
+    <link rel="stylesheet" href="/assets/css/base.css?v=16">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <style>
+        .dl-page {
+            max-width: 680px;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+        .dl-hero {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2.5rem 2rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        .dl-hero .icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
+        .dl-hero h1 { font-size: 1.8rem; margin-bottom: 0.4rem; color: var(--text-primary); }
+        .dl-hero p { color: var(--text-secondary); margin-bottom: 1.75rem; font-size: 1rem; line-height: 1.6; }
+
+        .btn-dl {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #2563eb;
+            color: #fff !important;
+            padding: 1rem 2.5rem;
+            border-radius: 0.75rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none !important;
+            box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-dl:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .stat-val { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .stat-lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+
+        /* Steps section */
+        .steps-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.85rem;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .step-num {
+            background: #2563eb;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .step-body { flex: 1; }
+        .step-body strong { display: block; font-size: 1rem; color: var(--text-primary); margin-bottom: 0.2rem; }
+        .step-body span { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+        .step-body code {
+            background: var(--bg-secondary);
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.3rem;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+        .step-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+        .tip {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            border-radius: 0.5rem;
+            padding: 0.9rem 1.2rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #1e40af;
+            line-height: 1.6;
+        }
+        .dark .tip { background: #1e3a5f; color: #93c5fd; }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+
+    <main>
+        <div class="dl-page">
+
+            <!-- Download hero -->
+            <div class="dl-hero">
+                <div class="icon">📦</div>
+                <h1>Download All Site Files</h1>
+                <p>All 60 calculators, pages, and assets in one ZIP file.<br>Unzip it, then drag everything into GitHub — done.</p>
+
+                <a href="/freebiecalculator-site.zip" download="freebiecalculator-site.zip" class="btn-dl">
+                    ⬇️ &nbsp;Download ZIP (0.6 MB)
+                </a>
+
+                <div class="stats">
+                    <div><div class="stat-val">0.6 MB</div><div class="stat-lbl">File size</div></div>
+                    <div><div class="stat-val">152</div><div class="stat-lbl">Files</div></div>
+                    <div><div class="stat-val">60</div><div class="stat-lbl">Calculators</div></div>
+                </div>
+            </div>
+
+            <!-- Step-by-step guide -->
+            <p class="steps-title">How to put these files on GitHub (5 minutes)</p>
+
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <div class="step-icon">⬇️</div>
+                <div class="step-body">
+                    <strong>Download the ZIP above</strong>
+                    <span>Click the blue button. The file saves to your <code>Downloads</code> folder.</span>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <div class="step-icon">📂</div>
+                <div class="step-body">
+                    <strong>Unzip the folder</strong>
+                    <span><b>Windows:</b> Right-click the ZIP → <em>Extract All</em> → Extract.<br>
+                    <b>Mac:</b> Just double-click the ZIP — it opens as a folder automatically.</span>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <div class="step-icon">🐙</div>
+                <div class="step-body">
+                    <strong>Create an empty GitHub repo</strong>
+                    <span>Go to <a href="https://github.com/new" target="_blank" rel="noopener">github.com/new</a> → name it <code>freebiecalculator-com</code> → set <em>Public</em> → <b>do not</b> add a README → click <em>Create repository</em>.</span>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num">4</div>
+                <div class="step-icon">🖱️</div>
+                <div class="step-body">
+                    <strong>Open the unzipped folder → Select All → Drag into GitHub</strong>
+                    <span>Open the unzipped folder. Press <code>Ctrl+A</code> (Windows) or <code>Cmd+A</code> (Mac) to select all files. Then drag them into the GitHub upload area that says <em>"Drag files here to add them to your repository"</em>.</span>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num">5</div>
+                <div class="step-icon">✅</div>
+                <div class="step-body">
+                    <strong>Click "Commit changes"</strong>
+                    <span>Scroll down on GitHub and click the green <em>Commit changes</em> button. All your files are now on GitHub!</span>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num">6</div>
+                <div class="step-icon">🚀</div>
+                <div class="step-body">
+                    <strong>Connect to Cloudflare Pages (free hosting)</strong>
+                    <span>Go to <a href="https://dash.cloudflare.com" target="_blank" rel="noopener">dash.cloudflare.com</a> → <em>Workers &amp; Pages</em> → <em>Create</em> → <em>Pages</em> → <em>Connect to Git</em> → select your repo.<br>
+                    Build command: <em>leave blank</em> &nbsp;·&nbsp; Output folder: <code>/</code> &nbsp;·&nbsp; Click <em>Deploy</em>.<br>
+                    Your site goes live in about 60 seconds!</span>
+                </div>
+            </div>
+
+            <div class="tip">
+                💡 <strong>Tip:</strong> If GitHub says "too many files", upload them in batches — drag half first, commit, then drag the rest. Or use <a href="https://desktop.github.com" target="_blank" rel="noopener">GitHub Desktop</a> (free app) to upload the whole folder at once without any limits.
+            </div>
+
+            <!-- Cloudflare fix -->
+            <p class="steps-title" style="margin-top:2rem;">⚠️ Cloudflare Pages — Important Settings</p>
+
+            <div class="step-card" style="border-color:#f59e0b; background: #fffbeb;">
+                <div class="step-icon">⚙️</div>
+                <div class="step-body">
+                    <strong style="color:#92400e;">Set these EXACT settings in Cloudflare Pages</strong>
+                    <span style="color:#78350f;">
+                        When Cloudflare asks for build settings:<br>
+                        &nbsp; • <b>Framework preset:</b> None<br>
+                        &nbsp; • <b>Build command:</b> <em>leave completely empty</em><br>
+                        &nbsp; • <b>Build output directory:</b> <code>/</code> (just a forward slash)<br><br>
+                        Wrong output directory is the most common reason Cloudflare shows the wrong page.
+                    </span>
+                </div>
+            </div>
+
+            <div class="step-card" style="border-color:#ef4444; background: #fef2f2;">
+                <div class="step-icon">🚫</div>
+                <div class="step-body">
+                    <strong style="color:#991b1b;">Don't drag the outer folder — drag the FILES inside it</strong>
+                    <span style="color:#7f1d1d;">
+                        After unzipping, open the folder so you can see files like <code>index.html</code>, <code>robots.txt</code>, <code>calculators/</code> etc.<br>
+                        Select ALL of those → drag into GitHub.<br>
+                        <b>Do not</b> drag the folder itself — GitHub must see <code>index.html</code> at the root level.
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+    <script type="module" src="/assets/js/main.js?v=115"></script>
+</body>
+</html>

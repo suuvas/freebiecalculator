@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savings Calculator — Future Value & Goal Planner | FreebieCalculator.com</title>
+<meta name="description" content="Calculate how savings grow over time with compound interest. See future value, interest earned, and progress toward your goal.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/savings.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Savings Calculator — Future Value & Goal Planner"><meta property="og:description" content="Calculate how savings grow over time with compound interest. See future value, interest earned, and progress toward your goal."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Savings Calculator — Future Value & Goal Planner","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate how savings grow over time with compound interest. See future value, interest earned, and progress toward your goal.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/compound-interest.html"},{"@type":"ListItem","position":3,"name":"Savings Calculator — Future Value & Goal Planner","item":"https://freebiecalculator.com/calculators/savings.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'How much should I save per month?',"acceptedAnswer":{"@type":"Answer","text":'The 50/30/20 rule suggests 20% of take-home pay. Use this calculator to find the exact amount for your specific goal date.'}},{"@type":"Question","name":'What interest rate to use?',"acceptedAnswer":{"@type":"Answer","text":"Use your account's actual APY. High-yield savings accounts currently offer 4–5% APY."}},{"@type":"Question","name":'Save or pay debt first?',"acceptedAnswer":{"@type":"Answer","text":'If debt interest rate exceeds savings rate, paying off debt first is mathematically better.'}},{"@type":"Question","name":'Rule of 72?',"acceptedAnswer":{"@type":"Answer","text":'Divide 72 by your annual rate to estimate years to double. At 6%, money doubles in ~12 years.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/compound-interest.html">Finance</a> &rsaquo; Savings Calculator — Future Value & Goal Planner</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Savings Calculator</h1>
+<p class="calc-intro">Plan your savings with confidence. Enter your initial deposit, monthly contributions, interest rate, and time horizon to see exactly how your money grows.</p>
+<div class="calculator-tool">
+<form onsubmit="calcSavings(event)">
+<div class="form-group"><label for="si">Initial Deposit ($)</label><input type="number" id="si" min="0" placeholder="e.g., 1000" value="0"></div>
+<div class="form-group"><label for="sp">Monthly Contribution ($)</label><input type="number" id="sp" min="0" placeholder="e.g., 200" required></div>
+<div class="form-group"><label for="sr">Annual Interest Rate / APY (%)</label><input type="number" id="sr" step="0.01" min="0" max="50" placeholder="e.g., 5" required></div>
+<div class="form-group"><label for="sy">Time Period (Years)</label><input type="number" id="sy" min="1" max="50" placeholder="e.g., 10" required></div>
+<button type="submit" class="btn btn-primary">Calculate Savings</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice finance-disclaimer" role="note"><strong>&#x1F4B0; Financial Disclaimer:</strong> This calculator is for educational purposes only. Consult a qualified financial professional.</div>
+<section class="content-section"><h2>How It Works</h2><p>Uses compound interest with regular monthly contributions. Interest compounds monthly on both initial deposit and ongoing contributions.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>FV = PV &times; (1+r)<sup>n</sup> + PMT &times; ((1+r)<sup>n</sup>&minus;1)/r</code><br>FV=future value, PV=present value, r=monthly rate, n=months, PMT=monthly contribution.</p></section>
+<section class="content-section"><h2>Example</h2><p>$1,000 initial, $200/month, 5% APY, 10 years:<br>Future Value &asymp; <strong>$32,278</strong><br>Contributions: $25,000 | Interest earned: $7,278</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when planning for any savings goal — emergency fund, vacation, down payment, or major purchase. Run different scenarios to find the right monthly amount.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Forgetting inflation — long-term goals need inflation adjustment.</li>
+<li>Using annual rate without monthly conversion — divide annual rate by 12.</li>
+<li>Ignoring taxes on interest — savings account interest is generally taxable income.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">How much should I save per month?</div><div class="faq-answer">The 50/30/20 rule suggests 20% of take-home pay. Use this calculator to find the exact amount for your specific goal date.</div></div>
+<div class="faq-item"><div class="faq-question">What interest rate to use?</div><div class="faq-answer">Use your account's actual APY. High-yield savings accounts currently offer 4–5% APY.</div></div>
+<div class="faq-item"><div class="faq-question">Save or pay debt first?</div><div class="faq-answer">If debt interest rate exceeds savings rate, paying off debt first is mathematically better.</div></div>
+<div class="faq-item"><div class="faq-question">Rule of 72?</div><div class="faq-answer">Divide 72 by your annual rate to estimate years to double. At 6%, money doubles in ~12 years.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/compound-interest.html" class="related-calc-link">Compound Interest</a>
+<a href="/calculators/retirement.html" class="related-calc-link">Retirement</a>
+<a href="/calculators/apy.html" class="related-calc-link">APY Calculator</a>
+<a href="/calculators/inflation.html" class="related-calc-link">Inflation</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcSavings(e){e.preventDefault();var PV=parseFloat(document.getElementById('si').value)||0,PMT=parseFloat(document.getElementById('sp').value),r=parseFloat(document.getElementById('sr').value)/100/12,n=parseInt(document.getElementById('sy').value)*12,fv=r>0?PV*Math.pow(1+r,n)+PMT*(Math.pow(1+r,n)-1)/r:PV+PMT*n,contrib=PV+PMT*n;document.getElementById('result-text').innerHTML='<strong>Future Value: $'+fv.toFixed(2)+'</strong><br>Total Contributed: $'+contrib.toFixed(2)+'<br>Interest Earned: $'+(fv-contrib).toFixed(2);document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

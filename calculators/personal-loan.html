@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Loan Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Calculate monthly payments and true cost of any personal loan. Compare rates, amounts, and terms instantly.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/personal-loan.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Personal Loan Calculator"><meta property="og:description" content="Calculate monthly payments and true cost of any personal loan. Compare rates, amounts, and terms instantly."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Personal Loan Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate monthly payments and true cost of any personal loan. Compare rates, amounts, and terms instantly.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/mortgage.html"},{"@type":"ListItem","position":3,"name":"Personal Loan Calculator","item":"https://freebiecalculator.com/calculators/personal-loan.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Credit score needed?',"acceptedAnswer":{"@type":"Answer","text":'600+ for most approvals. Best rates (under 10%) typically require 720+.'}},{"@type":"Question","name":'How fast is funding?',"acceptedAnswer":{"@type":"Answer","text":'Online lenders: 1–3 business days. Banks/credit unions: 1–2 weeks.'}},{"@type":"Question","name":'Can I pay off early?',"acceptedAnswer":{"@type":"Answer","text":'Usually yes. Check your agreement — some lenders charge a prepayment penalty.'}},{"@type":"Question","name":'Good personal loan rate?',"acceptedAnswer":{"@type":"Answer","text":'Under 10% is excellent. 10–20% is average. Above 20%: work on credit first.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/mortgage.html">Finance</a> &rsaquo; Personal Loan Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Personal Loan Calculator</h1>
+<p class="calc-intro">See your monthly payment and total borrowing cost before you sign. Enter amount, rate, and term for instant results.</p>
+<div class="calculator-tool">
+<form onsubmit="calcPL(event)">
+<div class="form-group"><label for="pla">Loan Amount ($)</label><input type="number" id="pla" min="1" placeholder="e.g., 10000" required></div>
+<div class="form-group"><label for="plr">Annual Interest Rate (%)</label><input type="number" id="plr" step="0.01" min="0" max="100" placeholder="e.g., 12" required></div>
+<div class="form-group"><label for="plt">Loan Term (Months)</label><select id="plt"><option value="12">12 months</option><option value="24">24 months</option><option value="36" selected>36 months</option><option value="48">48 months</option><option value="60">60 months</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate Payment</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice finance-disclaimer" role="note"><strong>&#x1F4B0; Financial Disclaimer:</strong> This calculator is for educational purposes only. Consult a qualified financial professional.</div>
+<section class="content-section"><h2>How It Works</h2><p>Uses fixed-rate amortization to calculate monthly payment and total interest for any personal loan.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>Monthly Payment = P &times; r(1+r)<sup>n</sup> / ((1+r)<sup>n</sup>&minus;1)</code></p></section>
+<section class="content-section"><h2>Example</h2><p>$10,000 loan, 12% APR, 36 months:<br>Monthly = $332.14. Total paid = $11,957. <strong>Interest = $1,957.</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use before applying for any fixed-term personal loan to understand the monthly commitment and total cost.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Not comparing origination fees — lower rate + 3% fee can cost more than higher rate with no fee.</li>
+<li>Borrowing the maximum offered — borrow only what you need.</li>
+<li>Longer term for lower payments — more months = much more interest paid.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Credit score needed?</div><div class="faq-answer">600+ for most approvals. Best rates (under 10%) typically require 720+.</div></div>
+<div class="faq-item"><div class="faq-question">How fast is funding?</div><div class="faq-answer">Online lenders: 1–3 business days. Banks/credit unions: 1–2 weeks.</div></div>
+<div class="faq-item"><div class="faq-question">Can I pay off early?</div><div class="faq-answer">Usually yes. Check your agreement — some lenders charge a prepayment penalty.</div></div>
+<div class="faq-item"><div class="faq-question">Good personal loan rate?</div><div class="faq-answer">Under 10% is excellent. 10–20% is average. Above 20%: work on credit first.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/credit-card-payoff.html" class="related-calc-link">Credit Card Payoff</a>
+<a href="/calculators/student-loan.html" class="related-calc-link">Student Loan</a>
+<a href="/calculators/mortgage.html" class="related-calc-link">Mortgage</a>
+<a href="/calculators/amortization.html" class="related-calc-link">Amortization</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcPL(e){e.preventDefault();var P=parseFloat(document.getElementById('pla').value),r=parseFloat(document.getElementById('plr').value)/100/12,n=parseInt(document.getElementById('plt').value),pmt=r>0?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):P/n;document.getElementById('result-text').innerHTML='<strong>Monthly Payment: $'+pmt.toFixed(2)+'</strong><br>Total Paid: $'+(pmt*n).toFixed(2)+'<br>Total Interest: $'+(pmt*n-P).toFixed(2);document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

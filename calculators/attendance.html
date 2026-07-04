@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance Calculator — Attendance Percentage | FreebieCalculator.com</title>
+<meta name="description" content="Calculate attendance percentage for school or work. Find how many more classes needed to meet the minimum requirement.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/attendance.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Attendance Calculator — Attendance Percentage"><meta property="og:description" content="Calculate attendance percentage for school or work. Find how many more classes needed to meet the minimum requirement."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Attendance Calculator — Attendance Percentage","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate attendance percentage for school or work. Find how many more classes needed to meet the minimum requirement.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Education","item":"/calculators/gpa.html"},{"@type":"ListItem","position":3,"name":"Attendance Calculator — Attendance Percentage","item":"https://freebiecalculator.com/calculators/attendance.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Minimum attendance requirement?',"acceptedAnswer":{"@type":"Answer","text":'Most universities require 75–80% for exam eligibility. Professional programs may require 85–90%.'}},{"@type":"Question","name":'How many classes can I miss?',"acceptedAnswer":{"@type":"Answer","text":'For 75% in 100 classes: miss at most 25. Use this calculator for your exact numbers.'}},{"@type":"Question","name":'Do online classes count?',"acceptedAnswer":{"@type":"Answer","text":'Generally yes if the institution considers them equivalent. Check your policy.'}},{"@type":"Question","name":'Can I recover from low attendance?',"acceptedAnswer":{"@type":"Answer","text":'Depends on remaining classes. More left = easier recovery. Calculator shows exact number needed.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/gpa.html">Education</a> &rsaquo; Attendance Calculator — Attendance Percentage</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Attendance Calculator</h1>
+<p class="calc-intro">Calculate your current attendance percentage and find out exactly how many of the remaining classes you must attend to meet the minimum requirement.</p>
+<div class="calculator-tool">
+<form onsubmit="calcAtt(event)">
+<div class="form-group"><label for="atpr">Classes / Days Present</label><input type="number" id="atpr" min="0" placeholder="e.g., 60" required></div>
+<div class="form-group"><label for="attt">Total Classes / Days So Far</label><input type="number" id="attt" min="1" placeholder="e.g., 80" required></div>
+<div class="form-group"><label for="atrm">Remaining Classes This Term</label><input type="number" id="atrm" min="0" placeholder="e.g., 20" value="0"></div>
+<div class="form-group"><label for="atmn">Minimum Required (%)</label><input type="number" id="atmn" step="0.1" min="0" max="100" placeholder="e.g., 75" value="75"></div>
+<button type="submit" class="btn btn-primary">Calculate Attendance</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Calculates attendance as (present/total)×100. Projects how many future classes to attend to reach a minimum threshold.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Attendance % = (Present &divide; Total) &times; 100<br>Needed = &lceil;(Target% &times; Total_With_Remaining &minus; 100 &times; Present) / 100&rceil;</p></section>
+<section class="content-section"><h2>Example</h2><p>60 of 80 classes = 75%. 20 remaining. Need 80%:<br>Attend all 20 &rarr; 80/100 = <strong>80%</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when your institution requires minimum attendance (75–85%) for exam eligibility, or for HR absenteeism tracking.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Not tracking early — early absences have outsized impact when total classes are few.</li>
+<li>Assuming medical leaves count against you — check if your policy excludes medical absences.</li>
+<li>Future classes increase denominator too — attendance math accounts for this.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Minimum attendance requirement?</div><div class="faq-answer">Most universities require 75–80% for exam eligibility. Professional programs may require 85–90%.</div></div>
+<div class="faq-item"><div class="faq-question">How many classes can I miss?</div><div class="faq-answer">For 75% in 100 classes: miss at most 25. Use this calculator for your exact numbers.</div></div>
+<div class="faq-item"><div class="faq-question">Do online classes count?</div><div class="faq-answer">Generally yes if the institution considers them equivalent. Check your policy.</div></div>
+<div class="faq-item"><div class="faq-question">Can I recover from low attendance?</div><div class="faq-answer">Depends on remaining classes. More left = easier recovery. Calculator shows exact number needed.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/gpa.html" class="related-calc-link">GPA Calculator</a>
+<a href="/calculators/grade.html" class="related-calc-link">Grade Calculator</a>
+<a href="/calculators/study-time.html" class="related-calc-link">Study Time</a>
+<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcAtt(e){e.preventDefault();var pres=parseFloat(document.getElementById('atpr').value),tot=parseFloat(document.getElementById('attt').value),rem=parseFloat(document.getElementById('atrm').value)||0,minP=parseFloat(document.getElementById('atmn').value)/100,curr=(pres/tot)*100,totalWR=tot+rem,needed=Math.ceil(minP*totalWR-pres),canSkip=rem-needed,out='<strong>Current Attendance: '+curr.toFixed(2)+'%</strong><br>'+pres+' of '+tot+' classes';if(rem>0){if(needed<=0){out+='<br>&#10003; Already meeting '+minP*100+'% requirement!';}else if(needed>rem){out+='<br>&#10007; Cannot reach '+minP*100+'% even attending all remaining classes.';}else{out+='<br>Attend at least <strong>'+needed+' of '+rem+' remaining classes</strong><br>Can still miss: '+Math.max(0,canSkip)+' classes';}}document.getElementById('result-text').innerHTML=out;document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

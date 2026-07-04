@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ratio Calculator — Simplify and Scale Ratios | FreebieCalculator.com</title>
+<meta name="description" content="Simplify ratios to lowest terms and scale to any target. Instant ratio calculations for math, cooking, mixing, and more.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/ratio.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Ratio Calculator — Simplify and Scale Ratios"><meta property="og:description" content="Simplify ratios to lowest terms and scale to any target. Instant ratio calculations for math, cooking, mixing, and more."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ratio Calculator — Simplify and Scale Ratios","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Simplify ratios to lowest terms and scale to any target. Instant ratio calculations for math, cooking, mixing, and more.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Math","item":"/calculators/percentage.html"},{"@type":"ListItem","position":3,"name":"Ratio Calculator — Simplify and Scale Ratios","item":"https://freebiecalculator.com/calculators/ratio.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'How to simplify a ratio?',"acceptedAnswer":{"@type":"Answer","text":'Divide both numbers by their GCD. Example: 24:36 → GCD=12 → 2:3.'}},{"@type":"Question","name":'What is a 1:1 ratio?',"acceptedAnswer":{"@type":"Answer","text":'Equal parts — a 50/50 mix.'}},{"@type":"Question","name":'How to scale a ratio?',"acceptedAnswer":{"@type":"Answer","text":'Multiply both parts by the same number. 2:3 scaled to 20 total: multiply each by 4 → 8:12.'}},{"@type":"Question","name":'Can ratios have 3 numbers?',"acceptedAnswer":{"@type":"Answer","text":'Yes — 1:2:3 means three quantities in those proportions. Total parts = 6.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/percentage.html">Math</a> &rsaquo; Ratio Calculator — Simplify and Scale Ratios</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Ratio Calculator</h1>
+<p class="calc-intro">Ratios express relationships between quantities. Simplify any ratio to its lowest terms and scale it to any target total instantly.</p>
+<div class="calculator-tool">
+<form onsubmit="calcRatio(event)">
+<div class="form-group"><label for="ra">Value A</label><input type="number" id="ra" min="0" step="any" placeholder="e.g., 12" required></div>
+<div class="form-group"><label for="rb">Value B</label><input type="number" id="rb" min="0" step="any" placeholder="e.g., 18" required></div>
+<div class="form-group"><label for="rs">Scale to Total (optional)</label><input type="number" id="rs" min="0" step="any" placeholder="e.g., 100"></div>
+<button type="submit" class="btn btn-primary">Simplify Ratio</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Finds the GCD of both values and divides each by it to get the simplest form. Optionally scales to any target total.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>Simplified = (A &divide; GCD) : (B &divide; GCD)</code><br>Scale: multiply each part by (Target &divide; (A+B))</p></section>
+<section class="content-section"><h2>Example</h2><p>12:18 &rarr; GCD=6 &rarr; <strong>2:3</strong><br>Percentages: 40% : 60%</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use for scaling recipes, mixing solutions, interpreting map scales, or solving ratio problems in math.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Confusing ratio with fraction — ratio 3:5 means 3 parts to 5 parts (total 8).</li>
+<li>Not converting decimals to integers first before simplifying.</li>
+<li>Forgetting units in real-world ratios — 1:10 bleach means 1 part bleach to 10 parts water.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">How to simplify a ratio?</div><div class="faq-answer">Divide both numbers by their GCD. Example: 24:36 → GCD=12 → 2:3.</div></div>
+<div class="faq-item"><div class="faq-question">What is a 1:1 ratio?</div><div class="faq-answer">Equal parts — a 50/50 mix.</div></div>
+<div class="faq-item"><div class="faq-question">How to scale a ratio?</div><div class="faq-answer">Multiply both parts by the same number. 2:3 scaled to 20 total: multiply each by 4 → 8:12.</div></div>
+<div class="faq-item"><div class="faq-question">Can ratios have 3 numbers?</div><div class="faq-answer">Yes — 1:2:3 means three quantities in those proportions. Total parts = 6.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/proportion.html" class="related-calc-link">Proportion Calculator</a>
+<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a>
+<a href="/calculators/fraction.html" class="related-calc-link">Fraction Calculator</a>
+<a href="/calculators/average.html" class="related-calc-link">Average Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function gcd(a,b){return b===0?a:gcd(b,a%b);}
+function calcRatio(e){e.preventDefault();var a=parseFloat(document.getElementById('ra').value),b=parseFloat(document.getElementById('rb').value),target=parseFloat(document.getElementById('rs').value),ai=Math.round(a*1000),bi=Math.round(b*1000),g=gcd(ai,bi),sa=ai/g,sb=bi/g,out='<strong>Simplified: '+sa+' : '+sb+'</strong><br>Percentages: '+(a/(a+b)*100).toFixed(2)+'% : '+(b/(a+b)*100).toFixed(2)+'%';if(!isNaN(target)&&target>0)out+='<br>Scaled to '+target+': '+(target*a/(a+b)).toFixed(4)+' : '+(target*b/(a+b)).toFixed(4);document.getElementById('result-text').innerHTML=out;document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

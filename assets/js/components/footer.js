@@ -28,14 +28,31 @@ export function initFooter() {
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Calculators</h4>
+                    <h4>Popular Calculators</h4>
                     <ul>
-                        <li><a href="/calculators/emi.html">EMI Calculator</a></li>
-                        <li><a href="/calculators/bmi.html">BMI Calculator</a></li>
-                        <li><a href="/calculators/percentage.html">Percentage Calculator</a></li>
                         <li><a href="/calculators/mortgage.html">Mortgage Calculator</a></li>
+                        <li><a href="/calculators/bmi.html">BMI Calculator</a></li>
                         <li><a href="/calculators/compound-interest.html">Compound Interest</a></li>
-                        <li><a href="/">View All Calculators</a></li>
+                        <li><a href="/calculators/percentage.html">Percentage Calculator</a></li>
+                        <li><a href="/calculators/tdee.html">TDEE Calculator</a></li>
+                        <li><a href="/calculators/profit-margin.html">Profit Margin</a></li>
+                        <li><a href="/">View All 99+ Calculators</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="/categories/finance.html">Financial Calculators</a></li>
+                        <li><a href="/categories/health.html">Health &amp; Fitness</a></li>
+                        <li><a href="/categories/math.html">Math Calculators</a></li>
+                        <li><a href="/categories/business.html">Business Calculators</a></li>
+                        <li><a href="/categories/construction.html">Construction</a></li>
+                        <li><a href="/categories/loans.html">Loan Calculators</a></li>
+                        <li><a href="/categories/tax.html">Tax &amp; Income</a></li>
+                        <li><a href="/categories/investment.html">Investment</a></li>
+                        <li><a href="/categories/utility.html">Utility Tools</a></li>
+                        <li><a href="/categories/education.html">Education</a></li>
                     </ul>
                 </div>
                 
@@ -47,19 +64,23 @@ export function initFooter() {
                         <li><a href="/editorial-policy.html">Editorial Policy</a></li>
                         <li><a href="/review-process.html">Review Process</a></li>
                         <li><a href="/update-log.html">Update Log</a></li>
+                        <li><a href="/sitemap.html">HTML Sitemap</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Support & Legal</h4>
+                    <h4>Support &amp; Legal</h4>
                     <ul>
                         <li><a href="/contact.html">Contact Us</a></li>
                         <li><a href="/search.html">Search</a></li>
                         <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                         <li><a href="/terms.html">Terms of Service</a></li>
                         <li><a href="/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="/feed.xml">RSS Feed</a></li>
-                        <li><a href="/sitemap.xml">Sitemap</a></li>
+                        <li><a href="/accessibility.html">Accessibility</a></li>
+                        <li><a href="/accuracy-policy.html">Accuracy Policy</a></li>
+                        <li><a href="/sources.html">Sources &amp; References</a></li>
+                        <li><a href="/sitemap.xml">XML Sitemap</a></li>
                     </ul>
                 </div>
             </div>

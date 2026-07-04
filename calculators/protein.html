@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protein Intake Calculator — Daily Protein Needs | FreebieCalculator.com</title>
+<meta name="description" content="Calculate daily protein needs by body weight, activity, and goal. Evidence-based recommendations for muscle building and fat loss.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/protein.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Protein Intake Calculator — Daily Protein Needs"><meta property="og:description" content="Calculate daily protein needs by body weight, activity, and goal. Evidence-based recommendations for muscle building and fat loss."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Protein Intake Calculator — Daily Protein Needs","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate daily protein needs by body weight, activity, and goal. Evidence-based recommendations for muscle building and fat loss.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Health","item":"/calculators/calorie.html"},{"@type":"ListItem","position":3,"name":"Protein Intake Calculator — Daily Protein Needs","item":"https://freebiecalculator.com/calculators/protein.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'How much protein to build muscle?',"acceptedAnswer":{"@type":"Answer","text":'Research supports 1.6–2.2 g/kg of bodyweight for maximizing muscle protein synthesis.'}},{"@type":"Question","name":'Is high protein harmful?',"acceptedAnswer":{"@type":"Answer","text":'For healthy people with normal kidneys, up to 2.4 g/kg appears safe.'}},{"@type":"Question","name":'Best protein foods?',"acceptedAnswer":{"@type":"Answer","text":'Chicken (31g/100g), tuna (30g/100g), Greek yogurt (10g/100g), eggs (13g/100g), whey protein (80g/100g).'}},{"@type":"Question","name":'Do I need protein shakes?',"acceptedAnswer":{"@type":"Answer","text":'Not necessary. Whole food protein is optimal. Shakes help when hitting targets through food alone is impractical.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/calorie.html">Health</a> &rsaquo; Protein Intake Calculator — Daily Protein Needs</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Protein Intake Calculator</h1>
+<p class="calc-intro">Your ideal daily protein intake depends on your weight, activity, and goal. Get a personalized, evidence-based protein target in grams.</p>
+<div class="calculator-tool">
+<form onsubmit="calcProtein(event)">
+<div class="form-group"><label for="pw">Body Weight (kg)</label><input type="number" id="pw" step="0.1" min="1" placeholder="e.g., 75" required></div>
+<div class="form-group"><label for="pg">Goal</label><select id="pg"><option value="0.8">General Health (sedentary)</option><option value="1.2">Lightly Active</option><option value="1.5">Endurance Training</option><option value="1.8" selected>Muscle Building</option><option value="2.0">Fat Loss (preserve muscle)</option><option value="2.2">Advanced Athlete</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate Protein Needs</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice" role="note"><strong>&#x2695;&#xFE0F; Health Disclaimer:</strong> This calculator is for educational purposes only and is not a substitute for professional medical advice.</div>
+<section class="content-section"><h2>How It Works</h2><p>Multiplies body weight in kg by a recommended g/kg multiplier based on your goal, per current sports nutrition research.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>Protein (g) = Body Weight (kg) &times; Multiplier</code><br>Sedentary: 0.8 g/kg | Active: 1.2–1.6 | Muscle Building: 1.6–2.2 | Fat Loss: 1.8–2.4</p></section>
+<section class="content-section"><h2>Example</h2><p>75 kg person, muscle building goal:<br>75 &times; 1.8 = <strong>135 g/day</strong> (~45 g per meal, 3 meals)</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when starting a fitness program, adjusting nutrition for a specific goal, or verifying current intake against recommendations.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Using total weight for obese individuals — fat tissue has minimal protein needs; use lean mass.</li>
+<li>More protein is always better — diminishing returns above ~2.2 g/kg.</li>
+<li>Ignoring protein distribution — spread across 3–5 meals is more effective.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">How much protein to build muscle?</div><div class="faq-answer">Research supports 1.6–2.2 g/kg of bodyweight for maximizing muscle protein synthesis.</div></div>
+<div class="faq-item"><div class="faq-question">Is high protein harmful?</div><div class="faq-answer">For healthy people with normal kidneys, up to 2.4 g/kg appears safe.</div></div>
+<div class="faq-item"><div class="faq-question">Best protein foods?</div><div class="faq-answer">Chicken (31g/100g), tuna (30g/100g), Greek yogurt (10g/100g), eggs (13g/100g), whey protein (80g/100g).</div></div>
+<div class="faq-item"><div class="faq-question">Do I need protein shakes?</div><div class="faq-answer">Not necessary. Whole food protein is optimal. Shakes help when hitting targets through food alone is impractical.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/calorie.html" class="related-calc-link">Calorie Calculator</a>
+<a href="/calculators/macro-calculator.html" class="related-calc-link">Macro Calculator</a>
+<a href="/calculators/tdee.html" class="related-calc-link">TDEE Calculator</a>
+<a href="/calculators/bmi.html" class="related-calc-link">BMI Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcProtein(e){e.preventDefault();var w=parseFloat(document.getElementById('pw').value),mult=parseFloat(document.getElementById('pg').value),total=Math.round(w*mult);document.getElementById('result-text').innerHTML='<strong>Daily Protein: '+total+' g</strong><br>Per meal (3x): '+Math.round(total/3)+' g<br>Per meal (4x): '+Math.round(total/4)+' g<br>Calories from protein: '+(total*4)+' kcal';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

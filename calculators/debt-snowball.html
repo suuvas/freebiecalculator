@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debt Snowball Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Use the debt snowball method to pay off multiple debts faster. See your payoff order, timeline, and total interest.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/debt-snowball.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Debt Snowball Calculator"><meta property="og:description" content="Use the debt snowball method to pay off multiple debts faster. See your payoff order, timeline, and total interest."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Debt Snowball Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Use the debt snowball method to pay off multiple debts faster. See your payoff order, timeline, and total interest.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/debt-to-income.html"},{"@type":"ListItem","position":3,"name":"Debt Snowball Calculator","item":"https://freebiecalculator.com/calculators/debt-snowball.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Snowball vs avalanche?',"acceptedAnswer":{"@type":"Answer","text":'Snowball: smallest balance first (motivation). Avalanche: highest APR first (less interest). Both work — snowball has higher completion rates.'}},{"@type":"Question","name":'How much extra to pay?',"acceptedAnswer":{"@type":"Answer","text":'Any amount helps. Even $50/month significantly accelerates payoff.'}},{"@type":"Question","name":'Stop saving while paying debt?',"acceptedAnswer":{"@type":"Answer","text":'Keep $1,000 emergency fund minimum, then aggressively pay debt.'}},{"@type":"Question","name":'Two debts same balance?',"acceptedAnswer":{"@type":"Answer","text":'Target the higher-APR debt first when balances tie.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/debt-to-income.html">Finance</a> &rsaquo; Debt Snowball Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Debt Snowball Calculator</h1>
+<p class="calc-intro">The debt snowball pays off your smallest balance first for quick wins. Enter up to 4 debts to see your payoff schedule and total interest.</p>
+<div class="calculator-tool">
+<form onsubmit="calcSnowball(event)">
+<p style="font-size:.9rem;color:var(--text-secondary)">Enter up to 4 debts. Leave unused rows blank.</p>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem"><thead><tr><th style="padding:.4rem;text-align:left;border-bottom:2px solid var(--border-color)">Name</th><th style="padding:.4rem;border-bottom:2px solid var(--border-color)">Balance($)</th><th style="padding:.4rem;border-bottom:2px solid var(--border-color)">APR(%)</th><th style="padding:.4rem;border-bottom:2px solid var(--border-color)">Min($)</th></tr></thead><tbody>
+<tr><td><input id="d1n" placeholder="Credit Card" style="width:95%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d1b" type="number" min="0" placeholder="5000" style="width:90%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d1r" type="number" step="0.1" placeholder="20" style="width:85%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d1p" type="number" placeholder="100" style="width:90%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td></tr>
+<tr><td><input id="d2n" placeholder="Car Loan" style="width:95%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d2b" type="number" min="0" placeholder="8000" style="width:90%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d2r" type="number" step="0.1" placeholder="6" style="width:85%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d2p" type="number" placeholder="200" style="width:90%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td></tr>
+<tr><td><input id="d3n" placeholder="Student Loan" style="width:95%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d3b" type="number" min="0" style="width:90%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d3r" type="number" step="0.1" style="width:85%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d3p" type="number" style="width:90%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td></tr>
+<tr><td><input id="d4n" placeholder="Store Card" style="width:95%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d4b" type="number" min="0" style="width:90%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d4r" type="number" step="0.1" style="width:85%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td><td><input id="d4p" type="number" style="width:90%;padding:.35rem;border:1px solid var(--border-color);border-radius:.25rem"></td></tr>
+</tbody></table></div>
+<div class="form-group" style="margin-top:1rem"><label for="ep">Extra Monthly Payment ($)</label><input type="number" id="ep" min="0" placeholder="e.g., 100" value="0"></div>
+<button type="submit" class="btn btn-primary">Calculate Snowball</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice finance-disclaimer" role="note"><strong>&#x1F4B0; Financial Disclaimer:</strong> This calculator is for educational purposes only. Consult a qualified financial professional.</div>
+<section class="content-section"><h2>How It Works</h2><p>Sorts debts smallest-to-largest. Pays minimums on all plus extra toward smallest. When a debt clears, rolls its full payment to the next smallest.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Sort debts ascending by balance. Pay minimums on all + extra on smallest. When paid off, roll full payment to next debt.</p></section>
+<section class="content-section"><h2>Example</h2><p>Debt A: $500 at 15%, $25 min. Debt B: $2,000 at 20%, $50 min. Extra $100/month.<br>A paid ~2 months. Then $225/month to B.</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when you have multiple debts and want the motivational boost of eliminating accounts quickly.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Not rolling the freed payment forward — this creates the snowball effect.</li>
+<li>Comparing only on interest saved — motivational wins have real value.</li>
+<li>Not identifying the extra payment source first.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Snowball vs avalanche?</div><div class="faq-answer">Snowball: smallest balance first (motivation). Avalanche: highest APR first (less interest). Both work — snowball has higher completion rates.</div></div>
+<div class="faq-item"><div class="faq-question">How much extra to pay?</div><div class="faq-answer">Any amount helps. Even $50/month significantly accelerates payoff.</div></div>
+<div class="faq-item"><div class="faq-question">Stop saving while paying debt?</div><div class="faq-answer">Keep $1,000 emergency fund minimum, then aggressively pay debt.</div></div>
+<div class="faq-item"><div class="faq-question">Two debts same balance?</div><div class="faq-answer">Target the higher-APR debt first when balances tie.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/credit-card-payoff.html" class="related-calc-link">Credit Card Payoff</a>
+<a href="/calculators/debt-to-income.html" class="related-calc-link">Debt-to-Income</a>
+<a href="/calculators/net-worth.html" class="related-calc-link">Net Worth</a>
+<a href="/calculators/personal-loan.html" class="related-calc-link">Personal Loan</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcSnowball(e){e.preventDefault();var debts=[];for(var i=1;i<=4;i++){var b=parseFloat(document.getElementById('d'+i+'b').value),r=parseFloat(document.getElementById('d'+i+'r').value),p=parseFloat(document.getElementById('d'+i+'p').value),n=document.getElementById('d'+i+'n').value||'Debt '+i;if(b>0&&r>=0&&p>0)debts.push({n:n,b:b,r:r/100/12,p:p,done:false});}if(!debts.length){alert('Enter at least one debt.');return;}debts.sort(function(a,b){return a.b-b.b;});var extra=parseFloat(document.getElementById('ep').value)||0,months=0,totalInt=0,results=[];while(debts.some(function(d){return d.b>0;})&&months<600){debts.forEach(function(d){if(d.b<=0)return;var int=d.b*d.r;totalInt+=int;d.b+=int;});var st=debts.find(function(d){return d.b>0&&!d.done;});if(st)st.p+=extra;debts.forEach(function(d){if(d.b<=0)return;var paid=Math.min(d.p,d.b);d.b=Math.max(0,d.b-paid);if(d.b<0.01&&!d.done){d.done=true;results.push(d.n+' paid off in '+(months+1)+' months');var freed=d.p;var next=debts.find(function(x){return!x.done&&x.b>0;});if(next)next.p+=freed;d.b=0;}});months++;}document.getElementById('result-text').innerHTML='<strong>Payoff Order:</strong><ul>'+results.map(function(r){return'<li>'+r+'</li>';}).join('')+'</ul>Total Months: '+months+'<br>Total Interest: $'+totalInt.toFixed(2);document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

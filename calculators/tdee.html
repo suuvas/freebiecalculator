@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDEE Calculator — Total Daily Energy Expenditure | FreebieCalculator.com</title>
+<meta name="description" content="Calculate total daily energy expenditure to know exactly how many calories to eat. Uses the Mifflin-St Jeor equation.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/tdee.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="TDEE Calculator — Total Daily Energy Expenditure"><meta property="og:description" content="Calculate total daily energy expenditure to know exactly how many calories to eat. Uses the Mifflin-St Jeor equation."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TDEE Calculator — Total Daily Energy Expenditure","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total daily energy expenditure to know exactly how many calories to eat. Uses the Mifflin-St Jeor equation.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Health","item":"/calculators/calorie.html"},{"@type":"ListItem","position":3,"name":"TDEE Calculator — Total Daily Energy Expenditure","item":"https://freebiecalculator.com/calculators/tdee.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'BMR vs TDEE?',"acceptedAnswer":{"@type":"Answer","text":'BMR = calories at complete rest. TDEE adds daily activity on top of BMR. Eat at TDEE to maintain weight.'}},{"@type":"Question","name":'Caloric deficit for weight loss?',"acceptedAnswer":{"@type":"Answer","text":'300–500 calories/day below TDEE = 0.5–1 lb/week fat loss, which is sustainable.'}},{"@type":"Question","name":'Why do calculators differ?',"acceptedAnswer":{"@type":"Answer","text":'Different BMR formulas (Mifflin-St Jeor vs Harris-Benedict) and activity multipliers produce different results.'}},{"@type":"Question","name":'Does TDEE include workout calories?',"acceptedAnswer":{"@type":"Answer","text":'Yes — the activity multiplier accounts for exercise. Do not add exercise calories on top.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/calorie.html">Health</a> &rsaquo; TDEE Calculator — Total Daily Energy Expenditure</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>TDEE Calculator</h1>
+<p class="calc-intro">TDEE is the total calories your body burns daily including exercise. Know your TDEE and you know exactly how to eat for fat loss, maintenance, or muscle gain.</p>
+<div class="calculator-tool">
+<form onsubmit="calcTDEE(event)">
+<div class="form-group"><label for="tu">Unit System</label><select id="tu" onchange="toggleTU()"><option value="metric">Metric (kg, cm)</option><option value="imperial">Imperial (lbs, inches)</option></select></div>
+<div id="tm"><div class="form-group"><label for="tw">Weight (kg)</label><input type="number" id="tw" step="0.1" min="1" placeholder="e.g., 70"></div><div class="form-group"><label for="th">Height (cm)</label><input type="number" id="th" step="0.1" min="1" placeholder="e.g., 175"></div></div>
+<div id="ti" hidden><div class="form-group"><label for="twl">Weight (lbs)</label><input type="number" id="twl" step="0.1" min="1" placeholder="e.g., 154"></div><div class="form-group"><label for="thi">Height (inches)</label><input type="number" id="thi" step="0.5" min="1" placeholder="e.g., 69"></div></div>
+<div class="form-group"><label for="ta">Age (years)</label><input type="number" id="ta" min="15" max="100" placeholder="e.g., 30" required></div>
+<div class="form-group"><label for="ts">Sex</label><select id="ts"><option value="m">Male</option><option value="f">Female</option></select></div>
+<div class="form-group"><label for="tact">Activity Level</label><select id="tact"><option value="1.2">Sedentary (desk job, little exercise)</option><option value="1.375">Lightly Active (1–3 days/week)</option><option value="1.55" selected>Moderately Active (3–5 days/week)</option><option value="1.725">Very Active (6–7 days/week)</option><option value="1.9">Extra Active (athlete / physical job)</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate TDEE</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice" role="note"><strong>&#x2695;&#xFE0F; Health Disclaimer:</strong> This calculator is for educational purposes only and is not a substitute for professional medical advice.</div>
+<section class="content-section"><h2>How It Works</h2><p>Calculates your BMR using the Mifflin-St Jeor equation, then multiplies by an activity factor for total daily calorie burn.</p></section>
+<section class="content-section"><h2>Formula</h2><p>BMR (men): <code>10W + 6.25H &minus; 5A + 5</code><br>BMR (women): <code>10W + 6.25H &minus; 5A &minus; 161</code><br>TDEE = BMR &times; Activity Factor (1.2&ndash;1.9)</p></section>
+<section class="content-section"><h2>Example</h2><p>30-year-old woman, 65 kg, 165 cm, moderately active:<br>BMR = 1,464. TDEE = 1,464 &times; 1.55 = <strong>2,269 kcal/day</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use TDEE as the foundation for any diet plan. Eat at TDEE to maintain, 300–500 below for fat loss, 200–300 above for muscle building.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Overestimating activity — most people should use Sedentary or Lightly Active.</li>
+<li>Not recalculating as weight changes — TDEE decreases with weight loss.</li>
+<li>Confusing BMR with TDEE — BMR is rest-only; TDEE includes all activity.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">BMR vs TDEE?</div><div class="faq-answer">BMR = calories at complete rest. TDEE adds daily activity on top of BMR. Eat at TDEE to maintain weight.</div></div>
+<div class="faq-item"><div class="faq-question">Caloric deficit for weight loss?</div><div class="faq-answer">300–500 calories/day below TDEE = 0.5–1 lb/week fat loss, which is sustainable.</div></div>
+<div class="faq-item"><div class="faq-question">Why do calculators differ?</div><div class="faq-answer">Different BMR formulas (Mifflin-St Jeor vs Harris-Benedict) and activity multipliers produce different results.</div></div>
+<div class="faq-item"><div class="faq-question">Does TDEE include workout calories?</div><div class="faq-answer">Yes — the activity multiplier accounts for exercise. Do not add exercise calories on top.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/bmr.html" class="related-calc-link">BMR Calculator</a>
+<a href="/calculators/calorie.html" class="related-calc-link">Calorie Calculator</a>
+<a href="/calculators/macro-calculator.html" class="related-calc-link">Macro Calculator</a>
+<a href="/calculators/bmi.html" class="related-calc-link">BMI Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function toggleTU(){var u=document.getElementById('tu').value;document.getElementById('tm').hidden=u!=='metric';document.getElementById('ti').hidden=u==='metric';}
+function calcTDEE(e){e.preventDefault();var u=document.getElementById('tu').value,w,h;if(u==='metric'){w=parseFloat(document.getElementById('tw').value);h=parseFloat(document.getElementById('th').value);}else{w=parseFloat(document.getElementById('twl').value)*0.453592;h=parseFloat(document.getElementById('thi').value)*2.54;}var age=parseInt(document.getElementById('ta').value),sex=document.getElementById('ts').value,act=parseFloat(document.getElementById('tact').value),bmr=sex==='m'?10*w+6.25*h-5*age+5:10*w+6.25*h-5*age-161,tdee=bmr*act;document.getElementById('result-text').innerHTML='<strong>TDEE: '+Math.round(tdee)+' kcal/day</strong><br>BMR: '+Math.round(bmr)+' kcal<br>Fat loss (-500): '+Math.round(tdee-500)+' kcal<br>Muscle gain (+250): '+Math.round(tdee+250)+' kcal';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Probability Calculator — Single and Compound Events | FreebieCalculator.com</title>
+<meta name="description" content="Calculate probability of events, P(A and B), P(A or B), and complements. Simple and compound probability made easy.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/probability.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Probability Calculator — Single and Compound Events"><meta property="og:description" content="Calculate probability of events, P(A and B), P(A or B), and complements. Simple and compound probability made easy."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Probability Calculator — Single and Compound Events","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate probability of events, P(A and B), P(A or B), and complements. Simple and compound probability made easy.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Math","item":"/calculators/standard-deviation.html"},{"@type":"ListItem","position":3,"name":"Probability Calculator — Single and Compound Events","item":"https://freebiecalculator.com/calculators/probability.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Probability 0.5 means?',"acceptedAnswer":{"@type":"Answer","text":'Equal chance of occurring or not — like flipping a fair coin.'}},{"@type":"Question","name":'What is a complementary event?',"acceptedAnswer":{"@type":"Answer","text":'The complement of event A is everything except A. P(A) + P(not A) = 1 always.'}},{"@type":"Question","name":'Theoretical vs experimental probability?',"acceptedAnswer":{"@type":"Answer","text":'Theoretical: calculated from known outcomes. Experimental: measured from actual trials.'}},{"@type":"Question","name":'Can probability exceed 1?',"acceptedAnswer":{"@type":"Answer","text":'No. Always between 0 (impossible) and 1 (certain).'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/standard-deviation.html">Math</a> &rsaquo; Probability Calculator — Single and Compound Events</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Probability Calculator</h1>
+<p class="calc-intro">Calculate the probability of single events, combined events (AND/OR), and complements instantly.</p>
+<div class="calculator-tool">
+<form onsubmit="calcProb(event)">
+<div class="form-group"><label for="prf">Favorable Outcomes</label><input type="number" id="prf" min="0" step="1" placeholder="e.g., 1" required></div>
+<div class="form-group"><label for="prt">Total Possible Outcomes</label><input type="number" id="prt" min="1" step="1" placeholder="e.g., 6" required></div>
+<div class="form-group"><label for="prb">P(B) — Second event (0–1, optional for compound)</label><input type="number" id="prb" step="0.0001" min="0" max="1" placeholder="e.g., 0.1667"></div>
+<button type="submit" class="btn btn-primary">Calculate Probability</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Enter favorable outcomes and total outcomes for P(A). Optionally add P(B) to calculate compound event probabilities.</p></section>
+<section class="content-section"><h2>Formula</h2><p>P(A) = Favorable / Total<br>P(A and B) = P(A) &times; P(B) [independent]<br>P(A or B) = P(A) + P(B) &minus; P(A and B)<br>P(not A) = 1 &minus; P(A)</p></section>
+<section class="content-section"><h2>Example</h2><p>Rolling a 3 on a six-sided die:<br>P(3) = 1/6 = <strong>16.67%</strong>. P(not 3) = 83.33%.</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use for probability homework, game odds, risk percentages, or any likelihood calculation.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Confusing AND with OR — AND multiplies (lower); OR adds minus overlap (higher).</li>
+<li>Assuming independence — P(A and B) = P(A)×P(B) only when events are independent.</li>
+<li>Not checking P(A) + P(not A) = 1.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Probability 0.5 means?</div><div class="faq-answer">Equal chance of occurring or not — like flipping a fair coin.</div></div>
+<div class="faq-item"><div class="faq-question">What is a complementary event?</div><div class="faq-answer">The complement of event A is everything except A. P(A) + P(not A) = 1 always.</div></div>
+<div class="faq-item"><div class="faq-question">Theoretical vs experimental probability?</div><div class="faq-answer">Theoretical: calculated from known outcomes. Experimental: measured from actual trials.</div></div>
+<div class="faq-item"><div class="faq-question">Can probability exceed 1?</div><div class="faq-answer">No. Always between 0 (impossible) and 1 (certain).</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/standard-deviation.html" class="related-calc-link">Standard Deviation</a>
+<a href="/calculators/average.html" class="related-calc-link">Average Calculator</a>
+<a href="/calculators/variance.html" class="related-calc-link">Variance Calculator</a>
+<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcProb(e){e.preventDefault();var pA=parseFloat(document.getElementById('prf').value)/parseFloat(document.getElementById('prt').value),pB=parseFloat(document.getElementById('prb').value),out='<strong>P(A) = '+pA.toFixed(6)+' ('+(pA*100).toFixed(4)+'%)</strong><br>P(not A) = '+(1-pA).toFixed(6)+' ('+(100-pA*100).toFixed(4)+'%)';if(!isNaN(pB)&&pB>0){out+='<br>P(A and B) = '+(pA*pB).toFixed(6)+'<br>P(A or B) = '+(pA+pB-pA*pB).toFixed(6);}document.getElementById('result-text').innerHTML=out;document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

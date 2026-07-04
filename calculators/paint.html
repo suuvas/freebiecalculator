@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paint Calculator — How Many Gallons of Paint Do I Need? | FreebieCalculator.com</title>
+<meta name="description" content="Calculate paint needed for any room. Accounts for windows, doors, coats, and optional ceiling.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/paint.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Paint Calculator — How Many Gallons of Paint Do I Need?"><meta property="og:description" content="Calculate paint needed for any room. Accounts for windows, doors, coats, and optional ceiling."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Paint Calculator — How Many Gallons of Paint Do I Need?","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate paint needed for any room. Accounts for windows, doors, coats, and optional ceiling.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Construction","item":"/calculators/concrete.html"},{"@type":"ListItem","position":3,"name":"Paint Calculator — How Many Gallons of Paint Do I Need?","item":"https://freebiecalculator.com/calculators/paint.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Coverage per gallon?',"acceptedAnswer":{"@type":"Answer","text":'350–400 sq ft on previously painted surfaces. Rough/unpainted walls: 200–300 sq ft.'}},{"@type":"Question","name":'Do I need primer?',"acceptedAnswer":{"@type":"Answer","text":'Use over bare drywall, going dark to light, or covering stains.'}},{"@type":"Question","name":'How long between coats?',"acceptedAnswer":{"@type":"Answer","text":'Latex paint: 2–4 hours. Wait overnight for best results.'}},{"@type":"Question","name":'Interior vs exterior paint?',"acceptedAnswer":{"@type":"Answer","text":'Never interchange — each has specialized additives for its environment.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/concrete.html">Construction</a> &rsaquo; Paint Calculator — How Many Gallons of Paint Do I Need?</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Paint Calculator</h1>
+<p class="calc-intro">Calculate exactly how much paint to buy — walls, ceiling, doors, and windows accounted for. Includes 10% waste.</p>
+<div class="calculator-tool">
+<form onsubmit="calcPaint(event)">
+<div class="form-group"><label for="pln">Room Length (ft)</label><input type="number" id="pln" step="0.1" min="1" placeholder="e.g., 12" required></div>
+<div class="form-group"><label for="pwd">Room Width (ft)</label><input type="number" id="pwd" step="0.1" min="1" placeholder="e.g., 14" required></div>
+<div class="form-group"><label for="pht">Wall Height (ft)</label><input type="number" id="pht" step="0.1" min="1" placeholder="e.g., 8" required></div>
+<div class="form-group"><label for="pwn">Windows</label><input type="number" id="pwn" min="0" value="0"></div>
+<div class="form-group"><label for="pdr">Doors</label><input type="number" id="pdr" min="0" value="1"></div>
+<div class="form-group"><label for="pct">Number of Coats</label><select id="pct"><option value="1">1 Coat</option><option value="2" selected>2 Coats</option><option value="3">3 Coats</option></select></div>
+<div class="form-group"><label for="pcl">Paint Ceiling?</label><select id="pcl"><option value="no">No</option><option value="yes">Yes</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate Paint</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Computes wall area (perimeter × height), subtracts openings, divides by coverage (350 sq ft/gallon), multiplies by coats, adds 10% waste.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Wall Area = 2(L+W) &times; H &minus; Openings<br>Gallons = Wall Area &times; Coats &divide; 350 &times; 1.10</p></section>
+<section class="content-section"><h2>Example</h2><p>12×14 ft room, 8 ft ceilings, 2 windows, 1 door, 2 coats:<br>Wall area = 366 sq ft. Gallons = <strong>2.3</strong> (incl. waste)</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use before any painting project to buy the right amount and avoid costly return trips for color-matched paint.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>No waste factor — buy 10% extra minimum.</li>
+<li>One coat over dark colors — dark-to-light needs primer + 2 finish coats.</li>
+<li>Forgetting ceiling — calculate separately if different color.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Coverage per gallon?</div><div class="faq-answer">350–400 sq ft on previously painted surfaces. Rough/unpainted walls: 200–300 sq ft.</div></div>
+<div class="faq-item"><div class="faq-question">Do I need primer?</div><div class="faq-answer">Use over bare drywall, going dark to light, or covering stains.</div></div>
+<div class="faq-item"><div class="faq-question">How long between coats?</div><div class="faq-answer">Latex paint: 2–4 hours. Wait overnight for best results.</div></div>
+<div class="faq-item"><div class="faq-question">Interior vs exterior paint?</div><div class="faq-answer">Never interchange — each has specialized additives for its environment.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/tile.html" class="related-calc-link">Tile Calculator</a>
+<a href="/calculators/flooring.html" class="related-calc-link">Flooring Calculator</a>
+<a href="/calculators/square-footage.html" class="related-calc-link">Square Footage</a>
+<a href="/calculators/concrete.html" class="related-calc-link">Concrete Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcPaint(e){e.preventDefault();var len=parseFloat(document.getElementById('pln').value),wid=parseFloat(document.getElementById('pwd').value),ht=parseFloat(document.getElementById('pht').value),wins=parseInt(document.getElementById('pwn').value)||0,doors=parseInt(document.getElementById('pdr').value)||0,coats=parseInt(document.getElementById('pct').value),ceil=document.getElementById('pcl').value==='yes',wallArea=2*(len+wid)*ht-wins*15-doors*20,ceilArea=ceil?len*wid:0,gallons=(wallArea+ceilArea)*coats/350*1.1;document.getElementById('result-text').innerHTML='<strong>Paint Needed: '+gallons.toFixed(1)+' gallons</strong> (incl. 10% waste)<br>Wall Area: '+wallArea.toFixed(0)+' sq ft'+(ceil?'<br>Ceiling: '+ceilArea.toFixed(0)+' sq ft':'');document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

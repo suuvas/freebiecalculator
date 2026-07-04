@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAT Calculator — Add or Remove Value Added Tax | FreebieCalculator.com</title>
+<meta name="description" content="Add or remove VAT from any price. Works for UK 20%, EU 20%, Australia GST 10%, and any custom rate.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/vat.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="VAT Calculator — Add or Remove Value Added Tax"><meta property="og:description" content="Add or remove VAT from any price. Works for UK 20%, EU 20%, Australia GST 10%, and any custom rate."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VAT Calculator — Add or Remove Value Added Tax","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add or remove VAT from any price. Works for UK 20%, EU 20%, Australia GST 10%, and any custom rate.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/sales-tax.html"},{"@type":"ListItem","position":3,"name":"VAT Calculator — Add or Remove Value Added Tax","item":"https://freebiecalculator.com/calculators/vat.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Which countries use VAT?',"acceptedAnswer":{"@type":"Answer","text":'Most of the world: EU, UK, Australia (GST), Canada (HST/GST), India (GST). The US uses sales tax instead.'}},{"@type":"Question","name":'UK standard VAT rate?',"acceptedAnswer":{"@type":"Answer","text":"20% standard. 5% reduced for domestic fuel. 0% for most food and children's clothing."}},{"@type":"Question","name":'VAT vs sales tax?',"acceptedAnswer":{"@type":"Answer","text":'VAT is collected at each production stage; sales tax only at the final retail sale.'}},{"@type":"Question","name":'How to reclaim VAT?',"acceptedAnswer":{"@type":"Answer","text":'VAT-registered businesses file periodic returns reporting output tax minus input tax credit.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/sales-tax.html">Finance</a> &rsaquo; VAT Calculator — Add or Remove Value Added Tax</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>VAT Calculator</h1>
+<p class="calc-intro">Instantly add VAT to a net price or remove it to find the pre-tax amount. Works for any VAT rate worldwide.</p>
+<div class="calculator-tool">
+<form onsubmit="calcVAT(event)">
+<div class="form-group"><label for="vm">Mode</label><select id="vm"><option value="add">Add VAT to Net Price</option><option value="remove">Remove VAT from Gross Price</option></select></div>
+<div class="form-group"><label for="vp">Price</label><input type="number" id="vp" step="0.01" min="0" placeholder="e.g., 100" required></div>
+<div class="form-group"><label for="vr">VAT Rate (%)</label><select id="vr"><option value="20">20% (UK/EU Standard)</option><option value="10">10% (Australia GST)</option><option value="15">15%</option><option value="5">5% (UK Reduced)</option><option value="0">0%</option></select></div>
+<div class="form-group"><label for="vc">Custom Rate % (overrides above)</label><input type="number" id="vc" step="0.1" min="0" max="100" placeholder="Optional"></div>
+<button type="submit" class="btn btn-primary">Calculate VAT</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Select add or remove mode. Enter price and VAT rate. Shows VAT amount plus both net and gross prices.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Add VAT: <code>Gross = Net &times; (1 + Rate/100)</code><br>Remove VAT: <code>Net = Gross &divide; (1 + Rate/100)</code></p></section>
+<section class="content-section"><h2>Example</h2><p>&pound;100 net, 20% VAT: VAT = &pound;20, Gross = <strong>&pound;120</strong>.<br>Reverse: &pound;120 &divide; 1.20 = &pound;100 net.</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when issuing invoices, filing VAT returns, purchasing business goods for VAT reclaim, or comparing prices across different markets.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Calculating VAT removal as rate% of gross — always divide by (1 + rate/100).</li>
+<li>Using the wrong rate — reduced rates apply to food and children's clothing.</li>
+<li>Not checking registration threshold — UK threshold is £90,000.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Which countries use VAT?</div><div class="faq-answer">Most of the world: EU, UK, Australia (GST), Canada (HST/GST), India (GST). The US uses sales tax instead.</div></div>
+<div class="faq-item"><div class="faq-question">UK standard VAT rate?</div><div class="faq-answer">20% standard. 5% reduced for domestic fuel. 0% for most food and children's clothing.</div></div>
+<div class="faq-item"><div class="faq-question">VAT vs sales tax?</div><div class="faq-answer">VAT is collected at each production stage; sales tax only at the final retail sale.</div></div>
+<div class="faq-item"><div class="faq-question">How to reclaim VAT?</div><div class="faq-answer">VAT-registered businesses file periodic returns reporting output tax minus input tax credit.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/sales-tax.html" class="related-calc-link">US Sales Tax</a>
+<a href="/calculators/gst-hst.html" class="related-calc-link">Canada GST/HST</a>
+<a href="/calculators/discount.html" class="related-calc-link">Discount</a>
+<a href="/calculators/tax.html" class="related-calc-link">Tax Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcVAT(e){e.preventDefault();var mode=document.getElementById('vm').value,price=parseFloat(document.getElementById('vp').value),cust=parseFloat(document.getElementById('vc').value),rate=(isNaN(cust)?parseFloat(document.getElementById('vr').value):cust)/100,net,gross,vatAmt;if(mode==='add'){net=price;gross=price*(1+rate);vatAmt=gross-net;}else{gross=price;net=price/(1+rate);vatAmt=gross-net;}document.getElementById('result-text').innerHTML='<strong>VAT Amount: '+vatAmt.toFixed(2)+'</strong><br>Net (excl. VAT): '+net.toFixed(2)+'<br>Gross (incl. VAT): '+gross.toFixed(2)+'<br>Rate: '+(rate*100)+'%';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

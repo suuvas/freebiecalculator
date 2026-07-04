@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heart Rate Zone Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Calculate target heart rate zones for fat burn, cardio, and peak performance training based on your maximum heart rate.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/heart-rate.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Heart Rate Zone Calculator"><meta property="og:description" content="Calculate target heart rate zones for fat burn, cardio, and peak performance training based on your maximum heart rate."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Heart Rate Zone Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate target heart rate zones for fat burn, cardio, and peak performance training based on your maximum heart rate.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Health","item":"/calculators/bmr.html"},{"@type":"ListItem","position":3,"name":"Heart Rate Zone Calculator","item":"https://freebiecalculator.com/calculators/heart-rate.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Which zone burns most fat?',"acceptedAnswer":{"@type":"Answer","text":'Zone 2 (60–70% max HR) uses highest fat percentage as fuel. Higher zones burn more total calories per minute.'}},{"@type":"Question","name":'Normal resting heart rate?',"acceptedAnswer":{"@type":"Answer","text":'60–100 bpm normal. Trained athletes often see 40–60 bpm.'}},{"@type":"Question","name":'How accurate is 220 − age?',"acceptedAnswer":{"@type":"Answer","text":'±10–12 bpm standard deviation. A supervised max HR test is more precise.'}},{"@type":"Question","name":'What is Zone 2 training?',"acceptedAnswer":{"@type":"Answer","text":'Builds mitochondrial density and aerobic base. Popularized by Dr. Inigo San Millan for athletes and longevity.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/bmr.html">Health</a> &rsaquo; Heart Rate Zone Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Heart Rate Zone Calculator</h1>
+<p class="calc-intro">Training in the right heart rate zone maximizes your results. Enter your age to see personalized zones for fat burning, cardio, and peak performance.</p>
+<div class="calculator-tool">
+<form onsubmit="calcHR(event)">
+<div class="form-group"><label for="ha">Age (years)</label><input type="number" id="ha" min="10" max="100" placeholder="e.g., 35" required></div>
+<div class="form-group"><label for="hm">Known Max HR (optional — leave blank to estimate)</label><input type="number" id="hm" min="100" max="250" placeholder="e.g., 185"></div>
+<button type="submit" class="btn btn-primary">Calculate Heart Rate Zones</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice" role="note"><strong>&#x2695;&#xFE0F; Health Disclaimer:</strong> This calculator is for educational purposes only and is not a substitute for professional medical advice.</div>
+<section class="content-section"><h2>How It Works</h2><p>Uses 220 − age formula to estimate maximum HR, then calculates five training zones as percentages. Enter known max HR for better accuracy.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>Max HR = 220 &minus; Age</code><br>Zone 1: 50–60% | Zone 2: 60–70% | Zone 3: 70–80% | Zone 4: 80–90% | Zone 5: 90–100%</p></section>
+<section class="content-section"><h2>Example</h2><p>Age 35: Max HR = 185 bpm<br>Zone 2 (Fat Burn): <strong>111–130 bpm</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when setting up a heart rate monitor, starting a cardio program, or designing interval training with specific zone targets.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Treating 220 − age as absolute — it has ±10–12 bpm variability.</li>
+<li>Training only in Zone 3 — 80/20 rule: 80% Zone 2, 20% Zones 4–5.</li>
+<li>Ignoring resting heart rate — Karvonen formula is more personalized for trained athletes.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Which zone burns most fat?</div><div class="faq-answer">Zone 2 (60–70% max HR) uses highest fat percentage as fuel. Higher zones burn more total calories per minute.</div></div>
+<div class="faq-item"><div class="faq-question">Normal resting heart rate?</div><div class="faq-answer">60–100 bpm normal. Trained athletes often see 40–60 bpm.</div></div>
+<div class="faq-item"><div class="faq-question">How accurate is 220 − age?</div><div class="faq-answer">±10–12 bpm standard deviation. A supervised max HR test is more precise.</div></div>
+<div class="faq-item"><div class="faq-question">What is Zone 2 training?</div><div class="faq-answer">Builds mitochondrial density and aerobic base. Popularized by Dr. Inigo San Millan for athletes and longevity.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/bmr.html" class="related-calc-link">BMR Calculator</a>
+<a href="/calculators/tdee.html" class="related-calc-link">TDEE Calculator</a>
+<a href="/calculators/calorie.html" class="related-calc-link">Calorie Calculator</a>
+<a href="/calculators/pace.html" class="related-calc-link">Running Pace</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcHR(e){e.preventDefault();var age=parseInt(document.getElementById('ha').value),known=parseFloat(document.getElementById('hm').value),mhr=(!isNaN(known)&&known>0)?known:220-age,zones=[[50,60,'Zone 1 &mdash; Recovery'],[60,70,'Zone 2 &mdash; Fat Burn'],[70,80,'Zone 3 &mdash; Cardio'],[80,90,'Zone 4 &mdash; Hard'],[90,100,'Zone 5 &mdash; Max']],rows=zones.map(function(z){return'<li><strong>'+z[2]+':</strong> '+Math.round(mhr*z[0]/100)+'&ndash;'+Math.round(mhr*z[1]/100)+' bpm</li>';}).join('');document.getElementById('result-text').innerHTML='<strong>Max HR: '+mhr+' bpm</strong><ul style="margin:.5rem 0 0 1.5rem">'+rows+'</ul>';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

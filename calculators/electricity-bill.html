@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electricity Bill Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Calculate monthly electricity bill by kWh usage or appliance wattage. See which devices cost the most.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/electricity-bill.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Electricity Bill Calculator"><meta property="og:description" content="Calculate monthly electricity bill by kWh usage or appliance wattage. See which devices cost the most."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Electricity Bill Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate monthly electricity bill by kWh usage or appliance wattage. See which devices cost the most.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Utility","item":"/calculators/fuel-cost.html"},{"@type":"ListItem","position":3,"name":"Electricity Bill Calculator","item":"https://freebiecalculator.com/calculators/electricity-bill.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Average US electricity rate?',"acceptedAnswer":{"@type":"Answer","text":'$0.12–$0.16/kWh nationally. Ranges from $0.09 to $0.30+ by state.'}},{"@type":"Question","name":'Highest electricity users?',"acceptedAnswer":{"@type":"Answer","text":'HVAC (1–5 kW), water heater (4 kW), dryer (5 kW), refrigerator (continuous 150–400W).'}},{"@type":"Question","name":'TV electricity cost?',"acceptedAnswer":{"@type":"Answer","text":'55" LED TV ≈ 100W. 5h/day at $0.13/kWh ≈ $1.95/month.'}},{"@type":"Question","name":'What is a kilowatt-hour?',"acceptedAnswer":{"@type":"Answer","text":'Energy used by a 1,000-watt device running for 1 hour.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/fuel-cost.html">Utility</a> &rsaquo; Electricity Bill Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Electricity Bill Calculator</h1>
+<p class="calc-intro">Find out what your appliances cost to run and estimate your monthly electricity bill accurately.</p>
+<div class="calculator-tool">
+<form onsubmit="calcElec(event)">
+<div class="form-group"><label for="elr">Electricity Rate ($/kWh)</label><input type="number" id="elr" step="0.001" min="0" placeholder="e.g., 0.13" required></div>
+<div class="form-group"><label for="elm">Calculate By</label><select id="elm" onchange="toggleElec()"><option value="kwh">Monthly kWh total</option><option value="app">Appliance (Watts + Hours/day)</option></select></div>
+<div id="el-ki"><div class="form-group"><label for="elk">Monthly kWh Usage</label><input type="number" id="elk" step="0.1" min="0" placeholder="e.g., 900"></div></div>
+<div id="el-ai" hidden><div class="form-group"><label for="elw">Appliance Watts</label><input type="number" id="elw" step="1" min="0" placeholder="e.g., 1500"></div><div class="form-group"><label for="elh">Hours per Day</label><input type="number" id="elh" step="0.5" min="0" max="24" placeholder="e.g., 8"></div></div>
+<button type="submit" class="btn btn-primary">Calculate Bill</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Converts watts to kWh and multiplies by your electricity rate ($/kWh) to show daily, monthly, and annual costs.</p></section>
+<section class="content-section"><h2>Formula</h2><p>kWh = Watts &times; Hours &divide; 1,000<br>Daily Cost = kWh &times; Rate<br>Monthly = Daily &times; 30</p></section>
+<section class="content-section"><h2>Example</h2><p>AC 1,500W, 8h/day, $0.13/kWh:<br>12 kWh/day &times; $0.13 = <strong>$46.80/month</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use to understand which appliances drive your bill, evaluate energy-efficient upgrades, or estimate costs when moving.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Wrong rate — check your utility bill for the actual rate.</li>
+<li>Forgetting standby power — many devices draw 1–5 watts when off.</li>
+<li>Not accounting for seasonal variation — HVAC dramatically changes bills.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Average US electricity rate?</div><div class="faq-answer">$0.12–$0.16/kWh nationally. Ranges from $0.09 to $0.30+ by state.</div></div>
+<div class="faq-item"><div class="faq-question">Highest electricity users?</div><div class="faq-answer">HVAC (1–5 kW), water heater (4 kW), dryer (5 kW), refrigerator (continuous 150–400W).</div></div>
+<div class="faq-item"><div class="faq-question">TV electricity cost?</div><div class="faq-answer">55" LED TV ≈ 100W. 5h/day at $0.13/kWh ≈ $1.95/month.</div></div>
+<div class="faq-item"><div class="faq-question">What is a kilowatt-hour?</div><div class="faq-answer">Energy used by a 1,000-watt device running for 1 hour.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/fuel-cost.html" class="related-calc-link">Fuel Cost Calculator</a>
+<a href="/calculators/trip-cost.html" class="related-calc-link">Trip Cost Calculator</a>
+<a href="/calculators/inflation.html" class="related-calc-link">Inflation</a>
+<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function toggleElec(){var m=document.getElementById('elm').value;document.getElementById('el-ki').hidden=m!=='kwh';document.getElementById('el-ai').hidden=m==='kwh';}
+function calcElec(e){e.preventDefault();var rate=parseFloat(document.getElementById('elr').value),mode=document.getElementById('elm').value,mo,daily,kwh;if(mode==='kwh'){kwh=parseFloat(document.getElementById('elk').value);mo=kwh*rate;daily=mo/30;}else{var w=parseFloat(document.getElementById('elw').value),hrs=parseFloat(document.getElementById('elh').value),dk=w*hrs/1000;daily=dk*rate;mo=daily*30;kwh=dk*30;}document.getElementById('result-text').innerHTML='<strong>Monthly Bill: $'+mo.toFixed(2)+'</strong><br>Monthly kWh: '+kwh.toFixed(1)+'<br>Daily Cost: $'+daily.toFixed(2)+'<br>Annual: $'+(mo*12).toFixed(2);document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

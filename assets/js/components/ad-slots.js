@@ -4,94 +4,103 @@
 const PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX';
 
 // Each placement gets its own unique slot ID — required by AdSense policy.
-// Create all 7 slots in the AdSense dashboard and paste IDs here after approval.
+// Create all 8 slots in the AdSense dashboard and paste IDs here after approval.
 const SLOT_IDS = {
-    top:      '1000000001', // Between content sections 1 and 2
-    mid:      '1000000002', // Between form and first content section
-    result:   '1000000003', // After results — HIGHEST CTR (post-calculation)
-    bottom:   '1000000004', // Before related links / pre-footer
-    sidebar:  '1000000005', // Desktop sticky sidebar (300×250 / 300×600)
-    sticky:   '1000000006', // Mobile anchor bottom banner
-    blogMid2: '1000000007', // Second mid-article ad on long blog posts
+    top:           '1000000001', // Desktop only: between content sections 1 and 2
+    mid:           '1000000002', // Below form / between form and first content section
+    result:        '1000000003', // After results — HIGHEST CTR (post-calculation)
+    bottom:        '1000000004', // Before related links / pre-footer
+    sidebar:       '1000000005', // Desktop sticky sidebar (300×250 / 300×600)
+    sticky:        '1000000006', // Mobile anchor bottom banner
+    mobileArticle: '1000000007', // Mobile only: mid-content in-article (replaces hidden #ad-top)
+    blogMid2:      '1000000008', // Second mid-article ad on long blog posts
 };
 
 export function initAdSlots() {
-    injectAdCodeIntoSlots(); // wire up #ad-mid and #ad-bottom
-    injectTopAdBetweenSections(); // create #ad-top in correct position
-    injectResultAd();        // high-CTR ad after calculation
-    injectSidebarAd();       // desktop 300px sidebar
-    injectStickyMobileAd();  // mobile anchor bottom banner
+    injectAdCodeIntoSlots();     // wire up #ad-mid (desktop) and #ad-bottom
+    injectTopAdBetweenSections();// desktop only: between content sections 1 and 2
+    // Mobile in-article ad removed — mobile uses result ad + sticky anchor only
+    injectResultAd();            // highest-CTR: after calculation results appear
+    injectSidebarAd();           // desktop 300px sticky sidebar
+    injectStickyMobileAd();      // mobile anchor bottom banner
 
     const count = document.querySelectorAll('.ad-slot').length;
     console.log(`Initialized ${count} ad slots`);
 }
 
-// ── Inject <ins> tags into existing .ad-slot placeholders ────────────────────
+// ── Inject <ins> tags into existing #ad-mid and #ad-bottom placeholders ───────
+// #ad-mid is skipped on mobile (≤900px) — it sits inside the calculator form
+// flow on mobile and would block tool usability. CSS also hides it on mobile.
+// Skipping the <ins> injection means no hidden-ad policy violation occurs.
 function injectAdCodeIntoSlots() {
+    const isMobile = window.innerWidth <= 900;
     const slotMap = {
-        'ad-mid':    SLOT_IDS.mid,
+        'ad-mid':    isMobile ? null : SLOT_IDS.mid,  // desktop-only
         'ad-bottom': SLOT_IDS.bottom,
     };
     for (const [slotId, adSlotNum] of Object.entries(slotMap)) {
+        if (!adSlotNum) continue;
         const el = document.getElementById(slotId);
         if (!el || el.querySelector('ins.adsbygoogle')) continue;
         injectIns(el, adSlotNum);
     }
 }
 
-// ── Create #ad-top between content sections 1 and 2 ─────────────────────────
+// ── DESKTOP ONLY: Create #ad-top between content sections 1 and 2 ────────────
 //
-// WHY: The original HTML had #ad-top between the <h1> and the calculator form,
-// blocking users from reaching the primary tool — an AdSense policy violation.
-// We removed it from all 60 HTML files and create it here in the correct
-// position: between the first and second .content-section elements.
+// WHY desktop-only: pushing ads into hidden elements (display:none) violates
+// AdSense policy. Since #ad-top is hidden on mobile via CSS, we must not
+// create or push it on mobile. Mobile uses #ad-mobile-article instead.
 //
-// This creates a natural reading break with real content on both sides:
+// Layout on desktop:
 //   Form → #ad-mid → Content-1 → #ad-top (HERE) → Content-2 → FAQ → #ad-bottom
-//
-// Hidden on mobile via CSS — the sticky banner handles mobile coverage.
 function injectTopAdBetweenSections() {
+    if (window.innerWidth <= 900) return;            // mobile/tablet: skip entirely
     if (!document.querySelector('.calculator-tool')) return; // not a calculator page
-    if (document.getElementById('ad-top')) return; // already placed
+    if (document.getElementById('ad-top')) return;   // already placed
 
     const sections = document.querySelectorAll('.content-section');
     if (!sections.length) return;
 
-    const adTop = createSlotEl('ad-top', 'ad-slot');
+    const adTop = createSlotEl('ad-top', 'ad-slot ad-top-slot');
 
     if (sections.length >= 2) {
-        // Insert between section 1 and section 2 — best reading break
         sections[1].parentNode.insertBefore(adTop, sections[1]);
     } else {
-        // Only one section: insert after it
         sections[0].parentNode.insertBefore(adTop, sections[0].nextSibling);
     }
 
     injectIns(adTop, SLOT_IDS.top);
 }
 
-// ── Create and push a responsive <ins class="adsbygoogle"> ───────────────────
-// Sizes come from the container CSS — do NOT set min-width/min-height on <ins>.
-// AdSense calculates available space from the container div, not the <ins> tag.
-function injectIns(container, slotId) {
-    const ins = document.createElement('ins');
-    ins.className = 'adsbygoogle';
-    ins.style.display = 'block';
-    ins.dataset.adClient = PUB_ID;
-    ins.dataset.adSlot = slotId;
-    ins.dataset.adFormat = 'auto';
-    ins.dataset.fullWidthResponsive = 'true';
-    container.appendChild(ins);
-    try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) { /* AdSense script not yet loaded — push queued automatically */ }
+// ── MOBILE ONLY: In-article ad between content sections 2 and 3 ──────────────
+//
+// On mobile, #ad-top is not created (see above). This places a visible,
+// compliant in-article ad between reading sections — high viewability score.
+// Only runs on calculator pages that have at least 2 content sections.
+function injectMobileInArticleAd() {
+    if (window.innerWidth > 900) return;             // desktop: #ad-top handles this
+    if (!document.querySelector('.calculator-tool')) return;
+    if (document.getElementById('ad-mobile-article')) return;
+
+    const sections = document.querySelectorAll('.content-section');
+    if (sections.length < 2) return; // need at least 2 sections for this to make sense
+
+    // Insert before the 3rd section (index 2), or after the 2nd if only 2 exist
+    const targetSection = sections[2] || sections[sections.length - 1];
+    const el = createSlotEl('ad-mobile-article', 'ad-slot ad-mobile-article');
+    targetSection.parentNode.insertBefore(el, targetSection);
+    injectIns(el, SLOT_IDS.mobileArticle);
 }
 
-// ── Post-calculation result ad ───────────────────────────────────────────────
-// Inserted after .result-container the moment results become visible.
-// Highest CTR of any position: user just got their answer, peak purchase intent.
+// ── Post-calculation result ad ────────────────────────────────────────────────
+// Inserted after results become visible — HIGHEST CTR of any position.
+// Selector covers all result wrapper patterns across all calculator layouts:
+//   .result-container  — standard old layout (33 pages)
+//   .result-section    — compact new layout (39 pages)
+//   .results-container — alternative old layout (26 pages, note the plural)
 function injectResultAd() {
-    const resultContainer = document.querySelector('.result-container');
+    const resultContainer = document.querySelector('.result-container, .result-section, .results-container');
     if (!resultContainer || document.getElementById('ad-result')) return;
 
     const wrapper = createSlotEl('ad-result', 'ad-slot ad-result-slot');
@@ -100,7 +109,7 @@ function injectResultAd() {
 
     resultContainer.parentNode.insertBefore(wrapper, resultContainer.nextSibling);
 
-    // Watch only the result container — not the whole body (avoids jank + CLS)
+    // Watch result container for when it becomes visible after calculation
     const observer = new MutationObserver(() => {
         const isVisible =
             resultContainer.style.display !== 'none' &&
@@ -112,7 +121,7 @@ function injectResultAd() {
             if (!wrapper.querySelector('ins.adsbygoogle')) {
                 injectIns(wrapper, SLOT_IDS.result);
             }
-            observer.disconnect(); // stop watching once shown
+            observer.disconnect();
         }
     });
 
@@ -129,7 +138,7 @@ function injectResultAd() {
     }
 }
 
-// ── Desktop sidebar ad (≥1025px) ─────────────────────────────────────────────
+// ── Desktop sidebar ad (≥1025px) ──────────────────────────────────────────────
 // 300px wide — supports 300×250 (most-filled worldwide) and 300×600 (premium).
 // JS guard ensures it never runs on mobile or tablet screens.
 function injectSidebarAd() {
@@ -158,10 +167,13 @@ function injectSidebarAd() {
     injectIns(sidebarSlot, SLOT_IDS.sidebar);
 }
 
-// ── Sticky mobile bottom anchor banner ───────────────────────────────────────
-// Fixed at bottom of screen on mobile. Compliant with AdSense anchor policy:
-// must be dismissible and not cover more than 30% of screen height.
-// CLS fix: body padding added immediately (not after timeout) via CSS class.
+// ── Sticky mobile bottom anchor banner ────────────────────────────────────────
+// Fixed at bottom of screen on mobile. AdSense anchor ad policy requires:
+//   1. Must be dismissible (close button) ✓
+//   2. Must not cover more than 30% of screen height ✓ (70px = ~10% on average phone)
+//   3. Must not overlap main content or navigation ✓
+// CLS fix: body padding added immediately via CSS class so layout doesn't
+// jump when the ad slides in after 3 seconds.
 function injectStickyMobileAd() {
     if (document.getElementById('ad-sticky-mobile')) return;
     if (window.innerWidth > 900) return;
@@ -169,6 +181,8 @@ function injectStickyMobileAd() {
     const sticky = document.createElement('div');
     sticky.id = 'ad-sticky-mobile';
     sticky.className = 'ad-sticky-mobile';
+    sticky.setAttribute('aria-label', 'Advertisement');
+    sticky.setAttribute('role', 'complementary');
 
     const label = document.createElement('span');
     label.className = 'ad-sticky-label';
@@ -194,7 +208,7 @@ function injectStickyMobileAd() {
 
     document.body.appendChild(sticky);
 
-    // Reserve space immediately — prevents CLS when ad slides in after 3s
+    // Reserve body padding immediately to prevent CLS when ad slides in
     document.body.classList.add('has-sticky-ad');
 
     setTimeout(() => {
@@ -202,7 +216,7 @@ function injectStickyMobileAd() {
         if (!adSlot.querySelector('ins.adsbygoogle')) {
             injectIns(adSlot, SLOT_IDS.sticky);
         }
-    }, 3000);
+    }, 2000); // 2s delay — enough for LCP to complete, not too long to miss users
 }
 
 // ── Blog post dynamic ad insertion ───────────────────────────────────────────
@@ -232,7 +246,6 @@ export function insertBlogAdSlots() {
         injectIns(el, SLOT_IDS.mid);
     }
 
-    // Second mid for long posts — must use its own unique slot ID
     if (isLongPost && sections.length >= 4) {
         const lateSection = sections[Math.floor(sections.length * 0.75)];
         const el = createSlotEl('ad-blog-mid2', 'ad-slot');
@@ -246,6 +259,28 @@ export function insertBlogAdSlots() {
         footer.parentNode.insertBefore(el, footer);
         injectIns(el, SLOT_IDS.bottom);
     }
+}
+
+// ── Shared helpers ─────────────────────────────────────────────────────────────
+
+// Create and push a responsive <ins class="adsbygoogle">.
+// data-ad-format="auto" + data-full-width-responsive="true" lets AdSense
+// pick the best size for the available container width.
+// Adds .ad-active to the container so CSS shows the gray background and
+// "Advertisement" label — only slots that actually have an <ins> get the styling.
+function injectIns(container, slotId) {
+    const ins = document.createElement('ins');
+    ins.className = 'adsbygoogle';
+    ins.style.display = 'block';
+    ins.dataset.adClient = PUB_ID;
+    ins.dataset.adSlot = slotId;
+    ins.dataset.adFormat = 'auto';
+    ins.dataset.fullWidthResponsive = 'true';
+    container.appendChild(ins);
+    container.classList.add('ad-active'); // enables gray bg + label via CSS
+    try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) { /* AdSense not yet loaded — queued automatically on script load */ }
 }
 
 function createSlotEl(id, className) {

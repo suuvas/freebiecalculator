@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APR Calculator — Annual Percentage Rate | FreebieCalculator.com</title>
+<meta name="description" content="Calculate the true APR of any loan including fees. Compare loan offers accurately with our free APR calculator.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/apr.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="APR Calculator — Annual Percentage Rate"><meta property="og:description" content="Calculate the true APR of any loan including fees. Compare loan offers accurately with our free APR calculator."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"APR Calculator — Annual Percentage Rate","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the true APR of any loan including fees. Compare loan offers accurately with our free APR calculator.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/mortgage.html"},{"@type":"ListItem","position":3,"name":"APR Calculator — Annual Percentage Rate","item":"https://freebiecalculator.com/calculators/apr.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Why is APR higher than the interest rate?',"acceptedAnswer":{"@type":"Answer","text":'APR includes upfront fees spread across the loan term, making it higher than the base rate.'}},{"@type":"Question","name":'Good mortgage APR?',"acceptedAnswer":{"@type":"Answer","text":'Under 7% for a 30-year fixed is generally good, depending on market conditions and credit score.'}},{"@type":"Question","name":'Can I compare different loan types by APR?',"acceptedAnswer":{"@type":"Answer","text":'APR works across types but is most useful comparing similar products with the same term.'}},{"@type":"Question","name":'Lower APR always better?',"acceptedAnswer":{"@type":"Answer","text":'Yes, for the same amount and term, lower APR = lower total cost.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/mortgage.html">Finance</a> &rsaquo; APR Calculator — Annual Percentage Rate</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>APR Calculator</h1>
+<p class="calc-intro">APR is the true annual cost of borrowing, including interest and fees. Use this to compare loan offers and understand the real cost beyond just the interest rate.</p>
+<div class="calculator-tool">
+<form onsubmit="calcAPR(event)">
+<div class="form-group"><label for="la">Loan Amount ($)</label><input type="number" id="la" min="1" placeholder="e.g., 100000" required></div>
+<div class="form-group"><label for="ir">Annual Interest Rate (%)</label><input type="number" id="ir" step="0.01" min="0" max="100" placeholder="e.g., 6" required></div>
+<div class="form-group"><label for="lt">Loan Term (Years)</label><input type="number" id="lt" min="1" max="50" placeholder="e.g., 30" required></div>
+<div class="form-group"><label for="fe">Total Fees ($)</label><input type="number" id="fe" min="0" placeholder="e.g., 2000" value="0"></div>
+<button type="submit" class="btn btn-primary">Calculate APR</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice finance-disclaimer" role="note"><strong>&#x1F4B0; Financial Disclaimer:</strong> This calculator is for educational purposes only. Consult a qualified financial professional.</div>
+<section class="content-section"><h2>How It Works</h2><p>Enter loan amount, interest rate, term, and upfront fees. The calculator uses numerical iteration to find the effective APR including all costs.</p></section>
+<section class="content-section"><h2>Formula</h2><p>APR solves for the rate where present value of payments equals loan amount minus fees.<br><code>Net Proceeds = PMT &times; (1&minus;(1+APR/12)^&minus;n) / (APR/12)</code></p></section>
+<section class="content-section"><h2>Example</h2><p>$100,000 loan, 6% rate, 30 years, $2,000 fees:<br>Monthly payment: $599.55. Net proceeds: $98,000.<br>Effective APR: <strong>6.17%</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use before signing any loan to understand the full cost. Lenders must disclose APR under the Truth in Lending Act.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Comparing loans by interest rate alone — lower rate + high fees can mean higher APR.</li>
+<li>Ignoring loan term — APR is only comparable across loans with the same term.</li>
+<li>Confusing APR with APY — APR is for loans; APY is for savings.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Why is APR higher than the interest rate?</div><div class="faq-answer">APR includes upfront fees spread across the loan term, making it higher than the base rate.</div></div>
+<div class="faq-item"><div class="faq-question">Good mortgage APR?</div><div class="faq-answer">Under 7% for a 30-year fixed is generally good, depending on market conditions and credit score.</div></div>
+<div class="faq-item"><div class="faq-question">Can I compare different loan types by APR?</div><div class="faq-answer">APR works across types but is most useful comparing similar products with the same term.</div></div>
+<div class="faq-item"><div class="faq-question">Lower APR always better?</div><div class="faq-answer">Yes, for the same amount and term, lower APR = lower total cost.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/mortgage.html" class="related-calc-link">Mortgage</a>
+<a href="/calculators/car-loan.html" class="related-calc-link">Car Loan</a>
+<a href="/calculators/apy.html" class="related-calc-link">APY Calculator</a>
+<a href="/calculators/emi.html" class="related-calc-link">EMI Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcAPR(e){e.preventDefault();var P=parseFloat(document.getElementById('la').value),r=parseFloat(document.getElementById('ir').value)/100/12,n=parseInt(document.getElementById('lt').value)*12,fees=parseFloat(document.getElementById('fe').value)||0,pmt=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1),net=P-fees,ag=r;for(var i=0;i<200;i++){var pv=pmt*(1-Math.pow(1+ag,-n))/ag,dpv=-pmt*(n*Math.pow(1+ag,-(n+1))/ag-(1-Math.pow(1+ag,-n))/(ag*ag)),d=(pv-net)/dpv;ag-=d;if(Math.abs(d)<1e-12)break;}document.getElementById('result-text').innerHTML='<strong>APR: '+(ag*12*100).toFixed(4)+'%</strong><br>Monthly Payment: $'+pmt.toFixed(2)+'<br>Total Paid: $'+(pmt*n).toFixed(2)+'<br>Total Interest+Fees: $'+(pmt*n-net).toFixed(2);document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

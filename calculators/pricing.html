@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Pricing Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Calculate the right selling price using cost-plus or target margin pricing methods with competitor comparison.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/pricing.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Product Pricing Calculator"><meta property="og:description" content="Calculate the right selling price using cost-plus or target margin pricing methods with competitor comparison."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Product Pricing Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the right selling price using cost-plus or target margin pricing methods with competitor comparison.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Business","item":"/calculators/profit-margin.html"},{"@type":"ListItem","position":3,"name":"Product Pricing Calculator","item":"https://freebiecalculator.com/calculators/pricing.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Cost-plus pricing?',"acceptedAnswer":{"@type":"Answer","text":'Adds fixed markup to total cost. Simple and ensures profitability but ignores market demand.'}},{"@type":"Question","name":'Value-based pricing?',"acceptedAnswer":{"@type":"Answer","text":'Price based on perceived customer value, not cost. Higher margins but requires market knowledge.'}},{"@type":"Question","name":'How to price a service?',"acceptedAnswer":{"@type":"Answer","text":'Hourly rate × hours + expenses + profit margin, or package-based pricing.'}},{"@type":"Question","name":'Keystone pricing?',"acceptedAnswer":{"@type":"Answer","text":'100% markup = 2× cost = 50% gross margin. Common retail rule of thumb.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/profit-margin.html">Business</a> &rsaquo; Product Pricing Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Product Pricing Calculator</h1>
+<p class="calc-intro">Price your products profitably. Choose cost-plus or target margin pricing and get a recommended price with margin analysis.</p>
+<div class="calculator-tool">
+<form onsubmit="calcPrice(event)">
+<div class="form-group"><label for="prc">Total Product Cost ($)</label><input type="number" id="prc" step="0.01" min="0" placeholder="e.g., 30" required></div>
+<div class="form-group"><label for="prmt">Method</label><select id="prmt"><option value="markup">Cost-Plus (Markup %)</option><option value="margin" selected>Target Margin (%)</option></select></div>
+<div class="form-group"><label for="prpct">Markup % or Margin %</label><input type="number" id="prpct" step="0.1" min="0" max="99" placeholder="e.g., 40" required></div>
+<div class="form-group"><label for="prcp">Competitor Price (optional)</label><input type="number" id="prcp" step="0.01" min="0" placeholder="e.g., 55"></div>
+<button type="submit" class="btn btn-primary">Calculate Price</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Supports cost-plus (cost × markup) and target margin (cost / (1−margin)) methods. Optionally compares your margin against a competitor price.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Cost-Plus: <code>Price = Cost &times; (1 + Markup%)</code><br>Target Margin: <code>Price = Cost &divide; (1 &minus; Margin%)</code></p></section>
+<section class="content-section"><h2>Example</h2><p>Cost $30, target 40% margin:<br>Price = $30/0.60 = <strong>$50</strong>. Markup = 66.7%.</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when launching products, reviewing existing prices, or responding to competitor price changes.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Not knowing true total cost — include materials, labor, shipping, fees, and overhead.</li>
+<li>Blindly matching competitor price — their costs may differ.</li>
+<li>Ignoring price elasticity — higher price can signal quality in some markets.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Cost-plus pricing?</div><div class="faq-answer">Adds fixed markup to total cost. Simple and ensures profitability but ignores market demand.</div></div>
+<div class="faq-item"><div class="faq-question">Value-based pricing?</div><div class="faq-answer">Price based on perceived customer value, not cost. Higher margins but requires market knowledge.</div></div>
+<div class="faq-item"><div class="faq-question">How to price a service?</div><div class="faq-answer">Hourly rate × hours + expenses + profit margin, or package-based pricing.</div></div>
+<div class="faq-item"><div class="faq-question">Keystone pricing?</div><div class="faq-answer">100% markup = 2× cost = 50% gross margin. Common retail rule of thumb.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/profit-margin.html" class="related-calc-link">Profit Margin</a>
+<a href="/calculators/markup.html" class="related-calc-link">Markup Calculator</a>
+<a href="/calculators/break-even.html" class="related-calc-link">Break-Even Calculator</a>
+<a href="/calculators/discount.html" class="related-calc-link">Discount Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcPrice(e){e.preventDefault();var cost=parseFloat(document.getElementById('prc').value),method=document.getElementById('prmt').value,pct=parseFloat(document.getElementById('prpct').value)/100,comp=parseFloat(document.getElementById('prcp').value),price,margin,markup;if(method==='markup'){price=cost*(1+pct);markup=pct*100;margin=(price-cost)/price*100;}else{price=cost/(1-pct);margin=pct*100;markup=(price-cost)/cost*100;}var out='<strong>Price: $'+price.toFixed(2)+'</strong><br>Margin: '+margin.toFixed(2)+'%<br>Markup: '+markup.toFixed(2)+'%';if(!isNaN(comp)&&comp>0)out+='<br>At competitor price ($'+comp.toFixed(2)+'): '+((comp-cost)/comp*100).toFixed(2)+'% margin';document.getElementById('result-text').innerHTML=out;document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

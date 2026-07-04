@@ -6,7 +6,7 @@
     <title>Subnet Calculator - IP Address and Network Subnet Calculator | FreebieCalculator</title>
     <meta name="description" content="Free subnet calculator for IP networks. Calculate subnet masks, network addresses, broadcast addresses, and host ranges for IPv4 networks.">
     <link rel="canonical" href="https://freebiecalculator.com/calculators/subnet.html">
-    <link rel="stylesheet" href="/assets/css/base.css?v=15">
+    <link rel="stylesheet" href="/assets/css/base.css?v=16">
     <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
     
     <!-- Open Graph -->
@@ -355,7 +355,19 @@
             </section>
         </div>
     
-                <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+                <section class="content-section">
+                <h2>When to Use This Calculator</h2>
+                <p>Use this when designing or troubleshooting a network, allocating IP address ranges to departments, verifying subnet masks, or studying for CCNA and other networking certifications.</p>
+            </section>
+            <section class="content-section">
+                <h2>Common Mistakes to Avoid</h2>
+                <ul style="margin-left:1.5rem">
+                    <li>Confusing CIDR notation with subnet mask — /24 equals a subnet mask of 255.255.255.0; both describe the same network boundary.</li>
+                    <li>Forgetting to reserve the network and broadcast addresses — a /24 subnet has 254 usable host addresses, not 256.</li>
+                    <li>Using overlapping subnets — overlapping IP ranges cause routing conflicts; always verify that subnets do not share any address space.</li>
+                </ul>
+            </section>
+            <div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
 </main>
     
     <footer id="footer"></footer>

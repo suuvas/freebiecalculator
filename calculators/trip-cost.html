@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip Cost Calculator — Road Trip Budget Planner | FreebieCalculator.com</title>
+<meta name="description" content="Calculate total road trip cost including fuel, tolls, food, and lodging. Split costs per passenger.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/trip-cost.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Trip Cost Calculator — Road Trip Budget Planner"><meta property="og:description" content="Calculate total road trip cost including fuel, tolls, food, and lodging. Split costs per passenger."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Trip Cost Calculator — Road Trip Budget Planner","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total road trip cost including fuel, tolls, food, and lodging. Split costs per passenger.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Utility","item":"/calculators/fuel-cost.html"},{"@type":"ListItem","position":3,"name":"Trip Cost Calculator — Road Trip Budget Planner","item":"https://freebiecalculator.com/calculators/trip-cost.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Drive vs fly?',"acceptedAnswer":{"@type":"Answer","text":'Solo: flying often cheaper beyond 300–400 miles. 3–4 passengers sharing costs: driving usually wins.'}},{"@type":"Question","name":'Finding car MPG?',"acceptedAnswer":{"@type":"Answer","text":'Fill up → drive → fill again. Miles / gallons = real-world MPG.'}},{"@type":"Question","name":'When to rent?',"acceptedAnswer":{"@type":"Answer","text":'Rent when: poor fuel economy, protect own mileage, or need larger vehicle.'}},{"@type":"Question","name":'Road trip food budget?',"acceptedAnswer":{"@type":"Answer","text":'$15–$30/person/day quick meals; $30–$60 for restaurants.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/fuel-cost.html">Utility</a> &rsaquo; Trip Cost Calculator — Road Trip Budget Planner</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Trip Cost Calculator</h1>
+<p class="calc-intro">Plan your road trip budget to the dollar. Enter distance, fuel economy, and other costs for a complete travel budget.</p>
+<div class="calculator-tool">
+<form onsubmit="calcTrip(event)">
+<div class="form-group"><label for="trd">Distance (miles)</label><input type="number" id="trd" step="1" min="1" placeholder="e.g., 500" required></div>
+<div class="form-group"><label for="trm">Fuel Economy (MPG)</label><input type="number" id="trm" step="0.1" min="1" placeholder="e.g., 30" required></div>
+<div class="form-group"><label for="trf">Fuel Price ($/gallon)</label><input type="number" id="trf" step="0.01" min="0" placeholder="e.g., 3.50" required></div>
+<div class="form-group"><label for="trt">Tolls ($)</label><input type="number" id="trt" step="0.01" min="0" value="0"></div>
+<div class="form-group"><label for="trfd">Food ($)</label><input type="number" id="trfd" step="0.01" min="0" value="0"></div>
+<div class="form-group"><label for="trl">Lodging ($)</label><input type="number" id="trl" step="0.01" min="0" value="0"></div>
+<div class="form-group"><label for="trp">Passengers</label><input type="number" id="trp" min="1" max="20" value="1"></div>
+<button type="submit" class="btn btn-primary">Calculate Trip Cost</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Calculates fuel cost from distance and MPG, sums all other costs, and optionally splits by passenger count.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Fuel Cost = (Distance &divide; MPG) &times; Fuel Price<br>Total = Fuel + Tolls + Food + Lodging<br>Per Person = Total &divide; Passengers</p></section>
+<section class="content-section"><h2>Example</h2><p>500 miles, 30 MPG, $3.50/gal, $30 tolls, $50 food:<br>Fuel $58.33. Total = <strong>$138.33</strong>. Per person (2): $69.17.</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use before any road trip to set a realistic budget, compare driving vs flying, or decide whether to rent.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Using highway MPG for mixed driving — city driving cuts efficiency 25–30%.</li>
+<li>Forgetting return trip — double one-way fuel for roundtrips.</li>
+<li>Not budgeting parking — can exceed fuel costs in cities.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Drive vs fly?</div><div class="faq-answer">Solo: flying often cheaper beyond 300–400 miles. 3–4 passengers sharing costs: driving usually wins.</div></div>
+<div class="faq-item"><div class="faq-question">Finding car MPG?</div><div class="faq-answer">Fill up → drive → fill again. Miles / gallons = real-world MPG.</div></div>
+<div class="faq-item"><div class="faq-question">When to rent?</div><div class="faq-answer">Rent when: poor fuel economy, protect own mileage, or need larger vehicle.</div></div>
+<div class="faq-item"><div class="faq-question">Road trip food budget?</div><div class="faq-answer">$15–$30/person/day quick meals; $30–$60 for restaurants.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/fuel-cost.html" class="related-calc-link">Fuel Cost Calculator</a>
+<a href="/calculators/electricity-bill.html" class="related-calc-link">Electricity Bill</a>
+<a href="/calculators/date-difference.html" class="related-calc-link">Date Difference</a>
+<a href="/calculators/unit-converter.html" class="related-calc-link">Unit Converter</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcTrip(e){e.preventDefault();var dist=parseFloat(document.getElementById('trd').value),mpg=parseFloat(document.getElementById('trm').value),fuel=parseFloat(document.getElementById('trf').value),toll=parseFloat(document.getElementById('trt').value)||0,food=parseFloat(document.getElementById('trfd').value)||0,lodge=parseFloat(document.getElementById('trl').value)||0,pass=parseInt(document.getElementById('trp').value)||1,fuelCost=(dist/mpg)*fuel,total=fuelCost+toll+food+lodge;document.getElementById('result-text').innerHTML='<strong>Total: $'+total.toFixed(2)+'</strong><br>Per Person: $'+(total/pass).toFixed(2)+'<br>Fuel: $'+fuelCost.toFixed(2)+' ('+(dist/mpg).toFixed(1)+' gallons)<br>Other: $'+(toll+food+lodge).toFixed(2);document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

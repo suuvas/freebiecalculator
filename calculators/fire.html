@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIRE Calculator — Financial Independence Retire Early | FreebieCalculator.com</title>
+<meta name="description" content="Calculate your FIRE number and timeline to retire early using the 4% safe withdrawal rate.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/fire.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="FIRE Calculator — Financial Independence Retire Early"><meta property="og:description" content="Calculate your FIRE number and timeline to retire early using the 4% safe withdrawal rate."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FIRE Calculator — Financial Independence Retire Early","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate your FIRE number and timeline to retire early using the 4% safe withdrawal rate.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/retirement.html"},{"@type":"ListItem","position":3,"name":"FIRE Calculator — Financial Independence Retire Early","item":"https://freebiecalculator.com/calculators/fire.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'What is the 4% rule?',"acceptedAnswer":{"@type":"Answer","text":'Research shows withdrawing 4% of a diversified portfolio annually (adjusted for inflation) has historically lasted 30+ years.'}},{"@type":"Question","name":'Lean vs fat FIRE?',"acceptedAnswer":{"@type":"Answer","text":'Lean FIRE targets minimal spending (under $40K/year). Fat FIRE targets higher lifestyle ($80K+/year).'}},{"@type":"Question","name":'What return to assume?',"acceptedAnswer":{"@type":"Answer","text":'7% real return is common (10% historical stock return minus 3% inflation). Use 5–6% for conservative estimates.'}},{"@type":"Question","name":'Is FIRE realistic for average earners?',"acceptedAnswer":{"@type":"Answer","text":'Yes — it depends more on savings rate than income. Saving 50% of income allows FIRE in roughly 17 years.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/retirement.html">Finance</a> &rsaquo; FIRE Calculator — Financial Independence Retire Early</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>FIRE Calculator</h1>
+<p class="calc-intro">Find your FIRE number — the total savings needed to live off investments indefinitely — and project how many years until you reach financial independence.</p>
+<div class="calculator-tool">
+<form onsubmit="calcFIRE(event)">
+<div class="form-group"><label for="fe">Annual Retirement Expenses ($)</label><input type="number" id="fe" min="1" placeholder="e.g., 40000" required></div>
+<div class="form-group"><label for="fs">Current Savings ($)</label><input type="number" id="fs" min="0" placeholder="e.g., 50000" value="0"></div>
+<div class="form-group"><label for="fc">Monthly Savings Contribution ($)</label><input type="number" id="fc" min="0" placeholder="e.g., 2000" required></div>
+<div class="form-group"><label for="fr">Expected Annual Return (%)</label><input type="number" id="fr" step="0.1" min="0" max="30" value="7"></div>
+<div class="form-group"><label for="fw">Withdrawal Rate (%)</label><select id="fw"><option value="4">4% (Standard)</option><option value="3.5">3.5% (Conservative)</option><option value="3">3% (Very Conservative)</option><option value="5">5% (Aggressive)</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate FIRE Number</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice finance-disclaimer" role="note"><strong>&#x1F4B0; Financial Disclaimer:</strong> This calculator is for educational purposes only. Consult a qualified financial professional.</div>
+<section class="content-section"><h2>How It Works</h2><p>Divides your annual retirement expenses by the withdrawal rate to get the FIRE number, then simulates monthly investment growth until you hit that target.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>FIRE Number = Annual Expenses &divide; Withdrawal Rate</code><br>4% rule: Annual Expenses &times; 25 = FIRE Number</p></section>
+<section class="content-section"><h2>Example</h2><p>Annual expenses $40,000, 4% withdrawal rate:<br>FIRE Number = <strong>$1,000,000</strong><br>With $100K saved + $2K/month at 7% return &rarr; ~17 years to FIRE</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when pursuing financial independence to identify your target portfolio size and estimate how many years of saving and investing remain.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Ignoring sequence-of-returns risk — early retirement market crashes can permanently deplete portfolios.</li>
+<li>Not budgeting healthcare before 65 — private health insurance is expensive.</li>
+<li>Using nominal returns without adjusting for inflation.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">What is the 4% rule?</div><div class="faq-answer">Research shows withdrawing 4% of a diversified portfolio annually (adjusted for inflation) has historically lasted 30+ years.</div></div>
+<div class="faq-item"><div class="faq-question">Lean vs fat FIRE?</div><div class="faq-answer">Lean FIRE targets minimal spending (under $40K/year). Fat FIRE targets higher lifestyle ($80K+/year).</div></div>
+<div class="faq-item"><div class="faq-question">What return to assume?</div><div class="faq-answer">7% real return is common (10% historical stock return minus 3% inflation). Use 5–6% for conservative estimates.</div></div>
+<div class="faq-item"><div class="faq-question">Is FIRE realistic for average earners?</div><div class="faq-answer">Yes — it depends more on savings rate than income. Saving 50% of income allows FIRE in roughly 17 years.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/retirement.html" class="related-calc-link">Retirement</a>
+<a href="/calculators/compound-interest.html" class="related-calc-link">Compound Interest</a>
+<a href="/calculators/savings.html" class="related-calc-link">Savings Calculator</a>
+<a href="/calculators/net-worth.html" class="related-calc-link">Net Worth</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcFIRE(e){e.preventDefault();var exp=parseFloat(document.getElementById('fe').value),sav=parseFloat(document.getElementById('fs').value)||0,cont=parseFloat(document.getElementById('fc').value),ret=parseFloat(document.getElementById('fr').value)/100/12,wr=parseFloat(document.getElementById('fw').value)/100,target=exp/wr,months=0,bal=sav;while(bal<target&&months<600){bal=bal*(1+ret)+cont;months++;}document.getElementById('result-text').innerHTML='<strong>FIRE Number: $'+Math.round(target).toLocaleString()+'</strong><br>'+(months<600?'Time to FIRE: '+Math.floor(months/12)+'y '+months%12+'mo':'Increase savings or reduce expenses')+'<br>Withdrawal rate: '+(wr*100)+'%';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

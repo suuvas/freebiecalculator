@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Variance Calculator — Population and Sample Variance | FreebieCalculator.com</title>
+<meta name="description" content="Calculate variance and standard deviation for any dataset. Supports population and sample variance with full statistical summary.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/variance.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Variance Calculator — Population and Sample Variance"><meta property="og:description" content="Calculate variance and standard deviation for any dataset. Supports population and sample variance with full statistical summary."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Variance Calculator — Population and Sample Variance","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate variance and standard deviation for any dataset. Supports population and sample variance with full statistical summary.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Math","item":"/calculators/standard-deviation.html"},{"@type":"ListItem","position":3,"name":"Variance Calculator — Population and Sample Variance","item":"https://freebiecalculator.com/calculators/variance.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'High variance means?',"acceptedAnswer":{"@type":"Answer","text":'Data points are widely spread from the mean.'}},{"@type":"Question","name":'Is SD more useful?',"acceptedAnswer":{"@type":"Answer","text":'SD is more interpretable (same units as data). Variance is used in many statistical formulas.'}},{"@type":"Question","name":'Sample vs population?',"acceptedAnswer":{"@type":"Answer","text":'Sample (n−1) when your data represents a larger population. Population (n) when you have all data.'}},{"@type":"Question","name":'Coefficient of variation?',"acceptedAnswer":{"@type":"Answer","text":'CV = (SD/Mean) × 100. Compares variability across datasets with different scales.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/standard-deviation.html">Math</a> &rsaquo; Variance Calculator — Population and Sample Variance</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Variance Calculator</h1>
+<p class="calc-intro">Variance measures how spread out a dataset is from its mean. Enter your numbers to get variance, standard deviation, and a full statistical summary.</p>
+<div class="calculator-tool">
+<form onsubmit="calcVar(event)">
+<div class="form-group"><label for="vd">Numbers (comma or space separated)</label><textarea id="vd" rows="3" placeholder="e.g., 2, 4, 6, 8, 10" style="width:100%;padding:.75rem;border:2px solid var(--border-color);border-radius:.5rem;font-size:1rem;resize:vertical;box-sizing:border-box" required></textarea></div>
+<div class="form-group"><label for="vt">Variance Type</label><select id="vt"><option value="sample" selected>Sample Variance (n&minus;1)</option><option value="pop">Population Variance (n)</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate Variance</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Computes the mean, then finds squared deviations. Uses n−1 for sample variance (Bessel's correction) or n for population variance.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Population: <code>&sigma;&sup2; = &Sigma;(x&sub;i&minus;&mu;)&sup2;/N</code><br>Sample: <code>s&sup2; = &Sigma;(x&sub;i&minus;x&#772;)&sup2;/(N&minus;1)</code><br>SD = &radic;Variance</p></section>
+<section class="content-section"><h2>Example</h2><p>Dataset: 2, 4, 6, 8. Mean=5. Squared deviations: 9+1+1+9=20.<br>Pop variance=5. SD=<strong>2.236</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use in statistics homework, data analysis, quality control, or any situation requiring measurement of data spread.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Wrong type — sample (n−1) for subsets; population (n) for all data.</li>
+<li>Not squaring deviations — variance uses squared differences to eliminate negatives.</li>
+<li>Confusing variance with SD — SD is in original units; variance is squared units.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">High variance means?</div><div class="faq-answer">Data points are widely spread from the mean.</div></div>
+<div class="faq-item"><div class="faq-question">Is SD more useful?</div><div class="faq-answer">SD is more interpretable (same units as data). Variance is used in many statistical formulas.</div></div>
+<div class="faq-item"><div class="faq-question">Sample vs population?</div><div class="faq-answer">Sample (n−1) when your data represents a larger population. Population (n) when you have all data.</div></div>
+<div class="faq-item"><div class="faq-question">Coefficient of variation?</div><div class="faq-answer">CV = (SD/Mean) × 100. Compares variability across datasets with different scales.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/standard-deviation.html" class="related-calc-link">Standard Deviation</a>
+<a href="/calculators/average.html" class="related-calc-link">Average Calculator</a>
+<a href="/calculators/probability.html" class="related-calc-link">Probability</a>
+<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcVar(e){e.preventDefault();var nums=document.getElementById('vd').value.split(/[,\s]+/).filter(function(v){return v!=='';}).map(Number).filter(function(v){return!isNaN(v);});if(nums.length<2){alert('Enter at least 2 numbers.');return;}var type=document.getElementById('vt').value,n=nums.length,mean=nums.reduce(function(s,v){return s+v;},0)/n,sq=nums.reduce(function(s,v){return s+Math.pow(v-mean,2);},0),variance=type==='sample'?sq/(n-1):sq/n;document.getElementById('result-text').innerHTML='<strong>Variance: '+variance.toFixed(6)+'</strong><br>Std Dev: '+Math.sqrt(variance).toFixed(6)+'<br>Mean: '+mean.toFixed(6)+'<br>Count: '+n+'<br>Min: '+Math.min.apply(null,nums)+' | Max: '+Math.max.apply(null,nums);document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

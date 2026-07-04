@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lean Body Mass Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Calculate lean body mass from body fat percentage or Boer formula. Essential for accurate fitness and nutrition planning.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/lean-body-mass.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Lean Body Mass Calculator"><meta property="og:description" content="Calculate lean body mass from body fat percentage or Boer formula. Essential for accurate fitness and nutrition planning."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Lean Body Mass Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate lean body mass from body fat percentage or Boer formula. Essential for accurate fitness and nutrition planning.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Health","item":"/calculators/body-fat.html"},{"@type":"ListItem","position":3,"name":"Lean Body Mass Calculator","item":"https://freebiecalculator.com/calculators/lean-body-mass.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Typical LBM values?',"acceptedAnswer":{"@type":"Answer","text":'Men: 60–80 kg. Women: 40–60 kg. Athletes can significantly exceed these ranges.'}},{"@type":"Question","name":'Gain LBM while losing fat?',"acceptedAnswer":{"@type":"Answer","text":'Yes — body recomposition is possible, especially for beginners with adequate protein and resistance training.'}},{"@type":"Question","name":'How accurate is Boer formula?',"acceptedAnswer":{"@type":"Answer","text":'±4–5% accuracy. DEXA scan is the gold standard but expensive.'}},{"@type":"Question","name":'Why use LBM for protein?',"acceptedAnswer":{"@type":"Answer","text":'Fat tissue has minimal protein needs. LBM-based calculation avoids over-recommending protein.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/body-fat.html">Health</a> &rsaquo; Lean Body Mass Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Lean Body Mass Calculator</h1>
+<p class="calc-intro">Lean body mass (LBM) is your total weight minus fat — muscle, bone, organs, and water. It is a more accurate basis for nutrition planning than total weight.</p>
+<div class="calculator-tool">
+<form onsubmit="calcLBM(event)">
+<div class="form-group"><label for="lw">Body Weight (kg)</label><input type="number" id="lw" step="0.1" min="1" placeholder="e.g., 70" required></div>
+<div class="form-group"><label for="lh">Height (cm)</label><input type="number" id="lh" step="0.1" min="100" placeholder="e.g., 175" required></div>
+<div class="form-group"><label for="ls">Sex</label><select id="ls"><option value="m">Male</option><option value="f">Female</option></select></div>
+<div class="form-group"><label for="lb">Body Fat % (optional — leave blank to estimate)</label><input type="number" id="lb" step="0.1" min="0" max="70" placeholder="e.g., 20"></div>
+<button type="submit" class="btn btn-primary">Calculate Lean Body Mass</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice" role="note"><strong>&#x2695;&#xFE0F; Health Disclaimer:</strong> This calculator is for educational purposes only and is not a substitute for professional medical advice.</div>
+<section class="content-section"><h2>How It Works</h2><p>Uses body fat % if known, otherwise uses the Boer formula (height and weight based) to estimate LBM.</p></section>
+<section class="content-section"><h2>Formula</h2><p>From BF%: <code>LBM = Weight &times; (1&minus;BF%/100)</code><br>Boer (men): <code>0.407W + 0.267H &minus; 19.2</code><br>Boer (women): <code>0.252W + 0.473H &minus; 48.3</code></p></section>
+<section class="content-section"><h2>Example</h2><p>70 kg person, 20% body fat:<br>LBM = 70 &times; 0.80 = <strong>56 kg lean mass</strong>, 14 kg fat</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use to calibrate protein intake to lean mass, track muscle gains during body recomposition, or understand composition beyond just weight.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Not updating LBM as you progress — recheck every 4–8 weeks.</li>
+<li>Assuming higher LBM is always better — appropriate LBM for height and frame matters.</li>
+<li>Confusing LBM with fat-free mass — they are the same measurement.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Typical LBM values?</div><div class="faq-answer">Men: 60–80 kg. Women: 40–60 kg. Athletes can significantly exceed these ranges.</div></div>
+<div class="faq-item"><div class="faq-question">Gain LBM while losing fat?</div><div class="faq-answer">Yes — body recomposition is possible, especially for beginners with adequate protein and resistance training.</div></div>
+<div class="faq-item"><div class="faq-question">How accurate is Boer formula?</div><div class="faq-answer">±4–5% accuracy. DEXA scan is the gold standard but expensive.</div></div>
+<div class="faq-item"><div class="faq-question">Why use LBM for protein?</div><div class="faq-answer">Fat tissue has minimal protein needs. LBM-based calculation avoids over-recommending protein.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/body-fat.html" class="related-calc-link">Body Fat Calculator</a>
+<a href="/calculators/bmi.html" class="related-calc-link">BMI Calculator</a>
+<a href="/calculators/protein.html" class="related-calc-link">Protein Calculator</a>
+<a href="/calculators/macro-calculator.html" class="related-calc-link">Macro Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcLBM(e){e.preventDefault();var w=parseFloat(document.getElementById('lw').value),h=parseFloat(document.getElementById('lh').value),sex=document.getElementById('ls').value,bf=parseFloat(document.getElementById('lb').value),lbm,method;if(!isNaN(bf)&&bf>0){lbm=w*(1-bf/100);method='Body fat % method';}else{lbm=sex==='m'?0.407*w+0.267*h-19.2:0.252*w+0.473*h-48.3;method='Boer formula estimate';}document.getElementById('result-text').innerHTML='<strong>Lean Body Mass: '+lbm.toFixed(1)+' kg</strong><br>Fat Mass: '+(w-lbm).toFixed(1)+' kg ('+((w-lbm)/w*100).toFixed(1)+'%)<br>Method: '+method;document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

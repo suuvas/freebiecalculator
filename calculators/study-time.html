@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Time Calculator — Plan Your Study Schedule | FreebieCalculator.com</title>
+<meta name="description" content="Calculate daily study hours needed based on exam date, subjects, and material. Build a realistic study plan.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/study-time.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Study Time Calculator — Plan Your Study Schedule"><meta property="og:description" content="Calculate daily study hours needed based on exam date, subjects, and material. Build a realistic study plan."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Study Time Calculator — Plan Your Study Schedule","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate daily study hours needed based on exam date, subjects, and material. Build a realistic study plan.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Education","item":"/calculators/gpa.html"},{"@type":"ListItem","position":3,"name":"Study Time Calculator — Plan Your Study Schedule","item":"https://freebiecalculator.com/calculators/study-time.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Effective daily study hours?',"acceptedAnswer":{"@type":"Answer","text":'3–5 focused hours is optimal. Diminishing returns after 6 hours.'}},{"@type":"Question","name":'What is spaced repetition?',"acceptedAnswer":{"@type":"Answer","text":'Reviewing at increasing intervals (Day 1, 3, 7, 14) dramatically improves retention.'}},{"@type":"Question","name":'One subject per day or multiple?',"acceptedAnswer":{"@type":"Answer","text":'Interleaving multiple subjects per session is more effective than blocking.'}},{"@type":"Question","name":'When to start for major exams?',"acceptedAnswer":{"@type":"Answer","text":'4–6 weeks for best results. 1–2 weeks out = cramming territory.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/gpa.html">Education</a> &rsaquo; Study Time Calculator — Plan Your Study Schedule</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Study Time Calculator</h1>
+<p class="calc-intro">Plan your revision schedule intelligently. Enter your exam date, subjects, and review cycles to get a daily study time target.</p>
+<div class="calculator-tool">
+<form onsubmit="calcStudy(event)">
+<div class="form-group"><label for="std">Exam Date</label><input type="date" id="std" required></div>
+<div class="form-group"><label for="stns">Number of Subjects</label><input type="number" id="stns" min="1" max="20" placeholder="e.g., 5" required></div>
+<div class="form-group"><label for="sths">Hours Needed per Subject</label><input type="number" id="sths" step="0.5" min="1" placeholder="e.g., 10" required></div>
+<div class="form-group"><label for="strc">Review Cycles</label><select id="strc"><option value="1">1 (read once)</option><option value="2" selected>2 (read + review)</option><option value="3">3 (spaced repetition)</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate Study Plan</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Counts days until exam, calculates total hours needed (subjects × hours × cycles), and divides by available days.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Total Hours = Subjects &times; Hours/Subject &times; Review Cycles<br>Daily Hours = Total Hours &divide; Days Until Exam</p></section>
+<section class="content-section"><h2>Example</h2><p>5 subjects, 10 hrs each, 2 cycles, 30 days:<br>Total: 100h. Daily: <strong>3.3 hours/day</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use at the start of exam prep to build a realistic schedule. Adjust inputs until daily hours are manageable.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Not including breaks — plan 25-min focus blocks with 5-min rests.</li>
+<li>Underestimating review rounds — most material needs 2–3 spaced sessions.</li>
+<li>Planning 8+ hours daily — quality drops sharply after 4–6 focused hours.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Effective daily study hours?</div><div class="faq-answer">3–5 focused hours is optimal. Diminishing returns after 6 hours.</div></div>
+<div class="faq-item"><div class="faq-question">What is spaced repetition?</div><div class="faq-answer">Reviewing at increasing intervals (Day 1, 3, 7, 14) dramatically improves retention.</div></div>
+<div class="faq-item"><div class="faq-question">One subject per day or multiple?</div><div class="faq-answer">Interleaving multiple subjects per session is more effective than blocking.</div></div>
+<div class="faq-item"><div class="faq-question">When to start for major exams?</div><div class="faq-answer">4–6 weeks for best results. 1–2 weeks out = cramming territory.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/reading-time.html" class="related-calc-link">Reading Time</a>
+<a href="/calculators/gpa.html" class="related-calc-link">GPA Calculator</a>
+<a href="/calculators/grade.html" class="related-calc-link">Grade Calculator</a>
+<a href="/calculators/attendance.html" class="related-calc-link">Attendance</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcStudy(e){e.preventDefault();var exam=new Date(document.getElementById('std').value),days=Math.max(1,Math.ceil((exam-new Date())/86400000)),subj=parseInt(document.getElementById('stns').value),hrs=parseFloat(document.getElementById('sths').value),cycles=parseInt(document.getElementById('strc').value),total=subj*hrs*cycles,daily=total/days;document.getElementById('result-text').innerHTML='<strong>Daily Study Time: '+daily.toFixed(1)+' hours/day</strong><br>Total Hours: '+total+'h<br>Days Until Exam: '+days+'<br>Per Subject/Day: '+(daily/subj).toFixed(1)+'h';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

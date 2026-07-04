@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APY Calculator — Annual Percentage Yield | FreebieCalculator.com</title>
+<meta name="description" content="Calculate Annual Percentage Yield from nominal interest rate and compounding frequency. Compare savings accounts accurately.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/apy.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="APY Calculator — Annual Percentage Yield"><meta property="og:description" content="Calculate Annual Percentage Yield from nominal interest rate and compounding frequency. Compare savings accounts accurately."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"APY Calculator — Annual Percentage Yield","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate Annual Percentage Yield from nominal interest rate and compounding frequency. Compare savings accounts accurately.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/compound-interest.html"},{"@type":"ListItem","position":3,"name":"APY Calculator — Annual Percentage Yield","item":"https://freebiecalculator.com/calculators/apy.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'APR vs APY?',"acceptedAnswer":{"@type":"Answer","text":'APR is the stated rate without compounding. APY includes compounding effects, showing your true annual return. Always compare APY for savings.'}},{"@type":"Question","name":'Which compounding is best?',"acceptedAnswer":{"@type":"Answer","text":'Daily > Monthly > Quarterly > Annual for the same nominal rate.'}},{"@type":"Question","name":'At 5% APY, what does $10,000 earn?',"acceptedAnswer":{"@type":"Answer","text":'$10,000 at 5% APY earns $500 in the first year, growing to $10,500.'}},{"@type":"Question","name":'Is higher APY always better?',"acceptedAnswer":{"@type":"Answer","text":'Generally yes, but check minimum balances and fees that may offset the higher yield.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/compound-interest.html">Finance</a> &rsaquo; APY Calculator — Annual Percentage Yield</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>APY Calculator</h1>
+<p class="calc-intro">APY shows the real return on savings after compounding. Compare savings accounts, CDs, and money market accounts on equal terms.</p>
+<div class="calculator-tool">
+<form onsubmit="calcAPY(event)">
+<div class="form-group"><label for="nom">Nominal Annual Rate (%)</label><input type="number" id="nom" step="0.01" min="0" max="100" placeholder="e.g., 5" required></div>
+<div class="form-group"><label for="freq">Compounding Frequency</label><select id="freq"><option value="365">Daily (365)</option><option value="12" selected>Monthly (12)</option><option value="4">Quarterly (4)</option><option value="2">Semi-Annual (2)</option><option value="1">Annual (1)</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate APY</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice finance-disclaimer" role="note"><strong>&#x1F4B0; Financial Disclaimer:</strong> This calculator is for educational purposes only. Consult a qualified financial professional.</div>
+<section class="content-section"><h2>How It Works</h2><p>Enter your nominal (stated) rate and how often interest compounds. The calculator converts to APY so you can compare any savings products fairly.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>APY = (1 + r/n)<sup>n</sup> &minus; 1</code></p><p><strong>r</strong> = nominal rate (decimal), <strong>n</strong> = compounding periods/year (365=daily, 12=monthly, 4=quarterly, 1=annual).</p></section>
+<section class="content-section"><h2>Example</h2><p>Nominal 5%, monthly compounding:<br>APY = (1 + 0.05/12)<sup>12</sup> &minus; 1 = <strong>5.116%</strong><br>On $10,000: earns $511.60/year vs $500 simple interest.</p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when comparing savings accounts or CDs with different compounding frequencies. APY is the only fair comparison basis — lenders are required to disclose it.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Confusing APR with APY — APR ignores compounding effects.</li>
+<li>Assuming daily and monthly compounding are identical — daily is slightly better.</li>
+<li>Ignoring fees — a high APY with monthly fees may yield less than a fee-free lower-APY account.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">APR vs APY?</div><div class="faq-answer">APR is the stated rate without compounding. APY includes compounding effects, showing your true annual return. Always compare APY for savings.</div></div>
+<div class="faq-item"><div class="faq-question">Which compounding is best?</div><div class="faq-answer">Daily > Monthly > Quarterly > Annual for the same nominal rate.</div></div>
+<div class="faq-item"><div class="faq-question">At 5% APY, what does $10,000 earn?</div><div class="faq-answer">$10,000 at 5% APY earns $500 in the first year, growing to $10,500.</div></div>
+<div class="faq-item"><div class="faq-question">Is higher APY always better?</div><div class="faq-answer">Generally yes, but check minimum balances and fees that may offset the higher yield.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/compound-interest.html" class="related-calc-link">Compound Interest</a>
+<a href="/calculators/simple-interest.html" class="related-calc-link">Simple Interest</a>
+<a href="/calculators/savings.html" class="related-calc-link">Savings Calculator</a>
+<a href="/calculators/investment-roi.html" class="related-calc-link">Investment ROI</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcAPY(e){e.preventDefault();var r=parseFloat(document.getElementById('nom').value)/100,n=parseInt(document.getElementById('freq').value),apy=Math.pow(1+r/n,n)-1;document.getElementById('result-text').innerHTML='<strong>APY: '+(apy*100).toFixed(4)+'%</strong><br>Effective monthly rate: '+(apy/12*100).toFixed(4)+'%<br>$10,000 earns: $'+(apy*10000).toFixed(2)+'/year';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

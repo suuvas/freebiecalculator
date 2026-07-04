@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payroll Calculator — Employee Payroll Cost Estimator | FreebieCalculator.com</title>
+<meta name="description" content="Calculate total payroll cost including gross wages and employer FICA taxes. Estimate payroll for any team size.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/payroll.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Payroll Calculator — Employee Payroll Cost Estimator"><meta property="og:description" content="Calculate total payroll cost including gross wages and employer FICA taxes. Estimate payroll for any team size."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Payroll Calculator — Employee Payroll Cost Estimator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total payroll cost including gross wages and employer FICA taxes. Estimate payroll for any team size.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Business","item":"/calculators/paycheck.html"},{"@type":"ListItem","position":3,"name":"Payroll Calculator — Employee Payroll Cost Estimator","item":"https://freebiecalculator.com/calculators/payroll.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Employer payroll tax rate?',"acceptedAnswer":{"@type":"Answer","text":'Federal: 6.2% SS + 1.45% Medicare = 7.65% total on gross wages.'}},{"@type":"Question","name":'Total employee cost?',"acceptedAnswer":{"@type":"Answer","text":'Plan for 25–40% above gross salary for all taxes and benefits.'}},{"@type":"Question","name":'Most common payroll frequency?',"acceptedAnswer":{"@type":"Answer","text":'Bi-weekly (26/year) is most common in the US.'}},{"@type":"Question","name":'Part-time employees and benefits?',"acceptedAnswer":{"@type":"Answer","text":'Not required by law under 30 hours/week (ACA threshold for large employers).'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/paycheck.html">Business</a> &rsaquo; Payroll Calculator — Employee Payroll Cost Estimator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Payroll Calculator</h1>
+<p class="calc-intro">Estimate your total payroll cost including employer taxes. Helps small businesses budget accurately for staff.</p>
+<div class="calculator-tool">
+<form onsubmit="calcPayroll(event)">
+<div class="form-group"><label for="pre">Number of Employees</label><input type="number" id="pre" min="1" placeholder="e.g., 5" required></div>
+<div class="form-group"><label for="prr">Average Hourly Rate ($)</label><input type="number" id="prr" step="0.01" min="0" placeholder="e.g., 20" required></div>
+<div class="form-group"><label for="prh">Hours per Week</label><input type="number" id="prh" step="0.5" min="1" max="60" value="40"></div>
+<div class="form-group"><label for="prb">Monthly Benefits per Employee ($)</label><input type="number" id="prb" step="0.01" min="0" placeholder="e.g., 500" value="0"></div>
+<button type="submit" class="btn btn-primary">Calculate Payroll</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+<div class="disclaimer-notice finance-disclaimer" role="note"><strong>&#x1F4B0; Financial Disclaimer:</strong> This calculator is for educational purposes only. Consult a qualified financial professional.</div>
+<section class="content-section"><h2>How It Works</h2><p>Calculates gross payroll (employees × hours × rate), adds employer FICA taxes (7.65%), and optional benefits.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Gross = Employees &times; Hours &times; Rate<br>Employer FICA = Gross &times; 7.65%<br>Total = Gross + FICA + Benefits</p></section>
+<section class="content-section"><h2>Example</h2><p>5 employees, $20/hr, 40 hrs/week:<br>Gross $4,000/week. Monthly total &asymp; <strong>$19,129</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use for hiring budgets, estimating the full cost of a new hire, or validating a payroll run before processing.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Forgetting employer-side payroll taxes — employees pay half FICA; you pay the other half.</li>
+<li>Not budgeting benefits — health insurance and 401(k) add 20–30% above gross.</li>
+<li>Missing state unemployment tax (SUTA) — rates vary by state.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Employer payroll tax rate?</div><div class="faq-answer">Federal: 6.2% SS + 1.45% Medicare = 7.65% total on gross wages.</div></div>
+<div class="faq-item"><div class="faq-question">Total employee cost?</div><div class="faq-answer">Plan for 25–40% above gross salary for all taxes and benefits.</div></div>
+<div class="faq-item"><div class="faq-question">Most common payroll frequency?</div><div class="faq-answer">Bi-weekly (26/year) is most common in the US.</div></div>
+<div class="faq-item"><div class="faq-question">Part-time employees and benefits?</div><div class="faq-answer">Not required by law under 30 hours/week (ACA threshold for large employers).</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/paycheck.html" class="related-calc-link">Paycheck Calculator</a>
+<a href="/calculators/hourly-to-salary.html" class="related-calc-link">Hourly to Salary</a>
+<a href="/calculators/overtime.html" class="related-calc-link">Overtime Pay</a>
+<a href="/calculators/break-even.html" class="related-calc-link">Break-Even Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcPayroll(e){e.preventDefault();var emp=parseInt(document.getElementById('pre').value),rate=parseFloat(document.getElementById('prr').value),hrs=parseFloat(document.getElementById('prh').value),ben=parseFloat(document.getElementById('prb').value)||0,wkGross=emp*rate*hrs,moGross=wkGross*52/12,moTax=moGross*0.0765,moBen=ben*emp,total=moGross+moTax+moBen;document.getElementById('result-text').innerHTML='<strong>Weekly Gross: $'+wkGross.toFixed(2)+'</strong><br>Monthly Gross: $'+moGross.toFixed(2)+'<br>Monthly Employer Taxes: $'+moTax.toFixed(2)+'<br>Monthly Total: $'+total.toFixed(2)+'<br>Annual Total: $'+(total*12).toFixed(2);document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

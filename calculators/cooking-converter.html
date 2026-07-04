@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cooking Converter — Volume and Weight Measurement Conversion | FreebieCalculator.com</title>
+<meta name="description" content="Convert cooking measurements: cups to ml, tablespoons to teaspoons, ounces to grams, and more.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/cooking-converter.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Cooking Converter — Volume and Weight Measurement Conversion"><meta property="og:description" content="Convert cooking measurements: cups to ml, tablespoons to teaspoons, ounces to grams, and more."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cooking Converter — Volume and Weight Measurement Conversion","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert cooking measurements: cups to ml, tablespoons to teaspoons, ounces to grams, and more.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Utility","item":"/calculators/unit-converter.html"},{"@type":"ListItem","position":3,"name":"Cooking Converter — Volume and Weight Measurement Conversion","item":"https://freebiecalculator.com/calculators/cooking-converter.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Tablespoons in a cup?',"acceptedAnswer":{"@type":"Answer","text":'1 cup = 16 tablespoons = 48 teaspoons.'}},{"@type":"Question","name":'ml per teaspoon?',"acceptedAnswer":{"@type":"Answer","text":'1 US tsp = 4.93 ml, typically rounded to 5 ml.'}},{"@type":"Question","name":'Cups to grams?',"acceptedAnswer":{"@type":"Answer","text":'Depends on ingredient: water 237g/cup; flour ~125g/cup; sugar ~200g/cup.'}},{"@type":"Question","name":'US cup vs metric cup?',"acceptedAnswer":{"@type":"Answer","text":'US = 236.6 ml. Metric (AU/CA) = 250 ml. Matters in precision baking.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/unit-converter.html">Utility</a> &rsaquo; Cooking Converter — Volume and Weight Measurement Conversion</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Cooking Converter</h1>
+<p class="calc-intro">Convert any cooking measurement instantly — cups to milliliters, tablespoons to teaspoons, ounces to grams, and more.</p>
+<div class="calculator-tool">
+<form onsubmit="calcCook(event)">
+<div class="form-group"><label for="ckv">Amount</label><input type="number" id="ckv" step="any" min="0" placeholder="e.g., 2" required></div>
+<div class="form-group"><label for="ckf">From</label><select id="ckf"><optgroup label="Volume"><option value="cup">Cup (US)</option><option value="tbsp">Tablespoon</option><option value="tsp">Teaspoon</option><option value="ml">Milliliter</option><option value="liter">Liter</option><option value="floz">Fluid Ounce</option><option value="pint">Pint (US)</option><option value="quart">Quart</option><option value="gallon">Gallon</option></optgroup><optgroup label="Weight"><option value="g">Gram</option><option value="kg">Kilogram</option><option value="oz">Ounce (weight)</option><option value="lb">Pound</option></optgroup></select></div>
+<div class="form-group"><label for="ckt">To</label><select id="ckt"><optgroup label="Volume"><option value="cup">Cup (US)</option><option value="tbsp">Tablespoon</option><option value="tsp">Teaspoon</option><option value="ml" selected>Milliliter</option><option value="liter">Liter</option><option value="floz">Fluid Ounce</option><option value="pint">Pint (US)</option><option value="quart">Quart</option><option value="gallon">Gallon</option></optgroup><optgroup label="Weight"><option value="g">Gram</option><option value="kg">Kilogram</option><option value="oz">Ounce (weight)</option><option value="lb">Pound</option></optgroup></select></div>
+<button type="submit" class="btn btn-primary">Convert</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Uses standard conversion ratios between all common cooking volume and weight units.</p></section>
+<section class="content-section"><h2>Formula</h2><p>1 cup = 16 tbsp = 48 tsp = 237 ml = 8 fl oz<br>1 oz = 28.35g | 1 lb = 453.6g</p></section>
+<section class="content-section"><h2>Example</h2><p>2 cups = 2 &times; 237 ml = <strong>474 ml</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use when following international recipes, scaling recipes up or down, or converting between US and metric measurements.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Assuming all ingredients weigh the same per cup — 1 cup flour ≠ 1 cup sugar by weight.</li>
+<li>Confusing fluid ounces with weight ounces — fl oz is volume; oz is weight.</li>
+<li>UK pint (568 ml) vs US pint (473 ml) — significant in baking.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Tablespoons in a cup?</div><div class="faq-answer">1 cup = 16 tablespoons = 48 teaspoons.</div></div>
+<div class="faq-item"><div class="faq-question">ml per teaspoon?</div><div class="faq-answer">1 US tsp = 4.93 ml, typically rounded to 5 ml.</div></div>
+<div class="faq-item"><div class="faq-question">Cups to grams?</div><div class="faq-answer">Depends on ingredient: water 237g/cup; flour ~125g/cup; sugar ~200g/cup.</div></div>
+<div class="faq-item"><div class="faq-question">US cup vs metric cup?</div><div class="faq-answer">US = 236.6 ml. Metric (AU/CA) = 250 ml. Matters in precision baking.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/unit-converter.html" class="related-calc-link">Unit Converter</a>
+<a href="/calculators/tip.html" class="related-calc-link">Tip Calculator</a>
+<a href="/calculators/fraction.html" class="related-calc-link">Fraction Calculator</a>
+<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+var CML={cup:236.588,tbsp:14.787,tsp:4.929,ml:1,liter:1000,floz:29.574,pint:473.176,quart:946.353,gallon:3785.41};
+var CGR={g:1,kg:1000,oz:28.3495,lb:453.592};
+function calcCook(e){e.preventDefault();var val=parseFloat(document.getElementById('ckv').value),from=document.getElementById('ckf').value,to=document.getElementById('ckt').value,vF=CML[from]!==undefined,vT=CML[to]!==undefined;if(vF&&vT){document.getElementById('result-text').innerHTML='<strong>'+val+' '+from+' = '+(val*CML[from]/CML[to]).toFixed(6)+' '+to+'</strong>';}else if(!vF&&!vT){document.getElementById('result-text').innerHTML='<strong>'+val+' '+from+' = '+(val*CGR[from]/CGR[to]).toFixed(6)+' '+to+'</strong>';}else{document.getElementById('result-text').innerHTML='&#9888; Cannot convert between volume and weight without ingredient density.';}document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

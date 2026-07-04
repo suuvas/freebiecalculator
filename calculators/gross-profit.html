@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gross Profit Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Calculate gross profit, gross margin percentage, and COGS % from revenue and cost of goods sold.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/gross-profit.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Gross Profit Calculator"><meta property="og:description" content="Calculate gross profit, gross margin percentage, and COGS % from revenue and cost of goods sold."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gross Profit Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate gross profit, gross margin percentage, and COGS % from revenue and cost of goods sold.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Business","item":"/calculators/profit-margin.html"},{"@type":"ListItem","position":3,"name":"Gross Profit Calculator","item":"https://freebiecalculator.com/calculators/gross-profit.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'What is in COGS?',"acceptedAnswer":{"@type":"Answer","text":'Direct materials, direct labor, manufacturing overhead. NOT SG&A expenses.'}},{"@type":"Question","name":'Good gross margin by industry?',"acceptedAnswer":{"@type":"Answer","text":'Software: 70–90%. Retail: 30–50%. Manufacturing: 20–40%. Grocery: 25–30%.'}},{"@type":"Question","name":'How investors use gross profit?',"acceptedAnswer":{"@type":"Answer","text":'To evaluate scalability — high gross margins allow room for growing operating expenses.'}},{"@type":"Question","name":'Gross profit vs EBITDA?',"acceptedAnswer":{"@type":"Answer","text":'Gross profit = Revenue − COGS. EBITDA deducts operating expenses and adds back D&A.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/profit-margin.html">Business</a> &rsaquo; Gross Profit Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Gross Profit Calculator</h1>
+<p class="calc-intro">Gross profit is revenue after subtracting the direct cost of producing goods or services — the starting point for all profitability analysis.</p>
+<div class="calculator-tool">
+<form onsubmit="calcGP(event)">
+<div class="form-group"><label for="gpr">Revenue / Sales ($)</label><input type="number" id="gpr" step="0.01" min="0" placeholder="e.g., 200000" required></div>
+<div class="form-group"><label for="gpc">Cost of Goods Sold ($)</label><input type="number" id="gpc" step="0.01" min="0" placeholder="e.g., 120000" required></div>
+<button type="submit" class="btn btn-primary">Calculate Gross Profit</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Subtracts COGS from revenue and expresses gross profit as a dollar amount and as percentage of revenue (gross margin).</p></section>
+<section class="content-section"><h2>Formula</h2><p>Gross Profit = Revenue &minus; COGS<br>Gross Margin % = (Profit / Revenue) &times; 100<br>COGS % = (COGS / Revenue) &times; 100</p></section>
+<section class="content-section"><h2>Example</h2><p>Revenue $200,000 &minus; COGS $120,000 = <strong>$80,000 gross profit (40% margin)</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use to track production efficiency, compare margins across product lines, or prepare a basic income statement.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Including operating expenses in COGS — rent and marketing go in OpEx, not COGS.</li>
+<li>Confusing gross with net profit — gross does not deduct operating expenses, interest, or taxes.</li>
+<li>Relying on gross margin alone — high gross margin with high overhead can still produce net losses.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">What is in COGS?</div><div class="faq-answer">Direct materials, direct labor, manufacturing overhead. NOT SG&A expenses.</div></div>
+<div class="faq-item"><div class="faq-question">Good gross margin by industry?</div><div class="faq-answer">Software: 70–90%. Retail: 30–50%. Manufacturing: 20–40%. Grocery: 25–30%.</div></div>
+<div class="faq-item"><div class="faq-question">How investors use gross profit?</div><div class="faq-answer">To evaluate scalability — high gross margins allow room for growing operating expenses.</div></div>
+<div class="faq-item"><div class="faq-question">Gross profit vs EBITDA?</div><div class="faq-answer">Gross profit = Revenue − COGS. EBITDA deducts operating expenses and adds back D&A.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/profit-margin.html" class="related-calc-link">Profit Margin</a>
+<a href="/calculators/markup.html" class="related-calc-link">Markup Calculator</a>
+<a href="/calculators/break-even.html" class="related-calc-link">Break-Even Calculator</a>
+<a href="/calculators/discount.html" class="related-calc-link">Discount Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcGP(e){e.preventDefault();var rev=parseFloat(document.getElementById('gpr').value),cogs=parseFloat(document.getElementById('gpc').value),gp=rev-cogs;document.getElementById('result-text').innerHTML='<strong>Gross Profit: $'+gp.toLocaleString('en-US',{minimumFractionDigits:2})+'</strong><br>Gross Margin: '+(gp/rev*100).toFixed(2)+'%<br>COGS %: '+(cogs/rev*100).toFixed(2)+'%';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

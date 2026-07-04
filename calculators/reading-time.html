@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Time Calculator | FreebieCalculator.com</title>
+<meta name="description" content="Estimate how long any article, book, or text takes to read. Enter word count or paste text and select reading speed.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/reading-time.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Reading Time Calculator"><meta property="og:description" content="Estimate how long any article, book, or text takes to read. Enter word count or paste text and select reading speed."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Reading Time Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate how long any article, book, or text takes to read. Enter word count or paste text and select reading speed.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Education","item":"/calculators/gpa.html"},{"@type":"ListItem","position":3,"name":"Reading Time Calculator","item":"https://freebiecalculator.com/calculators/reading-time.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Average adult reading speed?',"acceptedAnswer":{"@type":"Answer","text":'200–300 wpm for general non-fiction. Skilled readers: 400–600 wpm.'}},{"@type":"Question","name":'Words per book page?',"acceptedAnswer":{"@type":"Answer","text":'Average page: 250–300 words. 300-page book ≈ 75,000–90,000 words.'}},{"@type":"Question","name":'Time for a research paper?',"acceptedAnswer":{"@type":"Answer","text":'3,000–5,000 words: 15–30 minutes to read; 1–2 hours to study carefully.'}},{"@type":"Question","name":'Does audiobook listening count as reading?',"acceptedAnswer":{"@type":"Answer","text":'For comprehension yes. Most people comprehend well at 1.5–2× speed.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/gpa.html">Education</a> &rsaquo; Reading Time Calculator</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Reading Time Calculator</h1>
+<p class="calc-intro">Find out exactly how long any content will take to read. Paste text or enter word count and select your reading speed.</p>
+<div class="calculator-tool">
+<form onsubmit="calcRT(event)">
+<div class="form-group"><label for="rtw">Word Count</label><input type="number" id="rtw" min="1" placeholder="e.g., 1500"></div>
+<div class="form-group"><label for="rtt">Or Paste Text Here (auto-counts words)</label><textarea id="rtt" rows="4" placeholder="Paste text here..." style="width:100%;padding:.75rem;border:2px solid var(--border-color);border-radius:.5rem;font-size:1rem;resize:vertical;box-sizing:border-box" oninput="countWords()"></textarea></div>
+<div class="form-group"><label for="rts">Reading Speed</label><select id="rts"><option value="150">Slow / Technical (150 wpm)</option><option value="200">Below Average (200 wpm)</option><option value="250" selected>Average (250 wpm)</option><option value="300">Above Average (300 wpm)</option><option value="400">Fast Reader (400 wpm)</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate Reading Time</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Divides word count by reading speed (words per minute). Paste text to auto-count words.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>Reading Time = Word Count &divide; Words Per Minute</code><br>Average: 200–300 wpm | Technical: 100–150 wpm | Fiction: 300+ wpm</p></section>
+<section class="content-section"><h2>Example</h2><p>1,500-word article at 250 wpm:<br>1,500 &divide; 250 = <strong>6 minutes</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use to estimate reading assignment time, plan study sessions, or estimate audio recording lengths.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Using average speed for technical content — dense academic text is often 100–150 wpm.</li>
+<li>Not accounting for comprehension time — reading speed excludes pausing to process complex concepts.</li>
+<li>Applying wpm to audio — audiobooks average 150–200 wpm.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Average adult reading speed?</div><div class="faq-answer">200–300 wpm for general non-fiction. Skilled readers: 400–600 wpm.</div></div>
+<div class="faq-item"><div class="faq-question">Words per book page?</div><div class="faq-answer">Average page: 250–300 words. 300-page book ≈ 75,000–90,000 words.</div></div>
+<div class="faq-item"><div class="faq-question">Time for a research paper?</div><div class="faq-answer">3,000–5,000 words: 15–30 minutes to read; 1–2 hours to study carefully.</div></div>
+<div class="faq-item"><div class="faq-question">Does audiobook listening count as reading?</div><div class="faq-answer">For comprehension yes. Most people comprehend well at 1.5–2× speed.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/study-time.html" class="related-calc-link">Study Time</a>
+<a href="/calculators/attendance.html" class="related-calc-link">Attendance</a>
+<a href="/calculators/gpa.html" class="related-calc-link">GPA Calculator</a>
+<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function countWords(){var t=document.getElementById('rtt').value.trim();document.getElementById('rtw').value=t?t.split(/\s+/).length:'';}
+function calcRT(e){e.preventDefault();var t=document.getElementById('rtt').value.trim(),wc=parseInt(document.getElementById('rtw').value);if(t&&!wc)wc=t.split(/\s+/).length;if(!wc){alert('Enter word count or paste text.');return;}var wpm=parseInt(document.getElementById('rts').value),mins=wc/wpm,m=Math.floor(mins),s=Math.round((mins-m)*60);document.getElementById('result-text').innerHTML='<strong>Reading Time: '+m+'m '+s+'s</strong><br>Word Count: '+wc.toLocaleString()+'<br>Speed: '+wpm+' wpm';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

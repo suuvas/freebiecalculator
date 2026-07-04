@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravel Calculator — Cubic Yards and Tons | FreebieCalculator.com</title>
+<meta name="description" content="Calculate cubic yards and tons of gravel, pea gravel, or crushed stone for driveways, paths, and landscaping.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/gravel.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Gravel Calculator — Cubic Yards and Tons"><meta property="og:description" content="Calculate cubic yards and tons of gravel, pea gravel, or crushed stone for driveways, paths, and landscaping."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gravel Calculator — Cubic Yards and Tons","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate cubic yards and tons of gravel, pea gravel, or crushed stone for driveways, paths, and landscaping.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Construction","item":"/calculators/concrete.html"},{"@type":"ListItem","position":3,"name":"Gravel Calculator — Cubic Yards and Tons","item":"https://freebiecalculator.com/calculators/gravel.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Driveway depth?',"acceptedAnswer":{"@type":"Answer","text":'4–6 inches minimum. 3-layer system (6" base + 4" mid + 2" surface) is ideal.'}},{"@type":"Question","name":'Tons per cubic yard?',"acceptedAnswer":{"@type":"Answer","text":'Standard gravel: 1.35–1.5 t/cu yd. Use 1.4 for estimates.'}},{"@type":"Question","name":'Haul myself?',"acceptedAnswer":{"@type":"Answer","text":'Pickup truck safely carries ~1 ton (0.7 cu yd). Large projects: bulk delivery.'}},{"@type":"Question","name":'Best gravel for drainage?',"acceptedAnswer":{"@type":"Answer","text":'Pea gravel (3/8") for surface; clean 3/4" crushed stone for French drains.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/concrete.html">Construction</a> &rsaquo; Gravel Calculator — Cubic Yards and Tons</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Gravel Calculator</h1>
+<p class="calc-intro">Calculate cubic yards and tons of gravel needed for driveways, garden paths, French drains, and landscaping beds.</p>
+<div class="calculator-tool">
+<form onsubmit="calcGravel(event)">
+<div class="form-group"><label for="gvln">Length (ft)</label><input type="number" id="gvln" step="0.1" min="0" placeholder="e.g., 40" required></div>
+<div class="form-group"><label for="gvwd">Width (ft)</label><input type="number" id="gvwd" step="0.1" min="0" placeholder="e.g., 12" required></div>
+<div class="form-group"><label for="gvdp">Depth (inches)</label><input type="number" id="gvdp" step="0.5" min="0.5" placeholder="e.g., 3" required></div>
+<div class="form-group"><label for="gvmt">Material</label><select id="gvmt"><option value="1.4">Gravel (1.4 t/cu yd)</option><option value="1.3">Pea Gravel (1.3)</option><option value="1.5">Crushed Stone (1.5)</option><option value="0.65">Mulch (0.65)</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate Gravel</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Computes volume in cubic feet, converts to cubic yards, and estimates weight in tons based on material density.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Volume (cu ft) = L &times; W &times; Depth<br>Cu Yards = Volume &divide; 27<br>Tons = Cu Yds &times; Density</p></section>
+<section class="content-section"><h2>Example</h2><p>Driveway 40×12 ft, 3 in deep:<br>120 cu ft = 4.44 cu yds. Tons: 4.44 &times; 1.4 = <strong>6.2 tons</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use before ordering bulk gravel delivery. Gravel is sold by the cubic yard or ton; suppliers need both.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Depth in feet not inches — calculator expects inches; 3 in = 0.25 ft.</li>
+<li>Not adding 10% buffer — settling and spreading losses are common.</li>
+<li>Confusing cu yds with cu ft — 1 cu yd = 27 cu ft.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">Driveway depth?</div><div class="faq-answer">4–6 inches minimum. 3-layer system (6" base + 4" mid + 2" surface) is ideal.</div></div>
+<div class="faq-item"><div class="faq-question">Tons per cubic yard?</div><div class="faq-answer">Standard gravel: 1.35–1.5 t/cu yd. Use 1.4 for estimates.</div></div>
+<div class="faq-item"><div class="faq-question">Haul myself?</div><div class="faq-answer">Pickup truck safely carries ~1 ton (0.7 cu yd). Large projects: bulk delivery.</div></div>
+<div class="faq-item"><div class="faq-question">Best gravel for drainage?</div><div class="faq-answer">Pea gravel (3/8") for surface; clean 3/4" crushed stone for French drains.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/concrete.html" class="related-calc-link">Concrete Calculator</a>
+<a href="/calculators/tile.html" class="related-calc-link">Tile Calculator</a>
+<a href="/calculators/square-footage.html" class="related-calc-link">Square Footage</a>
+<a href="/calculators/paint.html" class="related-calc-link">Paint Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcGravel(e){e.preventDefault();var len=parseFloat(document.getElementById('gvln').value),wid=parseFloat(document.getElementById('gvwd').value),dep=parseFloat(document.getElementById('gvdp').value)/12,density=parseFloat(document.getElementById('gvmt').value),cuFt=len*wid*dep,cuYd=cuFt/27,tons=cuYd*density;document.getElementById('result-text').innerHTML='<strong>'+cuYd.toFixed(2)+' cubic yards | '+tons.toFixed(2)+' tons</strong><br>With 10% buffer: '+(cuYd*1.1).toFixed(2)+' cu yds / '+(tons*1.1).toFixed(2)+' tons<br>Volume: '+cuFt.toFixed(1)+' cu ft';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

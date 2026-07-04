@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quadratic Equation Solver — ax² + bx + c = 0 | FreebieCalculator.com</title>
+<meta name="description" content="Solve any quadratic equation instantly. Get real and complex roots with the quadratic formula.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/quadratic.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Quadratic Equation Solver — ax² + bx + c = 0"><meta property="og:description" content="Solve any quadratic equation instantly. Get real and complex roots with the quadratic formula."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Quadratic Equation Solver — ax² + bx + c = 0","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Solve any quadratic equation instantly. Get real and complex roots with the quadratic formula.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Math","item":"/calculators/scientific.html"},{"@type":"ListItem","position":3,"name":"Quadratic Equation Solver — ax² + bx + c = 0","item":"https://freebiecalculator.com/calculators/quadratic.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'What does the discriminant tell me?',"acceptedAnswer":{"@type":"Answer","text":'b²−4ac > 0: two real roots. = 0: one repeated root. < 0: complex roots.'}},{"@type":"Question","name":'What are complex roots?',"acceptedAnswer":{"@type":"Answer","text":'Involve imaginary numbers (i=√−1). Appear as a ± bi pairs.'}},{"@type":"Question","name":'Works for degree 3?',"acceptedAnswer":{"@type":"Answer","text":'No — cubic equations need different methods.'}},{"@type":"Question","name":'How to verify?',"acceptedAnswer":{"@type":"Answer","text":'Substitute root back into original equation and confirm it equals 0.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/scientific.html">Math</a> &rsaquo; Quadratic Equation Solver — ax² + bx + c = 0</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Quadratic Equation Solver</h1>
+<p class="calc-intro">Enter coefficients a, b, and c of ax&sup2; + bx + c = 0 to instantly get roots, discriminant, and solution type.</p>
+<div class="calculator-tool">
+<form onsubmit="calcQuad(event)">
+<p style="font-size:.9rem;color:var(--text-secondary)">ax<sup>2</sup> + bx + c = 0</p>
+<div class="form-group"><label for="qa">a (coefficient of x&sup2;)</label><input type="number" id="qa" step="any" placeholder="e.g., 1" required></div>
+<div class="form-group"><label for="qb">b (coefficient of x)</label><input type="number" id="qb" step="any" placeholder="e.g., -5" required></div>
+<div class="form-group"><label for="qc">c (constant)</label><input type="number" id="qc" step="any" placeholder="e.g., 6" required></div>
+<button type="submit" class="btn btn-primary">Solve Equation</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Applies the quadratic formula. Discriminant (b²−4ac) determines whether roots are real, repeated, or complex.</p></section>
+<section class="content-section"><h2>Formula</h2><p><code>x = (&minus;b &plusmn; &radic;(b&sup2;&minus;4ac)) / 2a</code><br>&Delta; = b&sup2;&minus;4ac: &gt;0 = two real roots | =0 = one root | &lt;0 = complex roots</p></section>
+<section class="content-section"><h2>Example</h2><p>x&sup2;&minus;5x+6=0 (a=1, b=&minus;5, c=6):<br>&Delta; = 1 &gt; 0 &rarr; x&sub1;=3, x&sub2;=<strong>2</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use for algebra homework, physics projectile problems, or any equation reducible to quadratic form.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Not moving all terms to one side first — must equal 0.</li>
+<li>Using a=0 — that makes it linear, not quadratic.</li>
+<li>Sign errors on b — in 2x²−3x+1, b=−3.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">What does the discriminant tell me?</div><div class="faq-answer">b²−4ac > 0: two real roots. = 0: one repeated root. < 0: complex roots.</div></div>
+<div class="faq-item"><div class="faq-question">What are complex roots?</div><div class="faq-answer">Involve imaginary numbers (i=√−1). Appear as a ± bi pairs.</div></div>
+<div class="faq-item"><div class="faq-question">Works for degree 3?</div><div class="faq-answer">No — cubic equations need different methods.</div></div>
+<div class="faq-item"><div class="faq-question">How to verify?</div><div class="faq-answer">Substitute root back into original equation and confirm it equals 0.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/scientific.html" class="related-calc-link">Scientific Calculator</a>
+<a href="/calculators/fraction.html" class="related-calc-link">Fraction Calculator</a>
+<a href="/calculators/standard-deviation.html" class="related-calc-link">Standard Deviation</a>
+<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcQuad(e){e.preventDefault();var a=parseFloat(document.getElementById('qa').value),b=parseFloat(document.getElementById('qb').value),c=parseFloat(document.getElementById('qc').value);if(a===0){document.getElementById('result-text').innerHTML='Linear solution: x = '+(-c/b).toFixed(6);document.getElementById('result').hidden=false;return;}var D=b*b-4*a*c,out;if(D>0){var x1=(-b+Math.sqrt(D))/(2*a),x2=(-b-Math.sqrt(D))/(2*a);out='<strong>Two real roots:</strong><br>x&#8321; = '+x1.toFixed(8)+'<br>x&#8322; = '+x2.toFixed(8);}else if(D===0){out='<strong>One repeated root: x = '+(-b/(2*a)).toFixed(8)+'</strong>';}else{var re=-b/(2*a),im=Math.sqrt(-D)/(2*a);out='<strong>Complex roots:</strong><br>x&#8321; = '+re.toFixed(6)+' + '+im.toFixed(6)+'i<br>x&#8322; = '+re.toFixed(6)+' &minus; '+im.toFixed(6)+'i';}out+='<br>Discriminant: '+D.toFixed(6);document.getElementById('result-text').innerHTML=out;document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>

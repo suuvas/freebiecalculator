@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roofing Calculator — Squares of Shingles Needed | FreebieCalculator.com</title>
+<meta name="description" content="Calculate roofing squares and shingle bundles for any roof. Accounts for pitch factor and waste.">
+<link rel="canonical" href="https://freebiecalculator.com/calculators/roofing.html">
+<link rel="stylesheet" href="/assets/css/base.css?v=16">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<meta property="og:title" content="Roofing Calculator — Squares of Shingles Needed"><meta property="og:description" content="Calculate roofing squares and shingle bundles for any roof. Accounts for pitch factor and waste."><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Roofing Calculator — Squares of Shingles Needed","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate roofing squares and shingle bundles for any roof. Accounts for pitch factor and waste.","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Construction","item":"/calculators/concrete.html"},{"@type":"ListItem","position":3,"name":"Roofing Calculator — Squares of Shingles Needed","item":"https://freebiecalculator.com/calculators/roofing.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'What is a roofing square?',"acceptedAnswer":{"@type":"Answer","text":'100 sq ft of roof surface. Standard 3-tab shingles = 3 bundles/square.'}},{"@type":"Question","name":'Bundles per square?',"acceptedAnswer":{"@type":"Answer","text":'3-tab: 3 bundles. Architectural: 3–4 bundles. Check manufacturer spec.'}},{"@type":"Question","name":'Shingle lifespan?',"acceptedAnswer":{"@type":"Answer","text":'3-tab: 15–20 years. Architectural: 25–30 years. Class 4 impact-resistant: 40+ years.'}},{"@type":"Question","name":'Roof over old shingles?',"acceptedAnswer":{"@type":"Answer","text":'Most codes allow one layer over existing. Two or more must be torn off.'}}]}</script>
+</head>
+<body>
+<header id="header"></header>
+<main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/concrete.html">Construction</a> &rsaquo; Roofing Calculator — Squares of Shingles Needed</nav>
+<div class="calculator-page-layout">
+<div class="calculator-main">
+<h1>Roofing Calculator</h1>
+<p class="calc-intro">Calculate exactly how many roofing squares of shingles you need, accounting for roof pitch, type, and waste.</p>
+<div class="calculator-tool">
+<form onsubmit="calcRoof(event)">
+<div class="form-group"><label for="rfln">Building Length (ft)</label><input type="number" id="rfln" step="0.5" min="1" placeholder="e.g., 40" required></div>
+<div class="form-group"><label for="rfwd">Building Width (ft)</label><input type="number" id="rfwd" step="0.5" min="1" placeholder="e.g., 30" required></div>
+<div class="form-group"><label for="rfpt">Roof Pitch (rise per 12 in)</label><select id="rfpt"><option value="2">2:12 (low)</option><option value="4" selected>4:12 (common)</option><option value="6">6:12 (moderate)</option><option value="8">8:12 (steep)</option><option value="12">12:12 (very steep)</option></select></div>
+<div class="form-group"><label for="rfwt">Waste Factor</label><select id="rfwt"><option value="10">10% (simple gable)</option><option value="15" selected>15% (standard)</option><option value="20">20% (hip / complex)</option></select></div>
+<button type="submit" class="btn btn-primary">Calculate Roofing</button></form>
+<div id="result" class="result-section" hidden>
+<div id="result-text" class="result-display"></div>
+<div class="result-actions" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+<button type="button" onclick="copyResult()" class="btn btn-secondary">&#128203; Copy</button>
+<button type="button" onclick="shareResult()" class="btn btn-secondary">&#128279; Share</button>
+<button type="button" onclick="resetCalc()" class="btn btn-secondary">&#128260; Reset</button>
+<button type="button" onclick="window.print()" class="btn btn-secondary">&#128424; Print</button>
+</div></div></div>
+<div id="ad-mid" class="ad-slot" aria-label="Advertisement"></div>
+
+<section class="content-section"><h2>How It Works</h2><p>Applies pitch factor (√(1+(rise/12)²)) to building footprint, doubles it for a gable roof, adds waste, and divides by 100 for squares.</p></section>
+<section class="content-section"><h2>Formula</h2><p>Pitch Factor = &radic;(1+(Rise/12)&sup2;)<br>Roof Area = Footprint &times; Pitch Factor &times; 2<br>Squares = Area &times; (1+Waste%) &divide; 100</p></section>
+<section class="content-section"><h2>Example</h2><p>40×30 ft home, 4:12 pitch, 15% waste:<br>2,530 sq ft &times; 1.15 / 100 = <strong>29.1 squares</strong></p></section>
+<section class="content-section"><h2>When to Use This Calculator</h2><p>Use before ordering shingles, verifying contractor estimates, or planning a DIY roofing project.</p></section>
+<section class="content-section"><h2>Common Mistakes to Avoid</h2><ul style="margin-left:1.5rem"><li>Not using pitch factor — steep pitches dramatically increase actual area vs footprint.</li>
+<li>No waste for ridges and valleys — complex roofs need 15–20%.</li>
+<li>Wrong pitch measurement — measure with a level and tape on actual roof.</li></ul></section>
+<div id="ad-bottom" class="ad-slot" aria-label="Advertisement"></div>
+<section class="content-section"><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><div class="faq-question">What is a roofing square?</div><div class="faq-answer">100 sq ft of roof surface. Standard 3-tab shingles = 3 bundles/square.</div></div>
+<div class="faq-item"><div class="faq-question">Bundles per square?</div><div class="faq-answer">3-tab: 3 bundles. Architectural: 3–4 bundles. Check manufacturer spec.</div></div>
+<div class="faq-item"><div class="faq-question">Shingle lifespan?</div><div class="faq-answer">3-tab: 15–20 years. Architectural: 25–30 years. Class 4 impact-resistant: 40+ years.</div></div>
+<div class="faq-item"><div class="faq-question">Roof over old shingles?</div><div class="faq-answer">Most codes allow one layer over existing. Two or more must be torn off.</div></div></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/paint.html" class="related-calc-link">Paint Calculator</a>
+<a href="/calculators/concrete.html" class="related-calc-link">Concrete Calculator</a>
+<a href="/calculators/square-footage.html" class="related-calc-link">Square Footage</a>
+<a href="/calculators/tile.html" class="related-calc-link">Tile Calculator</a></div></section>
+<p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
+</div>
+<aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
+</div></div></main>
+<footer id="footer"></footer>
+<script>
+function calcRoof(e){e.preventDefault();var len=parseFloat(document.getElementById('rfln').value),wid=parseFloat(document.getElementById('rfwd').value),pitch=parseFloat(document.getElementById('rfpt').value),waste=parseFloat(document.getElementById('rfwt').value)/100,pf=Math.sqrt(1+Math.pow(pitch/12,2)),area=len*wid*pf*2,withWaste=area*(1+waste),squares=withWaste/100;document.getElementById('result-text').innerHTML='<strong>'+squares.toFixed(1)+' Roofing Squares</strong><br>Bundles: '+Math.ceil(squares*3)+' (3-tab) / '+Math.ceil(squares*3.5)+' (architectural)<br>Roof Area: '+area.toFixed(0)+' sq ft';document.getElementById('result').hidden=false;}
+function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
+function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
+function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
+</script>
+<script type="module" src="/assets/js/main.js?v=115"></script>
+</body></html>
