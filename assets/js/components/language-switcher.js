@@ -34,7 +34,7 @@ export class LanguageSwitcher {
     async loadTranslations() {
         try {
             const promises = this.availableLanguages.map(async lang => {
-                const response = await fetch(`/assets/js/lang/${lang}.json?v=105`);
+                const response = await fetch(`/assets/js/lang/${lang}.json?v=106`);
                 const translations = await response.json();
                 return { lang, translations };
             });

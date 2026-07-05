@@ -4,7 +4,7 @@ import { initFooter } from './components/footer.js?v=2';
 import { initThemeToggle } from './components/theme-toggle.js';
 import { initAdSlots, insertBlogAdSlots } from './components/ad-slots.js?v=4';
 import AccessibilityEnhancements from './components/accessibility.js';
-import { LanguageSwitcher } from './components/language-switcher.js?v=3';
+import { LanguageSwitcher } from './components/language-switcher.js?v=4';
 import { RecentlyViewed } from './components/recently-viewed.js';
 import { TopCalculators } from './components/top-calculators.js?v=4';
 import searchIndex from './search-index.js?v=2';
