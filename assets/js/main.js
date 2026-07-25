@@ -2,13 +2,13 @@
 import { initHeader } from './components/header.js?v=110';
 import { initFooter } from './components/footer.js?v=2';
 import { initThemeToggle } from './components/theme-toggle.js';
-import { initAdSlots, insertBlogAdSlots } from './components/ad-slots.js?v=5';
+import { initAdSlots, insertBlogAdSlots, injectStickyMobileAd } from './components/ad-slots.js?v=6';
 import AccessibilityEnhancements from './components/accessibility.js';
 import { LanguageSwitcher } from './components/language-switcher.js?v=4';
 import { RecentlyViewed } from './components/recently-viewed.js';
 import { TopCalculators } from './components/top-calculators.js?v=4';
 import searchIndex from './search-index.js?v=2';
-import { initCookieConsent } from './components/cookie-consent.js?v=1';
+import { initCookieConsent } from './components/cookie-consent.js?v=2';
 
 // Load Google AdSense script once per page (all pages share this entry point).
 // Called by initCookieConsent() after the user accepts or declines.
@@ -25,6 +25,9 @@ window.__loadAdSense = function loadAdSense(personalized) {
     s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
     s.setAttribute('crossorigin', 'anonymous');
     document.head.appendChild(s);
+    // Now that the consent banner is gone, it is safe to show the sticky mobile
+    // ad — body.has-sticky-ad padding won't interfere with the consent banner.
+    injectStickyMobileAd();
 };
 
 // Initialize the application
