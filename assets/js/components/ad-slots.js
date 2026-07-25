@@ -1,4 +1,4 @@
-// Ad Slots — Revenue-optimized, AdSense-compliant placement system
+// Ad Slots — Revenue-optimized, AdSense-compliant placement system v5
 // Replace ca-pub-XXXXXXXXXXXXXXXX and slot IDs after AdSense approval
 
 const PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX';
@@ -29,20 +29,67 @@ export function initAdSlots() {
 }
 
 // ── Inject <ins> tags into existing #ad-mid and #ad-bottom placeholders ───────
-// #ad-mid is skipped on mobile (≤900px) — it sits inside the calculator form
-// flow on mobile and would block tool usability. CSS also hides it on mobile.
-// Skipping the <ins> injection means no hidden-ad policy violation occurs.
+// #ad-mid POLICY NOTE: Before a calculation, the result container is hidden
+// (display:none / 0px height), which means #ad-mid would visually appear
+// directly adjacent to the Calculate button — a policy violation.
+// Fix: #ad-mid is hidden by default (CSS) and only revealed after the result
+// container becomes visible, using the same MutationObserver pattern as #ad-result.
+// #ad-bottom has no such constraint and is injected immediately on both platforms.
 function injectAdCodeIntoSlots() {
-    const isMobile = window.innerWidth <= 900;
-    const slotMap = {
-        'ad-mid':    isMobile ? null : SLOT_IDS.mid,  // desktop-only
-        'ad-bottom': SLOT_IDS.bottom,
-    };
-    for (const [slotId, adSlotNum] of Object.entries(slotMap)) {
-        if (!adSlotNum) continue;
-        const el = document.getElementById(slotId);
-        if (!el || el.querySelector('ins.adsbygoogle')) continue;
-        injectIns(el, adSlotNum);
+    // #ad-bottom — always inject immediately (desktop + mobile)
+    const bottomEl = document.getElementById('ad-bottom');
+    if (bottomEl && !bottomEl.querySelector('ins.adsbygoogle')) {
+        injectIns(bottomEl, SLOT_IDS.bottom);
+    }
+
+    // #ad-mid — desktop only, deferred until after first calculation
+    if (window.innerWidth > 900) {
+        injectMidAdAfterResult();
+    }
+}
+
+// #ad-mid is injected only after the result container becomes visible.
+// This ensures the ad never appears next to the Calculate button (policy violation).
+// On pages without a result container (e.g. blog), inject immediately.
+function injectMidAdAfterResult() {
+    const midEl = document.getElementById('ad-mid');
+    if (!midEl || midEl.querySelector('ins.adsbygoogle')) return;
+
+    const resultContainer = document.querySelector(
+        '.result-container, .result-section, .results-container'
+    );
+
+    if (!resultContainer) {
+        // Not a calculator page — inject immediately
+        midEl.style.display = 'block';
+        injectIns(midEl, SLOT_IDS.mid);
+        return;
+    }
+
+    // Watch for result container to become visible after calculation
+    const observer = new MutationObserver(() => {
+        const isVisible =
+            resultContainer.style.display !== 'none' &&
+            !resultContainer.hidden &&
+            resultContainer.offsetParent !== null;
+
+        if (isVisible && !midEl.querySelector('ins.adsbygoogle')) {
+            midEl.style.display = 'block';
+            injectIns(midEl, SLOT_IDS.mid);
+            observer.disconnect();
+        }
+    });
+
+    observer.observe(resultContainer, {
+        attributes: true,
+        attributeFilter: ['style', 'hidden', 'class'],
+    });
+    if (resultContainer.parentNode) {
+        observer.observe(resultContainer.parentNode, {
+            childList: true,
+            attributes: true,
+            attributeFilter: ['class', 'style'],
+        });
     }
 }
 
@@ -173,7 +220,10 @@ function injectSidebarAd() {
 //   2. Must not cover more than 30% of screen height ✓ (70px = ~10% on average phone)
 //   3. Must not overlap main content or navigation ✓
 // CLS fix: body padding added immediately via CSS class so layout doesn't
-// jump when the ad slides in after 3 seconds.
+// jump when the ad slides in after 2 seconds.
+// CONSENT: the cookie consent banner also sits at the bottom (z-index 960).
+// This function is called only after consent is given (from initAdSlots, which
+// is triggered post-consent), so the two never overlap.
 function injectStickyMobileAd() {
     if (document.getElementById('ad-sticky-mobile')) return;
     if (window.innerWidth > 900) return;

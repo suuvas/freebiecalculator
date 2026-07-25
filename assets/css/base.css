@@ -823,9 +823,12 @@ button:disabled {
 }
 
 /* Mid: 300×250 rectangle between form and content.
-   HIDDEN on mobile — on mobile it sits inside the form flow and blocks usability.
-   JS also skips injecting <ins> on mobile so no hidden-ad policy violation occurs. */
+   POLICY: hidden by default — JS reveals it only after the calculation result
+   becomes visible. This prevents the ad from appearing adjacent to the
+   Calculate button before the user has interacted (AdSense policy violation).
+   On mobile the element is never shown — JS also skips <ins> injection on mobile. */
 #ad-mid {
+    display: none; /* shown by JS after first calculation result appears */
     max-width: 336px;
     margin: 2rem auto;
 }
@@ -1010,10 +1013,13 @@ button:disabled {
 /* ── Sticky mobile bottom anchor banner ──────────────────────────────── */
 /* Compliant with AdSense anchor ad policy: fixed, closeable, not covering nav */
 /* CLS fix: padding reserved immediately via body class so layout doesn't
-   jump when the ad appears after 3 seconds. The banner itself slides in
-   via transform so it doesn't cause a reflow on the page content. */
+   jump when the ad appears after 2 seconds. The banner itself slides in
+   via transform so it doesn't cause a reflow on the page content.
+   iPhone safe-area: env(safe-area-inset-bottom) keeps the banner above
+   the home indicator on iPhone X and newer (requires viewport-fit=cover). */
 body.has-sticky-ad {
-    padding-bottom: 70px;
+    /* 70px banner + home-indicator safe area on iPhone X+ */
+    padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
 }
 
 .ad-sticky-mobile {
@@ -1029,7 +1035,8 @@ body.has-sticky-ad {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4px 36px 4px 8px;
+    /* padding-bottom accounts for iPhone home indicator bar (34px on iPhone X+) */
+    padding: 4px 36px calc(4px + env(safe-area-inset-bottom, 0px)) 8px;
     box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
     transform: translateY(100%);
     transition: transform 0.3s ease;
@@ -1660,19 +1667,24 @@ textarea:focus-visible {
         gap: 0.75rem;
     }
 
-    /* Ad slots on mobile — full width, proper heights */
+    /* Ad slots on mobile — full width.
+       ONLY give min-height to active (injected) slots.
+       Empty/unfilled slots must collapse to 0 — Google "valuable inventory" policy. */
     .ad-slot {
-        min-height: 90px;
         margin: 1rem auto;
         max-width: 100%;
         overflow: hidden;
+        min-height: 0;          /* empty slots collapse, no blank gaps on iPhone */
+    }
+    .ad-slot.ad-active {
+        min-height: 90px;       /* active slots: enough room for label + ad unit */
     }
 
-    /* ad-mid is hidden on mobile via its own rule above — no min-height needed.
-       ad-result only appears after calculation (JS-controlled display:none→block).
-       Containers collapse naturally when no real AdSense ad is loaded. */
+    /* ad-result only appears after calculation (JS-controlled display:none→block).
+       Extra top margin ensures 32px+ gap from result box on small screens. */
     #ad-result {
         max-width: 100%;
+        margin-top: 2rem;       /* ≥32px gap from result box — audit requirement */
     }
 
     /* Bottom leaderboard — full width on mobile */
@@ -1981,3 +1993,101 @@ textarea:focus-visible {
     border-radius: 9999px;
     font-weight: 700;
 }
+
+/* ── Cookie Consent Banner ────────────────────────────────────────────────── */
+/* Slides up from the bottom once on first visit. z-index 960 sits above the
+   sticky ad (950) but below the search dropdown (9999). The sticky ad is
+   deferred until consent is given so the two never overlap. */
+#cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 960;
+    background: var(--bg-card);
+    border-top: 2px solid var(--border-color);
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.14);
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+    padding: 0;
+}
+#cookie-consent-banner.visible {
+    transform: translateY(0);
+}
+.cc-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+.cc-text {
+    flex: 1 1 280px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+.cc-text strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+}
+.cc-text a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+.cc-buttons {
+    display: flex;
+    gap: 0.6rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+.cc-btn {
+    padding: 0.45rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.cc-btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+.cc-btn-primary:hover {
+    background: var(--primary-dark, #1d4ed8);
+    border-color: var(--primary-dark, #1d4ed8);
+}
+.cc-btn-secondary {
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+.cc-btn-secondary:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+/* On mobile, stack text above buttons and add safe-area padding */
+@media (max-width: 600px) {
+    .cc-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding-bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+    }
+    .cc-buttons {
+        justify-content: stretch;
+    }
+    .cc-btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+/* When both banner and sticky ad are potentially visible, the sticky ad is
+   held back (JS defers it) until consent is given, so no z-index conflict. */

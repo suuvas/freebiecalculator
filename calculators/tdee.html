@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3KP3H0YGC"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-R3KP3H0YGC');
-</script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TDEE Calculator — Total Daily Energy Expenditure | FreebieCalculator.com</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TDEE Calculator | FreebieCalculator.com</title>
 <meta name="description" content="Calculate total daily energy expenditure to know exactly how many calories to eat. Uses the Mifflin-St Jeor equation.">
 <link rel="canonical" href="https://freebiecalculator.com/calculators/tdee.html">
-<link rel="stylesheet" href="/assets/css/base.css?v=18">
+<link rel="stylesheet" href="/assets/css/base.css?v=20">
 <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
 <meta property="og:title" content="TDEE Calculator — Total Daily Energy Expenditure"><meta property="og:description" content="Calculate total daily energy expenditure to know exactly how many calories to eat. Uses the Mifflin-St Jeor equation."><meta property="og:type" content="website">
+    <meta property="og:url" content="https://freebiecalculator.com/calculators/tdee.html">
+    <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TDEE Calculator — Total Daily Energy Expenditure","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total daily energy expenditure to know exactly how many calories to eat. Uses the Mifflin-St Jeor equation.","dateModified":"2026-07-04"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Health","item":"/calculators/calorie.html"},{"@type":"ListItem","position":3,"name":"TDEE Calculator — Total Daily Energy Expenditure","item":"https://freebiecalculator.com/calculators/tdee.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'BMR vs TDEE?',"acceptedAnswer":{"@type":"Answer","text":'BMR = calories at complete rest. TDEE adds daily activity on top of BMR. Eat at TDEE to maintain weight.'}},{"@type":"Question","name":'Caloric deficit for weight loss?',"acceptedAnswer":{"@type":"Answer","text":'300–500 calories/day below TDEE = 0.5–1 lb/week fat loss, which is sustainable.'}},{"@type":"Question","name":'Why do calculators differ?',"acceptedAnswer":{"@type":"Answer","text":'Different BMR formulas (Mifflin-St Jeor vs Harris-Benedict) and activity multipliers produce different results.'}},{"@type":"Question","name":'Does TDEE include workout calories?',"acceptedAnswer":{"@type":"Answer","text":'Yes — the activity multiplier accounts for exercise. Do not add exercise calories on top.'}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "BMR vs TDEE?", "acceptedAnswer": {"@type": "Answer", "text": "BMR = calories at complete rest. TDEE adds daily activity on top of BMR. Eat at TDEE to maintain weight."}}, {"@type": "Question", "name": "Caloric deficit for weight loss?", "acceptedAnswer": {"@type": "Answer", "text": "300–500 calories/day below TDEE = 0.5–1 lb/week fat loss, which is sustainable."}}, {"@type": "Question", "name": "Why do calculators differ?", "acceptedAnswer": {"@type": "Answer", "text": "Different BMR formulas (Mifflin-St Jeor vs Harris-Benedict) and activity multipliers produce different results."}}, {"@type": "Question", "name": "Does TDEE include workout calories?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the activity multiplier accounts for exercise. Do not add exercise calories on top."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
@@ -77,5 +69,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=117"></script>
+<script type="module" src="/assets/js/main.js?v=118"></script>
 </body></html>

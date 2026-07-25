@@ -2,27 +2,38 @@
 import { initHeader } from './components/header.js?v=110';
 import { initFooter } from './components/footer.js?v=2';
 import { initThemeToggle } from './components/theme-toggle.js';
-import { initAdSlots, insertBlogAdSlots } from './components/ad-slots.js?v=4';
+import { initAdSlots, insertBlogAdSlots } from './components/ad-slots.js?v=5';
 import AccessibilityEnhancements from './components/accessibility.js';
 import { LanguageSwitcher } from './components/language-switcher.js?v=4';
 import { RecentlyViewed } from './components/recently-viewed.js';
 import { TopCalculators } from './components/top-calculators.js?v=4';
 import searchIndex from './search-index.js?v=2';
+import { initCookieConsent } from './components/cookie-consent.js?v=1';
 
-// Load Google AdSense script once per page (all pages share this entry point)
-// Replace ca-pub-XXXXXXXXXXXXXXXX with your real publisher ID after approval
-function loadAdSenseScript() {
+// Load Google AdSense script once per page (all pages share this entry point).
+// Called by initCookieConsent() after the user accepts or declines.
+// personalized=true  → standard ads (user accepted)
+// personalized=false → non-personalized ads only (user declined / no consent yet)
+window.__loadAdSense = function loadAdSense(personalized) {
     if (document.querySelector('script[src*="adsbygoogle"]')) return;
+    if (!personalized) {
+        // Signal non-personalized before the script tag is created
+        (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+    }
     const s = document.createElement('script');
     s.async = true;
     s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
     s.setAttribute('crossorigin', 'anonymous');
     document.head.appendChild(s);
-}
+};
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    loadAdSenseScript();
+    // initCookieConsent checks localStorage — if the user has already chosen,
+    // it immediately calls window.__loadAdSense and returns true (no banner).
+    // If this is a first visit, it shows the banner and defers AdSense loading
+    // until the user taps Accept or Essential Only.
+    initCookieConsent();
 
     // Initialize components
     initHeader();

@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3KP3H0YGC"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-R3KP3H0YGC');
-</script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amortization Calculator - Loan Payment Schedule | FreebieCalculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Amortization Calculator | FreebieCalculator</title>
     <meta name="description" content="Free amortization calculator to create detailed loan payment schedules. See how much principal and interest you pay each month over your loan term.">
     <link rel="canonical" href="https://freebiecalculator.com/calculators/amortization.html">
-    <link rel="stylesheet" href="/assets/css/base.css?v=18">
+    <link rel="stylesheet" href="/assets/css/base.css?v=20">
     <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
     
     <!-- Open Graph -->
@@ -24,6 +14,7 @@ gtag('config', 'G-R3KP3H0YGC');
     <meta property="og:description" content="Create detailed loan payment schedules with our free amortization calculator.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://freebiecalculator.com/calculators/amortization.html">
+    <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
     
     <!-- JSON-LD SoftwareApplication Schema -->
     <script type="application/ld+json">
@@ -32,14 +23,14 @@ gtag('config', 'G-R3KP3H0YGC');
         "@type": "SoftwareApplication",
         "name": "Amortization Calculator",
         "description": "Calculate detailed loan payment schedules showing principal and interest breakdown",
-        "applicationCategory": "Calculator",
+        "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
         "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
         },
-        "dateModified": "2025-08-22"
+        "dateModified": "2026-07-25"
     }
     </script>
     
@@ -59,7 +50,7 @@ gtag('config', 'G-R3KP3H0YGC');
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Financial Calculators",
-                "item": "https://freebiecalculator.com/#finance"
+                "item": "https://freebiecalculator.com/categories/finance.html"
             },
             {
                 "@type": "ListItem",
@@ -69,6 +60,16 @@ gtag('config', 'G-R3KP3H0YGC');
             }
         ]
     }
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is an amortization schedule?","acceptedAnswer":{"@type":"Answer","text":"An amortization schedule is a complete table of loan payments showing how much of each payment goes toward principal and interest over the life of the loan. Early payments are mostly interest; later payments shift toward principal."}},
+        {"@type":"Question","name":"How is the monthly payment calculated?","acceptedAnswer":{"@type":"Answer","text":"Monthly payment = P × [r(1+r)^n] / [(1+r)^n − 1], where P is the loan amount, r is the monthly interest rate, and n is the total number of payments."}},
+        {"@type":"Question","name":"How can I pay off my loan faster?","acceptedAnswer":{"@type":"Answer","text":"Making extra payments toward principal reduces the balance faster, shortening the loan term and saving interest. Even small additional monthly payments can save thousands over a 30-year mortgage."}},
+        {"@type":"Question","name":"What is the difference between principal and interest in a payment?","acceptedAnswer":{"@type":"Answer","text":"Each payment covers interest first (calculated on the remaining balance), then the rest reduces the principal. As the balance falls, more of each payment goes to principal — this is the amortization effect."}},
+        {"@type":"Question","name":"Does making extra payments change the amortization schedule?","acceptedAnswer":{"@type":"Answer","text":"Yes. Extra principal payments reduce the outstanding balance immediately, meaning future interest charges are lower. This shortens the total loan term and reduces overall interest paid."}}
+    ]}
     </script>
 </head>
 <body>
@@ -252,7 +253,7 @@ gtag('config', 'G-R3KP3H0YGC');
     
     <footer id="footer"></footer>
     
-    <script type="module" src="/assets/js/main.js?v=117"></script>
+    <script type="module" src="/assets/js/main.js?v=118"></script>
     <script type="module">
         import { formatCurrency, formatNumber } from '/assets/js/utils/math.js';
         
