@@ -8,35 +8,18 @@ import { LanguageSwitcher } from './components/language-switcher.js?v=4';
 import { RecentlyViewed } from './components/recently-viewed.js';
 import { TopCalculators } from './components/top-calculators.js?v=4';
 import searchIndex from './search-index.js?v=2';
-import { initCookieConsent } from './components/cookie-consent.js?v=3';
-
-// Load Google AdSense script once per page (all pages share this entry point).
-// Called by initCookieConsent() after the user accepts or declines.
-// personalized=true  → standard ads (user accepted)
-// personalized=false → non-personalized ads only (user declined / no consent yet)
-window.__loadAdSense = function loadAdSense(personalized) {
-    if (document.querySelector('script[src*="adsbygoogle"]')) return;
-    if (!personalized) {
-        // Signal non-personalized before the script tag is created
-        (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
-    }
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
-    s.setAttribute('crossorigin', 'anonymous');
-    document.head.appendChild(s);
-    // Now that the consent banner is gone, it is safe to show the sticky mobile
-    // ad — body.has-sticky-ad padding won't interfere with the consent banner.
-    injectStickyMobileAd();
-};
-
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    // initCookieConsent checks localStorage — if the user has already chosen,
-    // it immediately calls window.__loadAdSense and returns true (no banner).
-    // If this is a first visit, it shows the banner and defers AdSense loading
-    // until the user taps Accept or Essential Only.
-    initCookieConsent();
+    // Load Google AdSense immediately — no consent gate.
+    // Ads show to every visitor from the first page view.
+    if (!document.querySelector('script[src*="adsbygoogle"]')) {
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+        s.setAttribute('crossorigin', 'anonymous');
+        document.head.appendChild(s);
+    }
+    injectStickyMobileAd();
 
     // Initialize components
     initHeader();
@@ -99,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize mobile navigation
     initMobileNav();
     
-    console.log('freebiecalculator.com initialized - VERSION 118 LOADED');
+    console.log('freebiecalculator.com initialized - VERSION 119 LOADED');
 });
 
 // Simple language dropdown creator
