@@ -6,3 +6,27 @@
 /privacy-policy.html /privacy.html  301
 /tos /terms.html  301
 /terms-of-service /terms.html  301
+
+# .html → clean URL (Google de-dup)
+/calculators/mortgage.html  /calculators/mortgage  301
+/calculators/bmi.html  /calculators/bmi  301
+/calculators/compound-interest.html  /calculators/compound-interest  301
+/calculators/percentage.html  /calculators/percentage  301
+/calculators/loan.html  /calculators/loan  301
+/calculators/salary.html  /calculators/salary  301
+/calculators/tax.html  /calculators/tax  301
+/calculators/amortization.html  /calculators/amortization  301
+/calculators/retirement.html  /calculators/retirement  301
+/calculators/tip.html  /calculators/tip  301
+/categories/finance.html  /categories/finance  301
+/categories/health.html  /categories/health  301
+/categories/math.html  /categories/math  301
+/categories/loans.html  /categories/loans  301
+/categories/tax.html  /categories/tax  301
+/categories/investment.html  /categories/investment  301
+/about.html  /about  301
+/contact.html  /contact  301
+/disclaimer.html  /disclaimer  301
+/blog/posts/bmi-vs-body-fat.html  /blog/posts/bmi-vs-body-fat  301
+/blog/posts/compound-interest-vs-simple-interest.html  /blog/posts/compound-interest-vs-simple-interest  301
+/blog/posts/how-to-use-loan-calculator.html  /blog/posts/how-to-use-loan-calculator  301

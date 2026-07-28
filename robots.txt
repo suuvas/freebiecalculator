@@ -5,6 +5,8 @@ Allow: /
 Disallow: /.local/
 Disallow: /attached_assets/
 Disallow: /admin/
+Disallow: /search
+Disallow: /search.html
 Disallow: /private/
 
 # Sitemap location
