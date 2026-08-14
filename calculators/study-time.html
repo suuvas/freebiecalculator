@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/study-time">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Study Time Calculator — Plan Your Study Schedule","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate daily study hours needed based on exam date, subjects, and material. Build a realistic study plan.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Education","item":"/calculators/gpa.html"},{"@type":"ListItem","position":3,"name":"Study Time Calculator — Plan Your Study Schedule","item":"https://freebiecalculator.com/calculators/study-time"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Education",
+            "item": "https://freebiecalculator.com/calculators/gpa"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Study Time Calculator — Plan Your Study Schedule",
+            "item": "https://freebiecalculator.com/calculators/study-time"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Effective daily study hours?", "acceptedAnswer": {"@type": "Answer", "text": "3–5 focused hours is optimal. Diminishing returns after 6 hours."}}, {"@type": "Question", "name": "What is spaced repetition?", "acceptedAnswer": {"@type": "Answer", "text": "Reviewing at increasing intervals (Day 1, 3, 7, 14) dramatically improves retention."}}, {"@type": "Question", "name": "One subject per day or multiple?", "acceptedAnswer": {"@type": "Answer", "text": "Interleaving multiple subjects per session is more effective than blocking."}}, {"@type": "Question", "name": "When to start for major exams?", "acceptedAnswer": {"@type": "Answer", "text": "4–6 weeks for best results. 1–2 weeks out = cramming territory."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/gpa.html">Education</a> &rsaquo; Study Time Calculator — Plan Your Study Schedule</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/gpa">Education</a> &rsaquo; Study Time Calculator — Plan Your Study Schedule</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>Study Time Calculator</h1>
@@ -51,20 +76,21 @@
 <div class="faq-item"><div class="faq-question">What is spaced repetition?</div><div class="faq-answer">Reviewing at increasing intervals (Day 1, 3, 7, 14) dramatically improves retention.</div></div>
 <div class="faq-item"><div class="faq-question">One subject per day or multiple?</div><div class="faq-answer">Interleaving multiple subjects per session is more effective than blocking.</div></div>
 <div class="faq-item"><div class="faq-question">When to start for major exams?</div><div class="faq-answer">4–6 weeks for best results. 1–2 weeks out = cramming territory.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/reading-time.html" class="related-calc-link">Reading Time</a>
-<a href="/calculators/gpa.html" class="related-calc-link">GPA Calculator</a>
-<a href="/calculators/grade.html" class="related-calc-link">Grade Calculator</a>
-<a href="/calculators/attendance.html" class="related-calc-link">Attendance</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/reading-time" class="related-calc-link">Reading Time</a>
+<a href="/calculators/gpa" class="related-calc-link">GPA Calculator</a>
+<a href="/calculators/grade" class="related-calc-link">Grade Calculator</a>
+<a href="/calculators/attendance" class="related-calc-link">Attendance</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
 </div></div></main>
 <footer id="footer"></footer>
 <script>
-function calcStudy(e){e.preventDefault();var exam=new Date(document.getElementById('std').value),days=Math.max(1,Math.ceil((exam-new Date())/86400000)),subj=parseInt(document.getElementById('stns').value),hrs=parseFloat(document.getElementById('sths').value),cycles=parseInt(document.getElementById('strc').value),total=subj*hrs*cycles,daily=total/days;document.getElementById('result-text').innerHTML='<strong>Daily Study Time: '+daily.toFixed(1)+' hours/day</strong><br>Total Hours: '+total+'h<br>Days Until Exam: '+days+'<br>Per Subject/Day: '+(daily/subj).toFixed(1)+'h';document.getElementById('result').hidden=false;}
+function parseLocalDate(val){var p=val.split('-').map(Number);return new Date(p[0],p[1]-1,p[2]);}
+function calcStudy(e){e.preventDefault();var exam=parseLocalDate(document.getElementById('std').value),days=Math.max(1,Math.ceil((exam-new Date())/86400000)),subj=parseInt(document.getElementById('stns').value),hrs=parseFloat(document.getElementById('sths').value),cycles=parseInt(document.getElementById('strc').value),total=subj*hrs*cycles,daily=total/days;document.getElementById('result-text').innerHTML='<strong>Daily Study Time: '+daily.toFixed(1)+' hours/day</strong><br>Total Hours: '+total+'h<br>Days Until Exam: '+days+'<br>Per Subject/Day: '+(daily/subj).toFixed(1)+'h';document.getElementById('result').hidden=false;}
 function copyResult(){var t=document.getElementById('result-text').innerText;navigator.clipboard.writeText(t).then(function(){alert('Copied!');});}
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

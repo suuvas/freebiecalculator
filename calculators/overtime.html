@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/overtime">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Overtime Pay Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total pay including regular and overtime hours. Supports 1.5x, double time, and custom multipliers.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/paycheck.html"},{"@type":"ListItem","position":3,"name":"Overtime Pay Calculator","item":"https://freebiecalculator.com/calculators/overtime"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance",
+            "item": "https://freebiecalculator.com/calculators/paycheck"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Overtime Pay Calculator",
+            "item": "https://freebiecalculator.com/calculators/overtime"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who qualifies for overtime in the US?", "acceptedAnswer": {"@type": "Answer", "text": "Non-exempt employees working over 40 hours/week must receive at least 1.5&times; their regular rate under FLSA."}}, {"@type": "Question", "name": "Is overtime taxed differently?", "acceptedAnswer": {"@type": "Answer", "text": "Overtime is taxed at the same income rate. It may push you into a higher bracket for that period."}}, {"@type": "Question", "name": "What is double time?", "acceptedAnswer": {"@type": "Answer", "text": "2&times; your regular rate. California requires double time for hours over 12 in a single day."}}, {"@type": "Question", "name": "Does PTO count toward 40 hours?", "acceptedAnswer": {"@type": "Answer", "text": "No — only actual hours worked count toward the overtime threshold."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/paycheck.html">Finance</a> &rsaquo; Overtime Pay Calculator</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/paycheck">Finance</a> &rsaquo; Overtime Pay Calculator</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>Overtime Pay Calculator</h1>
@@ -51,10 +76,10 @@
 <div class="faq-item"><div class="faq-question">Is overtime taxed differently?</div><div class="faq-answer">Overtime is taxed at the same income rate. It may push you into a higher bracket for that period.</div></div>
 <div class="faq-item"><div class="faq-question">What is double time?</div><div class="faq-answer">2&times; your regular rate. California requires double time for hours over 12 in a single day.</div></div>
 <div class="faq-item"><div class="faq-question">Does PTO count toward 40 hours?</div><div class="faq-answer">No — only actual hours worked count toward the overtime threshold.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/paycheck.html" class="related-calc-link">Paycheck</a>
-<a href="/calculators/hourly-to-salary.html" class="related-calc-link">Hourly to Salary</a>
-<a href="/calculators/salary-after-tax.html" class="related-calc-link">Salary After Tax</a>
-<a href="/calculators/hours.html" class="related-calc-link">Hours Calculator</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/paycheck" class="related-calc-link">Paycheck</a>
+<a href="/calculators/hourly-to-salary" class="related-calc-link">Hourly to Salary</a>
+<a href="/calculators/salary-after-tax" class="related-calc-link">Salary After Tax</a>
+<a href="/calculators/hours" class="related-calc-link">Hours Calculator</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -66,5 +91,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

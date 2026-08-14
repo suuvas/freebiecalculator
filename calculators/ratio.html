@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/ratio">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ratio Calculator — Simplify and Scale Ratios","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Simplify ratios to lowest terms and scale to any target. Instant ratio calculations for math, cooking, mixing, and more.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Math","item":"/calculators/percentage.html"},{"@type":"ListItem","position":3,"name":"Ratio Calculator — Simplify and Scale Ratios","item":"https://freebiecalculator.com/calculators/ratio"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Math",
+            "item": "https://freebiecalculator.com/calculators/percentage"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Ratio Calculator — Simplify and Scale Ratios",
+            "item": "https://freebiecalculator.com/calculators/ratio"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How to simplify a ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Divide both numbers by their GCD. Example: 24:36 → GCD=12 → 2:3."}}, {"@type": "Question", "name": "What is a 1:1 ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Equal parts — a 50/50 mix."}}, {"@type": "Question", "name": "How to scale a ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply both parts by the same number. 2:3 scaled to 20 total: multiply each by 4 → 8:12."}}, {"@type": "Question", "name": "Can ratios have 3 numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — 1:2:3 means three quantities in those proportions. Total parts = 6."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/percentage.html">Math</a> &rsaquo; Ratio Calculator — Simplify and Scale Ratios</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/percentage">Math</a> &rsaquo; Ratio Calculator — Simplify and Scale Ratios</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>Ratio Calculator</h1>
@@ -50,10 +75,10 @@
 <div class="faq-item"><div class="faq-question">What is a 1:1 ratio?</div><div class="faq-answer">Equal parts — a 50/50 mix.</div></div>
 <div class="faq-item"><div class="faq-question">How to scale a ratio?</div><div class="faq-answer">Multiply both parts by the same number. 2:3 scaled to 20 total: multiply each by 4 → 8:12.</div></div>
 <div class="faq-item"><div class="faq-question">Can ratios have 3 numbers?</div><div class="faq-answer">Yes — 1:2:3 means three quantities in those proportions. Total parts = 6.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/proportion.html" class="related-calc-link">Proportion Calculator</a>
-<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a>
-<a href="/calculators/fraction.html" class="related-calc-link">Fraction Calculator</a>
-<a href="/calculators/average.html" class="related-calc-link">Average Calculator</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/proportion" class="related-calc-link">Proportion Calculator</a>
+<a href="/calculators/percentage" class="related-calc-link">Percentage</a>
+<a href="/calculators/fraction" class="related-calc-link">Fraction Calculator</a>
+<a href="/calculators/average" class="related-calc-link">Average Calculator</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -66,5 +91,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

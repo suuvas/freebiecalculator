@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/fire">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FIRE Calculator — Financial Independence Retire Early","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate your FIRE number and timeline to retire early using the 4% safe withdrawal rate.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/retirement.html"},{"@type":"ListItem","position":3,"name":"FIRE Calculator — Financial Independence Retire Early","item":"https://freebiecalculator.com/calculators/fire"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance",
+            "item": "https://freebiecalculator.com/calculators/retirement"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "FIRE Calculator — Financial Independence Retire Early",
+            "item": "https://freebiecalculator.com/calculators/fire"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the 4% rule?", "acceptedAnswer": {"@type": "Answer", "text": "Research shows withdrawing 4% of a diversified portfolio annually (adjusted for inflation) has historically lasted 30+ years."}}, {"@type": "Question", "name": "Lean vs fat FIRE?", "acceptedAnswer": {"@type": "Answer", "text": "Lean FIRE targets minimal spending (under $40K/year). Fat FIRE targets higher lifestyle ($80K+/year)."}}, {"@type": "Question", "name": "What return to assume?", "acceptedAnswer": {"@type": "Answer", "text": "7% real return is common (10% historical stock return minus 3% inflation). Use 5–6% for conservative estimates."}}, {"@type": "Question", "name": "Is FIRE realistic for average earners?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — it depends more on savings rate than income. Saving 50% of income allows FIRE in roughly 17 years."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/retirement.html">Finance</a> &rsaquo; FIRE Calculator — Financial Independence Retire Early</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/retirement">Finance</a> &rsaquo; FIRE Calculator — Financial Independence Retire Early</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>FIRE Calculator</h1>
@@ -52,10 +77,10 @@
 <div class="faq-item"><div class="faq-question">Lean vs fat FIRE?</div><div class="faq-answer">Lean FIRE targets minimal spending (under $40K/year). Fat FIRE targets higher lifestyle ($80K+/year).</div></div>
 <div class="faq-item"><div class="faq-question">What return to assume?</div><div class="faq-answer">7% real return is common (10% historical stock return minus 3% inflation). Use 5–6% for conservative estimates.</div></div>
 <div class="faq-item"><div class="faq-question">Is FIRE realistic for average earners?</div><div class="faq-answer">Yes — it depends more on savings rate than income. Saving 50% of income allows FIRE in roughly 17 years.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/retirement.html" class="related-calc-link">Retirement</a>
-<a href="/calculators/compound-interest.html" class="related-calc-link">Compound Interest</a>
-<a href="/calculators/savings.html" class="related-calc-link">Savings Calculator</a>
-<a href="/calculators/net-worth.html" class="related-calc-link">Net Worth</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/retirement" class="related-calc-link">Retirement</a>
+<a href="/calculators/compound-interest" class="related-calc-link">Compound Interest</a>
+<a href="/calculators/savings" class="related-calc-link">Savings Calculator</a>
+<a href="/calculators/net-worth" class="related-calc-link">Net Worth</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -67,5 +92,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

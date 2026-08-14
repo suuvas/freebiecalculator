@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/tdee">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TDEE Calculator — Total Daily Energy Expenditure","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total daily energy expenditure to know exactly how many calories to eat. Uses the Mifflin-St Jeor equation.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Health","item":"/calculators/calorie.html"},{"@type":"ListItem","position":3,"name":"TDEE Calculator — Total Daily Energy Expenditure","item":"https://freebiecalculator.com/calculators/tdee"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Health",
+            "item": "https://freebiecalculator.com/calculators/calorie"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "TDEE Calculator — Total Daily Energy Expenditure",
+            "item": "https://freebiecalculator.com/calculators/tdee"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "BMR vs TDEE?", "acceptedAnswer": {"@type": "Answer", "text": "BMR = calories at complete rest. TDEE adds daily activity on top of BMR. Eat at TDEE to maintain weight."}}, {"@type": "Question", "name": "Caloric deficit for weight loss?", "acceptedAnswer": {"@type": "Answer", "text": "300–500 calories/day below TDEE = 0.5–1 lb/week fat loss, which is sustainable."}}, {"@type": "Question", "name": "Why do calculators differ?", "acceptedAnswer": {"@type": "Answer", "text": "Different BMR formulas (Mifflin-St Jeor vs Harris-Benedict) and activity multipliers produce different results."}}, {"@type": "Question", "name": "Does TDEE include workout calories?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the activity multiplier accounts for exercise. Do not add exercise calories on top."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/calorie.html">Health</a> &rsaquo; TDEE Calculator — Total Daily Energy Expenditure</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/calorie">Health</a> &rsaquo; TDEE Calculator — Total Daily Energy Expenditure</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>TDEE Calculator</h1>
@@ -53,10 +78,10 @@
 <div class="faq-item"><div class="faq-question">Caloric deficit for weight loss?</div><div class="faq-answer">300–500 calories/day below TDEE = 0.5–1 lb/week fat loss, which is sustainable.</div></div>
 <div class="faq-item"><div class="faq-question">Why do calculators differ?</div><div class="faq-answer">Different BMR formulas (Mifflin-St Jeor vs Harris-Benedict) and activity multipliers produce different results.</div></div>
 <div class="faq-item"><div class="faq-question">Does TDEE include workout calories?</div><div class="faq-answer">Yes — the activity multiplier accounts for exercise. Do not add exercise calories on top.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/bmr.html" class="related-calc-link">BMR Calculator</a>
-<a href="/calculators/calorie.html" class="related-calc-link">Calorie Calculator</a>
-<a href="/calculators/macro-calculator.html" class="related-calc-link">Macro Calculator</a>
-<a href="/calculators/bmi.html" class="related-calc-link">BMI Calculator</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/bmr" class="related-calc-link">BMR Calculator</a>
+<a href="/calculators/calorie" class="related-calc-link">Calorie Calculator</a>
+<a href="/calculators/macro-calculator" class="related-calc-link">Macro Calculator</a>
+<a href="/calculators/bmi" class="related-calc-link">BMI Calculator</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -69,5 +94,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

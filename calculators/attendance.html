@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/attendance">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Attendance Calculator — Attendance Percentage","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate attendance percentage for school or work. Find how many more classes needed to meet the minimum requirement.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Education","item":"/calculators/gpa.html"},{"@type":"ListItem","position":3,"name":"Attendance Calculator — Attendance Percentage","item":"https://freebiecalculator.com/calculators/attendance"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Education",
+            "item": "https://freebiecalculator.com/calculators/gpa"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Attendance Calculator — Attendance Percentage",
+            "item": "https://freebiecalculator.com/calculators/attendance"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Minimum attendance requirement?", "acceptedAnswer": {"@type": "Answer", "text": "Most universities require 75–80% for exam eligibility. Professional programs may require 85–90%."}}, {"@type": "Question", "name": "How many classes can I miss?", "acceptedAnswer": {"@type": "Answer", "text": "For 75% in 100 classes: miss at most 25. Use this calculator for your exact numbers."}}, {"@type": "Question", "name": "Do online classes count?", "acceptedAnswer": {"@type": "Answer", "text": "Generally yes if the institution considers them equivalent. Check your policy."}}, {"@type": "Question", "name": "Can I recover from low attendance?", "acceptedAnswer": {"@type": "Answer", "text": "Depends on remaining classes. More left = easier recovery. Calculator shows exact number needed."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/gpa.html">Education</a> &rsaquo; Attendance Calculator — Attendance Percentage</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/gpa">Education</a> &rsaquo; Attendance Calculator — Attendance Percentage</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>Attendance Calculator</h1>
@@ -51,10 +76,10 @@
 <div class="faq-item"><div class="faq-question">How many classes can I miss?</div><div class="faq-answer">For 75% in 100 classes: miss at most 25. Use this calculator for your exact numbers.</div></div>
 <div class="faq-item"><div class="faq-question">Do online classes count?</div><div class="faq-answer">Generally yes if the institution considers them equivalent. Check your policy.</div></div>
 <div class="faq-item"><div class="faq-question">Can I recover from low attendance?</div><div class="faq-answer">Depends on remaining classes. More left = easier recovery. Calculator shows exact number needed.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/gpa.html" class="related-calc-link">GPA Calculator</a>
-<a href="/calculators/grade.html" class="related-calc-link">Grade Calculator</a>
-<a href="/calculators/study-time.html" class="related-calc-link">Study Time</a>
-<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/gpa" class="related-calc-link">GPA Calculator</a>
+<a href="/calculators/grade" class="related-calc-link">Grade Calculator</a>
+<a href="/calculators/study-time" class="related-calc-link">Study Time</a>
+<a href="/calculators/percentage" class="related-calc-link">Percentage</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -66,5 +91,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

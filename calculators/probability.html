@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/probability">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Probability Calculator — Single and Compound Events","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate probability of events, P(A and B), P(A or B), and complements. Simple and compound probability made easy.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Math","item":"/calculators/standard-deviation.html"},{"@type":"ListItem","position":3,"name":"Probability Calculator — Single and Compound Events","item":"https://freebiecalculator.com/calculators/probability"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Math",
+            "item": "https://freebiecalculator.com/calculators/standard-deviation"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Probability Calculator — Single and Compound Events",
+            "item": "https://freebiecalculator.com/calculators/probability"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Probability 0.5 means?", "acceptedAnswer": {"@type": "Answer", "text": "Equal chance of occurring or not — like flipping a fair coin."}}, {"@type": "Question", "name": "What is a complementary event?", "acceptedAnswer": {"@type": "Answer", "text": "The complement of event A is everything except A. P(A) + P(not A) = 1 always."}}, {"@type": "Question", "name": "Theoretical vs experimental probability?", "acceptedAnswer": {"@type": "Answer", "text": "Theoretical: calculated from known outcomes. Experimental: measured from actual trials."}}, {"@type": "Question", "name": "Can probability exceed 1?", "acceptedAnswer": {"@type": "Answer", "text": "No. Always between 0 (impossible) and 1 (certain)."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/standard-deviation.html">Math</a> &rsaquo; Probability Calculator — Single and Compound Events</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/standard-deviation">Math</a> &rsaquo; Probability Calculator — Single and Compound Events</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>Probability Calculator</h1>
@@ -50,10 +75,10 @@
 <div class="faq-item"><div class="faq-question">What is a complementary event?</div><div class="faq-answer">The complement of event A is everything except A. P(A) + P(not A) = 1 always.</div></div>
 <div class="faq-item"><div class="faq-question">Theoretical vs experimental probability?</div><div class="faq-answer">Theoretical: calculated from known outcomes. Experimental: measured from actual trials.</div></div>
 <div class="faq-item"><div class="faq-question">Can probability exceed 1?</div><div class="faq-answer">No. Always between 0 (impossible) and 1 (certain).</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/standard-deviation.html" class="related-calc-link">Standard Deviation</a>
-<a href="/calculators/average.html" class="related-calc-link">Average Calculator</a>
-<a href="/calculators/variance.html" class="related-calc-link">Variance Calculator</a>
-<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/standard-deviation" class="related-calc-link">Standard Deviation</a>
+<a href="/calculators/average" class="related-calc-link">Average Calculator</a>
+<a href="/calculators/variance" class="related-calc-link">Variance Calculator</a>
+<a href="/calculators/percentage" class="related-calc-link">Percentage</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -65,5 +90,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

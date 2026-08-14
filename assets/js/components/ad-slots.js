@@ -22,15 +22,12 @@ export function initAdSlots() {
     // Mobile in-article ad removed — mobile uses result ad + sticky anchor only
     injectResultAd();            // highest-CTR: after calculation results appear
     injectSidebarAd();           // desktop 300px sticky sidebar
-    // NOTE: injectStickyMobileAd() is NOT called here.
-    // It is called by window.__loadAdSense() AFTER the user gives consent,
-    // so body.has-sticky-ad padding is never added while the consent banner is visible.
 
     const count = document.querySelectorAll('.ad-slot').length;
     console.log(`Initialized ${count} ad slots`);
 }
 
-// Exported so main.js can call it post-consent
+// Exported so main.js can call it on page load
 export { injectStickyMobileAd };
 
 // ── Inject <ins> tags into existing #ad-mid and #ad-bottom placeholders ───────

@@ -315,7 +315,7 @@
     
     <footer id="footer"></footer>
     
-    <script type="module" src="/assets/js/main.js?v=119"></script>
+    <script type="module" src="/assets/js/main.js?v=121"></script>
     <script type="module">
         import { formatNumber } from '/assets/js/utils/math.js';
         
@@ -330,6 +330,12 @@
         });
         
         // Form submissions
+        // Parse YYYY-MM-DD as local time (fixes iOS Safari UTC off-by-one bug)
+        function parseLocalDate(val) {
+            const [y, m, d] = val.split('-').map(Number);
+            return new Date(y, m - 1, d);
+        }
+
         document.getElementById('lmp-form').addEventListener('submit', function(e) {
             e.preventDefault();
             calculateFromLMP();
@@ -360,7 +366,7 @@
         }
         
         function calculateFromLMP() {
-            const lmpDate = new Date(document.getElementById('lmp-date').value);
+            const lmpDate = parseLocalDate(document.getElementById('lmp-date').value);
             const cycleLength = parseInt(document.getElementById('cycle-length').value);
             
             if (!lmpDate || isNaN(lmpDate.getTime())) {
@@ -384,7 +390,7 @@
         }
         
         function calculateFromConception() {
-            const conceptionDate = new Date(document.getElementById('conception-date').value);
+            const conceptionDate = parseLocalDate(document.getElementById('conception-date').value);
             
             if (!conceptionDate || isNaN(conceptionDate.getTime())) {
                 alert('Please enter a valid date');
@@ -406,7 +412,7 @@
         }
         
         function calculateFromDueDate() {
-            const dueDate = new Date(document.getElementById('known-due-date').value);
+            const dueDate = parseLocalDate(document.getElementById('known-due-date').value);
             
             if (!dueDate || isNaN(dueDate.getTime())) {
                 alert('Please enter a valid date');

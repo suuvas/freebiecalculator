@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/inventory">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Inventory Turnover Calculator","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate inventory turnover ratio, days sales of inventory (DSI), and weeks of supply for any business.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Business","item":"/calculators/profit-margin.html"},{"@type":"ListItem","position":3,"name":"Inventory Turnover Calculator","item":"https://freebiecalculator.com/calculators/inventory"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Business",
+            "item": "https://freebiecalculator.com/calculators/profit-margin"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Inventory Turnover Calculator",
+            "item": "https://freebiecalculator.com/calculators/inventory"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Good inventory turnover?", "acceptedAnswer": {"@type": "Answer", "text": "Grocery: 12–15×. Clothing: 4–6×. Furniture: 2–4×. Electronics: 6–8×."}}, {"@type": "Question", "name": "What is DSI?", "acceptedAnswer": {"@type": "Answer", "text": "Days of sales your current stock supports. Lower = faster moving inventory."}}, {"@type": "Question", "name": "How to improve turnover?", "acceptedAnswer": {"@type": "Answer", "text": "More promotions, smaller/more frequent orders, or discontinue slow-moving SKUs."}}, {"@type": "Question", "name": "What is EOQ?", "acceptedAnswer": {"@type": "Answer", "text": "Economic Order Quantity — minimizes total holding and ordering costs."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/profit-margin.html">Business</a> &rsaquo; Inventory Turnover Calculator</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/profit-margin">Business</a> &rsaquo; Inventory Turnover Calculator</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>Inventory Turnover Calculator</h1>
@@ -50,10 +75,10 @@
 <div class="faq-item"><div class="faq-question">What is DSI?</div><div class="faq-answer">Days of sales your current stock supports. Lower = faster moving inventory.</div></div>
 <div class="faq-item"><div class="faq-question">How to improve turnover?</div><div class="faq-answer">More promotions, smaller/more frequent orders, or discontinue slow-moving SKUs.</div></div>
 <div class="faq-item"><div class="faq-question">What is EOQ?</div><div class="faq-answer">Economic Order Quantity — minimizes total holding and ordering costs.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/profit-margin.html" class="related-calc-link">Profit Margin</a>
-<a href="/calculators/break-even.html" class="related-calc-link">Break-Even Calculator</a>
-<a href="/calculators/gross-profit.html" class="related-calc-link">Gross Profit</a>
-<a href="/calculators/discount.html" class="related-calc-link">Discount Calculator</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/profit-margin" class="related-calc-link">Profit Margin</a>
+<a href="/calculators/break-even" class="related-calc-link">Break-Even Calculator</a>
+<a href="/calculators/gross-profit" class="related-calc-link">Gross Profit</a>
+<a href="/calculators/discount" class="related-calc-link">Discount Calculator</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -65,5 +90,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

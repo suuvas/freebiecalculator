@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/apr">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"APR Calculator — Annual Percentage Rate","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the true APR of any loan including fees. Compare loan offers accurately with our free APR calculator.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"/calculators/mortgage.html"},{"@type":"ListItem","position":3,"name":"APR Calculator — Annual Percentage Rate","item":"https://freebiecalculator.com/calculators/apr"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance",
+            "item": "https://freebiecalculator.com/calculators/mortgage"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "APR Calculator — Annual Percentage Rate",
+            "item": "https://freebiecalculator.com/calculators/apr"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is APR higher than the interest rate?", "acceptedAnswer": {"@type": "Answer", "text": "APR includes upfront fees spread across the loan term, making it higher than the base rate."}}, {"@type": "Question", "name": "Good mortgage APR?", "acceptedAnswer": {"@type": "Answer", "text": "Under 7% for a 30-year fixed is generally good, depending on market conditions and credit score."}}, {"@type": "Question", "name": "Can I compare different loan types by APR?", "acceptedAnswer": {"@type": "Answer", "text": "APR works across types but is most useful comparing similar products with the same term."}}, {"@type": "Question", "name": "Lower APR always better?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for the same amount and term, lower APR = lower total cost."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/mortgage.html">Finance</a> &rsaquo; APR Calculator — Annual Percentage Rate</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/mortgage">Finance</a> &rsaquo; APR Calculator — Annual Percentage Rate</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>APR Calculator</h1>
@@ -51,10 +76,10 @@
 <div class="faq-item"><div class="faq-question">Good mortgage APR?</div><div class="faq-answer">Under 7% for a 30-year fixed is generally good, depending on market conditions and credit score.</div></div>
 <div class="faq-item"><div class="faq-question">Can I compare different loan types by APR?</div><div class="faq-answer">APR works across types but is most useful comparing similar products with the same term.</div></div>
 <div class="faq-item"><div class="faq-question">Lower APR always better?</div><div class="faq-answer">Yes, for the same amount and term, lower APR = lower total cost.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/mortgage.html" class="related-calc-link">Mortgage</a>
-<a href="/calculators/car-loan.html" class="related-calc-link">Car Loan</a>
-<a href="/calculators/apy.html" class="related-calc-link">APY Calculator</a>
-<a href="/calculators/emi.html" class="related-calc-link">EMI Calculator</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/mortgage" class="related-calc-link">Mortgage</a>
+<a href="/calculators/car-loan" class="related-calc-link">Car Loan</a>
+<a href="/calculators/apy" class="related-calc-link">APY Calculator</a>
+<a href="/calculators/emi" class="related-calc-link">EMI Calculator</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -66,5 +91,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

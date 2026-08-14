@@ -11,13 +11,38 @@
     <meta property="og:url" content="https://freebiecalculator.com/calculators/variance">
     <meta property="og:image" content="https://freebiecalculator.com/assets/img/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Variance Calculator — Population and Sample Variance","applicationCategory":"Calculator","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate variance and standard deviation for any dataset. Supports population and sample variance with full statistical summary.","dateModified":"2026-07-04"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freebiecalculator.com/"},{"@type":"ListItem","position":2,"name":"Math","item":"/calculators/standard-deviation.html"},{"@type":"ListItem","position":3,"name":"Variance Calculator — Population and Sample Variance","item":"https://freebiecalculator.com/calculators/variance"}]}</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Math",
+            "item": "https://freebiecalculator.com/calculators/standard-deviation"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Variance Calculator — Population and Sample Variance",
+            "item": "https://freebiecalculator.com/calculators/variance"
+        }
+    ]
+}
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "High variance means?", "acceptedAnswer": {"@type": "Answer", "text": "Data points are widely spread from the mean."}}, {"@type": "Question", "name": "Is SD more useful?", "acceptedAnswer": {"@type": "Answer", "text": "SD is more interpretable (same units as data). Variance is used in many statistical formulas."}}, {"@type": "Question", "name": "Sample vs population?", "acceptedAnswer": {"@type": "Answer", "text": "Sample (n−1) when your data represents a larger population. Population (n) when you have all data."}}, {"@type": "Question", "name": "Coefficient of variation?", "acceptedAnswer": {"@type": "Answer", "text": "CV = (SD/Mean) × 100. Compares variability across datasets with different scales."}}]}</script>
 </head>
 <body>
 <header id="header"></header>
 <main><div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/standard-deviation.html">Math</a> &rsaquo; Variance Calculator — Population and Sample Variance</nav>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/standard-deviation">Math</a> &rsaquo; Variance Calculator — Population and Sample Variance</nav>
 <div class="calculator-page-layout">
 <div class="calculator-main">
 <h1>Variance Calculator</h1>
@@ -49,10 +74,10 @@
 <div class="faq-item"><div class="faq-question">Is SD more useful?</div><div class="faq-answer">SD is more interpretable (same units as data). Variance is used in many statistical formulas.</div></div>
 <div class="faq-item"><div class="faq-question">Sample vs population?</div><div class="faq-answer">Sample (n−1) when your data represents a larger population. Population (n) when you have all data.</div></div>
 <div class="faq-item"><div class="faq-question">Coefficient of variation?</div><div class="faq-answer">CV = (SD/Mean) × 100. Compares variability across datasets with different scales.</div></div></div></section>
-<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/standard-deviation.html" class="related-calc-link">Standard Deviation</a>
-<a href="/calculators/average.html" class="related-calc-link">Average Calculator</a>
-<a href="/calculators/probability.html" class="related-calc-link">Probability</a>
-<a href="/calculators/percentage.html" class="related-calc-link">Percentage</a></div></section>
+<section class="content-section"><h2>Related Calculators</h2><div class="related-calcs"><a href="/calculators/standard-deviation" class="related-calc-link">Standard Deviation</a>
+<a href="/calculators/average" class="related-calc-link">Average Calculator</a>
+<a href="/calculators/probability" class="related-calc-link">Probability</a>
+<a href="/calculators/percentage" class="related-calc-link">Percentage</a></div></section>
 <p><small><strong>Last Updated:</strong> July 4, 2026</small></p>
 </div>
 <aside class="calculator-sidebar"><div class="ad-slot" aria-label="Advertisement"></div></aside>
@@ -64,5 +89,5 @@ function copyResult(){var t=document.getElementById('result-text').innerText;nav
 function shareResult(){if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard.writeText(location.href).then(function(){alert('Link copied!');});}}
 function resetCalc(){var f=document.querySelector('form');if(f)f.reset();document.getElementById('result').hidden=true;}
 </script>
-<script type="module" src="/assets/js/main.js?v=119"></script>
+<script type="module" src="/assets/js/main.js?v=121"></script>
 </body></html>

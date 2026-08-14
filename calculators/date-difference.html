@@ -350,12 +350,12 @@ New Date = Base Date + (Days × 24 × 60 × 60 × 1000 milliseconds)
                 <section class="content-section">
                     <h2>More Date & Time Calculators</h2>
                     <div class="calculator-links">
-                        <a href="/calculators/age.html">Age Calculator</a>
-                        <a href="/calculators/percentage.html">Percentage Calculator</a>
-                        <a href="/calculators/unit-converter.html">Unit Converter</a>
-                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
-                        <a href="/calculators/average.html">Average Calculator</a>
-                        <a href="/calculators/discount.html">Discount Calculator</a>
+                        <a href="/calculators/age">Age Calculator</a>
+                        <a href="/calculators/percentage">Percentage Calculator</a>
+                        <a href="/calculators/unit-converter">Unit Converter</a>
+                        <a href="/calculators/compound-interest">Compound Interest Calculator</a>
+                        <a href="/calculators/average">Average Calculator</a>
+                        <a href="/calculators/discount">Discount Calculator</a>
                     </div>
                 </section>
             </div>
@@ -364,8 +364,13 @@ New Date = Base Date + (Days × 24 × 60 × 60 × 1000 milliseconds)
     
     <footer id="footer"></footer>
     
-    <script type="module" src="/assets/js/main.js?v=119"></script>
+    <script type="module" src="/assets/js/main.js?v=121"></script>
     <script type="module">
+        // Parse YYYY-MM-DD as local time (fixes iOS Safari UTC off-by-one bug)
+        function parseLocalDate(val) {
+            const [y, m, d] = val.split('-').map(Number);
+            return new Date(y, m - 1, d);
+        }
         import { calculateDateDifference, formatNumber } from '/assets/js/utils/math.js';
         
         // Switch between calculation modes
@@ -387,8 +392,8 @@ New Date = Base Date + (Days × 24 × 60 × 60 × 1000 milliseconds)
         document.getElementById('base-date').value = today;
         
         window.calculateDifference = function() {
-            const startDate = new Date(document.getElementById('start-date').value);
-            const endDate = new Date(document.getElementById('end-date').value);
+            const startDate = parseLocalDate(document.getElementById('start-date').value);
+            const endDate = parseLocalDate(document.getElementById('end-date').value);
             
             if (!document.getElementById('start-date').value || !document.getElementById('end-date').value) {
                 alert('Please select both start and end dates');
@@ -424,7 +429,7 @@ New Date = Base Date + (Days × 24 × 60 × 60 × 1000 milliseconds)
         };
         
         window.calculateNewDate = function() {
-            const baseDate = new Date(document.getElementById('base-date').value);
+            const baseDate = parseLocalDate(document.getElementById('base-date').value);
             const daysToModify = parseInt(document.getElementById('days-to-modify').value);
             
             if (!document.getElementById('base-date').value) {

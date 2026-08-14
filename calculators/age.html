@@ -276,12 +276,12 @@ Age in Days = Current Day - Birth Day (adjusted for month length)
                 <section class="content-section">
                     <h2>More Calculators</h2>
                     <div class="calculator-links">
-                        <a href="/calculators/date-difference.html">Date Difference Calculator</a>
-                        <a href="/calculators/percentage.html">Percentage Calculator</a>
-                        <a href="/calculators/bmi.html">BMI Calculator</a>
-                        <a href="/calculators/compound-interest.html">Compound Interest Calculator</a>
-                        <a href="/calculators/average.html">Average Calculator</a>
-                        <a href="/calculators/discount.html">Discount Calculator</a>
+                        <a href="/calculators/date-difference">Date Difference Calculator</a>
+                        <a href="/calculators/percentage">Percentage Calculator</a>
+                        <a href="/calculators/bmi">BMI Calculator</a>
+                        <a href="/calculators/compound-interest">Compound Interest Calculator</a>
+                        <a href="/calculators/average">Average Calculator</a>
+                        <a href="/calculators/discount">Discount Calculator</a>
                     </div>
                 </section>
             </div>
@@ -290,10 +290,16 @@ Age in Days = Current Day - Birth Day (adjusted for month length)
     
     <footer id="footer"></footer>
     
-    <script type="module" src="/assets/js/main.js?v=119"></script>
+    <script type="module" src="/assets/js/main.js?v=121"></script>
     <script type="module">
         import { calculateAge, validateNumber } from '/assets/js/utils/math.js';
         
+        // Parse YYYY-MM-DD as LOCAL time (not UTC) — fixes iOS Safari off-by-one bug
+        function parseLocalDate(val) {
+            const [y, m, d] = val.split('-').map(Number);
+            return new Date(y, m - 1, d);
+        }
+
         document.getElementById('age-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -303,9 +309,9 @@ Age in Days = Current Day - Birth Day (adjusted for month length)
             const ageDisplay = document.getElementById('age-display');
             const ageDetails = document.getElementById('age-details');
             
-            const birthDate = new Date(birthDateInput.value);
+            const birthDate = parseLocalDate(birthDateInput.value);
             const currentDate = currentDateInput.value ? 
-                new Date(currentDateInput.value) : new Date();
+                parseLocalDate(currentDateInput.value) : new Date();
             
             if (!birthDateInput.value) {
                 alert('Please enter your birth date');
