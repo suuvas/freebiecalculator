@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize mobile navigation
     initMobileNav();
     
-    console.log('freebiecalculator.com initialized - VERSION 121 LOADED');
+    console.log('freebiecalculator.com initialized - VERSION 122 LOADED');
 });
 
 // Simple language dropdown creator

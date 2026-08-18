@@ -1,3 +1,7 @@
+# HTTP → HTTPS — covers ALL four variants Google crawls
+http://freebiecalculator.com/*  https://freebiecalculator.com/:splat  301
+http://www.freebiecalculator.com/*  https://freebiecalculator.com/:splat  301
+
 # www → non-www (canonical domain)
 https://www.freebiecalculator.com/* https://freebiecalculator.com/:splat 301
 
@@ -174,3 +178,4 @@ https://www.freebiecalculator.com/* https://freebiecalculator.com/:splat 301
 /sources.html  /sources  301
 /update-log.html  /update-log  301
 /sitemap.html  /sitemap  301
+/search.html  /search  301
