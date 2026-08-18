@@ -18,48 +18,30 @@
     
     <!-- JSON-LD SoftwareApplication Schema -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Amortization Calculator",
-        "description": "Calculate detailed loan payment schedules showing principal and interest breakdown",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
         },
-        "dateModified": "2026-07-25"
-    }
-    </script>
-    
-    <!-- JSON-LD BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://freebiecalculator.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Financial Calculators",
-                "item": "https://freebiecalculator.com/categories/finance"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Amortization Calculator",
-                "item": "https://freebiecalculator.com/calculators/amortization"
-            }
-        ]
-    }
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance",
+            "item": "https://freebiecalculator.com/categories/finance"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Amortization Calculator",
+            "item": "https://freebiecalculator.com/calculators/amortization"
+        }
+    ]
+}
     </script>
 
     <script type="application/ld+json">
@@ -117,11 +99,7 @@
     
     <main>
         <div class="container">
-            <nav class="breadcrumbs">
-                <a href="/">Home</a> › 
-                <a href="/#financial-calculators">Financial Calculators</a> › 
-                <span>Amortization Calculator</span>
-            </nav>
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/categories/finance">Finance</a> &rsaquo; Amortization Calculator</nav>
             
             <div class="calculator-header">
                 <h1>📋 Amortization Calculator</h1>

@@ -18,48 +18,30 @@
     
     <!-- JSON-LD SoftwareApplication Schema -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Fraction Calculator",
-        "description": "Calculate with fractions: add, subtract, multiply, divide, and simplify",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Web",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
         },
-        "dateModified": "2026-07-25"
-    }
-    </script>
-    
-    <!-- JSON-LD BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://freebiecalculator.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Math Calculators",
-                "item": "https://freebiecalculator.com/categories/math"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Fraction Calculator",
-                "item": "https://freebiecalculator.com/calculators/fraction"
-            }
-        ]
-    }
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Math",
+            "item": "https://freebiecalculator.com/categories/math"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Fraction Calculator",
+            "item": "https://freebiecalculator.com/calculators/fraction"
+        }
+    ]
+}
     </script>
 
     <script type="application/ld+json">
@@ -148,11 +130,7 @@
     
     <main>
         <div class="container">
-            <nav class="breadcrumbs">
-                <a href="/">Home</a> › 
-                <a href="/#math-calculators">Math Calculators</a> › 
-                <span>Fraction Calculator</span>
-            </nav>
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/categories/math">Math</a> &rsaquo; Fraction Calculator</nav>
             
             <div class="calculator-header">
                 <h1>🔢 Fraction Calculator</h1>

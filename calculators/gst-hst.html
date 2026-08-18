@@ -21,6 +21,33 @@
         {"@type":"Question","name":"Does Alberta have provincial sales tax?","acceptedAnswer":{"@type":"Answer","text":"No. Alberta is the only province with no provincial sales tax. Residents pay only the 5% federal GST. This makes Alberta the lowest-tax province for consumer purchases."}},
         {"@type":"Question","name":"How do I calculate the pre-tax price from a total?","acceptedAnswer":{"@type":"Answer","text":"To find the pre-tax price: Pre-tax = Total ÷ (1 + tax rate). Example: $113 total in Ontario (13% HST): $113 ÷ 1.13 = $100 pre-tax. Our calculator handles this automatically with the reverse calculation."}}
     ]}</script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://freebiecalculator.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tax",
+            "item": "https://freebiecalculator.com/categories/tax"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Canadian GST/HST Calculator",
+            "item": "https://freebiecalculator.com/calculators/gst-hst"
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="header">
@@ -32,7 +59,7 @@
     </header>
     <main>
         <div class="container">
-            <nav class="breadcrumbs"><a href="/">Home</a> › <a href="/ca/">Canada</a> › <span>GST/HST Calculator</span></nav>
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/categories/tax">Tax</a> &rsaquo; Canadian GST/HST Calculator</nav>
             <div class="calculator-header"><h1>🍁 Canadian GST/HST Calculator</h1><p>Calculate sales tax for any Canadian province or territory — GST, HST, PST, and QST.</p></div>
             <div class="calculator-container"><div class="calculator-tool">
                 <form id="gst-form">
